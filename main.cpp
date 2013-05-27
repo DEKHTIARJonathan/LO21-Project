@@ -1,11 +1,15 @@
-#include <iostream>
+#include <QApplication>
+#include <QtGui>
+#include <QFileDialog>
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
 
-int main()
+int main(int argc, char *argv[])
 {
+    QApplication app(argc, argv);
 
-	std::cout<<"ok connard"<<std::endl;
-	std::cout<<"merci connard"<<std::endl;
+    MainWindow window;
+    window.show();
 
-
-    return 0;
+    return app.exec();
 }
