@@ -1,9 +1,13 @@
 SOURCES += \
     main.cpp \
-    note.cpp
+	note/note.cpp \
+    export/exportstrategy.cpp \
+    export/exportstrategynotfoundexception.cpp
 
 HEADERS += \
-	note.h
+	note/note.h \
+    export/exportstrategy.h \
+    export/exportstrategynotfoundexception.h
 
 HEADERS +=
 
