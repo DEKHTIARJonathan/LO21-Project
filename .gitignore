@@ -1,3 +1,5 @@
 *~
-mainwindow.*
+mainwindow.h
+mainwindow.cpp
+mainwindow.ui
 LO21.pro.user
