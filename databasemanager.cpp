@@ -11,6 +11,9 @@ databaseManager::databaseManager(QString filename)
 
     dbpath = QDir::currentPath() +"/"+ filename + ".lo21";
 
+    QFile file(dbpath);
+    bool dbIsNew = !file.exists();
+
     database->setDatabaseName(dbpath);
 
     //can be removed
@@ -24,7 +27,8 @@ databaseManager::databaseManager(QString filename)
     }
     else
     {
-        QSqlQuery query;
+        if (dbIsNew)
+            initDB();
     }
 
     /*all_model = new QSqlTableModel(this, *database);
@@ -66,5 +70,20 @@ void databaseManager::getPersonne(QString name) const
         cout<<"Nom :" << Name.toStdString() << " || Num :" << Mobile.toStdString() << " || City :"<< City.toStdString()<<endl;
     }
 
+}
+
+bool databaseManager::initDB()
+{
+    QString qry1 = "create table Contacts (Name varchar(20), Mobile varchar(20),City varchar(30), primary key(Name, Mobile))";
+    cout<<"\n\nDB initialisée\n\n";
+
+    return query(qry1);
+}
+
+bool databaseManager::addPersonne(QString name, QString mob, QString city) const
+{
+     QString request = "INSERT INTO Contacts (Name, Mobile, City) VALUES ('"+name+"','"+mob+"', '"+city+"')";
+
+     return query(request);
 }
 

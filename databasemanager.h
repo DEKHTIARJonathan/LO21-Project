@@ -9,6 +9,7 @@
 #include <QString>
 #include <QCoreApplication>
 #include <QDir>
+#include <QFile>
 #include <iostream>
 
 
@@ -26,7 +27,7 @@ public:
     /***************** DB REQUEST ********************/
     bool query(QString query) const;
     void getPersonne(QString name = "") const;
-    void addPersonne(QString name = "", QString mob = "", QString city = "", ) const;
+    bool addPersonne(QString name = "", QString mob = "", QString city = "") const;
 
 
  private:
