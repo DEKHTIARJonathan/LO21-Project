@@ -1,11 +1,8 @@
 SOURCES += \
-    main.cpp \
-    mainwindow.cpp
+    main.cpp
 
-HEADERS += \
-    mainwindow.h
+HEADERS +=
 
-FORMS += \
-    mainwindow.ui
+FORMS +=
 
 QT += widgets
