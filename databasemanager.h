@@ -26,11 +26,14 @@ public:
     /***************** DB REQUEST ********************/
     bool query(QString query) const;
     void getPersonne(QString name = "") const;
+    void addPersonne(QString name = "", QString mob = "", QString city = "", ) const;
 
 
  private:
     QSqlDatabase *database;
     QString dbpath;
+
+    bool initDB();
     //QSqlTableModel *all_model;
     //QSqlTableModel *search_model;
 

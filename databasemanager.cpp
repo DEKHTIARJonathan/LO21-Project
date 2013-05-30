@@ -25,12 +25,6 @@ databaseManager::databaseManager(QString filename)
     else
     {
         QSqlQuery query;
-        /*query.exec("create table Contacts "
-                          "(Name varchar(20), "
-                          "Mobile varchar(20), "
-                          "City varchar(30), "
-                         "primary key(Name, Mobile))");
-        //query.exec("insert into Contacts (Name,Mobile,City) Values ('John','0561390189', 'Toulouse')");*/
     }
 
     /*all_model = new QSqlTableModel(this, *database);
@@ -59,7 +53,7 @@ void databaseManager::getPersonne(QString name) const
     if (name == "")
         query = "Select * from Contacts";
     else
-        query = "Select * from Contacts where Name = "+name;
+        query = "Select * from Contacts where Name = '"+name+"'";
 
     request.exec(query);
 
