@@ -1,11 +1,10 @@
-#include <iostream>
+#include <QApplication>
+#include <QtGui>
 
-int main()
+int main(int argc, char *argv[])
 {
-
-	std::cout<<"ok connard"<<std::endl;
-	std::cout<<"merci connard"<<std::endl;
+    QApplication app(argc, argv);
 
 
-    return 0;
+    return app.exec();
 }

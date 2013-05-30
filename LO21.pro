@@ -3,4 +3,10 @@ SOURCES += \
     note.cpp
 
 HEADERS += \
-    note.h
+	note.h
+
+HEADERS +=
+
+FORMS +=
+
+QT += widgets
