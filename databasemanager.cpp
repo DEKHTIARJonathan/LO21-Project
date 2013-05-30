@@ -29,6 +29,7 @@ databaseManager::databaseManager(QString filename)
     {
         if (dbIsNew)
             initDB();
+        database->exec("PRAGMA foreign_keys=ON;");
     }
 
     /*all_model = new QSqlTableModel(this, *database);
@@ -72,10 +73,31 @@ void databaseManager::getPersonne(QString name) const
 
 }
 
+void databaseManager::getInscription(QString nameUV) const
+{
+    QSqlQuery request;
+    QString query;
+    if (nameUV == "")
+        query = "Select * from Inscription";
+    else
+        query = "Select * from Inscription where NameUV = '"+nameUV+"'";
+
+    request.exec(query);
+
+    while(request.next())
+    {
+        QString NameUV = request.value(0).toString();
+        QString etudiant = request.value(1).toString();
+
+        cout<<"NomUV :" << NameUV.toStdString() << " || etu :" << etudiant.toStdString() <<endl;
+    }
+
+}
+
 bool databaseManager::initDB()
 {
-    QString qry1 = "create table Contacts (Name varchar(20), Mobile varchar(20),City varchar(30), primary key(Name, Mobile))";
-    cout<<"\n\nDB initialisée\n\n";
+    QString qry1 = "create table Contacts (Name varchar(20), Mobile varchar(20),City varchar(30), primary key(Name))";
+    cout<<"DB initialisée\n\n";
 
     return query(qry1);
 }

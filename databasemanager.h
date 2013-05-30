@@ -28,6 +28,8 @@ public:
     bool query(QString query) const;
     void getPersonne(QString name = "") const;
     bool addPersonne(QString name = "", QString mob = "", QString city = "") const;
+    void getInscription(QString nameUV = "") const;
+
 
 
  private:
