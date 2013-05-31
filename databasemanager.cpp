@@ -29,6 +29,16 @@ databaseManager::databaseManager(QString filename, QString user, QString pass)
     {
         if (dbIsNew)
             initDB();
+        else
+        {
+            /*QStringList list = database->tables(QSql::Tables);
+            QStringList::Iterator it = list.begin();
+            while( it != list.end() )
+            {
+                cout << "Table: " << it->toStdString() << "\n";
+                ++it;
+            }*/
+        }
         database->exec("PRAGMA foreign_keys=ON;");
     }
 
@@ -104,7 +114,7 @@ bool databaseManager::initDB()
             b = false;
     }
 
-    b += addAllType();
+    b += addType();
 
     if (b)
         cout<<"DB initialisée\n\n";
@@ -122,7 +132,7 @@ bool databaseManager::addType(QString type) const
     return query("INSERT INTO TypeNote (name) VALUES ('"+ type +"')");
 }
 
-bool databaseManager::addAllType() const
+bool databaseManager::addType() const
 {
     bool b = true;
 

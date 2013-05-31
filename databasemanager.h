@@ -10,6 +10,7 @@
 #include <QCoreApplication>
 #include <QDir>
 #include <QFile>
+#include <QStringList>
 #include <iostream>
 
 class databaseManager
@@ -34,7 +35,7 @@ public:
 
     /******************* Temp *************************/
 
-    bool addAllType() const;
+    bool addType() const;
 
  private:
     QSqlDatabase *database;
