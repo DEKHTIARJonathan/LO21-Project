@@ -1,15 +1,15 @@
 SOURCES += \
 	main.cpp \
 	note/note.cpp \
-    export/exportstrategy.cpp \
+        export/exportstrategy.cpp \
 	export/exportstrategynotfoundexception.cpp \
-	databasemanager.cpp
+        dbmanager/databasemanager.cpp
 
 HEADERS += \
 	note/note.h \
-    export/exportstrategy.h \
+        export/exportstrategy.h \
 	export/exportstrategynotfoundexception.h \
-	databasemanager.h
+        dbmanager/databasemanager.h
 
 FORMS +=
 
