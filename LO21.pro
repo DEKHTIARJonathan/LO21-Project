@@ -10,7 +10,7 @@ SOURCES += \
 	note/image.cpp \
 	dbmanager/databasemanager.cpp \
     note/audio.cpp \
-    note/video.cpp
+	note/video.cpp \
     export/exporthtml.cpp \
     export/exporttex.cpp \
     export/exporttext.cpp
@@ -27,7 +27,7 @@ HEADERS += \
     note/image.h \
     note/audio.h \
     note/video.h \
-    note/classdef.h
+	note/classdef.h \
     export/exporthtml.h \
     export/exporttex.h \
     export/exporttext.h
