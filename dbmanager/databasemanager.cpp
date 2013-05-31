@@ -1,8 +1,8 @@
-#include "databasemanager.h"
+#include "DatabaseManager.h"
 
 using namespace std;
 
-databaseManager::databaseManager(QString filename, QString user, QString pass)
+DatabaseManager::DatabaseManager(QString filename, QString user, QString pass)
 {
     database = new QSqlDatabase();
 
@@ -44,19 +44,19 @@ databaseManager::databaseManager(QString filename, QString user, QString pass)
 
 }
 
-const QString databaseManager::getpath() const
+const QString DatabaseManager::getpath() const
 {
     return "Path " + dbpath+"\n";
 }
 
-bool databaseManager::query(QString query) const
+bool DatabaseManager::query(QString query) const
 {
     QSqlQuery request(*database);
 
     return request.exec(query);
 }
 
-void databaseManager::getNote(unsigned int id) const
+void DatabaseManager::getNote(unsigned int id) const
 {
     QSqlQuery request(*database);
 
@@ -73,7 +73,7 @@ void databaseManager::getNote(unsigned int id) const
 
 }
 
-void databaseManager::getNote() const
+void DatabaseManager::getNote() const
 {
     QSqlQuery request(*database);
 
@@ -90,12 +90,12 @@ void databaseManager::getNote() const
 
 }
 
-bool databaseManager::insertNote(QString titre, QString type) const
+bool DatabaseManager::insertNote(QString titre, QString type) const
 {
     return query("INSERT INTO Note (idNote, titre, typeNote) VALUES (NULL, '"+titre+"','"+ type +"')");
 }
 
-bool databaseManager::initDB()
+bool DatabaseManager::initDB()
 {
     QString qry[6];
 
@@ -127,12 +127,12 @@ bool databaseManager::initDB()
     return b;
 }
 
-bool databaseManager::addType(QString type) const
+bool DatabaseManager::addType(QString type) const
 {
     return query("INSERT INTO TypeNote (name) VALUES ('"+ type +"')");
 }
 
-bool databaseManager::addType() const
+bool DatabaseManager::addType() const
 {
     bool b = true;
 
@@ -145,12 +145,12 @@ bool databaseManager::addType() const
     return b;
 }
 
-bool databaseManager::deleteNote (unsigned int id) const
+bool DatabaseManager::deleteNote (unsigned int id) const
 {
     return query("Delete from Note where idNote = "+ QString::number(id));
 }
 
-bool databaseManager::deleteNote () const
+bool DatabaseManager::deleteNote () const
 {
     return query("Delete from Note where 1=1");
 }

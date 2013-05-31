@@ -1,5 +1,5 @@
-#ifndef DATABASEMANAGER_H
-#define DATABASEMANAGER_H
+#ifndef DatabaseManager_H
+#define DatabaseManager_H
 
 #include <QWidget>
 
@@ -13,11 +13,11 @@
 #include <QStringList>
 #include <iostream>
 
-class databaseManager
+class DatabaseManager
 {
 public:
     /* *************** Constructeur ******************/
-    databaseManager(QString filename = "temp", QString user = "", QString pass = "");
+    DatabaseManager(QString filename = "temp", QString user = "", QString pass = "");
 
     /***************** Getters ***********************/
     const QString getpath() const;
@@ -45,4 +45,4 @@ public:
 
 };
 
-#endif // DATABASEMANAGER_H
+#endif // DatabaseManager_H

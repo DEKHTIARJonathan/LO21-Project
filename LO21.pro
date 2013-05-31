@@ -23,7 +23,7 @@ HEADERS += \
     note/document.h \
     note/documentindexoutofarrayexception.h \
 	note/multimedia.h \
-	dbmanager/databasemanager.h \
+        dbmanager/databasemanager.h \
     note/image.h \
     note/audio.h \
     note/video.h \
