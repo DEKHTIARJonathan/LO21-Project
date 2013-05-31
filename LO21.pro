@@ -7,10 +7,10 @@ SOURCES += \
     note/document.cpp \
     note/documentindexoutofarrayexception.cpp \
     note/multimedia.cpp \
-	note/image.cpp \
-	dbmanager/databasemanager.cpp \
+    note/image.cpp \
+    dbmanager/databasemanager.cpp \
     note/audio.cpp \
-	note/video.cpp \
+    note/video.cpp \
     export/exporthtml.cpp \
     export/exporttex.cpp \
     export/exporttext.cpp
@@ -22,12 +22,12 @@ HEADERS += \
     note/article.h \
     note/document.h \
     note/documentindexoutofarrayexception.h \
-	note/multimedia.h \
-        dbmanager/databasemanager.h \
+    note/multimedia.h \
     note/image.h \
     note/audio.h \
     note/video.h \
-	note/classdef.h \
+    note/classdef.h \
+    dbmanager/databasemanager.h \
     export/exporthtml.h \
     export/exporttex.h \
     export/exporttext.h
