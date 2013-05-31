@@ -1,8 +1,8 @@
 SOURCES += \
-	main.cpp \
-	export/exportstrategy.cpp \
-	export/exportstrategynotfoundexception.cpp \
-	note/note.cpp \
+    main.cpp \
+    export/exportstrategy.cpp \
+    export/exportstrategynotfoundexception.cpp \
+    note/note.cpp \
     note/article.cpp \
     note/document.cpp \
     note/documentindexoutofarrayexception.cpp \
@@ -11,11 +11,14 @@ SOURCES += \
 	dbmanager/databasemanager.cpp \
     note/audio.cpp \
     note/video.cpp
+    export/exporthtml.cpp \
+    export/exporttex.cpp \
+    export/exporttext.cpp
 
 HEADERS += \
-	export/exportstrategy.h \
-	export/exportstrategynotfoundexception.h \
-	note/note.h \
+    export/exportstrategy.h \
+    export/exportstrategynotfoundexception.h \
+    note/note.h \
     note/article.h \
     note/document.h \
     note/documentindexoutofarrayexception.h \
@@ -25,6 +28,10 @@ HEADERS += \
     note/audio.h \
     note/video.h \
     note/classdef.h
+    export/exporthtml.h \
+    export/exporttex.h \
+    export/exporttext.h
+
 
 FORMS +=
 
