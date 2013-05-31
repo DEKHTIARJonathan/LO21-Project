@@ -2,7 +2,7 @@
 
 using namespace std;
 
-databaseManager::databaseManager(QString filename)
+databaseManager::databaseManager(QString filename, QString user, QString pass)
 {
     database = new QSqlDatabase();
 
@@ -18,8 +18,8 @@ databaseManager::databaseManager(QString filename)
 
     //can be removed
     database->setHostName("localhost");
-    database->setUserName("");
-    database->setPassword("");
+    database->setUserName(user);
+    database->setPassword(pass);
 
     if(!database->open())
     {
@@ -32,80 +32,115 @@ databaseManager::databaseManager(QString filename)
         database->exec("PRAGMA foreign_keys=ON;");
     }
 
-    /*all_model = new QSqlTableModel(this, *database);
-    updateTable();
-
-    search_model = new QSqlTableModel(this, *database);
-    search_model->setTable("Contacts");*/
 }
 
 const QString databaseManager::getpath() const
 {
-    return dbpath;
+    return "Path " + dbpath+"\n";
 }
 
 bool databaseManager::query(QString query) const
 {
-    QSqlQuery request;
+    QSqlQuery request(*database);
 
     return request.exec(query);
 }
 
-void databaseManager::getPersonne(QString name) const
+void databaseManager::getNote(unsigned int id) const
 {
-    QSqlQuery request;
-    QString query;
-    if (name == "")
-        query = "Select * from Contacts";
-    else
-        query = "Select * from Contacts where Name = '"+name+"'";
+    QSqlQuery request(*database);
 
-    request.exec(query);
+    request.exec("Select * from Note where idNote = "+ QString::number(id));
 
     while(request.next())
     {
-        QString Name = request.value(0).toString();
-        QString Mobile = request.value(1).toString();
-        QString City = request.value(2).toString();
+        QString idNote = request.value(0).toString();
+        QString titre = request.value(1).toString();
+        QString type = request.value(2).toString();
 
-        cout<<"Nom :" << Name.toStdString() << " || Num :" << Mobile.toStdString() << " || City :"<< City.toStdString()<<endl;
+        cout<<"idNote : " << idNote.toStdString() << " || titre : " << titre.toStdString() << " || type : " << type.toStdString() <<endl;
     }
 
 }
 
-void databaseManager::getInscription(QString nameUV) const
+void databaseManager::getNote() const
 {
-    QSqlQuery request;
-    QString query;
-    if (nameUV == "")
-        query = "Select * from Inscription";
-    else
-        query = "Select * from Inscription where NameUV = '"+nameUV+"'";
+    QSqlQuery request(*database);
 
-    request.exec(query);
+    request.exec("Select * from Note");
 
     while(request.next())
     {
-        QString NameUV = request.value(0).toString();
-        QString etudiant = request.value(1).toString();
+        QString idNote = request.value(0).toString();
+        QString titre = request.value(1).toString();
+        QString type = request.value(2).toString();
 
-        cout<<"NomUV :" << NameUV.toStdString() << " || etu :" << etudiant.toStdString() <<endl;
+        cout<<"idNote : " << idNote.toStdString() << " || titre : " << titre.toStdString() << " || type : " << type.toStdString() <<endl;
     }
 
+}
+
+bool databaseManager::insertNote(QString titre, QString type) const
+{
+    return query("INSERT INTO Note (idNote, titre, typeNote) VALUES (NULL, '"+titre+"','"+ type +"')");
 }
 
 bool databaseManager::initDB()
 {
-    QString qry1 = "create table Contacts (Name varchar(20), Mobile varchar(20),City varchar(30), primary key(Name))";
-    cout<<"DB initialisée\n\n";
+    QString qry[6];
 
-    return query(qry1);
+    qry[0] = "create table TypeNote (name varchar(30), primary key(name))";
+    qry[1] = "create table Note (idNote integer , titre varchar(255), typeNote varchar(30), primary key(idNote), FOREIGN KEY(typeNote) REFERENCES TypeNote(name) ON DELETE CASCADE)";
+    qry[2] = "create table Article (idArticle integer, primary key(idArticle), FOREIGN KEY(idArticle) REFERENCES Note(idNote) ON DELETE CASCADE)";
+    qry[3] = "create table Document (idDoc integer, primary key(idDoc), FOREIGN KEY(idDoc) REFERENCES Note(idNote) ON DELETE CASCADE)";
+    qry[4] = "create table Binary (idBin integer, primary key(idBin), FOREIGN KEY(idBin) REFERENCES Note(idNote) ON DELETE CASCADE)";
+    qry[5] = "create table AssocDoc (docMaster integer, docSlave integer, primary key(docMaster, docSlave), FOREIGN KEY(docMaster) REFERENCES Document(idDoc) ON DELETE CASCADE, FOREIGN KEY(docSlave) REFERENCES Note(idNote) ON DELETE CASCADE)";
+
+    bool b = true;
+
+    for (int i = 0; i<6; ++i)
+    {
+        if (!query(qry[i]))
+            b = false;
+    }
+
+    b += addAllType();
+
+    if (b)
+        cout<<"DB initialisée\n\n";
+    else
+    {
+        cout<<"Erreur à l'initialisation\n\n";
+        exit(0);
+    }
+
+    return b;
 }
 
-bool databaseManager::addPersonne(QString name, QString mob, QString city) const
+bool databaseManager::addType(QString type) const
 {
-     QString request = "INSERT INTO Contacts (Name, Mobile, City) VALUES ('"+name+"','"+mob+"', '"+city+"')";
-
-     return query(request);
+    return query("INSERT INTO TypeNote (name) VALUES ('"+ type +"')");
 }
 
+bool databaseManager::addAllType() const
+{
+    bool b = true;
+
+    b += addType("Article");
+    b += addType("Document");
+    b += addType("Audio");
+    b += addType("Image");
+    b += addType("Video");
+
+    return b;
+}
+
+bool databaseManager::deleteNote (unsigned int id) const
+{
+    return query("Delete from Note where idNote = "+ QString::number(id));
+}
+
+bool databaseManager::deleteNote () const
+{
+    return query("Delete from Note where 1=1");
+}
