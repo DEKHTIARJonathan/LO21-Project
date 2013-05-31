@@ -1,15 +1,11 @@
-#include "note.h"
+#include "multimedia.h"
 
 /********************************************************************
  *                            Constructor                           *
  ********************************************************************/
 
-// Generic Note constructor
-Note::Note( unsigned int id ) : m_id(id), m_title(), m_modified(false)
-{
-}
-
-Note::Note( unsigned int id, const QString & title ) : m_id(id), m_title(title), m_modified(false)
+// Generic MultiMedia constructor
+MultiMedia::MultiMedia( unsigned int id ) : Note(id), m_description(), m_path()
 {
 }
 
@@ -17,25 +13,18 @@ Note::Note( unsigned int id, const QString & title ) : m_id(id), m_title(title),
  *                              Getter                              *
  ********************************************************************/
 
-unsigned int	Note::getId() const{		return m_id;		}
-const QString &	Note::getTitle() const{		return m_title;		}
-bool			Note::isModified() const{	return m_modified;	}
+const QString &	MultiMedia::getDescription() const{	return m_description;	}
+const QString &	MultiMedia::getPath() const{		return m_path;			}
 
 /********************************************************************
  *                              Setter                              *
  ********************************************************************/
 
-void	Note::setTitle( const QString & title){	m_title	= title;	}
-
-/********************************************************************
- *                             Operator                             *
- ********************************************************************/
-
-bool Note::operator==(const Note& n) const{
-	return this->m_id == n.m_id;
-}
+void	MultiMedia::setDescription( const QString & description){	m_description	= description;	}
+void	MultiMedia::setPath( const QString & path){					m_path			= path;			}
 
 /********************************************************************
  *                              Method                              *
  ********************************************************************/
+
 

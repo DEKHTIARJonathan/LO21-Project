@@ -17,17 +17,26 @@ class Note
 		bool			isModified() const;
 
 		// Setter
-		void			setTitle( const QString & title);
+		void			setTitle(const QString & title);
+
+		// Operator
+		bool			operator==(const Note& n) const;
 
 		// Virtual Method
 
 		// Method
 
 	private:
+		// Constructor
+		Note( const Note& n);
+
 		// Member
 		unsigned int	m_id;
 		QString			m_title;
 		bool			m_modified;
+
+		// Operator
+		Note&			operator=(const Note& n);
 
 };
 
