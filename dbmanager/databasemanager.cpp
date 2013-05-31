@@ -31,13 +31,15 @@ DatabaseManager::DatabaseManager(QString filename, QString user, QString pass)
             initDB();
         else
         {
-            /*QStringList list = database->tables(QSql::Tables);
+			/*
+			QStringList list = database->tables(QSql::Tables);
             QStringList::Iterator it = list.begin();
             while( it != list.end() )
             {
                 cout << "Table: " << it->toStdString() << "\n";
                 ++it;
-            }*/
+			}
+			*/
         }
         database->exec("PRAGMA foreign_keys=ON;");
     }
@@ -97,7 +99,7 @@ bool DatabaseManager::insertNote(QString titre, QString type) const
 
 bool DatabaseManager::initDB()
 {
-    QString qry[6];
+	QString qry[8];
 
     qry[0] = "create table TypeNote (name varchar(30), primary key(name))";
     qry[1] = "create table Note (idNote integer , titre varchar(255), typeNote varchar(30), primary key(idNote), FOREIGN KEY(typeNote) REFERENCES TypeNote(name) ON DELETE CASCADE)";
@@ -105,10 +107,12 @@ bool DatabaseManager::initDB()
     qry[3] = "create table Document (idDoc integer, primary key(idDoc), FOREIGN KEY(idDoc) REFERENCES Note(idNote) ON DELETE CASCADE)";
     qry[4] = "create table Binary (idBin integer, primary key(idBin), FOREIGN KEY(idBin) REFERENCES Note(idNote) ON DELETE CASCADE)";
     qry[5] = "create table AssocDoc (docMaster integer, docSlave integer, primary key(docMaster, docSlave), FOREIGN KEY(docMaster) REFERENCES Document(idDoc) ON DELETE CASCADE, FOREIGN KEY(docSlave) REFERENCES Note(idNote) ON DELETE CASCADE)";
+	qry[6] = "create table Tag (name varchar(30), primary key(name))";
+	qry[7] = "create table AssocTag (idNote integer, name varchar(30), primary key(idNote, name), FOREIGN KEY(idNote) REFERENCES Note(idNote) ON DELETE CASCADE, FOREIGN KEY(name) REFERENCES Tag(name) ON DELETE CASCADE)";
 
     bool b = true;
 
-    for (int i = 0; i<6; ++i)
+	for (int i = 0; i<8; ++i)
     {
         if (!query(qry[i]))
             b = false;
