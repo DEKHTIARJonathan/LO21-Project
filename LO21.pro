@@ -23,7 +23,8 @@ HEADERS += \
 	dbmanager/databasemanager.h \
     note/image.h \
     note/audio.h \
-    note/video.h
+    note/video.h \
+    note/classdef.h
 
 FORMS +=
 
