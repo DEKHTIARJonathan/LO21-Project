@@ -1,35 +1,16 @@
 #ifndef NOTEFACTORY_H
 #define NOTEFACTORY_H
 
-#include <map>
-#include <QString>
-
+#include <notefactory/sqlitenotefactory.h>
 #include <note/note.h>
-#include <notefactory/notefactorynotfoundexception.h>
+#include <dbmanager/databasemanager.h>
+#include <constants.h>
+#include <QStringBuilder>
 
-using namespace std;
-
-class NoteFactory
+class NoteFactory : public SQLiteNoteFactory<Note>
 {
-
 	public:
-		// Virtual Method
-		virtual Note&						buildNewNote() = 0;
-		virtual Note&						buildNoteCopy(const Note& n) = 0;
-		virtual Note&						loadNote(unsigned int id) = 0;
-		virtual Note&						saveNote(const Note& n) = 0;
-		virtual Note&						deleteNote(unsigned int id) = 0;
-
-		// Static Method
-		static void							initNoteFactories();
-		static NoteFactory&					getNoteFactory(const QString& factoryName);
-
-		// Static Attribut
-		static map<QString,NoteFactory*>	s_mapNF;
-
-	protected:
-		virtual void						fillSpecificPart(Note& n);
-
+		bool constructStorage();
 };
 
-#endif
+#endif // NOTEFACTORY_H

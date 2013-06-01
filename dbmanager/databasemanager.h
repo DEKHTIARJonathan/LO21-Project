@@ -13,13 +13,13 @@
 #include <QStringList>
 #include <iostream>
 #include <vector>
+
 #include <note/note.h>
 
 class DatabaseManager
 {
 public:
-    /* *************** Constructeur ******************/
-	DatabaseManager(QString filename = "temp", QString user = "", QString pass = "");
+	/* *************** Constructeur ******************/
 
     /***************** Getters ***********************/
     const QString getpath() const;
@@ -50,12 +50,24 @@ public:
 	bool addTagAssoc (Note& n, QString t);
 	bool removeTagAssoc (Note& n, QString t);
 
+	// Fonction Affichage/Debug
+	void printTable() const;
+
+	// Singleton
+	static DatabaseManager&			getInstance();
+	static void						destroy();
+
  private:
     QSqlDatabase *database;
-    QString dbpath;
-	DatabaseManager(); // On interdit une construction sans argument
-	DatabaseManager(DatabaseManager&); // On interdit une construction par recopie
+	QString dbpath;
+
     bool initDB();
+
+	// Singleton
+	DatabaseManager(QString filename = "temp", QString user = "", QString pass = "");	// Interdit l'instanciation directe
+	DatabaseManager(const DatabaseManager& nm);	// Interdit la recopie
+	DatabaseManager&				operator=(const DatabaseManager& n);	// Interdit la recopie
+	static DatabaseManager * s_inst;	// Contient le singleton s'il est instancié
 
 };
 

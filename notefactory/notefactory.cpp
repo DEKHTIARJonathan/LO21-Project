@@ -1,24 +1,18 @@
 #include "notefactory.h"
 
-map<QString,NoteFactory*> NoteFactory::s_mapNF = map<QString,NoteFactory*>();
+using namespace constants;
 
 /********************************************************************
- *                          Static Method                           *
+ *                      Implementation Factory                      *
  ********************************************************************/
 
-void NoteFactory::initNoteFactories(){
-
-	// Add every NoteFactory to s_mapES here ;)
+bool NoteFactory::constructStorage(){
+	DatabaseManager& db = DatabaseManager::getInstance();
+	db.query( QString() %
+		"create table Note (" %
+			"id integer," %
+			"typeNote varchar(" % QString::number(SIZE_MAX_TYPE_NOTE) % ")," %
+			"title varchar(" % QString::number(SIZE_MAX_TITLE) % ")," %
+			"primary key(id)" %
+		 ")");
 }
-
-NoteFactory&	NoteFactory::getNoteFactory(const QString& factoryName){
-
-	map<QString,NoteFactory*>::iterator res = NoteFactory::s_mapNF.find(factoryName);
-
-	if( res == NoteFactory::s_mapNF.end() )
-		throw NoteFactoryNotFoundException(factoryName.toStdString());
-
-	return *(res->second);
-}
-
-

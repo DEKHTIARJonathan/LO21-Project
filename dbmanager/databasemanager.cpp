@@ -11,8 +11,11 @@ DatabaseManager::DatabaseManager(QString filename, QString user, QString pass)
 
     dbpath = QDir::currentPath() +"/"+ filename + ".lo21";
 
-    QFile file(dbpath);
+	QFile file(dbpath);
+	if(file.exists())
+		file.remove();
     bool dbIsNew = !file.exists();
+
 
     database->setDatabaseName(dbpath);
 
@@ -27,8 +30,10 @@ DatabaseManager::DatabaseManager(QString filename, QString user, QString pass)
     }
     else
     {
-        if (dbIsNew)
+		if (dbIsNew){
+			cout << "Creating Database.." << endl;
             initDB();
+		}
         else
         {
 			/*
@@ -99,36 +104,35 @@ bool DatabaseManager::insertNote(QString titre, QString type) const
 
 bool DatabaseManager::initDB()
 {
-	QString qry[8];
+//	QString qry[8];
 
-    qry[0] = "create table TypeNote (name varchar(30), primary key(name))";
-    qry[1] = "create table Note (idNote integer , titre varchar(255), typeNote varchar(30), primary key(idNote), FOREIGN KEY(typeNote) REFERENCES TypeNote(name) ON DELETE CASCADE)";
-    qry[2] = "create table Article (idArticle integer, primary key(idArticle), FOREIGN KEY(idArticle) REFERENCES Note(idNote) ON DELETE CASCADE)";
-    qry[3] = "create table Document (idDoc integer, primary key(idDoc), FOREIGN KEY(idDoc) REFERENCES Note(idNote) ON DELETE CASCADE)";
-    qry[4] = "create table Binary (idBin integer, primary key(idBin), FOREIGN KEY(idBin) REFERENCES Note(idNote) ON DELETE CASCADE)";
-    qry[5] = "create table AssocDoc (docMaster integer, docSlave integer, primary key(docMaster, docSlave), FOREIGN KEY(docMaster) REFERENCES Document(idDoc) ON DELETE CASCADE, FOREIGN KEY(docSlave) REFERENCES Note(idNote) ON DELETE CASCADE)";
-	qry[6] = "create table Tag (name varchar(30), primary key(name))";
-	qry[7] = "create table AssocTag (idNote integer, name varchar(30), primary key(idNote, name), FOREIGN KEY(idNote) REFERENCES Note(idNote) ON DELETE CASCADE, FOREIGN KEY(name) REFERENCES Tag(name) ON DELETE CASCADE)";
+//    qry[0] = "create table TypeNote (name varchar(30), primary key(name))";
+//    qry[1] = "create table Note (idNote integer , titre varchar(255), typeNote varchar(30), primary key(idNote), FOREIGN KEY(typeNote) REFERENCES TypeNote(name) ON DELETE CASCADE)";
+//    qry[2] = "create table Article (idArticle integer, primary key(idArticle), FOREIGN KEY(idArticle) REFERENCES Note(idNote) ON DELETE CASCADE)";
+//    qry[3] = "create table Document (idDoc integer, primary key(idDoc), FOREIGN KEY(idDoc) REFERENCES Note(idNote) ON DELETE CASCADE)";
+//    qry[4] = "create table Binary (idBin integer, primary key(idBin), FOREIGN KEY(idBin) REFERENCES Note(idNote) ON DELETE CASCADE)";
+//    qry[5] = "create table AssocDoc (docMaster integer, docSlave integer, primary key(docMaster, docSlave), FOREIGN KEY(docMaster) REFERENCES Document(idDoc) ON DELETE CASCADE, FOREIGN KEY(docSlave) REFERENCES Note(idNote) ON DELETE CASCADE)";
+//	qry[6] = "create table Tag (name varchar(30), primary key(name))";
+//	qry[7] = "create table AssocTag (idNote integer, name varchar(30), primary key(idNote, name), FOREIGN KEY(idNote) REFERENCES Note(idNote) ON DELETE CASCADE, FOREIGN KEY(name) REFERENCES Tag(name) ON DELETE CASCADE)";
 
-    bool b = true;
+//    bool b = true;
 
-	for (int i = 0; i<8; ++i)
-    {
-        if (!query(qry[i]))
-            b = false;
-    }
+//	for (int i = 0; i<8; ++i)
+//    {
+//        if (!query(qry[i]))
+//            b = false;
+//    }
 
-    b += addType();
+//    b += addType();
 
-    if (b)
-        cout<<"DB initialisée\n\n";
-    else
-    {
-        cout<<"Erreur à l'initialisation\n\n";
-        exit(0);
-    }
-
-    return b;
+//    if (b)
+//        cout<<"DB initialisée\n\n";
+//    else
+//    {
+//        cout<<"Erreur �  l'initialisation\n\n";
+//        exit(0);
+//    }
+	return true;
 }
 
 bool DatabaseManager::addType(QString type) const
@@ -157,4 +161,33 @@ bool DatabaseManager::deleteNote (unsigned int id) const
 bool DatabaseManager::deleteNote () const
 {
     return query("Delete from Note where 1=1");
+}
+
+void DatabaseManager::printTable() const{
+	QStringList list = database->tables(QSql::Tables);
+	QStringList::Iterator it = list.begin();
+	cout << "------- Tables --------" << endl;
+	while( it != list.end() )
+	{
+		cout << "Table: " << it->toStdString() << endl;
+		++it;
+	}
+	cout << "-----------------------" << endl;
+}
+
+/********************************************************************
+ *                            Singleton                             *
+ ********************************************************************/
+
+DatabaseManager* DatabaseManager::s_inst = NULL;
+
+DatabaseManager& DatabaseManager::getInstance(){
+	if( s_inst == NULL )
+		s_inst = new DatabaseManager();
+	return (*s_inst);
+}
+
+void DatabaseManager::destroy(){
+	if( s_inst != NULL )
+		delete s_inst;
 }
