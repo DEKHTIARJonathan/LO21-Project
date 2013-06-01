@@ -13,7 +13,8 @@ SOURCES += \
     note/video.cpp \
     export/exporthtml.cpp \
     export/exporttex.cpp \
-    export/exporttext.cpp
+    export/exporttext.cpp \
+    notemanager/notesmanager.cpp
 
 HEADERS += \
     export/exportstrategy.h \
@@ -30,7 +31,8 @@ HEADERS += \
     dbmanager/databasemanager.h \
     export/exporthtml.h \
     export/exporttex.h \
-    export/exporttext.h
+    export/exporttext.h \
+    notemanager/notesmanager.h
 
 
 FORMS +=
