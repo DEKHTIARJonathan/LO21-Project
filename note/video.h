@@ -5,6 +5,7 @@
 
 class Video : public MultiMedia
 {
+		Q_OBJECT
 
 	public:
 		// Constructor

@@ -5,11 +5,11 @@
  ********************************************************************/
 
 // Generic Note constructor
-Note::Note( unsigned int id ) : m_id(id), m_title(), m_modified(false)
+Note::Note( unsigned int id ) : QObject(), m_id(id), m_title(), m_modified(false)
 {
 }
 
-Note::Note( unsigned int id, const QString & title ) : m_id(id), m_title(title), m_modified(false)
+Note::Note( unsigned int id, const QString & title ) : QObject(), m_id(id), m_title(title), m_modified(false)
 {
 }
 

@@ -14,7 +14,10 @@ SOURCES += \
     export/exporthtml.cpp \
     export/exporttex.cpp \
     export/exporttext.cpp \
-    notemanager/notesmanager.cpp
+    notemanager/notesmanager.cpp \
+    notefactory/notefactory.cpp \
+	notefactory/notefactorynotfoundexception.cpp
+
 
 HEADERS += \
     export/exportstrategy.h \
@@ -32,7 +35,9 @@ HEADERS += \
     export/exporthtml.h \
     export/exporttex.h \
     export/exporttext.h \
-    notemanager/notesmanager.h
+    notemanager/notesmanager.h \
+    notefactory/notefactory.h \
+    notefactory/notefactorynotfoundexception.h
 
 
 FORMS +=

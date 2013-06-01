@@ -6,6 +6,7 @@
 
 class MultiMedia : public Note
 {
+		Q_OBJECT
 
 	public:
 		// Constructor

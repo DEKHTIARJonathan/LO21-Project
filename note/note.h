@@ -1,10 +1,12 @@
 #ifndef NOTE_H
 #define NOTE_H
 
+#include <QObject>
 #include <QString>
 
-class Note
+class Note : public QObject
 {
+		Q_OBJECT
 
 	public:
 		// Constructor
@@ -12,15 +14,15 @@ class Note
 		Note( unsigned int id, const QString & name );
 
 		// Getter
-		unsigned int	getId() const;
-		const QString &	getTitle() const;
-		bool			isModified() const;
+		unsigned int		getId() const;
+		const QString &		getTitle() const;
+		bool				isModified() const;
 
 		// Setter
-		void			setTitle(const QString & title);
+		void				setTitle(const QString & title);
 
 		// Operator
-		bool			operator==(const Note& n) const;
+		bool				operator==(const Note& n) const;
 
 		// Virtual Method
 
@@ -31,12 +33,12 @@ class Note
 		Note( const Note& n);
 
 		// Member
-		unsigned int	m_id;
-		QString			m_title;
-		bool			m_modified;
+		const unsigned int	m_id;
+		QString				m_title;
+		bool				m_modified;
 
 		// Operator
-		Note&			operator=(const Note& n);
+		Note&				operator=(const Note& n);
 
 };
 

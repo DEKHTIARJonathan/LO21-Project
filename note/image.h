@@ -5,6 +5,7 @@
 
 class Image : public MultiMedia
 {
+		Q_OBJECT
 
 	public:
 		// Constructor

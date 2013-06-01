@@ -10,6 +10,7 @@ using namespace std;
 
 class Document : public Note
 {
+		Q_OBJECT
 
 	public:
 		// Constructor

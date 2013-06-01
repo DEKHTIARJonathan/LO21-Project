@@ -7,6 +7,7 @@
 
 class Article : public Note
 {
+		Q_OBJECT
 
 	public:
 		// Constructor
