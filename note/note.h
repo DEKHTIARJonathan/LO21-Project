@@ -28,6 +28,9 @@ class Note : public QObject
 
 		// Method
 
+		// Destructor
+		virtual ~Note();
+
 	private:
 		// Constructor
 		Note( const Note& n);

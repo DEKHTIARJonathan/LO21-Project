@@ -17,7 +17,8 @@ SOURCES += \
     notemanager/notesmanager.cpp \
 	notefactory/notefactorynotfoundexception.cpp \
     notefactory/generalnotefactory.cpp \
-    constants.cpp
+    constants.cpp \
+    notefactory/notefactory.cpp
 
 HEADERS += \
     export/exportstrategy.h \
@@ -38,7 +39,9 @@ HEADERS += \
     notemanager/notesmanager.h \
     notefactory/notefactorynotfoundexception.h \
 	notefactory/generalnotefactory.h \
-    constants.h
+    constants.h \
+    notefactory/interfacenotefactory.h \
+    notefactory/notefactory.h
 
 FORMS +=
 
