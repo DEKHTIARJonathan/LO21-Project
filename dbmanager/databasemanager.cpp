@@ -150,72 +150,89 @@ bool DatabaseManager::deleteNote () const
 /********************************************************************
  *                            Inserters                             *
  ********************************************************************/
+unsigned int DatabaseManager::insertNote(QString type) const{
+	QString titre = "";
 
-bool DatabaseManager::insertNote (const Note& n) const
-{
-	QString titre = n.getTitle();
-	QString type = n.metaObject()->className();
-
-	return query("INSERT INTO Note (id, title, typeNote) VALUES (NULL, '"+titre+"','"+ type +"')");
+	if (query("INSERT INTO Note (id, title, typeNote) VALUES (NULL, '"+titre+"','"+ type +"')"))
+		return getLastID();
+	else
+		return 0;
 }
 
-int DatabaseManager::insertNote (const Article& a) const // return the idNote or -1 in case of error
+bool DatabaseManager::insertMultimedia(unsigned int id) const
 {
-	bool result = true;
+	QString description = "";
+	QString path = "";
 
-	result &= insertNote((Note&)a);
+	return query("INSERT INTO Multimedia (id, description, path) VALUES ("+ QString::number(id) +", '"+description+"', '"+path+"')");
+}
 
-	QString txt = a.getText();
-	int id = getLastID();
+template<>
+unsigned int DatabaseManager::insertNote<Article> () const{
+	int id = insertNote("Article");
 
-	result &= query("INSERT INTO Article (id, txt) VALUES ("+ QString::number(id) +", '"+txt+"')");
+	QString txt ="";
+
+	bool result = query("INSERT INTO Article (id, txt) VALUES ("+ QString::number(id) +", '"+txt+"')");
 
 	if (result)
 		return id;
 	else
 	{
 		deleteNote(id);
-		return -1;
+		return 0;
 	}
 }
 
-int DatabaseManager::insertNote(const Document& d) const
-{
-	bool result = true;
+template<>
+unsigned int DatabaseManager::insertNote<Audio> () const{
+	int id = insertNote("Audio");
 
-	result &= insertNote((Note&)d);
-
-	int id = getLastID();
-
-	result &= query("INSERT INTO Document (id) VALUES ("+ QString::number(id) +")");
-
-	if (result)
+	if(insertMultimedia(id))
 		return id;
 	else
 	{
 		deleteNote(id);
-		return -1;
+		return 0;
 	}
 }
 
-int DatabaseManager::insertNote(const MultiMedia &m) const
-{
-	bool result = true;
+template<>
+unsigned int DatabaseManager::insertNote<Video> () const{
+	int id = insertNote("Video");
 
-	result &= insertNote((Note&)m);
-
-	QString description = m.getDescription();
-	QString path = m.getPath();
-	int id = getLastID();
-
-	result &= query("INSERT INTO Multimedia (id, description, path) VALUES ("+ QString::number(id) +", '"+description+"', '"+path+"')");
-
-	if (result)
+	if(insertMultimedia(id))
 		return id;
 	else
 	{
 		deleteNote(id);
-		return -1;
+		return 0;
+	}
+}
+
+template<>
+unsigned int DatabaseManager::insertNote<Image> () const{
+	int id = insertNote("Image");
+
+	if(insertMultimedia(id))
+		return id;
+	else
+	{
+		deleteNote(id);
+		return 0;
+	}
+}
+
+template<>
+unsigned int DatabaseManager::insertNote<Document> () const{
+	int id = insertNote("Document");
+
+	if(query("INSERT INTO Document (id) VALUES ("+ QString::number(id) +")"))
+		return id;
+	else
+	{
+		deleteNote(id);
+		return 0;
 	}
 }
 
@@ -377,3 +394,18 @@ void DatabaseManager::destroy(){
 	if( s_inst != NULL )
 		delete s_inst;
 }
+
+
+
+
+
+
+
+
+
+
+/*********** TEST ****************/
+
+
+
+

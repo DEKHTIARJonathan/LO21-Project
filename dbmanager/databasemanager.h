@@ -39,10 +39,22 @@ public:
 
 	/***************** Inserters **********************/
 
+
+
+	template<class noteType>
+	unsigned int insertNote() const{
+		//Error
+		return 0;
+	}
+
+	bool insertTag (QString t) const;
+
+	/*
 	int insertNote (const Article& a) const; // return the idNote
 	int insertNote (const Document& d) const; // return the idNote
 	int insertNote (const MultiMedia& m) const; // return the idNote
 	bool insertTag (QString t) const;
+	*/
 
 	/**************** Updaters ********************/
 
@@ -81,6 +93,8 @@ public:
 	bool insertNote (const Note& n) const; // Insère une note
 	bool query(QString query) const; // Execute une query en SQL
 	int getLastID() const; // Retourne le rowid du de la derniere requete d'insertion effectuée.
+	unsigned int insertNote(QString type) const;
+	bool insertMultimedia(unsigned int id) const;
 
 	// Singleton
 	DatabaseManager(QString filename, QString user, QString pass);	// Interdit l'instanciation directe
@@ -88,5 +102,9 @@ public:
 	DatabaseManager&				operator=(const DatabaseManager& n);	// Interdit la recopie
 	static DatabaseManager * s_inst;	// Contient le singleton s'il est instancié
 };
+
+
+
+
 
 #endif // DatabaseManager_H
