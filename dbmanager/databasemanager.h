@@ -2,7 +2,6 @@
 #define DatabaseManager_H
 
 #include <QWidget>
-
 #include <QSqlDatabase>
 #include <QSqlTableModel>
 #include <QSqlQuery>
@@ -13,62 +12,80 @@
 #include <QStringList>
 #include <iostream>
 #include <vector>
-
-#include <note/note.h>
+#include "note/classdef.h"
 
 class DatabaseManager
 {
 public:
-	/* *************** Constructeur ******************/
 
-    /***************** Getters ***********************/
-    const QString getpath() const;
+	/***************** Getters ***********************/
+	const QString getpath() const;
 
-    /******************* Setters *********************/
+	/******************* Setters *********************/
 
-    /***************** DB REQUEST ********************/
-	bool query(QString query) const; // Execute une query en SQL
-	void getNote(unsigned int id) const; // Get 1 note
-	void getNote() const; // Get toutes les notes
+	/***************** DB REQUESTS ********************/
+
+	/***************** Retrievers *********************/
+
+	std::vector<QString> getAllTags() const; // Retourne tous les Tags existants
+	std::vector<QString> getTags (Note& n) const; // Retourne les tags associés à une Note
+	std::vector< pair <unsigned int, QString > > getNotes (QString tag) const; // Retourne les Notes associés à un Tag.
+
+	/***************** Deleters ************************/
+
 	bool deleteNote (unsigned int id) const; // On supprime une note
 	bool deleteNote () const; // On supprime toutes les notes
-	bool insertNote (QString titre, QString type) const; // InsÃ¨re une note
-	bool addType(QString type) const; // InsÃ¨re un type de Note dans la DB
 
-    /******************* Temp *************************/
+	/***************** Inserters **********************/
 
-	bool addType() const; // InsÃ¨re tous les types de Notes dans la DB
+	int insertNote (const Article& a) const; // return the idNote
+	int insertNote (const Document& d) const; // return the idNote
+	int insertNote (const MultiMedia& m) const; // return the idNote
+	bool insertTag (QString t) const;
 
+	/**************** Updaters ********************/
 
-	/******************* Ã€ FAIRE *************************/
+	bool updateNote (const Article& a)  const;
+	bool updateNote (const Document& d)  const;
+	bool updateNote (const MultiMedia& m)  const;
 
-	void getalltags();
-	std::vector<QString> getTags (Note& n);
-	std::vector<int> getNotes (QString tag);
-	bool insertTag (QString t);
-	bool deleteTag (QString t);
-	bool addTagAssoc (Note& n, QString t);
-	bool removeTagAssoc (Note& n, QString t);
+	/**************** Fillers ********************/
 
-	// Fonction Affichage/Debug
-	void printTable() const;
+	bool fillNote (const Article& a)  const;
+	bool fillNote (const Document& d)  const;
+	bool fillNote (const MultiMedia& m)  const;
+
+	/***************** À Modifier *********************/
+
+	void getNote(unsigned int id) const; // Get 1 note
+	void getNote() const; // Get toutes les notes
+
+	/******************* À FAIRE *************************/
+
+	bool deleteTag (QString t) const;
+	bool addTagAssoc (Note& n, QString t) const;
+	bool removeTagAssoc (Note& n, QString t) const;
+	bool addNoteToDoc (Document& d, Note& n) const;
+	bool removeNotefromDoc (Document& d, Note& n) const;
 
 	// Singleton
 	static DatabaseManager&			getInstance();
 	static void						destroy();
 
  private:
-    QSqlDatabase *database;
+	QSqlDatabase *database;
 	QString dbpath;
 
-    bool initDB();
+	bool initDB();
+	bool insertNote (const Note& n) const; // Insère une note
+	bool query(QString query) const; // Execute une query en SQL
+	int getLastID() const; // Retourne le rowid du de la derniere requete d'insertion effectuée.
 
 	// Singleton
 	DatabaseManager(QString filename = "temp", QString user = "", QString pass = "");	// Interdit l'instanciation directe
 	DatabaseManager(const DatabaseManager& nm);	// Interdit la recopie
 	DatabaseManager&				operator=(const DatabaseManager& n);	// Interdit la recopie
 	static DatabaseManager * s_inst;	// Contient le singleton s'il est instancié
-
 };
 
 #endif // DatabaseManager_H

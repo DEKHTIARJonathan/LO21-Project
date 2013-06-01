@@ -17,7 +17,6 @@ SOURCES += \
     notemanager/notesmanager.cpp \
 	notefactory/notefactorynotfoundexception.cpp \
     notefactory/generalnotefactory.cpp \
-    notefactory/notefactory.cpp \
     constants.cpp
 
 HEADERS += \
