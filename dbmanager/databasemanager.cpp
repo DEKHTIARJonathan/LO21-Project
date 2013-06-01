@@ -28,7 +28,7 @@ DatabaseManager::DatabaseManager(QString filename, QString user, QString pass)
 
 	if(!database->open())
 	{
-		std::cout<<"Erreur, Impossible d'ouvrir la base de données.";
+		std::cout<<"Erreur, Impossible d'ouvrir la base de donnÃ©es.";
 	}
 	else
 	{
@@ -83,13 +83,22 @@ bool DatabaseManager::initDB()
 {
 	QString qry[7];
 
-	qry[0] = "create table Note (id integer , title varchar(255), typeNote varchar(30), primary key(id))";
+	/*
+
+constants::SIZE_MAX_TYPE_NOTE
+constants::SIZE_MAX_TITLE
+constants::SIZE_MAX_PATH
+constants::SIZE_MAX_TAG
+
+	*/
+
+	qry[0] = "create table Note (id integer , title varchar("+QString::number(constants::SIZE_MAX_TITLE)+"), typeNote varchar("+QString::number(constants::SIZE_MAX_TYPE_NOTE)+"), primary key(id))";
 	qry[1] = "create table Article (id integer, txt text, primary key(id), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE)";
 	qry[2] = "create table Document (id integer, primary key(id), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE)";
-	qry[3] = "create table Multimedia (id integer, description TEXT, path varchar(255), primary key(id), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE)";
+	qry[3] = "create table Multimedia (id integer, description TEXT, path varchar("+QString::number(constants::SIZE_MAX_PATH)+"), primary key(id), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE)";
 	qry[4] = "create table AssocDoc (docMaster integer, note integer, primary key(docMaster, note), FOREIGN KEY(docMaster) REFERENCES Document(id) ON DELETE CASCADE, FOREIGN KEY(note) REFERENCES Note(id) ON DELETE CASCADE)";
-	qry[5] = "create table Tag (name varchar(30), primary key(name))";
-	qry[6] = "create table AssocTag (id integer, name varchar(30), primary key(id, name), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE, FOREIGN KEY(name) REFERENCES Tag(name) ON DELETE CASCADE)";
+	qry[5] = "create table Tag (name varchar("+QString::number(constants::SIZE_MAX_TAG)+"), primary key(name))";
+	qry[6] = "create table AssocTag (id integer, name varchar("+QString::number(constants::SIZE_MAX_TAG)+"), primary key(id, name), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE, FOREIGN KEY(name) REFERENCES Tag(name) ON DELETE CASCADE)";
 
 	bool b = true;
 
@@ -100,10 +109,10 @@ bool DatabaseManager::initDB()
 	}
 
 	if (b)
-		cout<<"DB initialisée\n\n";
+		cout<<"DB initialisÃ©e\n\n";
 	else
 	{
-		cout<<"Erreur à l'initialisation\n\n";
+		cout<<"Erreur â€¡ l'initialisation\n\n";
 		QFile::remove(dbpath);
 		exit(0);
 	}
@@ -141,72 +150,89 @@ bool DatabaseManager::deleteNote () const
 /********************************************************************
  *                            Inserters                             *
  ********************************************************************/
+unsigned int DatabaseManager::insertNote(QString type) const{
+	QString titre = "";
 
-bool DatabaseManager::insertNote (const Note& n) const
-{
-	QString titre = n.getTitle();
-	QString type = n.metaObject()->className();
-
-	return query("INSERT INTO Note (id, title, typeNote) VALUES (NULL, '"+titre+"','"+ type +"')");
+	if (query("INSERT INTO Note (id, title, typeNote) VALUES (NULL, '"+titre+"','"+ type +"')"))
+		return getLastID();
+	else
+		return 0;
 }
 
-int DatabaseManager::insertNote (const Article& a) const // return the idNote or -1 in case of error
+bool DatabaseManager::insertMultimedia(unsigned int id) const
 {
-	bool result = true;
+	QString description = "";
+	QString path = "";
 
-	result &= insertNote((Note&)a);
+	return query("INSERT INTO Multimedia (id, description, path) VALUES ("+ QString::number(id) +", '"+description+"', '"+path+"')");
+}
 
-	QString txt = a.getText();
-	int id = getLastID();
+template<>
+unsigned int DatabaseManager::insertNote<Article> () const{
+	int id = insertNote("Article");
 
-	result &= query("INSERT INTO Article (id, txt) VALUES ("+ QString::number(id) +", '"+txt+"')");
+	QString txt ="";
+
+	bool result = query("INSERT INTO Article (id, txt) VALUES ("+ QString::number(id) +", '"+txt+"')");
 
 	if (result)
 		return id;
 	else
 	{
 		deleteNote(id);
-		return -1;
+		return 0;
 	}
 }
 
-int DatabaseManager::insertNote(const Document& d) const
-{
-	bool result = true;
+template<>
+unsigned int DatabaseManager::insertNote<Audio> () const{
+	int id = insertNote("Audio");
 
-	result &= insertNote((Note&)d);
-
-	int id = getLastID();
-
-	result &= query("INSERT INTO Document (id) VALUES ("+ QString::number(id) +")");
-
-	if (result)
+	if(insertMultimedia(id))
 		return id;
 	else
 	{
 		deleteNote(id);
-		return -1;
+		return 0;
 	}
 }
 
-int DatabaseManager::insertNote(const MultiMedia &m) const
-{
-	bool result = true;
+template<>
+unsigned int DatabaseManager::insertNote<Video> () const{
+	int id = insertNote("Video");
 
-	result &= insertNote((Note&)m);
-
-	QString description = m.getDescription();
-	QString path = m.getPath();
-	int id = getLastID();
-
-	result &= query("INSERT INTO Multimedia (id, description, path) VALUES ("+ QString::number(id) +", '"+description+"', '"+path+"')");
-
-	if (result)
+	if(insertMultimedia(id))
 		return id;
 	else
 	{
 		deleteNote(id);
-		return -1;
+		return 0;
+	}
+}
+
+template<>
+unsigned int DatabaseManager::insertNote<Image> () const{
+	int id = insertNote("Image");
+
+	if(insertMultimedia(id))
+		return id;
+	else
+	{
+		deleteNote(id);
+		return 0;
+	}
+}
+
+template<>
+unsigned int DatabaseManager::insertNote<Document> () const{
+	int id = insertNote("Document");
+
+	if(query("INSERT INTO Document (id) VALUES ("+ QString::number(id) +")"))
+		return id;
+	else
+	{
+		deleteNote(id);
+		return 0;
 	}
 }
 
@@ -358,9 +384,9 @@ std::vector< pair <unsigned int, QString > > DatabaseManager::getNotes(QString t
 
 DatabaseManager* DatabaseManager::s_inst = NULL;
 
-DatabaseManager& DatabaseManager::getInstance(){
+DatabaseManager& DatabaseManager::getInstance(QString filename, QString user, QString pass){
 	if( s_inst == NULL )
-		s_inst = new DatabaseManager();
+		s_inst = new DatabaseManager(filename,user,pass);
 	return (*s_inst);
 }
 
@@ -368,3 +394,18 @@ void DatabaseManager::destroy(){
 	if( s_inst != NULL )
 		delete s_inst;
 }
+
+
+
+
+
+
+
+
+
+
+/*********** TEST ****************/
+
+
+
+

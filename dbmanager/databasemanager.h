@@ -13,6 +13,7 @@
 #include <iostream>
 #include <vector>
 #include "note/classdef.h"
+#include "constants.h"
 
 class DatabaseManager
 {
@@ -28,8 +29,8 @@ public:
 	/***************** Retrievers *********************/
 
 	std::vector<QString> getAllTags() const; // Retourne tous les Tags existants
-	std::vector<QString> getTags (Note& n) const; // Retourne les tags associés à une Note
-	std::vector< pair <unsigned int, QString > > getNotes (QString tag) const; // Retourne les Notes associés à un Tag.
+	std::vector<QString> getTags (Note& n) const; // Retourne les tags associÃ©s â€¡ une Note
+	std::vector< pair <unsigned int, QString > > getNotes (QString tag) const; // Retourne les Notes associÃ©s â€¡ un Tag.
 
 	/***************** Deleters ************************/
 
@@ -38,10 +39,22 @@ public:
 
 	/***************** Inserters **********************/
 
+
+
+	template<class noteType>
+	unsigned int insertNote() const{
+		//Error
+		return 0;
+	}
+
+	bool insertTag (QString t) const;
+
+	/*
 	int insertNote (const Article& a) const; // return the idNote
 	int insertNote (const Document& d) const; // return the idNote
 	int insertNote (const MultiMedia& m) const; // return the idNote
 	bool insertTag (QString t) const;
+	*/
 
 	/**************** Updaters ********************/
 
@@ -55,12 +68,12 @@ public:
 	bool fillNote (const Document& d)  const;
 	bool fillNote (const MultiMedia& m)  const;
 
-	/***************** À Modifier *********************/
+	/***************** Ã€ Modifier *********************/
 
 	void getNote(unsigned int id) const; // Get 1 note
 	void getNote() const; // Get toutes les notes
 
-	/******************* À FAIRE *************************/
+	/******************* Ã€ FAIRE *************************/
 
 	bool deleteTag (QString t) const;
 	bool addTagAssoc (Note& n, QString t) const;
@@ -69,7 +82,7 @@ public:
 	bool removeNotefromDoc (Document& d, Note& n) const;
 
 	// Singleton
-	static DatabaseManager&			getInstance();
+	static DatabaseManager&			getInstance(QString filename = "temp", QString user = "", QString pass = "");
 	static void						destroy();
 
  private:
@@ -77,15 +90,21 @@ public:
 	QString dbpath;
 
 	bool initDB();
-	bool insertNote (const Note& n) const; // Insère une note
+	bool insertNote (const Note& n) const; // InsÃ¨re une note
 	bool query(QString query) const; // Execute une query en SQL
-	int getLastID() const; // Retourne le rowid du de la derniere requete d'insertion effectuée.
+	int getLastID() const; // Retourne le rowid du de la derniere requete d'insertion effectuÃ©e.
+	unsigned int insertNote(QString type) const;
+	bool insertMultimedia(unsigned int id) const;
 
 	// Singleton
-	DatabaseManager(QString filename = "temp", QString user = "", QString pass = "");	// Interdit l'instanciation directe
+	DatabaseManager(QString filename, QString user, QString pass);	// Interdit l'instanciation directe
 	DatabaseManager(const DatabaseManager& nm);	// Interdit la recopie
 	DatabaseManager&				operator=(const DatabaseManager& n);	// Interdit la recopie
-	static DatabaseManager * s_inst;	// Contient le singleton s'il est instancié
+	static DatabaseManager * s_inst;	// Contient le singleton s'il est instanciÃ©
 };
+
+
+
+
 
 #endif // DatabaseManager_H
