@@ -3,7 +3,6 @@
 
 #include <vector>
 
-#include <notefactory/interfacenotefactory.h>
 #include <dbmanager/databasemanager.h>
 
 using namespace std;
@@ -12,15 +11,13 @@ class GeneralNoteFactory
 {
 	public:
 		// Method
-		bool							constructDB();
+
 
 		// Singleton
 		static GeneralNoteFactory&		getInstance();
 		static void						destroy();
 
 	private:
-		// Member
-		vector<InterfaceNoteFactory>	m_noteFactories;
 
 		// Singleton
 		GeneralNoteFactory();	// Interdit l'instanciation directe

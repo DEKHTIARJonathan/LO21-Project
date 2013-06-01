@@ -3,9 +3,8 @@
 
 #include <QObject>
 #include <QString>
-#include <note/strategies.h>
 
-class Note : public QObject, public Strategies<Note>
+class Note : public QObject
 {
 		Q_OBJECT
 

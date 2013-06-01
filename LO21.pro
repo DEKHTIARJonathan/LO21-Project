@@ -38,14 +38,8 @@ HEADERS += \
     export/exporttext.h \
     notemanager/notesmanager.h \
     notefactory/notefactorynotfoundexception.h \
-    notefactory/sqlitenotefactory.h \
 	notefactory/generalnotefactory.h \
-    notefactory/notefactory.h \
-    constants.h \
-    notefactory/interfacenotefactory.h \
-    notefactory/interfaceabstractnotefactory.h \
-    notefactory/sqliteabstractnotefactory.h \
-    note/strategies.h
+    constants.h
 
 FORMS +=
 

@@ -4,7 +4,7 @@
  *                            Constructor                           *
  ********************************************************************/
 
-GeneralNoteFactory::GeneralNoteFactory(  ) : m_noteFactories()
+GeneralNoteFactory::GeneralNoteFactory(  )
 {
 }
 
@@ -12,10 +12,7 @@ GeneralNoteFactory::GeneralNoteFactory(  ) : m_noteFactories()
  *                              Method                              *
  ********************************************************************/
 
-bool GeneralNoteFactory::constructDB(){
-	DatabaseManager& db = DatabaseManager::getInstance();
-	return true;
-}
+
 
 /********************************************************************
  *                            Singleton                             *
