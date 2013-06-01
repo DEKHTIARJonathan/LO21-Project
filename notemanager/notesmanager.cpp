@@ -1,5 +1,27 @@
 #include "notesmanager.h"
 
+map<QString,ExportStrategy*> NotesManager::s_mapES = map<QString,ExportStrategy*>();
+
+/********************************************************************
+ *                          Static Method                           *
+ ********************************************************************/
+
+void NotesManager::initExportStrategies(){
+
+	NotesManager::s_mapES.insert(s_mapES.begin(), std::pair<QString,ExportStrategy*>("html",new ExportHTML()));
+
+}
+
+ExportStrategy&	NotesManager::getExportStrategy(const QString& strategyName){
+
+	map<QString,ExportStrategy*>::iterator res = NotesManager::s_mapES.find(strategyName);
+
+	if( res == NotesManager::s_mapES.end() )
+		throw ExportStrategyNotFoundException(strategyName.toStdString());
+
+	return *(res->second);
+}
+
 /********************************************************************
  *                            Constructor                           *
  ********************************************************************/

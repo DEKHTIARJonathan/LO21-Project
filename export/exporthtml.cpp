@@ -1,10 +1,7 @@
 #include "exporthtml.h"
 
-ExportHTML::ExportHTML()
-{
-
-}
-
+ExportHTML::ExportHTML() : ExportStrategy()
+{}
 
 QString	ExportHTML::header() const
 {
@@ -20,7 +17,12 @@ QString	ExportHTML::footer() const
             "</html>";
 }
 
-QString	ExportHTML::exportNote(const Note& n, unsigned int level) const
+QString	ExportHTML::exportNote(const Note &n, unsigned int level) const
 {
-    return "";
+	return "Note Connard !!!";
+}
+
+QString	ExportHTML::exportNote(const Article &n, unsigned int level) const
+{
+	return "Article Connard !!!";
 }

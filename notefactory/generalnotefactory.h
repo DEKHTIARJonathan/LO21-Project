@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include <notefactory/abstractnotefactory.h>
+#include <notefactory/interfacenotefactory.h>
 #include <dbmanager/databasemanager.h>
 
 using namespace std;
@@ -20,7 +20,7 @@ class GeneralNoteFactory
 
 	private:
 		// Member
-		vector<AbstractNoteFactory>		m_noteFactories;
+		vector<InterfaceNoteFactory>	m_noteFactories;
 
 		// Singleton
 		GeneralNoteFactory();	// Interdit l'instanciation directe

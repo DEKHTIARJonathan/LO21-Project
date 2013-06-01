@@ -5,6 +5,7 @@
 #include <QString>
 
 #include <note/note.h>
+#include <export/exporthtml.h>
 
 using namespace std;
 
@@ -18,6 +19,12 @@ class NotesManager
 		static NotesManager&			getInstance();
 		static void						destroy();
 
+		// Static Method
+		static void						initExportStrategies();
+		static ExportStrategy&			getExportStrategy(const QString& strategyName);
+
+		// Static Attribut
+		static map<QString,ExportStrategy*>	s_mapES;
 	private:
 		// Member
 		map<unsigned int,Note*>		m_loadedNotes;

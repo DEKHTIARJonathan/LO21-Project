@@ -6,7 +6,7 @@ using namespace constants;
  *                      Implementation Factory                      *
  ********************************************************************/
 
-bool NoteFactory::constructStorage(){
+void NoteFactory::constructStorage(){
 	DatabaseManager& db = DatabaseManager::getInstance();
 	db.query( QString() %
 		"create table Note (" %

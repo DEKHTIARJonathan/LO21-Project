@@ -4,31 +4,30 @@
 #include <map>
 #include <QString>
 
-#include <notefactory/abstractnotefactory.h>
+#include <notefactory/interfaceabstractnotefactory.h>
+#include <notefactory/interfacenotefactory.h>
 #include <note/note.h>
 #include <dbmanager/databasemanager.h>
 
 using namespace std;
 
 template<class TypeNote>
-class SQLiteNoteFactory : public AbstractNoteFactory
+class SQLiteNoteFactory : public InterfaceNoteFactory
 {
 
 	public:
 		// Constructor
 		SQLiteNoteFactory(){}
 
-		// Implemented Method From AbstractNoteFactory
-		bool constructStorage() = 0;
+		// Implemented Method From InterfaceNoteFactory
+		TypeNote& buildNewNote(){
+			unsigned int newId = allocPart();
+			return *(new TypeNote(newId));
+		}
 
-//		TypeNte&	buildNewNote() = 0;
-//		TypeNote&	loadNote(unsigned int id) = 0;
+		TypeNote&	loadNote(unsigned int id) = 0;
 //		TypeNote&	saveNote(const Note& n) = 0;
 //		TypeNote&	deleteNote(unsigned int id) = 0;
-
-	protected:
-
-		//virtual void						fillSpecificPart(Note& n);
 
 };
 

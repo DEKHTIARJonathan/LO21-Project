@@ -1,16 +1,16 @@
 #ifndef NOTEFACTORY_H
 #define NOTEFACTORY_H
 
-#include <notefactory/sqlitenotefactory.h>
+#include <notefactory/interfaceabstractnotefactory.h>
 #include <note/note.h>
 #include <dbmanager/databasemanager.h>
 #include <constants.h>
 #include <QStringBuilder>
 
-class NoteFactory : public SQLiteNoteFactory<Note>
+class NoteFactory// : public SQLiteNoteFactory<Note>
 {
 	public:
-		bool constructStorage();
+		void constructStorage();
 };
 
 #endif // NOTEFACTORY_H
