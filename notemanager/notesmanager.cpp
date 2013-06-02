@@ -13,6 +13,32 @@ NotesManager::NotesManager(  ) : m_loadedNotes()
  *                              Method                              *
  ********************************************************************/
 
+Note& NotesManager::getNewNote(const QString& typeNote){
+	// Create new Note
+	GeneralNoteFactory gf = GeneralNoteFactory::getInstance();
+	InterfaceNoteFactory nf = gf.getFactories(typeNote);
+	Note& n = nf.buildNewNote();
+
+	// Add this new Note to instancied Note's storage
+	m_loadedNotes.insert(n.getId(), &n);
+
+	// Return new Note
+	return n;
+}
+
+Note& NotesManager::getNote(unsigned int id){
+	// Check if Note corresponding to 'id' is already loaded
+	QMap<unsigned int, Note*>::const_iterator it = m_loadedNotes.find(id);
+
+	if( it!=m_loadedNotes.end() )
+		return **it;
+	else{
+		// Load Note corresponding to 'id'
+		GeneralNoteFactory gf = GeneralNoteFactory::getInstance();
+		InterfaceNoteFactory nf = gf.getFactories(typeNote);
+		return nf.loadNote(id);
+	}
+}
 
 /********************************************************************
  *                            Singleton                             *

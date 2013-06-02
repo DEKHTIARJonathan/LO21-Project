@@ -1,11 +1,11 @@
 #ifndef NOTESMANAGER_H
 #define NOTESMANAGER_H
 
-#include <map>
+#include <QMap>
 #include <QString>
 
 #include <note/note.h>
-#include <export/exporthtml.h>
+#include <notefactory/generalnotefactory.h>
 
 using namespace std;
 
@@ -13,7 +13,9 @@ class NotesManager
 {
 
 	public:
-
+		// Method
+		Note&							getNewNote(const QString &typeNote);
+		Note&							getNote(unsigned int id);
 
 		// Singleton
 		static NotesManager&			getInstance();
@@ -21,7 +23,7 @@ class NotesManager
 
 	private:
 		// Member
-		map<unsigned int,Note*>		m_loadedNotes;
+		QMap<unsigned int,Note*>		m_loadedNotes;
 
 		// Singleton
 		NotesManager();	// Interdit l'instanciation directe

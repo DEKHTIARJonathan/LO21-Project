@@ -28,7 +28,7 @@ DatabaseManager::DatabaseManager(QString filename, QString user, QString pass)
 
 	if(!database->open())
 	{
-		std::cout<<"Erreur, Impossible d'ouvrir la base de données.";
+		throw DBException("INITIALISATION Database", "Can not open database.");
 	}
 	else
 	{
@@ -163,7 +163,7 @@ unsigned int DatabaseManager::insertNotePrivate(const QString & type) const{
 	if (query("INSERT INTO Note (id, title, typeNote) VALUES (NULL, '"+titre+"','"+ type +"')"))
 		return getLastID();
 	else
-		return 0;
+		throw DBException("INSERT Note", "");
 }
 
 bool DatabaseManager::insertMultimedia(unsigned int id) const
@@ -184,13 +184,15 @@ unsigned int DatabaseManager::insertNote(const QString& typeNote) const{
 		result = query("INSERT INTO Document (id) VALUES ("+ QString::number(id) +")");
 	else if(typeNote == "Image" ||typeNote == "Audio" || typeNote == "Video")
 		result = insertMultimedia(id);
+	else
+		throw DBException("INSERT Note", "'"+typeNote+"' does not a Note type.");
 
 	if (result)
 		return id;
 	else
 	{
 		deleteNote(id);
-		return 0;
+		throw DBException("INSERT Note", "SQL Error");
 	}
 }
 

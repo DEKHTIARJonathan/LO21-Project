@@ -5,6 +5,7 @@
 #include <QSqlDatabase>
 #include <QSqlTableModel>
 #include <QSqlQuery>
+#include <QSqlError>
 #include <QString>
 #include <QCoreApplication>
 #include <QDir>
@@ -14,6 +15,7 @@
 #include <vector>
 #include "note/classdef.h"
 #include "constants.h"
+#include <dbmanager/dbexception.h>
 
 class DatabaseManager
 {
@@ -89,6 +91,7 @@ public:
 	/***************** DB REQUESTS ********************/
 	bool initDB();
 	bool query(QString query) const; // Execute une query en SQL
+	QSqlError getLastError() const;
 	int getLastID() const; // Retourne le rowid du de la derniere requete d'insertion effectuée.
 
 	/***************** Inserters **********************/

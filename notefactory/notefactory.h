@@ -26,6 +26,13 @@ class NoteFactory : public InterfaceNoteFactory
 			return n;
 		}
 
+		void saveNote(Note &n){
+			DatabaseManager& db = DatabaseManager::getInstance();
+
+			NoteType& casted_n = (NoteType&) n;
+			db.updateNote(casted_n);
+		}
+
 };
 
 #endif // NOTEFACTORY_H
