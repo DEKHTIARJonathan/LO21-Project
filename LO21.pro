@@ -22,7 +22,7 @@ SOURCES += \
     export/generalexportfactory.cpp \
     export/exportfactorynotfoundexception.cpp \
     view/mainwindow.cpp \
-    export/exportfileexception.cpp \
+	export/exportfileexception.cpp \
     view/articleview.cpp \
 	view/containernoteview.cpp \
     export/exportstrategy.cpp
