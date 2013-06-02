@@ -7,6 +7,7 @@ QString	ExportHTML::header() const
 {
     return "<html>"
            "<head>"
+			"<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">"
             "</head>"
             "<body>";
 }
@@ -45,9 +46,9 @@ QString	ExportHTML::exportNote(const Video& v, unsigned int level) const
 {
 	QString description = v.getDescription();
 	QString path = v.getPath();
-	return exportNote((Note&)v)+"<div><h2>Video :</h2><br>
-			"<video id=\"sampleMovie\" width=\"640\" height=\"360\" preload controls><source src="+escape(path)+"/></video>"
-			"<br><h3>Description</h3><p>En cas de problème à la lecture . Le navigateur ne doit pas être compatible avec le lecteur</p>
+	return exportNote((Note&)v)+"<div><h2>Video :</h2><br>"
+			"<video id=\"sampleMovie\" width=\"640\" height=\"360\" preload controls><source src=\""+escape(path)+"\"/></video>"
+			"<br><h3>Description</h3><p>En cas de problème à la lecture . Le navigateur ne doit pas être compatible avec le lecteur</p>"
 			"<p>"+escape(description)+"</p></div>";
 
 }
@@ -56,7 +57,10 @@ QString	ExportHTML::exportNote(const Audio& a, unsigned int level) const
 {
 	QString description = a.getDescription();
 	QString path = a.getPath();
-	return "";
+	return exportNote((Note&)a)+"<div><h2>Audio :</h2><br>"
+			"<audio preload=\"auto\" autobuffer controls id=\"audio\"><source src=\""+escape(path)+"\" type=\"audio/mpeg\"></audio>"
+			"<br><h3>Description</h3><p>En cas de problème à la lecture . Le navigateur ne doit pas être compatible avec le lecteur</p>"
+			"<p>"+escape(description)+"</p></div>";
 }
 
 
@@ -64,3 +68,5 @@ QString	ExportHTML::escape(QString s) const
 {
 	return s;
 }
+
+

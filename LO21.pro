@@ -24,7 +24,8 @@ SOURCES += \
     view/mainwindow.cpp \
     export/exportfileexception.cpp \
     view/articleview.cpp \
-    view/containernoteview.cpp
+	view/containernoteview.cpp \
+    export/exportstrategy.cpp
 
 HEADERS += \
     export/exportstrategy.h \
