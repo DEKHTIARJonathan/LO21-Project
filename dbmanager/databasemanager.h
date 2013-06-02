@@ -31,17 +31,17 @@ public:
 	/***************** Retrievers *********************/
 
 	std::vector<QString> getAllTags() const; // Retourne tous les Tags existants
-	std::vector<QString> getTags (Note& n) const; // Retourne les tags associés ‡ une Note
-	std::vector< pair <unsigned int, QString > > getNotes (QString tag) const; // Retourne les Notes associés ‡ un Tag.
+	std::vector<QString> getTags (const Note& n) const; // Retourne les tags associés à une Note
+	std::vector< pair <unsigned int, QString > > getNotes (const QString &tag) const; // Retourne les Notes associés à un Tag.
 	std::vector< pair <unsigned int, QString > > getNotes () const; // Retourne Toutes les Notes
 
-	QString getNoteType(unsigned int id); // Renvoie le type d'une note
+	QString getNoteType(const unsigned int id); // Renvoie le type d'une note
 
 	/***************** Deleters ************************/
 
-	bool deleteNote (unsigned int id) const; // On supprime une note
+	bool deleteNote (const unsigned int id) const; // On supprime une note
 	bool deleteNote () const; // On supprime toutes les notes
-	bool deleteTag (QString t) const; // On supprime un Tag
+	bool deleteTag (const QString &t) const; // On supprime un Tag
 	bool deleteTag () const; // On supprime tous les Tag
 	bool flushDB () const; // On vide complètement la base de données
 
@@ -55,7 +55,7 @@ public:
 		return 0;
 	}
 */
-	bool insertTag (QString t) const;
+
 
 
 	/**************** Updaters ********************/
@@ -66,10 +66,10 @@ public:
 
 	/********** AssocBuilders // AssocRemovers **********/
 
-	bool addTagAssoc (Note& n, QString t) const;
-	bool removeTagAssoc (Note& n, QString t) const;
-	bool addNoteToDoc (Document& d, Note& n) const;
-	bool removeNotefromDoc (Document& d, Note& n) const;
+	bool TagAssocNote (const Note& n, const QString& t) const;
+	bool removeTagAssoc (const Note& n, const QString& t) const;
+	bool addNoteToDoc (const Document& d,const Note& n) const;
+	bool removeNotefromDoc (const Document& d, const Note& n) const;
 
 	/**************** Fillers ********************/
 
@@ -78,6 +78,7 @@ public:
 	bool fillNote (MultiMedia& m)  const;
 
 	/****************  Singleton ^*********************/
+
 	static DatabaseManager&			getInstance(QString filename = "temp", QString user = "", QString pass = "");
 	static void						destroy();
 
@@ -90,20 +91,31 @@ public:
 
 	/***************** DB REQUESTS ********************/
 	bool initDB();
-	bool query(QString query) const; // Execute une query en SQL
+	bool query(const QString& query) const; // Execute une query en SQL
 	QSqlError getLastError() const;
 	int getLastID() const; // Retourne le rowid du de la derniere requete d'insertion effectuée.
+	bool tagExist(const QString &t) const;
+
+	/********************* ESCAPER ********************/
+
+	QString escape(QString s) const;
+	QString capitalize(QString str) const;
 
 	/***************** Inserters **********************/
 
 	unsigned int insertNotePrivate(const QString& type) const;
-	bool insertMultimedia(unsigned int id) const;
+	bool insertMultimedia(const unsigned int id) const;
+	bool insertTag (const QString &t) const;
+
+	/***************** AssocBuilders ******************/
+
+	bool addTagAssoc (const Note& n,const QString &t) const;
 
 	/****************  Singleton ^*********************/
 
-	DatabaseManager(QString filename, QString user, QString pass);	// Interdit l'instanciation directe
+	DatabaseManager(const QString &filename, const QString &user, const QString &pass);	// Interdit l'instanciation directe
 	DatabaseManager(const DatabaseManager& nm);	// Interdit la recopie
-	DatabaseManager&				operator=(const DatabaseManager& n);	// Interdit la recopie
+	DatabaseManager& operator=(const DatabaseManager& n);	// Interdit la recopie
 	static DatabaseManager * s_inst;	// Contient le singleton s'il est instancié
 };
 
