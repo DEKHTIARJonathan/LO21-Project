@@ -4,7 +4,6 @@
  *                            Constructor                           *
  ********************************************************************/
 
-// Generic Document constructor
 Document::Document( unsigned int id ) : Note(id), m_notes()
 {
 }

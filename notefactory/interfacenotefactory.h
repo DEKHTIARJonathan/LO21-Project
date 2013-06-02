@@ -6,9 +6,8 @@
 class InterfaceNoteFactory
 {
 	public:
-		virtual Note&		buildNewNote();
-		virtual Note&		loadNote(unsigned int id);
-		virtual void		deleteNote(Note& n);
+		virtual Note&		buildNewNote() = 0;
+		virtual Note&		loadNote(unsigned int id) = 0;
 
 };
 

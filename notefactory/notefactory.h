@@ -4,20 +4,26 @@
 #include <notefactory/interfacenotefactory.h>
 #include <dbmanager/databasemanager.h>
 
-template<class noteType>
+template<class NoteType>
 class NoteFactory : public InterfaceNoteFactory
 {
 	public:
 		Note& buildNewNote(){
 			DatabaseManager& db = DatabaseManager::getInstance();
 
-			//db.insertNote()
+			unsigned int id = db.insertNote(NoteType::staticMetaObject.className());
+			NoteType& n = *(new NoteType(id));
+
+			return n;
 		}
 
 		Note& loadNote(unsigned int id){
 			DatabaseManager& db = DatabaseManager::getInstance();
 
-			db.fillNote( *(new noteType(id)) );
+			NoteType& n = *(new NoteType(id));
+			db.fillNote( n );
+
+			return n;
 		}
 
 };

@@ -4,7 +4,6 @@
  *                            Constructor                           *
  ********************************************************************/
 
-// Generic Audio constructor
 Audio::Audio( unsigned int id ) : MultiMedia(id)
 {
 }
