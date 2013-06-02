@@ -1,12 +1,10 @@
 #ifndef EXPORTSTRATEGY_H
 #define EXPORTSTRATEGY_H
 
-#include <map>
+#include <QHash>
 
 #include <export/exportstrategynotfoundexception.h>
 #include <note/note.h>
-
-using namespace std;
 
 class ExportStrategy
 {
@@ -22,7 +20,7 @@ class ExportStrategy
 		static ExportStrategy&			getExportStrategy(const QString& strategyName);
 
 		// Static Attribut
-		static map<QString,ExportStrategy*>	s_mapES;
+		static QHash<QString,ExportStrategy*>	s_mapES;
 
 };
 

@@ -2,7 +2,7 @@
 
 #include "export/exporthtml.h"
 
-map<QString,ExportStrategy*> ExportStrategy::s_mapES = map<QString,ExportStrategy*>();
+QHash<QString,ExportStrategy*> ExportStrategy::s_mapES = QHash<QString,ExportStrategy*>();
 
 /********************************************************************
  *                          Static Method                           *
@@ -10,16 +10,16 @@ map<QString,ExportStrategy*> ExportStrategy::s_mapES = map<QString,ExportStrateg
 
 void ExportStrategy::initExportStrategies(){
 
-	ExportStrategy::s_mapES.insert(s_mapES.begin(), std::pair<QString,ExportStrategy*>("html",new ExportHTML()));
+	ExportStrategy::s_mapES.insert("html",new ExportHTML());
 
 }
 
 ExportStrategy&	ExportStrategy::getExportStrategy(const QString& strategyName){
 
-	map<QString,ExportStrategy*>::iterator res = ExportStrategy::s_mapES.find(strategyName);
+	QHash<QString,ExportStrategy*>::iterator res = ExportStrategy::s_mapES.find(strategyName);
 
 	if( res == ExportStrategy::s_mapES.end() )
 		throw ExportStrategyNotFoundException(strategyName.toStdString());
 
-	return *(res->second);
+	return **res;
 }
