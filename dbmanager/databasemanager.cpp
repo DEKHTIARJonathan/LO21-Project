@@ -71,6 +71,11 @@ const QString DatabaseManager::getpath() const
  *                            DB Requests                           *
  ********************************************************************/
 
+QSqlError DatabaseManager::getLastError() const
+{
+	return database->lastError();
+}
+
 bool DatabaseManager::query(const QString &query) const
 {
 	QSqlQuery request(*database);

@@ -18,3 +18,8 @@ QString	ExportTex::exportNote(const Note& n, unsigned int level) const
 {
 	return "";
 }
+
+QString	ExportTex::escape(QString s) const
+{
+	return s;
+}

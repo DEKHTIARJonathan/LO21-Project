@@ -48,15 +48,6 @@ public:
 	/***************** Inserters **********************/
 
 	unsigned int insertNote(const QString& typeNote) const;
-/*
-	template<class noteType>
-	unsigned int insertNote() const{
-		//Error
-		return 0;
-	}
-*/
-
-
 
 	/**************** Updaters ********************/
 
