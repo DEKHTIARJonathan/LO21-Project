@@ -45,11 +45,17 @@ QString	ExportHTML::exportNote(const Video& v, unsigned int level) const
 {
 	QString description = v.getDescription();
 	QString path = v.getPath();
-	return exportNote((Note&)v)+"<div><h2>Image :</h2><br><img src='"+escape(path)+"'><br><h3>Description</h3><p>"+escape(description)+"</p></div>";
+	return exportNote((Note&)v)+"<div><h2>Video :</h2><br>
+			"<video id=\"sampleMovie\" width=\"640\" height=\"360\" preload controls><source src="+escape(path)+"/></video>"
+			"<br><h3>Description</h3><p>En cas de problème à la lecture . Le navigateur ne doit pas être compatible avec le lecteur</p>
+			"<p>"+escape(description)+"</p></div>";
+
 }
 
 QString	ExportHTML::exportNote(const Audio& a, unsigned int level) const
 {
+	QString description = a.getDescription();
+	QString path = a.getPath();
 	return "";
 }
 
