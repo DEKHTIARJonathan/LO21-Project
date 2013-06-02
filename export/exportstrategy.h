@@ -9,7 +9,6 @@
 
 class ExportStrategy
 {
-
 	public:
 		// Virtual Method
         virtual QString			header() const = 0 ;
@@ -22,15 +21,6 @@ class ExportStrategy
 		virtual QString			exportNote(const Video& n, unsigned int level = 0) const = 0 ;
 
 		virtual QString			escape(QString s) const = 0;
-
-		//
-
-		// Static Method
-		static void						initExportStrategies();
-		static ExportStrategy&			getExportStrategy(const QString& strategyName);
-
-		// Static Attribut
-		static QHash<QString,ExportStrategy*>	s_mapES;
 
 };
 

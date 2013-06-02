@@ -1,6 +1,5 @@
 SOURCES += \
     main.cpp \
-    export/exportstrategy.cpp \
     export/exportstrategynotfoundexception.cpp \
     note/note.cpp \
     note/article.cpp \
@@ -21,7 +20,8 @@ SOURCES += \
     dbmanager/dbexception.cpp \
     notemanager/notesmanagerexception.cpp \
     export/generalexportfactory.cpp \
-    export/exportfactorynotfoundexception.cpp
+    export/exportfactorynotfoundexception.cpp \
+    view/mainwindow.cpp
 
 HEADERS += \
     export/exportstrategy.h \
@@ -52,9 +52,11 @@ HEADERS += \
     export/interfaceexportfactory.h \
     export/exportfactory.h \
     export/generalexportfactory.h \
-    export/exportfactorynotfoundexception.h
+    export/exportfactorynotfoundexception.h \
+    view/mainwindow.h
 
-FORMS +=
+FORMS += \
+    view/mainwindow.ui
 
 QT += widgets \
       sql
