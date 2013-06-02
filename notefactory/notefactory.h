@@ -31,6 +31,14 @@ class NoteFactory : public InterfaceNoteFactory
 
 			NoteType& casted_n = (NoteType&) n;
 			db.updateNote(casted_n);
+			n.confirmSaving();
+		}
+
+		void deleteNote(Note &n){
+			DatabaseManager& db = DatabaseManager::getInstance();
+
+			db.deleteNote(n.getId());
+			delete &n;
 		}
 
 };

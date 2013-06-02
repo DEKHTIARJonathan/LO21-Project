@@ -6,6 +6,7 @@
 
 #include <note/note.h>
 #include <notefactory/generalnotefactory.h>
+#include <notemanager/notesmanagerexception.h>
 
 using namespace std;
 
@@ -16,6 +17,8 @@ class NotesManager
 		// Method
 		Note&							getNewNote(const QString &typeNote);
 		Note&							getNote(unsigned int id);
+		void							saveNote(Note& n);
+		void							deleteNote(Note& n);
 
 		// Singleton
 		static NotesManager&			getInstance();

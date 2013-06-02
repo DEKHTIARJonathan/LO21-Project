@@ -26,7 +26,6 @@ bool			Note::isModified() const{	return m_modified;	}
  ********************************************************************/
 
 void Note::setTitle( const QString & title){	m_title	= title;	}
-void Note::isSaved(){							m_modified	= false;}
 
 /********************************************************************
  *                             Operator                             *
@@ -40,6 +39,7 @@ bool Note::operator==(const Note& n) const{
  *                              Method                              *
  ********************************************************************/
 
+void Note::confirmSaving(){						m_modified	= false;}
 
 /********************************************************************
  *                            Destructor                            *

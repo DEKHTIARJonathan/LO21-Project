@@ -26,6 +26,32 @@ InterfaceNoteFactory& GeneralNoteFactory::getFactories(const QString & typeName)
 		return **it;
 }
 
+Note& GeneralNoteFactory::loadNote(unsigned int id) const{
+	// Look for TypeNote of Note corresponding to 'id'.
+	DatabaseManager& db = DatabaseManager::getInstance();
+	QString typeNote = db.getNoteType(id);
+
+	// Get back the corresponging NoteFactory and load the Note.
+	InterfaceNoteFactory& nf = getFactories(typeNote);
+	return nf.loadNote(id);
+}
+
+void GeneralNoteFactory::saveNote(Note &n) const{
+	// Get back the corresponging NoteFactory of Note 'n'.
+	InterfaceNoteFactory& nf = getFactories(n.metaObject()->className());
+
+	// Save Note 'n'.
+	nf.saveNote(n);
+}
+
+void GeneralNoteFactory::deleteNote(Note &n) const{
+	// Get back the corresponging NoteFactory of Note 'n'.
+	InterfaceNoteFactory& nf = getFactories(n.metaObject()->className());
+
+	// Delete Note 'n'.
+	nf.deleteNote(n);
+}
+
 /********************************************************************
  *                            Singleton                             *
  ********************************************************************/

@@ -14,6 +14,9 @@ class GeneralNoteFactory
 	public:
 		// Method
 		InterfaceNoteFactory&					getFactories(const QString& typeNote) const;
+		Note&									loadNote(unsigned int id) const;
+		void									saveNote(Note& n) const;
+		void									deleteNote(Note& n) const;
 
 		// Singleton
 		static GeneralNoteFactory&				getInstance();

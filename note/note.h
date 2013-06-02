@@ -20,10 +20,12 @@ class Note : public QObject
 
 		// Setter
 		void				setTitle(const QString & title);
-		void				saveConfirmed();
 
 		// Operator
 		bool				operator==(const Note& n) const;
+
+		// Method
+		void				confirmSaving();
 
 		// Destructor
 		virtual ~Note();
