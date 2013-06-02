@@ -1,7 +1,7 @@
 #ifndef STRATEGYFACTORY_H
 #define STRATEGYFACTORY_H
 
-#include <export/interfacestrategyfactory.h>
+#include <interfacestrategyfactory.h>
 
 template<typename ReturnType, typename Strategy, class NoteType>
 class StrategyFactory : InterfaceStrategyFactory<ReturnType,Strategy>

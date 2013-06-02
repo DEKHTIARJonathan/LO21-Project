@@ -21,7 +21,7 @@ ExportStrategy&	ExportStrategy::getExportStrategy(const QString& strategyName)
 	QHash<QString,ExportStrategy*>::iterator res = ExportStrategy::s_mapES.find(strategyName);
 
 	if( res == ExportStrategy::s_mapES.end() )
-		throw ExportStrategyNotFoundException(strategyName.toStdString());
+		throw ExportStrategyNotFoundException(strategyName);
 
 	return **res;
 }

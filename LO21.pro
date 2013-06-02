@@ -19,7 +19,9 @@ SOURCES += \
     notefactory/generalnotefactory.cpp \
     constants.cpp \
     dbmanager/dbexception.cpp \
-    notemanager/notesmanagerexception.cpp
+    notemanager/notesmanagerexception.cpp \
+    export/generalexportfactory.cpp \
+    export/exportfactorynotfoundexception.cpp
 
 HEADERS += \
     export/exportstrategy.h \
@@ -46,7 +48,11 @@ HEADERS += \
     dbmanager/dbexception.h \
     notemanager/notesmanagerexception.h \
 	interfacestrategyfactory.h \
-	strategyfactory.h
+	strategyfactory.h \
+    export/interfaceexportfactory.h \
+    export/exportfactory.h \
+    export/generalexportfactory.h \
+    export/exportfactorynotfoundexception.h
 
 FORMS +=
 

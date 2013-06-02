@@ -10,10 +10,10 @@ class ExportStrategyNotFoundException : public std::exception
 
 	public:
 		// Constructor
-		ExportStrategyNotFoundException( const std::string & esName );
+		ExportStrategyNotFoundException( const QString & esName );
 
 		// Getter
-		const std::string &	getEsName() const;
+		const QString &		getEsName() const;
 
 		// Implementation
 		const char*			what() const throw();
@@ -23,7 +23,7 @@ class ExportStrategyNotFoundException : public std::exception
 
 	private:
 		// Member
-		std::string			m_esName;
+		QString			m_esName;
 
 };
 

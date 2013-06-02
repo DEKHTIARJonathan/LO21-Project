@@ -1,30 +1,30 @@
-#include "exportstrategynotfoundexception.h"
+#include "exportfactorynotfoundexception.h"
 
 /********************************************************************
  *                            Constructor                           *
  ********************************************************************/
 
-// Generic ExportStrategyNotFoundException constructor
-ExportStrategyNotFoundException::ExportStrategyNotFoundException( const QString & esName ) : std::exception()
+// Generic ExportFactoryNotFoundException constructor
+ExportFactoryNotFoundException::ExportFactoryNotFoundException( const QString & typeName ) : std::exception()
 {
-	m_esName	= esName;
+	m_typeName	= typeName;
 }
 
 /********************************************************************
  *                              Getter                              *
  ********************************************************************/
 
-const  QString&	ExportStrategyNotFoundException::getEsName() const{	return m_esName;	}
+const QString &	ExportFactoryNotFoundException::getTypeName() const{	return m_typeName;	}
 
 /********************************************************************
  *                          Implementation                          *
  ********************************************************************/
 
-const char* ExportStrategyNotFoundException::what() const throw(){
+const char* ExportFactoryNotFoundException::what() const throw(){
 
 	std::stringstream ss;
 
-	ss << "The ExportStrategy '" << m_esName.toStdString() << "' does not exist." << std::endl;
+	ss << "The ExportFactory of type '" << m_typeName.toStdString() << "' does not exist." << std::endl;
 
 	return ss.str().data();
 }
@@ -32,5 +32,5 @@ const char* ExportStrategyNotFoundException::what() const throw(){
  *                            Destructor                            *
  ********************************************************************/
 
-ExportStrategyNotFoundException::~ExportStrategyNotFoundException() throw(){}
+ExportFactoryNotFoundException::~ExportFactoryNotFoundException() throw(){}
 
