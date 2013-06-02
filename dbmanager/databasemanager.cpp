@@ -315,38 +315,24 @@ bool DatabaseManager::updateNote (const MultiMedia& m)  const
  *                            Retrievers                            *
  ********************************************************************/
 
-
-void DatabaseManager::getNote(unsigned int id) const
+std::vector< pair <unsigned int, QString > > DatabaseManager::getNotes() const
 {
+	std::vector< pair <unsigned int, QString > > result;
+	pair <unsigned int, QString > temp;
+
 	QSqlQuery request(*database);
 
-	request.exec("Select * from Note where id = "+ QString::number(id));
+	request.exec("Select id, title from Note");
 
 	while(request.next())
 	{
-		QString idNote = request.value(0).toString();
-		QString titre = request.value(1).toString();
-		QString type = request.value(2).toString();
+		temp.first = request.value(0).toInt();
+		temp.second = request.value(1).toString();
 
-		cout<<"idNote : " << idNote.toStdString() << " || titre : " << titre.toStdString() << " || type : " << type.toStdString() <<endl;
+		result.push_back(temp);
 	}
 
-}
-
-void DatabaseManager::getNote() const
-{
-	QSqlQuery request(*database);
-
-	request.exec("Select * from Note");
-
-	while(request.next())
-	{
-		QString idNote = request.value(0).toString();
-		QString titre = request.value(1).toString();
-		QString type = request.value(2).toString();
-
-		cout<<"idNote : " << idNote.toStdString() << " || titre : " << titre.toStdString() << " || type : " << type.toStdString() <<endl;
-	}
+	return result;
 
 }
 
@@ -399,6 +385,17 @@ std::vector< pair <unsigned int, QString > > DatabaseManager::getNotes(QString t
 
 	return result;
 
+}
+
+QString DatabaseManager::getNoteType(unsigned int id)
+{
+	QSqlQuery request(*database);
+
+	request.exec("Select typeNote from Note where id = '"+QString::number(id)+"'");
+
+	request.next();
+
+	return request.value(0).toString();
 }
 
 /********************************************************************

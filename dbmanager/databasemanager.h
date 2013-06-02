@@ -31,6 +31,9 @@ public:
 	std::vector<QString> getAllTags() const; // Retourne tous les Tags existants
 	std::vector<QString> getTags (Note& n) const; // Retourne les tags associés ‡ une Note
 	std::vector< pair <unsigned int, QString > > getNotes (QString tag) const; // Retourne les Notes associés ‡ un Tag.
+	std::vector< pair <unsigned int, QString > > getNotes () const; // Retourne Toutes les Notes
+
+	QString getNoteType(unsigned int id); // Renvoie le type d'une note
 
 	/***************** Deleters ************************/
 
@@ -70,11 +73,6 @@ public:
 	bool fillNote (Article& a)  const;
 	bool fillNote (Document& d)  const;
 	bool fillNote (MultiMedia& m)  const;
-
-	/***************** À Modifier *********************/
-
-	void getNote(unsigned int id) const; // Get 1 note
-	void getNote() const; // Get toutes les notes
 
 	/****************  Singleton ^*********************/
 	static DatabaseManager&			getInstance(QString filename = "temp", QString user = "", QString pass = "");
