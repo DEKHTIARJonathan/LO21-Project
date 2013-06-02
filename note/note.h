@@ -24,14 +24,8 @@ class Note : public QObject
 		// Operator
 		bool				operator==(const Note& n) const;
 
-<<<<<<< HEAD
 		// Destructor
 		virtual ~Note();
-=======
-		// Virtual Method
-
-		// Method
->>>>>>> 0139dffa9c583ccf2ee48d17f35bbc91d85bd98f
 
 	private:
 		// Constructor
