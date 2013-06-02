@@ -22,7 +22,9 @@ SOURCES += \
     export/generalexportfactory.cpp \
     export/exportfactorynotfoundexception.cpp \
     view/mainwindow.cpp \
-    export/exportfileexception.cpp
+    export/exportfileexception.cpp \
+    view/articleview.cpp \
+    view/containernoteview.cpp
 
 HEADERS += \
     export/exportstrategy.h \
@@ -55,10 +57,14 @@ HEADERS += \
     export/generalexportfactory.h \
     export/exportfactorynotfoundexception.h \
     view/mainwindow.h \
-    export/exportfileexception.h
+    export/exportfileexception.h \
+    view/articleview.h \
+    view/containernoteview.h
 
 FORMS += \
-    view/mainwindow.ui
+    view/mainwindow.ui \
+    view/articleview.ui \
+    view/containernoteview.ui
 
 QT += widgets \
       sql
