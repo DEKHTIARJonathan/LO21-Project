@@ -74,9 +74,13 @@ public:
 	/***************** À Modifier *********************/
 
 	void getNote(unsigned int id) const; // Get 1 note
+<<<<<<< HEAD
 	void getNote() const; // Get toutes les notes
 
 	/****************  Singleton ^*********************/
+=======
+	void getNote() const; // Get toutes les notes	
+>>>>>>> assocDoc
 
 	static DatabaseManager&			getInstance(QString filename = "temp", QString user = "", QString pass = "");
 	static void						destroy();

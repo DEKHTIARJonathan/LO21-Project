@@ -83,15 +83,6 @@ bool DatabaseManager::initDB()
 {
 	QString qry[7];
 
-	/*
-
-constants::SIZE_MAX_TYPE_NOTE
-constants::SIZE_MAX_TITLE
-constants::SIZE_MAX_PATH
-constants::SIZE_MAX_TAG
-
-	*/
-
 	qry[0] = "create table Note (id integer , title varchar("+QString::number(constants::SIZE_MAX_TITLE)+"), typeNote varchar("+QString::number(constants::SIZE_MAX_TYPE_NOTE)+"), primary key(id))";
 	qry[1] = "create table Article (id integer, txt text, primary key(id), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE)";
 	qry[2] = "create table Document (id integer, primary key(id), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE)";
@@ -161,7 +152,11 @@ bool DatabaseManager::deleteTag () const
  *                            Inserters                             *
  ********************************************************************/
 
+<<<<<<< HEAD
 unsigned int DatabaseManager::insertNotePrivate(const QString & type) const{
+=======
+unsigned int DatabaseManager::insertNote(QString type) const{
+>>>>>>> assocDoc
 	QString titre = "";
 
 	if (query("INSERT INTO Note (id, title, typeNote) VALUES (NULL, '"+titre+"','"+ type +"')"))
@@ -409,6 +404,46 @@ std::vector< pair <unsigned int, QString > > DatabaseManager::getNotes(QString t
 }
 
 
+
+
+/********************************************************************
+ *                   AssocBuilders // AssocRemovers                 *
+ ********************************************************************/
+
+//AssocTag (id integer, name
+
+
+bool DatabaseManager::addTagAssoc (Note& n, QString t) const
+{
+	int id = n.getId();
+	return query("INSERT INTO AssocTag (id, name) VALUES ("+QString::number(id)+", '"+t+"')");
+}
+
+bool DatabaseManager::removeTagAssoc (Note& n, QString t) const
+{
+	int id = n.getId();
+	return query("REMOVE FROM AssocTag WHERE id = "+QString::number(id)+" and name = '"+t+"'");
+}
+
+bool DatabaseManager::addNoteToDoc (Document& d, Note& n) const
+{
+	int idDoc = d.getId();
+	int idNote = n.getId();
+	if (idDoc != idNote)
+		return query("INSERT INTO AssocDoc (docMaster, note) VALUES ("+QString::number(idDoc)+", "+QString::number(idNote)+")");
+	else
+		return false;
+}
+/*
+bool DatabaseManager::removeNotefromDoc (Document& d, Note& n) const
+{
+	return query();
+}
+*/
+
+/********************************************************************
+ *                             Fillers                              *
+ ********************************************************************/
 
 
 /********************************************************************
