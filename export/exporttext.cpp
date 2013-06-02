@@ -50,7 +50,7 @@ QString	ExportText::escape(QString s) const
 	return s;
 }
 
-bool	ExportText::exportFile(const QString &s, const QString &filename, const QString &exportPath) const
+/*bool	ExportText::exportFile(const QString &s, const QString &filename, const QString &exportPath) const
 {
 	QString fullpath = exportPath+"/"+filename+".txt";
 	QFile file(fullpath);
@@ -63,3 +63,4 @@ bool	ExportText::exportFile(const QString &s, const QString &filename, const QSt
 
 	return true;
 }
+*/

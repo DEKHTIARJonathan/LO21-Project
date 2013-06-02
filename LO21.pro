@@ -22,7 +22,8 @@ SOURCES += \
     export/generalexportfactory.cpp \
     export/exportfactorynotfoundexception.cpp \
     view/mainwindow.cpp \
-    export/exportfileexception.cpp
+    export/exportfileexception.cpp \
+    export/exportstrategy.cpp
 
 HEADERS += \
     export/exportstrategy.h \

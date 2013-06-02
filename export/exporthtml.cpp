@@ -7,6 +7,7 @@ QString	ExportHTML::header() const
 {
     return "<html>"
            "<head>"
+			"<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">"
             "</head>"
             "<body>";
 }
@@ -68,16 +69,4 @@ QString	ExportHTML::escape(QString s) const
 	return s;
 }
 
-bool	ExportHTML::exportFile(const QString &s, const QString &filename, const QString &exportPath)const
-{
-	QString fullpath = exportPath+"/"+filename+".html";
-	QFile file(fullpath);
 
-	if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
-		throw ExportFileException("ExportHTML::exportFile()", "Erreur à l'ouverture du fichier");
-
-	if(file.write((const char *)s.data()) == -1)
-		throw ExportFileException("ExportHTML::exportFile()", "Erreur à l'écriture dans le fichier");
-
-	return true;
-}
