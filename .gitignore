@@ -1,8 +1,4 @@
 *~
-mainwindow.h
-mainwindow.cpp
-mainwindow.ui
 LO21.pro.user
 main.cpp
 *.autosave
-window/*
