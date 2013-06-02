@@ -408,8 +408,6 @@ std::vector< pair <unsigned int, QString > > DatabaseManager::getNotes(QString t
  *                   AssocBuilders // AssocRemovers                 *
  ********************************************************************/
 
-//AssocTag (id integer, name
-
 
 bool DatabaseManager::addTagAssoc (Note& n, QString t) const
 {
@@ -432,12 +430,16 @@ bool DatabaseManager::addNoteToDoc (Document& d, Note& n) const
 	else
 		return false;
 }
-/*
+
 bool DatabaseManager::removeNotefromDoc (Document& d, Note& n) const
 {
-	return query();
+	int idDoc = d.getId();
+	int idNote = n.getId();
+	if (idDoc != idNote)
+		return query("REMOVE FROM AssocDoc WHERE docMaster = "+QString::number(idDoc)+" and note = "+QString::number(idNote));
+	else
+		return false;
 }
-*/
 
 /********************************************************************
  *                             Fillers                              *
