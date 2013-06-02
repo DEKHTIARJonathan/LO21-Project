@@ -14,6 +14,7 @@ public:
 	QString			footer() const;
 	QString			exportNote(const Note& n, unsigned int level = 0) const;
 	QString			exportNote(const Article& n, unsigned int level = 0) const;
+	QString			escape(QString s) const;
 
 };
 

@@ -10,9 +10,10 @@ class ExportTex : public ExportStrategy
 {
 public:
     ExportTex();
-	virtual QString			header() const;
-	virtual QString			footer() const;
-	virtual QString			exportNote(const Note& n, unsigned int level = 0) const;
+	QString			header() const;
+	QString			footer() const;
+	QString			exportNote(const Note& n, unsigned int level = 0) const;
+	QString			escape(QString s) const;
 };
 
 #endif // EXPORTTEX_H

@@ -8,13 +8,15 @@ QHash<QString,ExportStrategy*> ExportStrategy::s_mapES = QHash<QString,ExportStr
  *                          Static Method                           *
  ********************************************************************/
 
-void ExportStrategy::initExportStrategies(){
+void ExportStrategy::initExportStrategies()
+{
 
 	ExportStrategy::s_mapES.insert("html",new ExportHTML());
 
 }
 
-ExportStrategy&	ExportStrategy::getExportStrategy(const QString& strategyName){
+ExportStrategy&	ExportStrategy::getExportStrategy(const QString& strategyName)
+{
 
 	QHash<QString,ExportStrategy*>::iterator res = ExportStrategy::s_mapES.find(strategyName);
 

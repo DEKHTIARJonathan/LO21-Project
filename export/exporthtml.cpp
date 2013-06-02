@@ -26,3 +26,8 @@ QString	ExportHTML::exportNote(const Article &n, unsigned int level) const
 {
 	return "Article Connard !!!";
 }
+
+QString	ExportHTML::escape(QString s) const
+{
+	return s;
+}
