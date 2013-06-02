@@ -14,7 +14,9 @@ public:
 	QString			exportNote(const Note& n, unsigned int level = 0) const;
 	QString			exportNote(const Article& a, unsigned int level = 0) const;
 	QString			exportNote(const Document& d, unsigned int level = 0) const;
-	QString			exportNote(const MultiMedia& m, unsigned int level = 0) const;
+	QString			exportNote(const Image& i, unsigned int level = 0) const;
+	QString			exportNote(const Video& v, unsigned int level = 0) const;
+	QString			exportNote(const Audio& a, unsigned int level = 0) const;
 	QString			escape(QString s) const;
 };
 

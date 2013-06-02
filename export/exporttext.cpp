@@ -30,7 +30,17 @@ QString	ExportText::exportNote(const Document& d, unsigned int level) const
 	return "";
 }
 
-QString	ExportText::exportNote(const MultiMedia& m, unsigned int level) const
+QString	ExportText::exportNote(const Image& i, unsigned int level) const
+{
+	return "";
+}
+
+QString	ExportText::exportNote(const Video& v, unsigned int level) const
+{
+	return "";
+}
+
+QString	ExportText::exportNote(const Audio& a, unsigned int level) const
 {
 	return "";
 }
