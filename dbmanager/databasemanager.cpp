@@ -113,7 +113,7 @@ bool DatabaseManager::initDB()
 
 int DatabaseManager::getLastID() const
 {
-	 QSqlQuery query(*database);
+	QSqlQuery query(*database);
 
 	query.exec("SELECT last_insert_rowid()");
 
@@ -189,7 +189,7 @@ unsigned int DatabaseManager::insertNote(const QString& typeNote) const{
 	}
 }
 
-//template<>
+/*template<>
 //unsigned int DatabaseManager::insertNote<Article> () const{
 //	int id = insertNote("Article");
 
@@ -257,11 +257,13 @@ unsigned int DatabaseManager::insertNote(const QString& typeNote) const{
 //		return 0;
 //	}
 //}
+*/
 
 bool DatabaseManager::insertTag (QString t) const
 {
 	return query("INSERT INTO Tag (name) VALUES ('"+t+"')");
 }
+
 
 /********************************************************************
  *                             Updaters                             *
@@ -445,6 +447,62 @@ bool DatabaseManager::removeNotefromDoc (Document& d, Note& n) const
  *                             Fillers                              *
  ********************************************************************/
 
+bool DatabaseManager::fillNote (Article& a)  const
+{
+	QSqlQuery query(*database);
+	int id = a.getId();
+
+	bool result = true;
+	result &= query.exec("SELECT n.title, a.txt FROM Note n, Article a WHERE a.id = n.id = "+QString::number(id));
+
+	query.next();// Only one result no need of the while loop
+
+	QString title = query.value(0).toString();
+	QString text = query.value(1).toString();
+
+	a.setTitle(title);
+	a.setText(text);
+
+	return result;
+}
+
+bool DatabaseManager::fillNote (Document& d)  const
+{
+	QSqlQuery query(*database);
+	int id = d.getId();
+
+	bool result = true;
+	result &= query.exec("SELECT title FROM Note WHERE id = "+QString::number(id));
+
+	query.next();// Only one result no need of the while loop
+
+	QString title = query.value(0).toString();
+
+	d.setTitle(title);
+
+	return result;
+}
+
+bool DatabaseManager::fillNote (MultiMedia& m)  const
+{
+	QSqlQuery query(*database);
+	int id = m.getId();
+
+	bool result = true;
+	result &= query.exec("SELECT n.title, m.description, m.path FROM Note n, Multimedia m WHERE n.id = m.id = "+QString::number(id));
+
+	query.next();// Only one result no need of the while loop
+
+	QString title = query.value(0).toString();
+	QString description = query.value(1).toString();
+	QString path = query.value(2).toString();
+
+	m.setTitle(title);
+	m.setDescription(description);
+	m.setPath(path);
+
+	return result;
+}
 
 /********************************************************************
  *                            Singleton                             *

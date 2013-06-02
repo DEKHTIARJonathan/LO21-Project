@@ -67,9 +67,9 @@ public:
 
 	/**************** Fillers ********************/
 
-	bool fillNote (const Article& a)  const{return true;}
-	bool fillNote (const Document& d)  const{return true;}
-	bool fillNote (const MultiMedia& m)  const{return true;}
+	bool fillNote (Article& a)  const;
+	bool fillNote (Document& d)  const;
+	bool fillNote (MultiMedia& m)  const;
 
 	/***************** À Modifier *********************/
 
