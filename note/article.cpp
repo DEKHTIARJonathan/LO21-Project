@@ -19,7 +19,8 @@ const QString &	Article::getText() const{	return m_text;	}
  *                              Setter                              *
  ********************************************************************/
 
-void	Article::setText( const QString & text){	m_text	= text;	}
+void	Article::setText( const QString & text){	m_text	= text;
+													m_modified = true;	}
 
 /********************************************************************
  *                              Method                              *

@@ -20,8 +20,10 @@ bool Document::containNote( unsigned int id ) const{
 }
 
 void Document::addNote( Note& n){
-	if( !this->containNote(n.getId()) )
+	if( !this->containNote(n.getId()) ){
 		m_notes.push_back(&n);
+		m_modified = true;
+	}
 }
 
 Note& Document::getNote(unsigned int i) const{
@@ -35,6 +37,7 @@ void Document::removeNote(unsigned int id){
 	for( vector<Note*>::iterator it = m_notes.begin(); it!=m_notes.end(); it++ )
 		if( (*it)->getId() == id ){
 			m_notes.erase(it);
+			m_modified = true;
 			break;
 		}
 }
