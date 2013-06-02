@@ -4,6 +4,7 @@
 #include <QHash>
 
 #include <export/exportstrategynotfoundexception.h>
+#include "note/classdef.h"
 #include <note/note.h>
 
 class ExportStrategy
