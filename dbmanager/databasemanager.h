@@ -83,7 +83,6 @@ public:
 	/***************** DB REQUESTS ********************/
 	bool initDB();
 	bool query(const QString& query) const; // Execute une query en SQL
-	QSqlError getLastError() const;
 	int getLastID() const; // Retourne le rowid du de la derniere requete d'insertion effectuée.
 	bool tagExist(const QString &t) const;
 

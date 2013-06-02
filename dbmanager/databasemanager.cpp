@@ -71,16 +71,16 @@ const QString DatabaseManager::getpath() const
  *                            DB Requests                           *
  ********************************************************************/
 
-QSqlError DatabaseManager::getLastError() const
-{
-	return database->lastError();
-}
-
 bool DatabaseManager::query(const QString &query) const
 {
 	QSqlQuery request(*database);
 
-	return request.exec(query);
+	bool result = request.exec(query);
+
+	if (result)
+		return true;
+	else
+		throw DBException(query, request.lastError().databaseText());
 }
 
 bool DatabaseManager::initDB()
@@ -103,11 +103,8 @@ bool DatabaseManager::initDB()
 			b &= false;
 	}
 
-	if (b)
-		cout<<"DB initialisée\n\n";
-	else
+	if (!b)
 	{
-		cout<<"Erreur à l'initialisation\n\n";
 		QFile::remove(dbpath);
 		exit(0);
 	}
@@ -118,8 +115,10 @@ bool DatabaseManager::initDB()
 int DatabaseManager::getLastID() const
 {
 	QSqlQuery query(*database);
+	QString sql = "SELECT last_insert_rowid()";
 
-	query.exec("SELECT last_insert_rowid()");
+	if(!query.exec(sql))
+		throw DBException(sql, query.lastError().databaseText());
 
 	query.next();// Only one result no need of the while loop
 
@@ -130,8 +129,10 @@ int DatabaseManager::getLastID() const
 bool DatabaseManager::tagExist(const QString &t) const
 {
 	QSqlQuery query(*database);
+	QString sql = "SELECT * from Tag where name ='"+escape(capitalize(t))+"'";
 
-	query.exec("SELECT * from Tag where name ='"+escape(capitalize(t))+"'");
+	if(!query.exec(sql))
+		throw DBException(sql, query.lastError().databaseText());
 
 	if(query.size() != 0)
 		return true;
@@ -194,8 +195,6 @@ unsigned int DatabaseManager::insertNotePrivate(const QString & type) const{
 
 	if (query("INSERT INTO Note (id, title, typeNote) VALUES (NULL, '"+escape(titre)+"','"+escape(type)+"')"))
 		return getLastID();
-	else
-		throw DBException("INSERT Note", "");
 }
 
 bool DatabaseManager::insertMultimedia(const unsigned int id) const
@@ -218,7 +217,7 @@ unsigned int DatabaseManager::insertNote(const QString& typeNote) const
 	else if(typeNote == "Image" ||typeNote == "Audio" || typeNote == "Video")
 		result = insertMultimedia(id);
 	else
-		throw DBException("INSERT Note", "'"+escape(typeNote)+"' is not a Note type.");
+		throw DBException("INSERT Note", "'"+typeNote+"' is not a Note type.");
 
 	if (result)
 		return id;
@@ -291,8 +290,10 @@ std::vector< pair <unsigned int, QString > > DatabaseManager::getNotes() const
 	pair <unsigned int, QString > temp;
 
 	QSqlQuery request(*database);
+	QString sql = "Select id, title from Note";
 
-	request.exec("Select id, title from Note");
+	if(!request.exec(sql))
+		throw DBException(sql, request.lastError().databaseText());
 
 	while(request.next())
 	{
@@ -311,7 +312,10 @@ std::vector<QString> DatabaseManager::getAllTags() const
 	QSqlQuery request(*database);
 	vector<QString> result;
 
-	request.exec("Select * from Tag");
+	QString sql = "Select * from Tag";
+
+	if(!request.exec(sql))
+		throw DBException(sql, request.lastError().databaseText());
 
 	while (request.next())
 	{
@@ -328,7 +332,10 @@ std::vector<QString> DatabaseManager::getTags(const Note &n) const
 
 	int id = n.getId();
 
-	request.exec("Select name from AssocTag where id = '"+QString::number(id)+"'");
+	QString sql = "Select name from AssocTag where id = '"+QString::number(id)+"'";
+
+	if(!request.exec(sql))
+		throw DBException(sql, request.lastError().databaseText());
 
 	while (request.next())
 	{
@@ -345,7 +352,11 @@ std::vector< pair <unsigned int, QString > > DatabaseManager::getNotes(const QSt
 
 	QSqlQuery request(*database);
 
-	request.exec("Select a.id , title from AssocTag a, Note n where a.name = '"+escape(capitalize(tag))+"' and a.id = n.id");
+	QString sql = "Select a.id , title from AssocTag a, Note n where a.name = '"+escape(capitalize(tag))+"' and a.id = n.id";
+
+	if(!request.exec(sql))
+		throw DBException(sql, request.lastError().databaseText());
+
 	while (request.next())
 	{
 		temp.first = request.value(0).toInt();
@@ -361,7 +372,11 @@ QString DatabaseManager::getNoteType(const unsigned int id)
 {
 	QSqlQuery request(*database);
 
-	request.exec("Select typeNote from Note where id = '"+QString::number(id)+"'");
+	QString sql ="Select typeNote from Note where id = '"+QString::number(id)+"'";
+
+	if(!request.exec(sql))
+		throw DBException(sql, request.lastError().databaseText());
+
 
 	request.next();
 
@@ -409,7 +424,7 @@ bool DatabaseManager::addNoteToDoc (const Document &d, const Note &n) const
 	if (idDoc != idNote)
 		return query("INSERT INTO AssocDoc (docMaster, note) VALUES ("+QString::number(idDoc)+", "+QString::number(idNote)+")");
 	else
-		return false;
+		throw DBException("Try to include the document in itself", "DocumentID = "+QString::number(idDoc));
 }
 
 
@@ -420,7 +435,7 @@ bool DatabaseManager::removeNotefromDoc (const Document &d, const Note &n) const
 	if (idDoc != idNote)
 		return query("REMOVE FROM AssocDoc WHERE docMaster = "+QString::number(idDoc)+" and note = "+QString::number(idNote));
 	else
-		return false;
+		throw DBException("Try to remove the document from itself", "DocumentID = "+QString::number(idDoc));
 }
 
 
