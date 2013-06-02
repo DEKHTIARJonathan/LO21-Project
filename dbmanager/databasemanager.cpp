@@ -148,6 +148,11 @@ bool DatabaseManager::deleteTag () const
 	return query("Delete from Tag where 1=1");
 }
 
+bool DatabaseManager::flushDB () const
+{
+	return deleteTag() && deleteNote();
+}
+
 /********************************************************************
  *                            Inserters                             *
  ********************************************************************/

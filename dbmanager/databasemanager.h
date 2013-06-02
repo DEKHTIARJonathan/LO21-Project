@@ -41,6 +41,7 @@ public:
 	bool deleteNote () const; // On supprime toutes les notes
 	bool deleteTag (QString t) const; // On supprime un Tag
 	bool deleteTag () const; // On supprime tous les Tag
+	bool flushDB () const; // On vide complètement la base de données
 
 	/***************** Inserters **********************/
 
