@@ -30,6 +30,9 @@ class Note : public QObject
 		// Destructor
 		virtual ~Note();
 
+	protected:
+		bool				m_modified;
+
 	private:
 		// Constructor
 		Note( const Note& n);
@@ -37,7 +40,6 @@ class Note : public QObject
 		// Member
 		const unsigned int	m_id;
 		QString				m_title;
-		bool				m_modified;
 
 		// Operator
 		Note&				operator=(const Note& n);

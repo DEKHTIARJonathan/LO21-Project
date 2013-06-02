@@ -25,7 +25,8 @@ bool			Note::isModified() const{	return m_modified;	}
  *                              Setter                              *
  ********************************************************************/
 
-void Note::setTitle( const QString & title){	m_title	= title;	}
+void Note::setTitle( const QString & title){	m_title	= title;
+												m_modified = true;	}
 
 /********************************************************************
  *                             Operator                             *

@@ -13,17 +13,17 @@ MultiMedia::MultiMedia( unsigned int id ) : Note(id), m_description(), m_path()
  *                              Getter                              *
  ********************************************************************/
 
-const QString &	MultiMedia::getDescription() const{	return m_description;
-													m_modified = true;	}
-const QString &	MultiMedia::getPath() const{		return m_path;
-													m_modified = true;	}
+const QString &	MultiMedia::getDescription() const{	return m_description;	}
+const QString &	MultiMedia::getPath() const{		return m_path;			}
 
 /********************************************************************
  *                              Setter                              *
  ********************************************************************/
 
-void	MultiMedia::setDescription( const QString & description){	m_description	= description;	}
-void	MultiMedia::setPath( const QString & path){					m_path			= path;			}
+void	MultiMedia::setDescription( const QString & description){	m_description	= description;
+																	m_modified		= true;			}
+void	MultiMedia::setPath( const QString & path){					m_path			= path;
+																	m_modified		= true;			}
 
 /********************************************************************
  *                              Method                              *
