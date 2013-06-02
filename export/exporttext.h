@@ -17,6 +17,7 @@ public:
 	QString			exportNote(const Image& i, unsigned int level = 0) const;
 	QString			exportNote(const Video& v, unsigned int level = 0) const;
 	QString			exportNote(const Audio& a, unsigned int level = 0) const;
+	bool			exportFile(const QString &s, const QString &filename, const QString &exportPath) const;
 	QString			escape(QString s) const;
 };
 

@@ -49,3 +49,8 @@ QString	ExportText::escape(QString s) const
 {
 	return s;
 }
+
+bool	ExportText::exportFile(const QString &s, const QString &filename, const QString &exportPath) const
+{
+	return true;
+}
