@@ -51,5 +51,14 @@ QString	ExportTex::escape(QString s) const
 
 bool	ExportTex::exportFile(const QString &s, const QString &filename, const QString &exportPath) const
 {
+	QString fullpath = exportPath+"/"+filename+".tex";
+	QFile file(fullpath);
+
+	if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
+		throw ExportFileException("ExportTex::exportFile()", "Erreur à l'ouverture du fichier");
+
+	if(file.write((const char *)s.data()) == -1)
+		throw ExportFileException("ExportTex::exportFile()", "Erreur à l'écriture dans le fichier");
+
 	return true;
 }

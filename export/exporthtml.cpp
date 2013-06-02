@@ -73,10 +73,11 @@ bool	ExportHTML::exportFile(const QString &s, const QString &filename, const QSt
 	QString fullpath = exportPath+"/"+filename+".html";
 	QFile file(fullpath);
 
-	file.open(QIODevice::WriteOnly | QIODevice::Text);
+	if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
+		throw ExportFileException("ExportHTML::exportFile()", "Erreur à l'ouverture du fichier");
 
-	if(file.write((const char *)s.data()) != -1)
-		return true;
-	else
-		return false;
+	if(file.write((const char *)s.data()) == -1)
+		throw ExportFileException("ExportHTML::exportFile()", "Erreur à l'écriture dans le fichier");
+
+	return true;
 }
