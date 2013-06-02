@@ -147,6 +147,16 @@ bool DatabaseManager::deleteNote () const
 	return query("Delete from Note where 1=1");
 }
 
+bool DatabaseManager::deleteTag (QString t) const
+{
+	return query("Delete from Tag where name ='"+t+"'");
+}
+
+bool DatabaseManager::deleteTag () const
+{
+	return query("Delete from Tag where 1=1");
+}
+
 /********************************************************************
  *                            Inserters                             *
  ********************************************************************/
@@ -399,6 +409,48 @@ std::vector< pair <unsigned int, QString > > DatabaseManager::getNotes(QString t
 }
 
 
+
+
+/********************************************************************
+ *                   AssocBuilders // AssocRemovers                 *
+ ********************************************************************/
+
+//AssocTag (id integer, name
+
+
+bool DatabaseManager::addTagAssoc (Note& n, QString t) const
+{
+	int id = n.getId();
+	return query("INSERT INTO AssocTag (id, name) VALUES ("+QString::number(id)+", '"+t+"')");
+}
+
+bool DatabaseManager::removeTagAssoc (Note& n, QString t) const
+{
+	int id = n.getId();
+	return query("REMOVE FROM AssocTag WHERE id = "+QString::number(id)+" and name = '"+t+"'");
+}
+
+bool DatabaseManager::addNoteToDoc (Document& d, Note& n) const
+{
+	int idDoc = d.getId();
+	int idNote = n.getId();
+	if (idDoc != idNote)
+		return query("INSERT INTO AssocDoc (docMaster, note) VALUES ("+QString::number(idDoc)+", "+QString::number(idNote)+")");
+	else
+		return false;
+}
+/*
+bool DatabaseManager::removeNotefromDoc (Document& d, Note& n) const
+{
+	return query();
+}
+*/
+
+/********************************************************************
+ *                             Fillers                              *
+ ********************************************************************/
+
+
 /********************************************************************
  *                            Singleton                             *
  ********************************************************************/
@@ -415,18 +467,3 @@ void DatabaseManager::destroy(){
 	if( s_inst != NULL )
 		delete s_inst;
 }
-
-
-
-
-
-
-
-
-
-
-/*********** TEST ****************/
-
-
-
-
