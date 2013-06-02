@@ -185,7 +185,7 @@ unsigned int DatabaseManager::insertNote(const QString& typeNote) const{
 	else if(typeNote == "Image" ||typeNote == "Audio" || typeNote == "Video")
 		result = insertMultimedia(id);
 	else
-		throw DBException("INSERT Note", "'"+typeNote+"' does not a Note type.");
+		throw DBException("INSERT Note", "'"+typeNote+"' is not a Note type.");
 
 	if (result)
 		return id;
@@ -406,11 +406,6 @@ QString DatabaseManager::getNoteType(unsigned int id)
 }
 
 /********************************************************************
- *                             Fillers                              *
- ********************************************************************/
-
-
-/********************************************************************
  *                   AssocBuilders // AssocRemovers                 *
  ********************************************************************/
 
@@ -446,6 +441,7 @@ bool DatabaseManager::removeNotefromDoc (Document& d, Note& n) const
 	else
 		return false;
 }
+
 
 /********************************************************************
  *                             Fillers                              *
