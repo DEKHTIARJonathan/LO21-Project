@@ -21,7 +21,8 @@ SOURCES += \
     notemanager/notesmanagerexception.cpp \
     export/generalexportfactory.cpp \
     export/exportfactorynotfoundexception.cpp \
-    view/mainwindow.cpp
+    view/mainwindow.cpp \
+    export/exportfileexception.cpp
 
 HEADERS += \
     export/exportstrategy.h \
@@ -53,7 +54,8 @@ HEADERS += \
     export/exportfactory.h \
     export/generalexportfactory.h \
     export/exportfactorynotfoundexception.h \
-    view/mainwindow.h
+    view/mainwindow.h \
+    export/exportfileexception.h
 
 FORMS += \
     view/mainwindow.ui
