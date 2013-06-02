@@ -83,15 +83,6 @@ bool DatabaseManager::initDB()
 {
 	QString qry[7];
 
-	/*
-
-constants::SIZE_MAX_TYPE_NOTE
-constants::SIZE_MAX_TITLE
-constants::SIZE_MAX_PATH
-constants::SIZE_MAX_TAG
-
-	*/
-
 	qry[0] = "create table Note (id integer , title varchar("+QString::number(constants::SIZE_MAX_TITLE)+"), typeNote varchar("+QString::number(constants::SIZE_MAX_TYPE_NOTE)+"), primary key(id))";
 	qry[1] = "create table Article (id integer, txt text, primary key(id), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE)";
 	qry[2] = "create table Document (id integer, primary key(id), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE)";
@@ -122,7 +113,7 @@ constants::SIZE_MAX_TAG
 
 int DatabaseManager::getLastID() const
 {
-	 QSqlQuery query(*database);
+	QSqlQuery query(*database);
 
 	query.exec("SELECT last_insert_rowid()");
 
@@ -145,6 +136,16 @@ bool DatabaseManager::deleteNote (unsigned int id) const
 bool DatabaseManager::deleteNote () const
 {
 	return query("Delete from Note where 1=1");
+}
+
+bool DatabaseManager::deleteTag (QString t) const
+{
+	return query("Delete from Tag where name ='"+t+"'");
+}
+
+bool DatabaseManager::deleteTag () const
+{
+	return query("Delete from Tag where 1=1");
 }
 
 /********************************************************************
@@ -188,7 +189,7 @@ unsigned int DatabaseManager::insertNote(const QString& typeNote) const{
 	}
 }
 
-//template<>
+/*template<>
 //unsigned int DatabaseManager::insertNote<Article> () const{
 //	int id = insertNote("Article");
 
@@ -256,11 +257,13 @@ unsigned int DatabaseManager::insertNote(const QString& typeNote) const{
 //		return 0;
 //	}
 //}
+*/
 
 bool DatabaseManager::insertTag (QString t) const
 {
 	return query("INSERT INTO Tag (name) VALUES ('"+t+"')");
 }
+
 
 /********************************************************************
  *                             Updaters                             *
@@ -398,6 +401,108 @@ std::vector< pair <unsigned int, QString > > DatabaseManager::getNotes(QString t
 
 }
 
+/********************************************************************
+ *                             Fillers                              *
+ ********************************************************************/
+
+
+/********************************************************************
+ *                   AssocBuilders // AssocRemovers                 *
+ ********************************************************************/
+
+
+bool DatabaseManager::addTagAssoc (Note& n, QString t) const
+{
+	int id = n.getId();
+	return query("INSERT INTO AssocTag (id, name) VALUES ("+QString::number(id)+", '"+t+"')");
+}
+
+bool DatabaseManager::removeTagAssoc (Note& n, QString t) const
+{
+	int id = n.getId();
+	return query("REMOVE FROM AssocTag WHERE id = "+QString::number(id)+" and name = '"+t+"'");
+}
+
+bool DatabaseManager::addNoteToDoc (Document& d, Note& n) const
+{
+	int idDoc = d.getId();
+	int idNote = n.getId();
+	if (idDoc != idNote)
+		return query("INSERT INTO AssocDoc (docMaster, note) VALUES ("+QString::number(idDoc)+", "+QString::number(idNote)+")");
+	else
+		return false;
+}
+
+bool DatabaseManager::removeNotefromDoc (Document& d, Note& n) const
+{
+	int idDoc = d.getId();
+	int idNote = n.getId();
+	if (idDoc != idNote)
+		return query("REMOVE FROM AssocDoc WHERE docMaster = "+QString::number(idDoc)+" and note = "+QString::number(idNote));
+	else
+		return false;
+}
+
+/********************************************************************
+ *                             Fillers                              *
+ ********************************************************************/
+
+bool DatabaseManager::fillNote (Article& a)  const
+{
+	QSqlQuery query(*database);
+	int id = a.getId();
+
+	bool result = true;
+	result &= query.exec("SELECT n.title, a.txt FROM Note n, Article a WHERE a.id = n.id = "+QString::number(id));
+
+	query.next();// Only one result no need of the while loop
+
+	QString title = query.value(0).toString();
+	QString text = query.value(1).toString();
+
+	a.setTitle(title);
+	a.setText(text);
+
+	return result;
+}
+
+bool DatabaseManager::fillNote (Document& d)  const
+{
+	QSqlQuery query(*database);
+	int id = d.getId();
+
+	bool result = true;
+	result &= query.exec("SELECT title FROM Note WHERE id = "+QString::number(id));
+
+	query.next();// Only one result no need of the while loop
+
+	QString title = query.value(0).toString();
+
+	d.setTitle(title);
+
+	return result;
+}
+
+bool DatabaseManager::fillNote (MultiMedia& m)  const
+{
+	QSqlQuery query(*database);
+	int id = m.getId();
+
+	bool result = true;
+	result &= query.exec("SELECT n.title, m.description, m.path FROM Note n, Multimedia m WHERE n.id = m.id = "+QString::number(id));
+
+	query.next();// Only one result no need of the while loop
+
+	QString title = query.value(0).toString();
+	QString description = query.value(1).toString();
+	QString path = query.value(2).toString();
+
+	m.setTitle(title);
+	m.setDescription(description);
+	m.setPath(path);
+
+	return result;
+}
 
 /********************************************************************
  *                            Singleton                             *
@@ -415,18 +520,3 @@ void DatabaseManager::destroy(){
 	if( s_inst != NULL )
 		delete s_inst;
 }
-
-
-
-
-
-
-
-
-
-
-/*********** TEST ****************/
-
-
-
-
