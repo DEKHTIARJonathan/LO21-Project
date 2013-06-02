@@ -44,7 +44,9 @@ HEADERS += \
     notefactory/interfacenotefactory.h \
     notefactory/notefactory.h \
     dbmanager/dbexception.h \
-    notemanager/notesmanagerexception.h
+    notemanager/notesmanagerexception.h \
+	interfacestrategyfactory.h \
+	strategyfactory.h
 
 FORMS +=
 

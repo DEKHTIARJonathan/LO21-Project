@@ -29,7 +29,7 @@ class NoteFactory : public InterfaceNoteFactory
 		void saveNote(Note &n){
 			DatabaseManager& db = DatabaseManager::getInstance();
 
-			NoteType& casted_n = (NoteType&) n;
+			NoteType& casted_n = dynamic_cast<NoteType&> (n);
 			db.updateNote(casted_n);
 			n.confirmSaving();
 		}
