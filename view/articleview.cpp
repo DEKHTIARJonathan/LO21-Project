@@ -2,13 +2,13 @@
 #include "ui_articleview.h"
 
 ArticleView::ArticleView(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::ArticleView)
+	QWidget(parent),
+	ui(new Ui::ArticleView)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 }
 
 ArticleView::~ArticleView()
 {
-    delete ui;
+	delete ui;
 }

@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :QMainWindow(parent),ui(new Ui::MainWind
     //connect(openAct, SIGNAL(triggered()), this, SLOT(open()));
     //QString s = QFileDialog::getOpenFileName(this, tr("Open Note Manager"), "/", tr("Note Manager File (*.lo21)"));
 
-	ContainerNoteView* c = new ContainerNoteView(ui->Editor);
+	NoteForm* c = new NoteForm(ui->Editor);
 
 }
 

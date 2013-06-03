@@ -6,7 +6,7 @@
 #include <QtGui>
 #include <QFileDialog>
 
-#include <view/containernoteview.h>
+#include <view/noteform.h>
 
 namespace Ui {
 class MainWindow;
