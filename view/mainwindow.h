@@ -6,6 +6,8 @@
 #include <QtGui>
 #include <QFileDialog>
 
+#include <view/containernoteview.h>
+
 namespace Ui {
 class MainWindow;
 }
