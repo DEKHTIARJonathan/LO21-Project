@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :QMainWindow(parent),ui(new Ui::MainWind
     //QString s = QFileDialog::getOpenFileName(this, tr("Open Note Manager"), "/", tr("Note Manager File (*.lo21)"));
 
 	NoteForm* c = new NoteForm(ui->Editor);
+	ui->verticalLayout->addWidget(c);
 
 }
 

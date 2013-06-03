@@ -135,15 +135,7 @@
        <attribute name="title">
         <string>Editor</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <widget class="QCommandLinkButton" name="commandLinkButton">
-          <property name="text">
-           <string>CommandLinkButton</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <layout class="QVBoxLayout" name="verticalLayout_2"/>
       </widget>
       <widget class="QWidget" name="Html">
        <attribute name="title">
