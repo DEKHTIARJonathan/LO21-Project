@@ -66,6 +66,7 @@ QString	ExportHTML::exportNote(const Audio& a, unsigned int level) const
 
 QString	ExportHTML::escape(QString s) const
 {
+	s.replace("\\", "\\\\");
 	return s;
 }
 

@@ -17,12 +17,14 @@ QString	ExportText::footer() const
 
 QString	ExportText::exportNote(const Note& n, unsigned int level) const
 {
-	return "";
+	QString titre = n.getTitle();
+	return "Article\n\nTitre :\n"+escape(titre)+"\n\n";
 }
 
 QString	ExportText::exportNote(const Article& a, unsigned int level) const
 {
-	return "";
+	QString text = a.getText();
+	return exportNote((Note&)a)+"Texte :\n"+escape(text);
 }
 
 QString	ExportText::exportNote(const Document& d, unsigned int level) const
@@ -32,35 +34,27 @@ QString	ExportText::exportNote(const Document& d, unsigned int level) const
 
 QString	ExportText::exportNote(const Image& i, unsigned int level) const
 {
-	return "";
+	QString description = i.getDescription();
+	QString path = i.getPath();
+	return exportNote((Note&)i)+"Image :\n"+escape(path)+"'\n\nDescription :\n"+escape(description);
 }
 
 QString	ExportText::exportNote(const Video& v, unsigned int level) const
 {
-	return "";
+	QString description = v.getDescription();
+	QString path = v.getPath();
+	return exportNote((Note&)v)+"Video :\n"+escape(path)+"'\n\nDescription :\n"+escape(description);
 }
 
 QString	ExportText::exportNote(const Audio& a, unsigned int level) const
 {
-	return "";
+	QString description = a.getDescription();
+	QString path = a.getPath();
+	return exportNote((Note&)a)+"Audio :\n"+escape(path)+"'\n\nDescription :\n"+escape(description);
 }
 
 QString	ExportText::escape(QString s) const
 {
+	s.replace("\\", "\\\\");
 	return s;
 }
-
-/*bool	ExportText::exportFile(const QString &s, const QString &filename, const QString &exportPath) const
-{
-	QString fullpath = exportPath+"/"+filename+".txt";
-	QFile file(fullpath);
-
-	if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
-		throw ExportFileException("ExportText::exportFile()", "Erreur à l'ouverture du fichier");
-
-	if(file.write((const char *)s.data()) == -1)
-		throw ExportFileException("ExportText::exportFile()", "Erreur à l'écriture dans le fichier");
-
-	return true;
-}
-*/
