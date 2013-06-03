@@ -3,6 +3,7 @@
 
 #include <QHash>
 #include <QFile>
+#include <QDir>
 #include <QTextStream>
 #include <export/exportstrategynotfoundexception.h>
 #include "note/classdef.h"
@@ -20,7 +21,7 @@ class ExportStrategy
 		virtual QString			exportNote(const Image& n, unsigned int level = 0) const = 0 ;
 		virtual QString			exportNote(const Audio& n, unsigned int level = 0) const = 0 ;
 		virtual QString			exportNote(const Video& n, unsigned int level = 0) const = 0 ;
-		static  bool			exportFile(const QString &s, const QString &filename, const QString &exportPath, const QString & strategy);
+		static  bool			exportFile(const QString &s, const QString &filename, const QString & strategy, const QDir exportPath = QDir::current());
 		virtual QString			escape(QString s) const = 0;
 
 };
