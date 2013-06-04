@@ -27,7 +27,8 @@ SOURCES += \
 	view/notesview/articleview.cpp \
     view/notesview/noteview.cpp \
     view/notesview/generalviewfactory.cpp \
-    view/notesview/viewfactorynotfoundexception.cpp
+    view/notesview/viewfactorynotfoundexception.cpp \
+    controller/controller.cpp
 
 HEADERS += \
     export/exportstrategy.h \
@@ -66,7 +67,8 @@ HEADERS += \
     view/notesview/generalviewfactory.h \
     view/notesview/interfaceviewfactory.h \
     view/notesview/viewfactory.h \
-    view/notesview/viewfactorynotfoundexception.h
+    view/notesview/viewfactorynotfoundexception.h \
+    controller/controller.h
 
 FORMS += \
     view/mainwindow.ui \

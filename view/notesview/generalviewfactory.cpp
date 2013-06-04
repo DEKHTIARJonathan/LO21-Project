@@ -31,7 +31,19 @@ NoteView& GeneralViewFactory::getView(Note& n){
 
 	// Get back the corresponging ViewFactory and load it.
 	InterfaceViewFactory& vf = getFactories(n.metaObject()->className());
-	return vf.buildNoteView(n);
+	NoteView& view = vf.buildNoteView(n);
+	m_views.insert(n.getId(),&view);
+	return view;
+}
+
+void GeneralViewFactory::deleteView(unsigned int id){
+	// Look for corresponding view
+	QMap<unsigned int, NoteView*>::iterator f = m_views.find(id);
+
+	if( f!=m_views.end() ){ // And delete here if exist
+		// To do im exhausted :)
+		delete (*f);
+	}
 }
 
 /********************************************************************

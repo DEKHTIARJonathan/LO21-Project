@@ -8,6 +8,7 @@
 
 #include <constants.h>
 #include <notemanager/notesmanager.h>
+#include <view/notesview/generalviewfactory.h>
 
 namespace Ui {
 class MainWindow;
@@ -16,24 +17,41 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+
+	public slots:
+		void				newNote();
+		void				editSaveNote();
+		void				deleteNote();
     
 	public:
 		// Constructor
 		explicit MainWindow(QWidget *parent = 0);
 
 		// Method
-		void			displayNote( unsigned int id );
+		void				editNewNote( const QString& NoteType );
+		void				displayNote( unsigned int id );
+		void				displayNote( Note& n );
+		void				hideActualNote();
 
 		// Destructor
 		~MainWindow();
     
-private:
-	Ui::MainWindow*		ui;
+	private:
+		// Member
+		Ui::MainWindow*		ui;
+		Note*				m_actualNote;
+		NoteView*			m_actualNoteView;
+		bool				m_editMode;
 
-	// Setup
-	void				setupSearchArea();
-	void				setupEditorArea();
-	void				setupExportArea();
+		// Method
+		void				showErrorMessageBox(const QString& msg);
+		void				enableNoteInterraction(bool b);
+
+		// Setup
+		void				setupMenu();
+		void				setupSearchArea();
+		void				setupEditorArea();
+		void				setupExportArea();
 };
 
 #endif // MAINWINDOW_H

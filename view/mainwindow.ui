@@ -317,8 +317,13 @@
     </property>
     <widget class="QMenu" name="menuNouvelleNote">
      <property name="title">
-      <string>Nouveau</string>
+      <string>New</string>
      </property>
+     <addaction name="actionNewArticle"/>
+     <addaction name="actionDocument"/>
+     <addaction name="actionImage"/>
+     <addaction name="actionAudio"/>
+     <addaction name="actionVideo"/>
     </widget>
     <addaction name="menuNouvelleNote"/>
     <addaction name="actionSauvegarder"/>
@@ -333,19 +338,8 @@
     <addaction name="actionCouper"/>
     <addaction name="actionColler"/>
    </widget>
-   <widget class="QMenu" name="menuNote">
-    <property name="title">
-     <string>Note</string>
-    </property>
-    <addaction name="actionNouveau_Document"/>
-    <addaction name="actionNouvel_Article"/>
-    <addaction name="actionNouvelle_Video"/>
-    <addaction name="actionNouvelle_Image"/>
-    <addaction name="actionNouveau_Son"/>
-   </widget>
    <addaction name="menuFichier"/>
    <addaction name="menuEdition"/>
-   <addaction name="menuNote"/>
   </widget>
   <widget class="QStatusBar" name="statusbar">
    <property name="sizePolicy">
@@ -403,9 +397,9 @@
     <string>Nouveau Document</string>
    </property>
   </action>
-  <action name="actionNouvel_Article">
+  <action name="actionNewArticle">
    <property name="text">
-    <string>Nouvel Article</string>
+    <string>Article</string>
    </property>
   </action>
   <action name="actionNouvelle_Video">
@@ -426,6 +420,26 @@
   <action name="actionTest">
    <property name="text">
     <string>Test</string>
+   </property>
+  </action>
+  <action name="actionDocument">
+   <property name="text">
+    <string>Document</string>
+   </property>
+  </action>
+  <action name="actionVideo">
+   <property name="text">
+    <string>Video</string>
+   </property>
+  </action>
+  <action name="actionAudio">
+   <property name="text">
+    <string>Audio</string>
+   </property>
+  </action>
+  <action name="actionImage">
+   <property name="text">
+    <string>Image</string>
    </property>
   </action>
  </widget>
