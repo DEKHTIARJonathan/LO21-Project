@@ -25,7 +25,9 @@ SOURCES += \
 	export/exportfileexception.cpp \
     export/exportstrategy.cpp \
 	view/notesview/articleview.cpp \
-    view/notesview/noteview.cpp
+    view/notesview/noteview.cpp \
+    view/notesview/generalviewfactory.cpp \
+    view/notesview/viewfactorynotfoundexception.cpp
 
 HEADERS += \
     export/exportstrategy.h \
@@ -60,7 +62,11 @@ HEADERS += \
     view/mainwindow.h \
 	export/exportfileexception.h \
 	view/notesview/articleview.h \
-    view/notesview/noteview.h
+    view/notesview/noteview.h \
+    view/notesview/generalviewfactory.h \
+    view/notesview/interfaceviewfactory.h \
+    view/notesview/viewfactory.h \
+    view/notesview/viewfactorynotfoundexception.h
 
 FORMS += \
     view/mainwindow.ui \

@@ -5,7 +5,7 @@
  *                            Constructor                           *
  ********************************************************************/
 
-ArticleView::ArticleView(QWidget *parent, Article& a) :
+ArticleView::ArticleView(Article &a, QWidget *parent) :
 	NoteView(parent),
 	ui(new Ui::ArticleView),
 	m_art(&a)

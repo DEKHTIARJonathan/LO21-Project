@@ -18,7 +18,7 @@ class ArticleView : public NoteView
 		void				saveText();
 
 	public:
-		explicit ArticleView(QWidget *parent = 0, Article &a);
+		explicit ArticleView(Article &a, QWidget *parent = 0);
 		~ArticleView();
 		
 	private:
