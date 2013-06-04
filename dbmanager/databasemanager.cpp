@@ -438,6 +438,11 @@ bool DatabaseManager::removeNotefromDoc (const Document &d, const Note &n) const
 		throw DBException("Try to remove the document from itself", "DocumentID = "+QString::number(idDoc));
 }
 
+bool DatabaseManager::flushTagAssoc (const Note& n) const
+{
+	int id = n.getId();
+	return query("REMOVE FROM AssocTag WHERE id = "+QString::number(id));
+}
 
 /********************************************************************
  *                             Fillers                              *

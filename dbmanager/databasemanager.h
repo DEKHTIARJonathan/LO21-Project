@@ -61,6 +61,7 @@ public:
 	bool removeTagAssoc (const Note& n, const QString& t) const;
 	bool addNoteToDoc (const Document& d,const Note& n) const;
 	bool removeNotefromDoc (const Document& d, const Note& n) const;
+	bool flushTagAssoc (const Note& n) const;
 
 	/**************** Fillers ********************/
 
