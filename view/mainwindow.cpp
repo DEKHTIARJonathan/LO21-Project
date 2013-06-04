@@ -1,17 +1,51 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+/********************************************************************
+ *                            Constructor                           *
+ ********************************************************************/
+
 MainWindow::MainWindow(QWidget *parent) :QMainWindow(parent),ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
-    //actionOuvrir
-    //connect(openAct, SIGNAL(triggered()), this, SLOT(open()));
-    //QString s = QFileDialog::getOpenFileName(this, tr("Open Note Manager"), "/", tr("Note Manager File (*.lo21)"));
+	ui->setupUi(this);
 
-	NoteForm* c = new NoteForm(ui->Editor);
-	ui->verticalLayout->addWidget(c);
+	// Setup MainView
+	setupSearchArea();
+	setupEditorArea();
+	setupExportArea();
 
 }
+
+/********************************************************************
+ *                              Setup                               *
+ ********************************************************************/
+
+void MainWindow::setupSearchArea(){}
+
+void MainWindow::setupEditorArea(){
+
+	// Title
+	ui->titleEdit->setMaxLength(constants::SIZE_MAX_TITLE);
+}
+
+void MainWindow::setupExportArea(){}
+
+/********************************************************************
+ *                         Controller Method                        *
+ ********************************************************************/
+
+void MainWindow::displayNote(unsigned int id){
+	// Load Note
+	NotesManager& nm = NotesManager::getInstance();
+	Note& n = nm.getNote(id);
+
+	// Load Note View
+	// To DO
+}
+
+/********************************************************************
+ *                            Destructor                            *
+ ********************************************************************/
 
 MainWindow::~MainWindow()
 {

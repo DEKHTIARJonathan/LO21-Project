@@ -6,7 +6,8 @@
 #include <QtGui>
 #include <QFileDialog>
 
-#include <view/noteform.h>
+#include <constants.h>
+#include <notemanager/notesmanager.h>
 
 namespace Ui {
 class MainWindow;
@@ -16,12 +17,23 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
     
-public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+	public:
+		// Constructor
+		explicit MainWindow(QWidget *parent = 0);
+
+		// Method
+		void			displayNote( unsigned int id );
+
+		// Destructor
+		~MainWindow();
     
 private:
-    Ui::MainWindow *ui;
+	Ui::MainWindow*		ui;
+
+	// Setup
+	void				setupSearchArea();
+	void				setupEditorArea();
+	void				setupExportArea();
 };
 
 #endif // MAINWINDOW_H

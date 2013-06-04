@@ -24,8 +24,8 @@ SOURCES += \
     view/mainwindow.cpp \
 	export/exportfileexception.cpp \
     export/exportstrategy.cpp \
-    view/articleview.cpp \
-    view/noteform.cpp
+	view/notesview/articleview.cpp \
+    view/notesview/noteview.cpp
 
 HEADERS += \
     export/exportstrategy.h \
@@ -59,13 +59,12 @@ HEADERS += \
     export/exportfactorynotfoundexception.h \
     view/mainwindow.h \
 	export/exportfileexception.h \
-    view/articleview.h \
-    view/noteform.h
+	view/notesview/articleview.h \
+    view/notesview/noteview.h
 
 FORMS += \
     view/mainwindow.ui \
-    view/articleview.ui \
-    view/noteform.ui
+	view/notesview/articleview.ui
 
 QT += widgets \
       sql

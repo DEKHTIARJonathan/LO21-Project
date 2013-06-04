@@ -4,7 +4,6 @@
  *                            Constructor                           *
  ********************************************************************/
 
-// Generic Article constructor
 Article::Article( unsigned int id ) : Note(id), m_text()
 {
 }

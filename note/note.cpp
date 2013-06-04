@@ -4,7 +4,6 @@
  *                            Constructor                           *
  ********************************************************************/
 
-// Generic Note constructor
 Note::Note( unsigned int id ) : QObject(), m_id(id), m_title(), m_modified(false)
 {
 }
