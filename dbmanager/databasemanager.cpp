@@ -404,7 +404,6 @@ bool DatabaseManager::addTagAssoc (const Note& n,const QString &t) const
 	return query("INSERT INTO AssocTag (id, name) VALUES ("+QString::number(id)+", '"+escape(capitalize(t))+"')");
 }
 
-
 bool DatabaseManager::removeTagAssoc (const Note& n, const QString &t) const
 {
 	int id = n.getId();
@@ -416,7 +415,6 @@ bool DatabaseManager::removeTagAssoc (const Note& n, const QString &t) const
 	return result;
 }
 
-
 bool DatabaseManager::addNoteToDoc (const Document &d, const Note &n) const
 {
 	int idDoc = d.getId();
@@ -426,7 +424,6 @@ bool DatabaseManager::addNoteToDoc (const Document &d, const Note &n) const
 	else
 		throw DBException("Try to include the document in itself", "DocumentID = "+QString::number(idDoc));
 }
-
 
 bool DatabaseManager::removeNotefromDoc (const Document &d, const Note &n) const
 {
@@ -438,7 +435,7 @@ bool DatabaseManager::removeNotefromDoc (const Document &d, const Note &n) const
 		throw DBException("Try to remove the document from itself", "DocumentID = "+QString::number(idDoc));
 }
 
-bool DatabaseManager::flushTagAssoc (const Note& n) const
+bool DatabaseManager::flushNoteAssoc (const Note& n) const
 {
 	int id = n.getId();
 	return query("REMOVE FROM AssocTag WHERE id = "+QString::number(id));
