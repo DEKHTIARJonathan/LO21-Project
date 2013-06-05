@@ -53,6 +53,15 @@ void GeneralNoteFactory::deleteNote(Note &n) const{
 }
 
 /********************************************************************
+ *                            Destructor                            *
+ ********************************************************************/
+
+GeneralNoteFactory::~GeneralNoteFactory(){
+	for(QHash<QString, InterfaceNoteFactory*>::iterator it = m_factories.begin(); it!=m_factories.end(); it++)
+		delete *it;
+}
+
+/********************************************************************
  *                            Singleton                             *
  ********************************************************************/
 

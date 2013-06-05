@@ -26,6 +26,9 @@ class GeneralNoteFactory
 		// Member
 		QHash<QString, InterfaceNoteFactory*>	m_factories;
 
+		// Destructor
+		~GeneralNoteFactory();
+
 		// Singleton
 		GeneralNoteFactory();	// Interdit l'instanciation directe
 		GeneralNoteFactory(const GeneralNoteFactory& nm);	// Interdit la recopie

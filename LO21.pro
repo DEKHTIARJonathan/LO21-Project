@@ -70,8 +70,7 @@ HEADERS += \
     view/notesview/viewfactory.h \
     view/notesview/viewfactorynotfoundexception.h \
     controller/controller.h \
-    view/listnoteviewitem.h \
-    singleton.h
+    view/listnoteviewitem.h
 
 FORMS += \
     view/mainwindow.ui \

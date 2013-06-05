@@ -29,6 +29,7 @@ class GeneralViewFactory
 
 		// Method
 		InterfaceViewFactory&					getFactories(const QString& typeNote) const;
+		void									flush();
 
 		// Destructor
 		~GeneralViewFactory();

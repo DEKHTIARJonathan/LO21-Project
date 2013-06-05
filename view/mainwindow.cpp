@@ -31,6 +31,7 @@ void MainWindow::setupMenu(){
 void MainWindow::setupSearchArea(){
 	// Connect
 	QObject::connect(ui->searchButton, SIGNAL(clicked()), this, SLOT(searchNotes()));
+	QObject::connect(ui->noteList, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(openNote(QListWidgetItem*)));
 }
 
 void MainWindow::setupEditorArea(){

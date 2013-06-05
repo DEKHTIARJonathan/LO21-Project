@@ -72,6 +72,15 @@ QString GeneralExportFactory::exportNoteAsPart(ExportStrategy& es, const Note& n
 }
 
 /********************************************************************
+ *                            Destructor                            *
+ ********************************************************************/
+
+GeneralExportFactory::~GeneralExportFactory(){
+	for(QHash<QString, InterfaceExportFactory*>::iterator it = m_factories.begin(); it!=m_factories.end(); it++)
+		delete *it;
+}
+
+/********************************************************************
  *                            Singleton                             *
  ********************************************************************/
 

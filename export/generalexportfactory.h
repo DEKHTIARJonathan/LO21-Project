@@ -31,6 +31,9 @@ class GeneralExportFactory
 		InterfaceExportFactory&					getFactory(const QString& typeNote) const;
 		ExportStrategy&							getStrategy(const QString & strategyName) const;
 
+		// Destructor
+		~GeneralExportFactory();
+
 		// Singleton
 		GeneralExportFactory();	// Interdit l'instanciation directe
 		GeneralExportFactory(const GeneralExportFactory& nm);	// Interdit la recopie

@@ -52,13 +52,17 @@ void GeneralViewFactory::deleteView(unsigned int id){
 	}
 }
 
+void GeneralViewFactory::flush(){
+	for(QHash<QString, InterfaceViewFactory*>::iterator it = m_factories.begin(); it!=m_factories.end(); it++)
+		delete *it;
+}
+
 /********************************************************************
  *                            Destructor                            *
  ********************************************************************/
 
 GeneralViewFactory::~GeneralViewFactory(){
-	for(QHash<QString, InterfaceViewFactory*>::iterator it = m_factories.begin(); it!=m_factories.end(); it++)
-		delete *it;
+	flush();
 }
 
 /********************************************************************
