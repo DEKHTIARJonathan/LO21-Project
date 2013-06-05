@@ -14,6 +14,7 @@ class GeneralViewFactory
 {
 	public:
 		// Method
+		QList<QString>							getAvailableViewFactoryType();
 		NoteView&								getView(Note& n);
 		void                                    deleteView( unsigned int id );
 
@@ -28,6 +29,9 @@ class GeneralViewFactory
 
 		// Method
 		InterfaceViewFactory&					getFactories(const QString& typeNote) const;
+
+		// Destructor
+		~GeneralViewFactory();
 
 		// Singleton
 		GeneralViewFactory();	// Interdit l'instanciation directe

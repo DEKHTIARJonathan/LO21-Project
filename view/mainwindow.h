@@ -5,10 +5,12 @@
 #include <QApplication>
 #include <QtGui>
 #include <QFileDialog>
+#include <QListWidgetItem>
 
 #include <constants.h>
 #include <notemanager/notesmanager.h>
 #include <view/notesview/generalviewfactory.h>
+#include <view/listnoteviewitem.h>
 
 namespace Ui {
 class MainWindow;
@@ -20,8 +22,10 @@ class MainWindow : public QMainWindow
 
 	public slots:
 		void				newNote();
+		void				openNote(QListWidgetItem* i);
 		void				editSaveNote();
 		void				deleteCancelNote();
+		void				searchNotes();
     
 	public:
 		// Constructor
@@ -31,7 +35,7 @@ class MainWindow : public QMainWindow
 		void				editNewNote( const QString& NoteType );
 		void				displayNote( unsigned int id );
 		void				displayNote( Note& n );
-		void				hideActualNote();
+		void				clearActualNoteView();
 
 		// Destructor
 		~MainWindow();
@@ -44,6 +48,7 @@ class MainWindow : public QMainWindow
 		bool				m_editMode;
 
 		// Method
+		void				showInfoMessageBox(const QString& msg);
 		void				showErrorMessageBox(const QString& msg);
 		void				showEditor(bool b);
 		void				loadActualNoteContent();

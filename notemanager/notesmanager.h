@@ -28,6 +28,12 @@ class NotesManager
 		// Member
 		QMap<unsigned int,Note*>		m_loadedNotes;
 
+		// Method
+		void							flush();
+
+		// Destructor
+		~NotesManager();
+
 		// Singleton
 		NotesManager();	// Interdit l'instanciation directe
 		NotesManager(const NotesManager& nm);	// Interdit la recopie

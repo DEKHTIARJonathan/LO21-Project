@@ -24,10 +24,14 @@ MainWindow::MainWindow(QWidget *parent) :QMainWindow(parent),ui(new Ui::MainWind
 void MainWindow::setupMenu(){
 
 	// New Menu
+	QList<QString> l = GeneralViewFactory::getInstance().getAvailableViewFactoryType();
 	QObject::connect(ui->actionNewArticle,SIGNAL(triggered()),this,SLOT(newNote()));
 }
 
-void MainWindow::setupSearchArea(){}
+void MainWindow::setupSearchArea(){
+	// Connect
+	QObject::connect(ui->searchButton, SIGNAL(clicked()), this, SLOT(searchNotes()));
+}
 
 void MainWindow::setupEditorArea(){
 
@@ -53,6 +57,13 @@ void MainWindow::newNote(){
 	editNewNote(a->text());
 }
 
+void MainWindow::openNote(QListWidgetItem* i){
+	ListNoteViewItem* item = static_cast<ListNoteViewItem*> (i);
+	if( item!=NULL ){
+		displayNote(item->getId());
+	}
+}
+
 void MainWindow::editSaveNote(){
 	if( !m_editMode ){
 		// Setup Edit Mode
@@ -62,8 +73,11 @@ void MainWindow::editSaveNote(){
 		m_actualNoteView->setEditMode(true);
 	}
 	else{
-		// Save Note and Setup View Mode
+		// Save Note
+		m_actualNote->setTitle(ui->titleEdit->text());
 		m_actualNoteView->saveChanges();
+		NotesManager::getInstance().saveNote(*m_actualNote);
+		// And Setup View Mode
 		m_actualNoteView->setEditMode(false);
 		ui->titleEdit->setReadOnly(true);
 		ui->deleteCancelButton->setText("Delete");
@@ -77,13 +91,46 @@ void MainWindow::deleteCancelNote(){
 		// To Do Delete
 	}
 	else{
-		// Save Note and Setup View Mode
+		// Reload Original Note content and Setup View Mode
+		loadActualNoteContent();
 		m_actualNoteView->setEditMode(false);
 		ui->titleEdit->setReadOnly(true);
 		ui->deleteCancelButton->setText("Delete");
 		ui->editSaveButton->setText("Edit");
+		m_editMode = !m_editMode;
 	}
-	m_editMode = !m_editMode;
+}
+
+void MainWindow::searchNotes(){
+	// Get back search line's text
+	QString search = ui->searchLine->text();
+
+	// Start search in DataBase
+	DatabaseManager& db = DatabaseManager::getInstance();
+	std::vector< pair <unsigned int, QString > > result;
+	if( search.isEmpty() )
+		result = db.getNotes();
+	else
+		result = db.getNotes(search);
+
+	// Clear List View
+	QListWidget& l = *ui->noteList;
+	QListWidgetItem* item = l.takeItem(0);
+	while( item != NULL ){
+		delete item;
+		item = l.takeItem(0);
+	}
+
+	if(result.empty())
+		// Show No Result Massage
+		showInfoMessageBox("No result.");
+	else{
+		// Display results
+		for( std::vector< pair <unsigned int, QString > >::const_iterator it = result.begin(); it!=result.end(); it++ )
+			l.addItem( new ListNoteViewItem(it->first,it->second) );
+		l.sortItems();
+	}
+
 }
 
 /********************************************************************
@@ -120,6 +167,9 @@ void MainWindow::displayNote(Note &n){
 	if( m_editMode )
 		showErrorMessageBox("Impossible to open Note, currents modifications need to be saved before.");
 	else{
+		// Clear Previous View
+		clearActualNoteView();
+
 		// Load Note View
 		GeneralViewFactory& vf = GeneralViewFactory::getInstance();
 		NoteView& nv = vf.getView(n);
@@ -129,11 +179,12 @@ void MainWindow::displayNote(Note &n){
 		m_actualNoteView = &nv;
 		nv.setParent(ui->speNoteArea);
 		ui->speNoteLayout->addWidget(&nv);
+		loadActualNoteContent();
 		showEditor(true);
 	}
 }
 
-void MainWindow::hideActualNote(){
+void MainWindow::clearActualNoteView(){
 	if( m_actualNote != NULL ){
 		// Hide Actual Note View
 		showEditor(false);
@@ -147,6 +198,12 @@ void MainWindow::hideActualNote(){
 /********************************************************************
  *                           Info Method		                    *
  ********************************************************************/
+
+void MainWindow::showInfoMessageBox(const QString& msg){
+	QMessageBox messageBox;
+	messageBox.information(0,"Info",msg);
+	messageBox.setFixedSize(500,200);
+}
 
 void MainWindow::showErrorMessageBox(const QString& msg){
 	QMessageBox messageBox;

@@ -13,6 +13,10 @@ GeneralViewFactory::GeneralViewFactory() : m_factories()
  *                              Method                              *
  ********************************************************************/
 
+QList<QString> GeneralViewFactory::getAvailableViewFactoryType(){
+	return m_factories.keys();
+}
+
 InterfaceViewFactory& GeneralViewFactory::getFactories(const QString & typeName) const{
 	QHash<QString, InterfaceViewFactory*>::const_iterator it = m_factories.find(typeName);
 
@@ -26,7 +30,8 @@ NoteView& GeneralViewFactory::getView(Note& n){
 	// Look for already created view
 	QMap<unsigned int, NoteView*>::iterator f = m_views.find(n.getId());
 
-	if( f!=m_views.end() ) // And load it if exist
+	// And load it if exist
+	if( f!=m_views.end() )
 		return **f;
 
 	// Get back the corresponging ViewFactory and load it.
@@ -45,6 +50,15 @@ void GeneralViewFactory::deleteView(unsigned int id){
 		m_views.erase(f);
 		delete (v);
 	}
+}
+
+/********************************************************************
+ *                            Destructor                            *
+ ********************************************************************/
+
+GeneralViewFactory::~GeneralViewFactory(){
+	for(QHash<QString, InterfaceViewFactory*>::iterator it = m_factories.begin(); it!=m_factories.end(); it++)
+		delete *it;
 }
 
 /********************************************************************

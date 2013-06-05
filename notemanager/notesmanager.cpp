@@ -66,6 +66,14 @@ void NotesManager::deleteNote(Note& n){
 	gf.deleteNote(n);
 }
 
+void NotesManager::flush(){
+	for(QMap<unsigned int, Note*>::iterator it = m_loadedNotes.begin(); it!=m_loadedNotes.end(); it++)
+		delete *it;
+}
+
+NotesManager::~NotesManager(){
+}
+
 /********************************************************************
  *                            Singleton                             *
  ********************************************************************/

@@ -13,6 +13,8 @@ class NoteFactory : public InterfaceNoteFactory
 
 			unsigned int id = db.insertNote(NoteType::staticMetaObject.className());
 			NoteType& n = *(new NoteType(id));
+			n.setTitle(QString("New ") + NoteType::staticMetaObject.className());
+			saveNote(n);
 
 			return n;
 		}
