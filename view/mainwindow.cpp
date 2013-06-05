@@ -31,9 +31,12 @@ void MainWindow::setupSearchArea(){}
 
 void MainWindow::setupEditorArea(){
 
+	// Display
+	showEditor(false);
+
 	// Connects
 	QObject::connect(ui->editSaveButton, SIGNAL(clicked()), this, SLOT(editSaveNote()));
-	QObject::connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(deleteNote()));
+	QObject::connect(ui->deleteCancelButton, SIGNAL(clicked()), this, SLOT(deleteCancelNote()));
 
 	// Title
 	ui->titleEdit->setMaxLength(constants::SIZE_MAX_TITLE);
@@ -51,11 +54,36 @@ void MainWindow::newNote(){
 }
 
 void MainWindow::editSaveNote(){
-	// To do
+	if( !m_editMode ){
+		// Setup Edit Mode
+		ui->editSaveButton->setText("Save");
+		ui->deleteCancelButton->setText("Cancel");
+		ui->titleEdit->setReadOnly(false);
+		m_actualNoteView->setEditMode(true);
+	}
+	else{
+		// Save Note and Setup View Mode
+		m_actualNoteView->saveChanges();
+		m_actualNoteView->setEditMode(false);
+		ui->titleEdit->setReadOnly(true);
+		ui->deleteCancelButton->setText("Delete");
+		ui->editSaveButton->setText("Edit");
+	}
+	m_editMode = !m_editMode;
 }
 
-void MainWindow::deleteNote(){
-	// To Do
+void MainWindow::deleteCancelNote(){
+	if( !m_editMode ){
+		// To Do Delete
+	}
+	else{
+		// Save Note and Setup View Mode
+		m_actualNoteView->setEditMode(false);
+		ui->titleEdit->setReadOnly(true);
+		ui->deleteCancelButton->setText("Delete");
+		ui->editSaveButton->setText("Edit");
+	}
+	m_editMode = !m_editMode;
 }
 
 /********************************************************************
@@ -101,14 +129,14 @@ void MainWindow::displayNote(Note &n){
 		m_actualNoteView = &nv;
 		nv.setParent(ui->speNoteArea);
 		ui->speNoteLayout->addWidget(&nv);
-		enableNoteInterraction(true);
+		showEditor(true);
 	}
 }
 
 void MainWindow::hideActualNote(){
 	if( m_actualNote != NULL ){
 		// Hide Actual Note View
-		enableNoteInterraction(false);
+		showEditor(false);
 		ui->speNoteLayout->removeWidget(m_actualNoteView);
 		m_actualNoteView->setParent(NULL);
 		m_actualNoteView = NULL;
@@ -130,9 +158,17 @@ void MainWindow::showErrorMessageBox(const QString& msg){
  *                           Tool Method		                    *
  ********************************************************************/
 
-void MainWindow::enableNoteInterraction(bool b){
-	ui->editSaveButton->setEnabled(b);
-	ui->deleteButton->setEnabled(b);
+void MainWindow::loadActualNoteContent(){
+	if( m_actualNote != NULL ){
+		// Load Actual Note in View
+		ui->titleEdit->setText(m_actualNote->getTitle());
+		m_actualNoteView->loadNoteContent();
+	}
+}
+
+void MainWindow::showEditor(bool b){
+	ui->tabBox->setEnabled(b);
+	ui->editor->setShown(b);
 }
 
 /********************************************************************

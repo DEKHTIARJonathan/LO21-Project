@@ -13,12 +13,17 @@ namespace Ui {
 class ArticleView : public NoteView
 {
 		Q_OBJECT
-		
-	public slots:
-		void				saveText();
 
 	public:
+		// Constructor
 		explicit ArticleView(Article &a, QWidget *parent = 0);
+
+		// Method
+		void				loadNoteContent();
+		void				setEditMode(bool b);
+		void				saveChanges();
+
+		// Destructor
 		~ArticleView();
 		
 	private:

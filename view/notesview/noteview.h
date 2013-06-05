@@ -8,12 +8,16 @@ class NoteView : public QWidget
 		Q_OBJECT
 
 	public:
+		// Constructor
 		explicit NoteView(QWidget *parent = 0);
-		
-	signals:
-		void	saveChanges();
-	public slots:
-		
+
+		// Method
+		virtual void		loadNoteContent() = 0;
+		virtual void		setEditMode(bool b) = 0;
+		virtual void		saveChanges() = 0;
+
+		// Destructor
+		virtual ~NoteView();
 };
 
 #endif // NOTEVIEW_H

@@ -21,7 +21,7 @@ class MainWindow : public QMainWindow
 	public slots:
 		void				newNote();
 		void				editSaveNote();
-		void				deleteNote();
+		void				deleteCancelNote();
     
 	public:
 		// Constructor
@@ -45,7 +45,8 @@ class MainWindow : public QMainWindow
 
 		// Method
 		void				showErrorMessageBox(const QString& msg);
-		void				enableNoteInterraction(bool b);
+		void				showEditor(bool b);
+		void				loadActualNoteContent();
 
 		// Setup
 		void				setupMenu();

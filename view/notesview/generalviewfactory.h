@@ -15,6 +15,7 @@ class GeneralViewFactory
 	public:
 		// Method
 		NoteView&								getView(Note& n);
+		void                                    deleteView( unsigned int id );
 
 		// Singleton
 		static GeneralViewFactory&				getInstance();

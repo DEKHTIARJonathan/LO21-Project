@@ -41,8 +41,9 @@ void GeneralViewFactory::deleteView(unsigned int id){
 	QMap<unsigned int, NoteView*>::iterator f = m_views.find(id);
 
 	if( f!=m_views.end() ){ // And delete here if exist
-		// To do im exhausted :)
-		delete (*f);
+		NoteView* v = *f;
+		m_views.erase(f);
+		delete (v);
 	}
 }
 

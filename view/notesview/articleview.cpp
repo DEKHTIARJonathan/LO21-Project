@@ -11,17 +11,22 @@ ArticleView::ArticleView(Article &a, QWidget *parent) :
 	m_art(&a)
 {
 	ui->setupUi(this);
-
-	// Setup View
-	QObject::connect(this, SIGNAL(saveChanges()), this, SLOT(saveText()));
-
+	setEditMode(false);
 }
 
 /********************************************************************
- *                              Slots                               *
+ *                              Method                              *
  ********************************************************************/
 
-void ArticleView::saveText(){
+void ArticleView::loadNoteContent(){
+	ui->textEdit->setPlainText(m_art->getText());
+}
+
+void ArticleView::setEditMode(bool b){
+	ui->textEdit->setReadOnly(!b);
+}
+
+void ArticleView::saveChanges(){
 	m_art->setText( ui->textEdit->toPlainText() );
 }
 
