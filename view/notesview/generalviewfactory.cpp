@@ -61,20 +61,3 @@ GeneralViewFactory::~GeneralViewFactory(){
 		delete *it;
 }
 
-/********************************************************************
- *                            Singleton                             *
- ********************************************************************/
-
-GeneralViewFactory* GeneralViewFactory::s_inst = NULL;
-
-GeneralViewFactory& GeneralViewFactory::getInstance(){
-	if( s_inst == NULL )
-		s_inst = new GeneralViewFactory();
-	return (*s_inst);
-}
-
-void GeneralViewFactory::destroy(){
-	if( s_inst != NULL )
-		delete s_inst;
-}
-
