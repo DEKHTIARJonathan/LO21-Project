@@ -30,7 +30,7 @@ SOURCES += \
     view/notesview/viewfactorynotfoundexception.cpp \
     controller/controller.cpp \
     view/listnoteviewitem.cpp \
-    view/workspaceform.cpp
+	view/workspaceform.cpp
 
 HEADERS += \
     export/exportstrategy.h \
