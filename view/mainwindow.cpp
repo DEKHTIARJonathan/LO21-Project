@@ -23,9 +23,19 @@ MainWindow::MainWindow(QWidget *parent) :QMainWindow(parent),ui(new Ui::MainWind
 
 void MainWindow::setupMenu(){
 
-	// New Menu
+	// File Menu
+	QObject::connect(ui->actionChange_WorkSpace, SIGNAL(triggered()), this, SLOT(changeWorkspace()));
+	QObject::connect(ui->actionQuit, SIGNAL(triggered()), this, SLOT(close()));
+
+	// New Note Menu
 	QList<QString> l = GeneralViewFactory::getInstance().getAvailableViewFactoryType();
-	QObject::connect(ui->actionNewArticle,SIGNAL(triggered()),this,SLOT(newNote()));
+
+	for(QList<QString>::const_iterator it = l.begin(); it!=l.end(); it++){
+		QAction* act = new QAction(*it, this);
+		ui->menuNewNote->addAction(act);
+		QObject::connect(act, SIGNAL(triggered()), this, SLOT(newNote()));
+	}
+
 }
 
 void MainWindow::setupSearchArea(){
@@ -99,6 +109,20 @@ void MainWindow::deleteCancelNote(){
 		ui->deleteCancelButton->setText("Delete");
 		ui->editSaveButton->setText("Edit");
 		m_editMode = !m_editMode;
+	}
+}
+
+void MainWindow::changeWorkspace(){
+	// Look for Path
+	DatabaseManager& db = DatabaseManager::getInstance();
+
+	// Show Worspace form
+	WorkspaceForm w(db.getpath());
+	w.setModal(true);
+	w.exec();
+
+	if( !w.isCanceled() && w.getPath()!=db.getpath() ){
+		showInfoMessageBox("Path Changed : "+w.getPath());
 	}
 }
 

@@ -11,6 +11,7 @@
 #include <notemanager/notesmanager.h>
 #include <view/notesview/generalviewfactory.h>
 #include <view/listnoteviewitem.h>
+#include <view/workspaceform.h>
 
 namespace Ui {
 class MainWindow;
@@ -26,6 +27,7 @@ class MainWindow : public QMainWindow
 		void				editSaveNote();
 		void				deleteCancelNote();
 		void				searchNotes();
+		void				changeWorkspace();
     
 	public:
 		// Constructor

@@ -317,24 +317,20 @@
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuFichier">
+   <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>Fichier</string>
+     <string>File</string>
     </property>
-    <widget class="QMenu" name="menuNouvelleNote">
+    <widget class="QMenu" name="menuNewNote">
      <property name="title">
       <string>New</string>
      </property>
-     <addaction name="actionNewArticle"/>
-     <addaction name="actionDocument"/>
-     <addaction name="actionImage"/>
-     <addaction name="actionAudio"/>
-     <addaction name="actionVideo"/>
     </widget>
-    <addaction name="menuNouvelleNote"/>
-    <addaction name="actionSauvegarder"/>
-    <addaction name="actionOuvrir"/>
-    <addaction name="actionFermer"/>
+    <addaction name="menuNewNote"/>
+    <addaction name="separator"/>
+    <addaction name="actionChange_WorkSpace"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
    </widget>
    <widget class="QMenu" name="menuEdition">
     <property name="title">
@@ -344,7 +340,7 @@
     <addaction name="actionCouper"/>
     <addaction name="actionColler"/>
    </widget>
-   <addaction name="menuFichier"/>
+   <addaction name="menuFile"/>
    <addaction name="menuEdition"/>
   </widget>
   <widget class="QStatusBar" name="statusbar">
@@ -373,9 +369,9 @@
     <string>Ouvrir</string>
    </property>
   </action>
-  <action name="actionFermer">
+  <action name="actionQuit">
    <property name="text">
-    <string>Fermer</string>
+    <string>Quit</string>
    </property>
   </action>
   <action name="actionSauvegarder">
@@ -446,6 +442,11 @@
   <action name="actionImage">
    <property name="text">
     <string>Image</string>
+   </property>
+  </action>
+  <action name="actionChange_WorkSpace">
+   <property name="text">
+    <string>Change WorkSpace</string>
    </property>
   </action>
  </widget>
