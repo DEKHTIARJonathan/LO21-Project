@@ -59,16 +59,16 @@ QString GeneralExportFactory::exportNote(ExportStrategy& es, const Note& n) cons
 			es.footer();
 }
 
-QString GeneralExportFactory::exportNoteAsPart(const QString& strategyName, const Note& n, unsigned int level) const{
+QString GeneralExportFactory::exportNoteAsPart(const QString& strategyName, const Note& n) const{
 	// Get back the corresponging ExportStrategy and export the Note.
 	ExportStrategy& es = getStrategy(strategyName);
-	return	exportNoteAsPart(es,n,level);
+	return	exportNoteAsPart(es,n);
 }
 
-QString GeneralExportFactory::exportNoteAsPart(ExportStrategy& es, const Note& n, unsigned int level) const{
+QString GeneralExportFactory::exportNoteAsPart(ExportStrategy& es, const Note& n) const{
 	// Get back the corresponging ExportFactory and export the Note.
 	InterfaceExportFactory& ef = getFactory(n.metaObject()->className());
-	return ef.exportAsPart(es, n, level);
+	return ef.exportAsPart(es, n);
 }
 
 /********************************************************************

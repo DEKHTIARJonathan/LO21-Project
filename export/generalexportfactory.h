@@ -15,8 +15,8 @@ class GeneralExportFactory
 		// Method
 		QString									exportNote(const QString& strategyName, const Note& n) const;
 		QString									exportNote(ExportStrategy& es, const Note& n) const;
-		QString									exportNoteAsPart(const QString& strategyName, const Note& n, unsigned int level = 0) const;
-		QString									exportNoteAsPart(ExportStrategy& es, const Note& n, unsigned int level = 0) const;
+		QString									exportNoteAsPart(const QString& strategyName, const Note& n) const;
+		QString									exportNoteAsPart(ExportStrategy& es, const Note& n) const;
 
 		// Singleton
 		static GeneralExportFactory&			getInstance();
