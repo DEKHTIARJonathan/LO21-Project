@@ -7,12 +7,14 @@
 #include <QFileDialog>
 #include <QListWidgetItem>
 #include <QMessageBox>
-#include <QtWidgets>
 #include <constants.h>
 #include <notemanager/notesmanager.h>
 #include <view/notesview/generalviewfactory.h>
 #include <view/listnoteviewitem.h>
 #include <view/workspaceform.h>
+#if QT_VERSION >= 0x050000 // Pour la version 5 et + il est nécessaire d'inclure QtWidgets
+	#include <QtWidgets>
+#endif
 
 namespace Ui {
 class MainWindow;
