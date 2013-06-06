@@ -451,15 +451,18 @@ bool DatabaseManager::fillNote (Article& a)  const
 	int id = a.getId();
 
 	bool result = true;
-	result &= query.exec("SELECT n.title, a.txt FROM Note n, Article a WHERE a.id = n.id = "+QString::number(id));
+	result &= query.exec("SELECT n.title, a.txt FROM Note n, Article a WHERE a.id = n.id and a.id = "+QString::number(id));
 
-	query.next();// Only one result no need of the while loop
+	if(query.isActive())
+	{
+		query.next();// Only one result no need of the while loop
 
-	QString title = query.value(0).toString();
-	QString text = query.value(1).toString();
+		QString title = query.value(0).toString();
+		QString text = query.value(1).toString();
 
-	a.setTitle(title);
-	a.setText(text);
+		a.setTitle(title);
+		a.setText(text);
+	}
 
 	return result;
 }
@@ -487,7 +490,7 @@ bool DatabaseManager::fillNote (MultiMedia& m)  const
 	int id = m.getId();
 
 	bool result = true;
-	result &= query.exec("SELECT n.title, m.description, m.path FROM Note n, Multimedia m WHERE n.id = m.id = "+QString::number(id));
+	result &= query.exec("SELECT n.title, m.description, m.path FROM Note n, Multimedia m WHERE n.id = m.id and n.id = "+QString::number(id));
 
 	query.next();// Only one result no need of the while loop
 
