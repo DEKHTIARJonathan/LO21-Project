@@ -6,7 +6,9 @@
 #include <QtGui>
 #include <QFileDialog>
 #include <QListWidgetItem>
-
+#include <QMessageBox>
+#include <QtWidgets>
+#include <QtWidgets/QWidget>
 #include <constants.h>
 #include <notemanager/notesmanager.h>
 #include <view/notesview/generalviewfactory.h>

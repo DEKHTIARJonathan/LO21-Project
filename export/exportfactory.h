@@ -8,9 +8,9 @@ template <class NoteType>
 class ExportFactory : InterfaceExportFactory
 {
 	public:
-		QString exportAsPart(ExportStrategy &es, const Note &n, unsigned int level){
+		QString exportAsPart(ExportStrategy &es, const Note &n){
 			const NoteType& casted_n = dynamic_cast<const NoteType&> (n);
-			return es.exportNote(casted_n, level);
+			return es.exportNote(casted_n);
 		}
 };
 

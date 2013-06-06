@@ -250,7 +250,7 @@ void MainWindow::loadActualNoteContent(){
 
 void MainWindow::showEditor(bool b){
 	ui->tabBox->setEnabled(b);
-	ui->editor->setShown(b);
+	ui->editor->setVisible(b);
 }
 
 /********************************************************************

@@ -15,12 +15,12 @@ class ExportStrategy
 		// Virtual Method
         virtual QString			header() const = 0 ;
         virtual QString			footer() const = 0 ;
-		virtual QString			exportNote(const Note& n, unsigned int level = 0) const = 0 ;
-		virtual QString			exportNote(const Article& a, unsigned int level = 0) const = 0 ;
-		virtual QString			exportNote(const Document& d, unsigned int level = 0) const = 0 ;
-		virtual QString			exportNote(const Image& i, unsigned int level = 0) const = 0 ;
-		virtual QString			exportNote(const Audio& a, unsigned int level = 0) const = 0 ;
-		virtual QString			exportNote(const Video& v, unsigned int level = 0) const = 0 ;
+		virtual QString			exportNote(const Note& n) const = 0 ;
+		virtual QString			exportNote(const Article& a) const = 0 ;
+		virtual QString			exportNote(const Document& d) const = 0 ;
+		virtual QString			exportNote(const Image& i) const = 0 ;
+		virtual QString			exportNote(const Audio& a) const = 0 ;
+		virtual QString			exportNote(const Video& v) const = 0 ;
 		static  bool			exportFile(const QString &s, const QString &filename, const QString & strategy, const QDir exportPath = QDir::current());
 		virtual QString			escape(QString s) const = 0;
 

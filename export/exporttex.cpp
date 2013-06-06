@@ -49,9 +49,9 @@ QString	ExportTex::exportNote(const Image& i) const
 	return exportNote((Note&)i)+"\\section*{Video: }\n"
 			"\\frame\n"
 			"{\n"
-				"\\movie{"+escape(text)+"}\n"
+				"\\movie{"+escape(desc)+"}\n"
 			"}\n"
-			"Description : \n"+escape(text);
+			"Description : \n"+escape(path);
 }
 
 QString	ExportTex::exportNote(const Video& v) const
@@ -68,14 +68,14 @@ QString	ExportTex::exportNote(const Video& v) const
 
 QString	ExportTex::exportNote(const Audio& a) const
 {
-	QString desc = i.getDescription();
-	QString path = i.getPath();
-	return exportNote((Note&)v)+"\\section*{Video: }\n"
+	QString desc = a.getDescription();
+	QString path = a.getPath();
+	return exportNote((Note&)a)+"\\section*{Video: }\n"
 			"\\frame\n"
 			"{\n"
-				"\\movie{"+escape(text)+"}\n"
+				"\\movie{"+escape(desc)+"}\n"
 			"}\n"
-			"Description : \n"+escape(text);
+			"Description : \n"+escape(path);
 }
 
 QString	ExportTex::escape(QString s) const

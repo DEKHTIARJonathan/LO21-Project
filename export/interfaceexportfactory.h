@@ -7,7 +7,7 @@
 class InterfaceExportFactory
 {
 	public:
-		virtual QString exportAsPart(ExportStrategy& es, const Note& n, unsigned int level = 0) = 0;
+		virtual QString exportAsPart(ExportStrategy& es, const Note& n) = 0;
 };
 
 #endif // INTERFACEEXPORTFACTORY_H
