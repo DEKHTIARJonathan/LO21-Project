@@ -5,30 +5,16 @@ ExportTex::ExportTex()
 }
 
 
-/*
-
-			  % section header, defined by article class
-
-\TeX\ is a typesetting language. Instead of visually formatting your text, you type
-your text combined with commands in a plain text file.
-
-You can use macro packages like \LaTeX.
-TeX is a superb typesetter and is therefore very good at formulas: \[\Omega_0 = \left (
-\frac{\alpha}{\beta} \right ) ^ 4\]
-
-\end{document}
 
 
 
-
-
-  */
 
 
 QString	ExportTex::header() const
 {
 	return "\\documentclass[11pt,a4paper]{article}\n"
-			"\\usepackage[UKenglish]{babel}\n";
+			"\\usepackage[UKenglish]{babel}\n"
+			"\\usepackage{multimedia}\n";
 }
 
 QString	ExportTex::footer() const
@@ -36,7 +22,7 @@ QString	ExportTex::footer() const
 	return "\\end{document}\n";
 }
 
-QString	ExportTex::exportNote(const Note& n, unsigned int level) const
+QString	ExportTex::exportNote(const Note& n) const
 {
 	QString titre = n.getTitle();
 	return "\\title{"+escape(titre)+"}\n"
@@ -44,31 +30,52 @@ QString	ExportTex::exportNote(const Note& n, unsigned int level) const
 			"\\maketitle\n";
 }
 
-QString	ExportTex::exportNote(const Article& a, unsigned int level) const
+QString	ExportTex::exportNote(const Article& a) const
 {
 	QString text = a.getText();
 	return exportNote((Note&)a)+"\\section*{Text: }\n"
 			""+escape(text)+"\n";
 }
 
-QString	ExportTex::exportNote(const Document& d, unsigned int level) const
+QString	ExportTex::exportNote(const Document& d) const
 {
 	return "";
 }
 
-QString	ExportTex::exportNote(const Image& i, unsigned int level) const
+QString	ExportTex::exportNote(const Image& i) const
 {
-	return "";
+	QString desc = i.getDescription();
+	QString path = i.getPath();
+	return exportNote((Note&)i)+"\\section*{Video: }\n"
+			"\\frame\n"
+			"{\n"
+				"\\movie{"+escape(text)+"}\n"
+			"}\n"
+			"Description : \n"+escape(text);
 }
 
-QString	ExportTex::exportNote(const Video& v, unsigned int level) const
+QString	ExportTex::exportNote(const Video& v) const
 {
-	return "";
+	QString desc = v.getDescription();
+	QString path = v.getPath();
+	return exportNote((Note&)v)+"\\section*{Video: }\n"
+			"\\frame\n"
+			"{\n"
+				"\\movie{"+escape(desc)+"}\n"
+			"}\n"
+			"Description : \n"+escape(path);
 }
 
-QString	ExportTex::exportNote(const Audio& a, unsigned int level) const
+QString	ExportTex::exportNote(const Audio& a) const
 {
-	return "";
+	QString desc = i.getDescription();
+	QString path = i.getPath();
+	return exportNote((Note&)v)+"\\section*{Video: }\n"
+			"\\frame\n"
+			"{\n"
+				"\\movie{"+escape(text)+"}\n"
+			"}\n"
+			"Description : \n"+escape(text);
 }
 
 QString	ExportTex::escape(QString s) const
