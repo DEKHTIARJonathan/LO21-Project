@@ -51,7 +51,12 @@ QString	ExportHTML::exportNote(const Image& i) const
 QString	ExportHTML::exportNote(const Video& v) const
 {
 	QString description = v.getDescription();
-	QString path = v.getPath();
+
+	QString path =  v.getPath();
+
+	if (!path.startsWith("http"))
+		 path = "file://"+path;
+
 	return exportNote((Note&)v)+"<div><h2>Video :</h2><br>"
 			"<video id=\"sampleMovie\" width=\"640\" height=\"360\" preload controls><source src=\""+escape(path)+"\"/></video>"
 			"<br><h3>Description</h3><p>En cas de problème à la lecture . Le navigateur ne doit pas être compatible avec le lecteur</p>"
@@ -62,7 +67,12 @@ QString	ExportHTML::exportNote(const Video& v) const
 QString	ExportHTML::exportNote(const Audio& a) const
 {
 	QString description = a.getDescription();
-	QString path = a.getPath();
+
+	QString path =  a.getPath();
+
+	if (!path.startsWith("http"))
+		 path = "file://"+path;
+
 	return exportNote((Note&)a)+"<div><h2>Audio :</h2><br>"
 			"<audio preload=\"auto\" autobuffer controls id=\"audio\"><source src=\""+escape(path)+"\" type=\"audio/mpeg\"></audio>"
 			"<br><h3>Description</h3><p>En cas de problème à la lecture . Le navigateur ne doit pas être compatible avec le lecteur</p>"

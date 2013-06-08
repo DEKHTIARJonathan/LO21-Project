@@ -124,7 +124,7 @@ bool DatabaseManager::initDB()
 {
 	QString qry[7];
 
-	qry[0] = "create table Note (id integer , title varchar("+QString::number(constants::SIZE_MAX_TITLE)+"), typeNote varchar("+QString::number(constants::SIZE_MAX_TYPE_NOTE)+"), trashed  BOOL , primary key(id))";
+	qry[0] = "create table Note (id integer , title varchar("+QString::number(constants::SIZE_MAX_TITLE)+"), typeNote varchar("+QString::number(constants::SIZE_MAX_TYPE_NOTE)+"), trashed  BOOL DEFAULT '0' NOT NULL, primary key(id))";
 	qry[1] = "create table Article (id integer, txt text, primary key(id), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE)";
 	qry[2] = "create table Document (id integer, primary key(id), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE)";
 	qry[3] = "create table Multimedia (id integer, description TEXT, path varchar("+QString::number(constants::SIZE_MAX_PATH)+"), primary key(id), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE)";
@@ -227,10 +227,10 @@ QString DatabaseManager::capitalize(QString str) const
  *                            Inserters                             *
  ********************************************************************/
 
-unsigned int DatabaseManager::insertNotePrivate(const QString & type) const{
+unsigned int DatabaseManager::insertNoteCommon(const QString & type) const{
 	QString titre = "";
 
-	if (query("INSERT INTO Note (id, title, typeNote) VALUES (NULL, '"+escape(titre)+"','"+escape(type)+"')"))
+	if (query("INSERT INTO Note (id, title, typeNote, trashed) VALUES (NULL, '"+escape(titre)+"','"+escape(type)+"', 0)"))
 		return getLastID();
 	else
 		exit(0);
@@ -246,7 +246,7 @@ bool DatabaseManager::insertMultimedia(const unsigned int id) const
 
 unsigned int DatabaseManager::insertNote(const QString& typeNote) const
 {
-	int id = insertNotePrivate(typeNote);
+	int id = insertNoteCommon(typeNote);
 	bool result = false;
 
 	if(typeNote == "Article")
@@ -329,7 +329,30 @@ std::vector< pair <unsigned int, QString > > DatabaseManager::getNotes() const
 	pair <unsigned int, QString > temp;
 
 	QSqlQuery request(*database);
-	QString sql = "Select id, title from Note";
+	QString sql = "Select id, title from Note where trashed = 0";
+
+	if(!request.exec(sql))
+		throw DBException(sql, request.lastError().databaseText());
+
+	while(request.next())
+	{
+		temp.first = request.value(0).toInt();
+		temp.second = request.value(1).toString();
+
+		result.push_back(temp);
+	}
+
+	return result;
+
+}
+
+std::vector< pair <unsigned int, QString > > DatabaseManager::getTrash() const
+{
+	std::vector< pair <unsigned int, QString > > result;
+	pair <unsigned int, QString > temp;
+
+	QSqlQuery request(*database);
+	QString sql = "Select id, title from Note where trashed = 1";
 
 	if(!request.exec(sql))
 		throw DBException(sql, request.lastError().databaseText());
@@ -391,7 +414,7 @@ std::vector< pair <unsigned int, QString > > DatabaseManager::getNotes(const QSt
 
 	QSqlQuery request(*database);
 
-	QString sql = "Select a.id , title from AssocTag a, Note n where a.name = '"+escape(capitalize(tag))+"' and a.id = n.id";
+	QString sql = "Select a.id , title from AssocTag a, Note n where a.name = '"+escape(capitalize(tag))+"' and a.id = n.id and n.trashed = 0";
 
 	if(!request.exec(sql))
 		throw DBException(sql, request.lastError().databaseText());
@@ -426,7 +449,7 @@ QString DatabaseManager::getNoteType(const unsigned int id)
  *                   AssocBuilders // AssocRemovers                 *
  ********************************************************************/
 
-bool DatabaseManager::TagAssocNote (const Note& n, const QString& t) const
+bool DatabaseManager::TagAssocNote (const Note& n, const QString& t) const // Associe un tag et une note, si le tag n'existe pas il est créé
 {
 	bool result = true;
 
@@ -437,13 +460,13 @@ bool DatabaseManager::TagAssocNote (const Note& n, const QString& t) const
 
 }
 
-bool DatabaseManager::addTagAssoc (const Note& n,const QString &t) const
+bool DatabaseManager::addTagAssoc (const Note& n,const QString &t) const // Association d'un tag et d'une note
 {
 	int id = n.getId();
 	return query("INSERT INTO AssocTag (id, name) VALUES ("+QString::number(id)+", '"+escape(capitalize(t))+"')");
 }
 
-bool DatabaseManager::removeTagAssoc (const Note& n, const QString &t) const
+bool DatabaseManager::removeTagAssoc (const Note& n, const QString &t) const // Désassociation d'un tag et d'un note
 {
 	int id = n.getId();
 	bool result = query("REMOVE FROM AssocTag WHERE id = "+QString::number(id)+" and name = '"+escape(capitalize(t))+"'");
@@ -454,7 +477,7 @@ bool DatabaseManager::removeTagAssoc (const Note& n, const QString &t) const
 	return result;
 }
 
-bool DatabaseManager::addNoteToDoc (const Document &d, const Note &n) const
+bool DatabaseManager::addNoteToDoc (const Document &d, const Note &n) const // Ajoute une Note dans un document
 {
 	int idDoc = d.getId();
 	int idNote = n.getId();
@@ -464,7 +487,7 @@ bool DatabaseManager::addNoteToDoc (const Document &d, const Note &n) const
 		throw DBException("Try to include the document in itself", "DocumentID = "+QString::number(idDoc));
 }
 
-bool DatabaseManager::removeNotefromDoc (const Document &d, const Note &n) const
+bool DatabaseManager::removeNotefromDoc (const Document &d, const Note &n) const // Enleve une Note d'un Document
 {
 	int idDoc = d.getId();
 	int idNote = n.getId();
@@ -474,7 +497,7 @@ bool DatabaseManager::removeNotefromDoc (const Document &d, const Note &n) const
 		throw DBException("Try to remove the document from itself", "DocumentID = "+QString::number(idDoc));
 }
 
-bool DatabaseManager::flushNoteAssoc (const Note& n) const
+bool DatabaseManager::flushNoteAssoc (const Note& n) const //Enleve tous les tags d'une note
 {
 	int id = n.getId();
 	return query("REMOVE FROM AssocTag WHERE id = "+QString::number(id));
