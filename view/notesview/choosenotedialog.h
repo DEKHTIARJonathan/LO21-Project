@@ -15,16 +15,16 @@ class ChooseNoteDialog : public QDialog
 		Q_OBJECT
 		
 	public slots:
-		void					setSelectedNote(QListWidgetItem* item);
+		void							setSelectedNote(QListWidgetItem* item);
 
 	public:
-		explicit ChooseNoteDialog(QWidget *parent = 0);
-		Note*					getSelectedNote() const;
+		explicit ChooseNoteDialog(const QList<unsigned int> &forbidIds, QWidget *parent = 0);
+		Note*							getSelectedNote() const;
 		~ChooseNoteDialog();
 		
 	private:
-		Ui::ChooseNoteDialog *	ui;
-		Note*					m_selectedNote;
+		Ui::ChooseNoteDialog *			ui;
+		Note*							m_selectedNote;
 };
 
 #endif // CHOOSENOTEDIALOG_H

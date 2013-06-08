@@ -20,8 +20,20 @@ DocumentView::DocumentView(Document &a, QWidget *parent) :
  ********************************************************************/
 
 void DocumentView::addNote(){
+	QList<unsigned int> forbidList;
+	forbidList.append(m_doc->getId());
+
+	// Get back ids of document's Notes
+	const QObjectList& l = ui->noteArea->children();
+	for( QObjectList::const_iterator it = l.begin(); it!=l.end(); it++ ){
+		NoteDocumentView* v = dynamic_cast<NoteDocumentView*>( *it );
+
+		if( v!=NULL )
+			forbidList.append(v->getNoteRef().getId());
+	}
+
 	// Show Choose Note Dialog
-	ChooseNoteDialog c;
+	ChooseNoteDialog c(forbidList);
 	c.setModal(true);
 	c.exec();
 

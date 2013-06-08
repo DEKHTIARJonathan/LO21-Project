@@ -37,6 +37,7 @@ void VideoView::loadNoteContent(){
 
 void VideoView::setEditMode(bool b){
 	ui->descEdit->setReadOnly(!b);
+	ui->pathEdit->setReadOnly(!b);
 	ui->searchVideo->setEnabled(b);
 }
 

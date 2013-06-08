@@ -37,6 +37,7 @@ void AudioView::loadNoteContent(){
 
 void AudioView::setEditMode(bool b){
 	ui->descEdit->setReadOnly(!b);
+	ui->pathEdit->setReadOnly(!b);
 	ui->searchAudio->setEnabled(b);
 }
 

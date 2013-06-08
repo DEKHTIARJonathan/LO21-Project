@@ -1,7 +1,7 @@
 #include "choosenotedialog.h"
 #include "ui_choosenotedialog.h"
 
-ChooseNoteDialog::ChooseNoteDialog(QWidget *parent) :
+ChooseNoteDialog::ChooseNoteDialog(const QList<unsigned int>& forbidIds, QWidget *parent) :
 	QDialog(parent),
 	ui(new Ui::ChooseNoteDialog),
 	m_selectedNote(NULL)
@@ -17,7 +17,8 @@ ChooseNoteDialog::ChooseNoteDialog(QWidget *parent) :
 	if(!result.empty()){
 		// Display results
 		for( std::vector< pair <unsigned int, QString > >::const_iterator it = result.begin(); it!=result.end(); it++ )
-			l.addItem( new ListNoteViewItem(it->first,it->second) );
+			if( !forbidIds.contains(it->first) )
+				l.addItem( new ListNoteViewItem(it->first,it->second) );
 		l.sortItems();
 	}
 
