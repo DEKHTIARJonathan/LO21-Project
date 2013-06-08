@@ -80,5 +80,6 @@ FORMS += \
     view/workspaceform.ui
 
 QT += widgets \
-      sql
+	  sql \
+	  webkit
 

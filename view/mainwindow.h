@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <constants.h>
 #include <notemanager/notesmanager.h>
+#include <export/generalexportfactory.h>
 #include <view/notesview/generalviewfactory.h>
 #include <view/listnoteviewitem.h>
 #include <view/workspaceform.h>
@@ -30,6 +31,7 @@ class MainWindow : public QMainWindow
 		void				editSaveNote();
 		void				deleteCancelNote();
 		void				searchNotes();
+		void				exportNote(int i);
 		void				changeWorkspace();
     
 	public:
