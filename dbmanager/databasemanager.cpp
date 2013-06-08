@@ -7,18 +7,15 @@ using namespace std;
  *                           Constructers                           *
  ********************************************************************/
 
-DatabaseManager::DatabaseManager(const QString &filename, const QString &user, const QString &pass)
+DatabaseManager::DatabaseManager(const QString &path, const QString &user, const QString &pass) :database(new QSqlDatabase()), dbpath(path)
 {
-	database = new QSqlDatabase();
-	//set database driver to QSQLITE
-	*database = QSqlDatabase::addDatabase("QSQLITE", filename);
-
-	dbpath = QDir::currentPath() +"/"+ filename + ".lo21";
+	//set database driver to QSQLITE avec une connection ayant pour nom "projet.lo21"
+	*database = QSqlDatabase::addDatabase("QSQLITE", "projet.lo21");
 
 	QFile file(dbpath);
 	bool dbIsNew = !file.exists();
 
-	database->setDatabaseName(dbpath);
+	//database->setDatabaseName(dbpath);
 
 	//can be removed
 	database->setHostName("localhost");
@@ -619,13 +616,14 @@ bool DatabaseManager::fillNote (MultiMedia& m)  const
 
 DatabaseManager* DatabaseManager::s_inst = NULL;
 
-DatabaseManager& DatabaseManager::getInstance(QString filename, QString user, QString pass){
+DatabaseManager& DatabaseManager::getInstance(QString path, QString user, QString pass){
 	if( s_inst == NULL )
-		s_inst = new DatabaseManager(filename,user,pass);
+		s_inst = new DatabaseManager(path,user,pass);
 	return (*s_inst);
 }
 
-void DatabaseManager::destroy(){
+void DatabaseManager::destroy()
+{
 	if( s_inst != NULL )
 	{
 		delete s_inst;
@@ -639,5 +637,5 @@ DatabaseManager::~DatabaseManager()
 	database->close();
 	delete database;
 	database = NULL;
-	QSqlDatabase::removeDatabase(dbname);
+	QSqlDatabase::removeDatabase("projet.lo21");
 }
