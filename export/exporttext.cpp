@@ -1,4 +1,5 @@
 #include "exporttext.h"
+#include "export/generalexportfactory.h"
 
 ExportText::ExportText()
 {
@@ -18,7 +19,7 @@ QString	ExportText::footer() const
 QString	ExportText::exportNote(const Note& n) const
 {
 	QString titre = n.getTitle();
-	return "Article\n\nTitre :\n"+escape(titre)+"\n\n";
+	return QString(n.metaObject()->className())+"\n\nTitre :\n"+escape(titre)+"\n\n";
 }
 
 QString	ExportText::exportNote(const Article& a) const
@@ -29,7 +30,20 @@ QString	ExportText::exportNote(const Article& a) const
 
 QString	ExportText::exportNote(const Document& d) const
 {
-	d.getTitle();
+
+	GeneralExportFactory &gef = GeneralExportFactory::getInstance();
+
+	QString result = exportNote((Note&)d);
+
+	for (vector<Note* >::const_iterator it = d.begin(); it != d.end(); it++)
+	{
+
+		QString temp = "\t"+gef.exportNoteAsPart("txt", **it).replace ("\n","\n\t")+"\n\n\t-----------------------------------------------\n\n";
+
+		result += temp;
+	}
+	return result;
+
 	return "";
 }
 

@@ -101,8 +101,19 @@ bool DatabaseManager::removeFromTrash (unsigned int n) const
 	return query("UPDATE Note SET trashed = 0 WHERE id = "+ QString::number(n));
 }
 
-
-
+bool DatabaseManager::isTrashEmpty() const
+{
+	QSqlQuery request(*database);
+	if(request.exec("select count(*) from Note where trashed = 1"))
+	{
+		if(request.next())
+			return request.value(0).toBool();
+		else
+			throw DBException("select count(*) from Note where trashed = 1", request.lastError().databaseText());
+	}
+	else
+		throw DBException("select count(*) from Note where trashed = 1", request.lastError().databaseText());
+}
 /********************************************************************
  *                            DB Requests                           *
  ********************************************************************/
@@ -467,7 +478,6 @@ bool DatabaseManager::getNotesInDoc (Document& d) const
 
 	while (request.next())
 	{
-		cout<<"Note : "+request.value(0).toString().toStdString();
 		d.addNote(nm.getNote(request.value(0).toInt()));
 	}
 

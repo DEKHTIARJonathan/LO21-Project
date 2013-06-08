@@ -1,4 +1,5 @@
 #include "exporthtml.h"
+#include "export/generalexportfactory.h"
 
 ExportHTML::ExportHTML() : ExportStrategy()
 {}
@@ -32,8 +33,15 @@ QString	ExportHTML::exportNote(const Article& a) const
 
 QString	ExportHTML::exportNote(const Document& d) const
 {
-	d.getTitle();
-	return "";
+	GeneralExportFactory &gef = GeneralExportFactory::getInstance();
+
+	QString result = exportNote((Note&)d);
+
+	for (vector<Note* >::const_iterator it = d.begin(); it != d.end(); it++)
+	{
+		result += "<hr><div style='margin-left:100px;'>"+gef.exportNoteAsPart("html", **it)+"</div>";
+	}
+	return result;
 }
 
 QString	ExportHTML::exportNote(const Image& i) const
@@ -78,7 +86,6 @@ QString	ExportHTML::exportNote(const Audio& a) const
 			"<br><h3>Description</h3><p>En cas de problème à la lecture . Le navigateur ne doit pas être compatible avec le lecteur</p>"
 			"<p>"+escape(description)+"</p></div>";
 }
-
 
 QString	ExportHTML::escape(QString s) const
 {
