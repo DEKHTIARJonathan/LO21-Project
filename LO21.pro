@@ -30,7 +30,8 @@ SOURCES += \
     view/notesview/viewfactorynotfoundexception.cpp \
     controller/controller.cpp \
     view/listnoteviewitem.cpp \
-	view/workspaceform.cpp
+	view/workspaceform.cpp \
+    view/notesview/imageview.cpp
 
 HEADERS += \
     export/exportstrategy.h \
@@ -72,12 +73,14 @@ HEADERS += \
     view/notesview/viewfactorynotfoundexception.h \
     controller/controller.h \
     view/listnoteviewitem.h \
-    view/workspaceform.h
+    view/workspaceform.h \
+    view/notesview/imageview.h
 
 FORMS += \
     view/mainwindow.ui \
 	view/notesview/articleview.ui \
-    view/workspaceform.ui
+    view/workspaceform.ui \
+    view/notesview/imageview.ui
 
 QT += widgets \
       sql
