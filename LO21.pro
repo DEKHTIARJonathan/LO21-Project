@@ -105,3 +105,6 @@ QT += widgets \
       webkit\
       webkitwidgets\
       network
+
+RESOURCES += \
+    ressources/iconlib.qrc

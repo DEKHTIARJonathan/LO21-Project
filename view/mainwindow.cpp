@@ -49,6 +49,8 @@ void MainWindow::setupSearchArea(){
 	QObject::connect(ui->searchButton, SIGNAL(clicked()), this, SLOT(searchNotes()));
 	QObject::connect(ui->noteList, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(openNote(QListWidgetItem*)));
 	QObject::connect(ui->trashButton, SIGNAL(clicked()), this, SLOT(openTrash()));
+
+	setTrashIcon();
 }
 
 void MainWindow::setupEditorArea(){
@@ -420,6 +422,27 @@ void MainWindow::emptyTrash(const std::vector< pair <unsigned int, QString > >& 
 	// Empty model part of Notes in trash
 	NotesManager::getInstance().emptyTrash(trash);
 }
+
+/********************************************************************
+ *                           Trash Icon                           *
+ ********************************************************************/
+
+void MainWindow::setTrashIcon(bool empty)
+{
+	QPixmap buttonImage;
+
+	if(empty)
+		buttonImage.load(":/icn/empty");
+	else
+		buttonImage.load(":/icn/full");
+
+	//QPixmap buttonImage(":/icn/empty");
+	QIcon Icon;
+	Icon.addPixmap ( buttonImage, QIcon::Normal, QIcon::Off );
+	ui->trashButton->setIcon(Icon);
+	ui->trashButton->setIconSize(QSize(64,64));
+}
+
 
 /********************************************************************
  *                            Destructor                            *

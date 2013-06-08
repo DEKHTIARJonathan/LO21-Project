@@ -1,0 +1,7 @@
+<!DOCTYPE RCC>
+<RCC>
+    <qresource prefix="/icn">
+        <file alias="empty">icon/trash_empty.png</file>
+        <file alias="full">icon/trash_full.jpg</file>     
+    </qresource>
+</RCC>
