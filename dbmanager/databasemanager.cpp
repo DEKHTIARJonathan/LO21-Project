@@ -612,6 +612,19 @@ bool DatabaseManager::fillNote (MultiMedia& m)  const
 }
 
 /********************************************************************
+ *                            Destructor                            *
+ ********************************************************************/
+
+DatabaseManager::~DatabaseManager()
+{
+	QString dbname = database->connectionName();
+	database->close();
+	delete database;
+	database = NULL;
+	QSqlDatabase::removeDatabase("projet.lo21");
+}
+
+/********************************************************************
  *                            Singleton                             *
  ********************************************************************/
 
@@ -625,18 +638,8 @@ DatabaseManager& DatabaseManager::getInstance(QString path, QString user, QStrin
 
 void DatabaseManager::destroy()
 {
-	if( s_inst != NULL )
-	{
+	if( s_inst != NULL ){
 		delete s_inst;
 		s_inst = NULL;
 	}
-}
-
-DatabaseManager::~DatabaseManager()
-{
-	QString dbname = database->connectionName();
-	database->close();
-	delete database;
-	database = NULL;
-	QSqlDatabase::removeDatabase("projet.lo21");
 }

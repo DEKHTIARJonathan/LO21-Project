@@ -101,6 +101,8 @@ NotesManager& NotesManager::getInstance(){
 }
 
 void NotesManager::destroy(){
-	if( s_inst != NULL )
+	if( s_inst != NULL ){
 		delete s_inst;
+		s_inst = NULL;
+	}
 }
