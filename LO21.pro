@@ -83,5 +83,6 @@ FORMS += \
     view/notesview/imageview.ui
 
 QT += widgets \
-      sql
+	  sql \
+	  webkit
 

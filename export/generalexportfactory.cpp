@@ -11,9 +11,9 @@
 GeneralExportFactory::GeneralExportFactory() : m_factories(), m_strategies()
 {
 	// Strategies
-	m_strategies.insert(	"Html",									(ExportStrategy*)(new ExportHTML())	);
-	m_strategies.insert(	"TeX",									(ExportStrategy*)(new ExportTex())	);
-	m_strategies.insert(	"Txt",									(ExportStrategy*)(new ExportText())	);
+	m_strategies.insert(	"html",									(ExportStrategy*)(new ExportHTML())	);
+	m_strategies.insert(	"tex",									(ExportStrategy*)(new ExportTex())	);
+	m_strategies.insert(	"txt",									(ExportStrategy*)(new ExportText())	);
 
 	// Factories
 	m_factories.insert(		Article::staticMetaObject.className(),	(InterfaceExportFactory*)(new ExportFactory<Article>())		);
@@ -26,6 +26,10 @@ GeneralExportFactory::GeneralExportFactory() : m_factories(), m_strategies()
 /********************************************************************
  *                              Method                              *
  ********************************************************************/
+
+QList<QString> GeneralExportFactory::getAvailableExportType() const{
+	return m_strategies.keys();
+}
 
 InterfaceExportFactory& GeneralExportFactory::getFactory(const QString & typeName) const{
 	QHash<QString, InterfaceExportFactory*>::const_iterator it = m_factories.find(typeName);

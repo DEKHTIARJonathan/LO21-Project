@@ -14,7 +14,7 @@ class GeneralViewFactory
 {
 	public:
 		// Method
-		QList<QString>							getAvailableViewFactoryType();
+		QList<QString>							getAvailableViewFactoryType() const;
 		NoteView&								getView(Note& n);
 		void                                    deleteView( unsigned int id );
 

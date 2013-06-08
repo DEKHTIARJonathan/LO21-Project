@@ -57,15 +57,19 @@ void MainWindow::setupEditorArea(){
 	ui->titleEdit->setMaxLength(constants::SIZE_MAX_TITLE);
 }
 
-void MainWindow::setupExportArea(){}
+void MainWindow::setupExportArea(){
+	// Connects
+	QObject::connect(ui->tabBox, SIGNAL(currentChanged(int)), this, SLOT(exportNote(int)));
+}
 
 /********************************************************************
  *                           Slot Method		                    *
  ********************************************************************/
 
 void MainWindow::newNote(){
-	QAction* a = (QAction*)QObject::sender();
-	editNewNote(a->text());
+	QAction* a = static_cast<QAction*> (QObject::sender());
+	if(a!=NULL)
+		editNewNote(a->text());
 }
 
 void MainWindow::openNote(QListWidgetItem* i){
@@ -109,6 +113,34 @@ void MainWindow::deleteCancelNote(){
 		ui->deleteCancelButton->setText("Delete");
 		ui->editSaveButton->setText("Edit");
 		m_editMode = !m_editMode;
+	}
+}
+
+void MainWindow::exportNote(int i){
+	if( i!=0 ){
+		if( m_editMode ){
+			ui->tabBox->setCurrentIndex(0);
+			showErrorMessageBox("Impossible to export note, currents modifications need to be saved before.");
+		}
+		else{
+			// Get Export
+			GeneralExportFactory& ef = GeneralExportFactory::getInstance();
+
+			switch(i){
+				case 1:
+					ui->htmlArea->setHtml(ef.exportNote("html", *m_actualNote));
+					break;
+				case 2:
+					ui->texArea->setText(ef.exportNote("tex", *m_actualNote));
+					break;
+				case 3:
+					ui->txtArea->setText(ef.exportNote("txt", *m_actualNote));
+					break;
+				default:
+					showErrorMessageBox("This box is not referenced in exportNote function.");
+					break;
+			}
+		}
 	}
 }
 
@@ -159,7 +191,23 @@ void MainWindow::searchNotes(){
 }
 
 /********************************************************************
- *                         Controller Method                        *
+ *                           Info Method		                    *
+ ********************************************************************/
+
+void MainWindow::showInfoMessageBox(const QString& msg){
+	QMessageBox messageBox;
+	messageBox.information(0,"Info",msg);
+	messageBox.setFixedSize(500,200);
+}
+
+void MainWindow::showErrorMessageBox(const QString& msg){
+	QMessageBox messageBox;
+	messageBox.critical(0,"Error",msg);
+	messageBox.setFixedSize(500,200);
+}
+
+/********************************************************************
+ *                           Tool Method		                    *
  ********************************************************************/
 
 void MainWindow::editNewNote( const QString& typeNote ){
@@ -206,6 +254,7 @@ void MainWindow::displayNote(Note &n){
 		ui->speNoteLayout->addWidget(&nv);
 		loadActualNoteContent();
 		showEditor(true);
+		ui->tabBox->setCurrentIndex(0);
 	}
 }
 
@@ -219,26 +268,6 @@ void MainWindow::clearActualNoteView(){
 		m_actualNote = NULL;
 	}
 }
-
-/********************************************************************
- *                           Info Method		                    *
- ********************************************************************/
-
-void MainWindow::showInfoMessageBox(const QString& msg){
-	QMessageBox messageBox;
-	messageBox.information(0,"Info",msg);
-	messageBox.setFixedSize(500,200);
-}
-
-void MainWindow::showErrorMessageBox(const QString& msg){
-	QMessageBox messageBox;
-	messageBox.critical(0,"Error",msg);
-	messageBox.setFixedSize(500,200);
-}
-
-/********************************************************************
- *                           Tool Method		                    *
- ********************************************************************/
 
 void MainWindow::loadActualNoteContent(){
 	if( m_actualNote != NULL ){

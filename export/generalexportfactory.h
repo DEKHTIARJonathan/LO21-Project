@@ -13,6 +13,7 @@ class GeneralExportFactory
 {
 	public:
 		// Method
+		QList<QString>							getAvailableExportType() const;
 		QString									exportNote(const QString& strategyName, const Note& n) const;
 		QString									exportNote(ExportStrategy& es, const Note& n) const;
 		QString									exportNoteAsPart(const QString& strategyName, const Note& n) const;

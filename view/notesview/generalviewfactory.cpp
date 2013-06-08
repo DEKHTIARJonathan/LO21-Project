@@ -13,7 +13,7 @@ GeneralViewFactory::GeneralViewFactory() : m_factories()
  *                              Method                              *
  ********************************************************************/
 
-QList<QString> GeneralViewFactory::getAvailableViewFactoryType(){
+QList<QString> GeneralViewFactory::getAvailableViewFactoryType() const{
 	return m_factories.keys();
 }
 
