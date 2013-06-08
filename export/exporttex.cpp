@@ -5,11 +5,6 @@ ExportTex::ExportTex()
 }
 
 
-
-
-
-
-
 QString	ExportTex::header() const
 {
 	return "\\documentclass[11pt,a4paper]{article}\n"
@@ -49,9 +44,9 @@ QString	ExportTex::exportNote(const Image& i) const
 	return exportNote((Note&)i)+"\\section*{Video: }\n"
 			"\\frame\n"
 			"{\n"
-				"\\movie{"+escape(desc)+"}\n"
+				"\\includegraphics{"+escape(path)+"}";
 			"}\n"
-			"Description : \n"+escape(path);
+			"Description : \n"+escape(desc);
 }
 
 QString	ExportTex::exportNote(const Video& v) const
@@ -61,9 +56,9 @@ QString	ExportTex::exportNote(const Video& v) const
 	return exportNote((Note&)v)+"\\section*{Video: }\n"
 			"\\frame\n"
 			"{\n"
-				"\\movie{"+escape(desc)+"}\n"
+				"\\movie{"+escape(path)+"}\n"
 			"}\n"
-			"Description : \n"+escape(path);
+			"Description : \n"+escape(desc);
 }
 
 QString	ExportTex::exportNote(const Audio& a) const
@@ -73,7 +68,7 @@ QString	ExportTex::exportNote(const Audio& a) const
 	return exportNote((Note&)a)+"\\section*{Video: }\n"
 			"\\frame\n"
 			"{\n"
-				"\\movie{"+escape(desc)+"}\n"
+				"\\audio{"+escape(path)+"}\n"
 			"}\n"
 			"Description : \n"+escape(path);
 }
