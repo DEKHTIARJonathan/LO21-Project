@@ -36,7 +36,6 @@ public:
 	bool putToTrash (unsigned int n) const;
 	bool removeFromTrash (unsigned int n) const;
 
-
 	/***************** Retrievers *********************/
 
 	std::vector<QString> getAllTags() const; // Retourne tous les Tags existants
@@ -64,9 +63,7 @@ public:
 	/********** AssocBuilders // AssocRemovers **********/
 
 	bool TagAssocNote (const Note& n, const QString& t) const;
-	bool removeTagAssoc (const Note& n, const QString& t) const;
-	bool addNoteToDoc (const Document& d,const Note& n) const;
-	bool removeNotefromDoc (const Document& d, const Note& n) const;
+	bool flushDoc (const Document& d) const;
 	bool flushNoteAssoc (const Note& n) const;
 
 	/**************** Fillers ********************/
@@ -90,7 +87,7 @@ public:
 	/***************** DB Requests ********************/
 	bool initDB();
 	bool query(const QString& query) const; // Execute une query en SQL
-	int getLastID() const; // Retourne le rowid du de la derniere requete d'insertion effectuée.
+	unsigned int getLastID() const; // Retourne le rowid du de la derniere requete d'insertion effectuée.
 	bool tagExist(const QString &t) const;
 
 	/********************* Escaper ********************/
@@ -117,6 +114,9 @@ public:
 	/***************** AssocBuilders ******************/
 
 	bool addTagAssoc (const Note& n,const QString &t) const;
+	bool removeTagAssoc (const Note& n, const QString& t) const;
+	bool addNoteToDoc (const Document& d,const Note& n) const;
+	bool removeNotefromDoc (const Document& d, const Note& n) const;
 
 	/****************  Singleton ^*********************/
 
