@@ -10,9 +10,8 @@ using namespace std;
 DatabaseManager::DatabaseManager(const QString &filename, const QString &user, const QString &pass)
 {
 	database = new QSqlDatabase();
-
 	//set database driver to QSQLITE
-	*database = QSqlDatabase::addDatabase("QSQLITE");
+	*database = QSqlDatabase::addDatabase("QSQLITE", filename);
 
 	dbpath = QDir::currentPath() +"/"+ filename + ".lo21";
 
@@ -149,7 +148,7 @@ bool DatabaseManager::initDB()
 	return b;
 }
 
-int DatabaseManager::getLastID() const
+unsigned int DatabaseManager::getLastID() const
 {
 	QSqlQuery query(*database);
 	QString sql = "SELECT last_insert_rowid()";
@@ -159,7 +158,7 @@ int DatabaseManager::getLastID() const
 
 	query.next();// Only one result no need of the while loop
 
-	return query.value(0).toInt();
+	return query.value(0).toUInt();
 
 }
 
@@ -246,7 +245,7 @@ bool DatabaseManager::insertMultimedia(const unsigned int id) const
 
 unsigned int DatabaseManager::insertNote(const QString& typeNote) const
 {
-	int id = insertNoteCommon(typeNote);
+	unsigned int id = insertNoteCommon(typeNote);
 	bool result = false;
 
 	if(typeNote == "Article")
@@ -298,11 +297,13 @@ bool DatabaseManager::updateNote (const Document& d)  const
 	QString title = d.getTitle();
 	int id = d.getId();
 
+	result &= flushDoc(d);
+
 	result &= query("UPDATE Note SET title = '"+escape(title)+"' WHERE id ='"+ QString::number(id) +"'");
 
 	for (vector<Note* >::const_iterator it = d.begin(); it != d.end(); it++)
 	{
-		addNoteToDoc(id, (Note&) *it);
+		addNoteToDoc(d, **it);
 	}
 
 	return result;
@@ -531,6 +532,11 @@ bool DatabaseManager::flushNoteAssoc (const Note& n) const //Enleve tous les tag
 	return query("REMOVE FROM AssocTag WHERE id = "+QString::number(id));
 }
 
+bool DatabaseManager::flushDoc (const Document& d) const
+{
+	query("Delete From AssocDoc where docMaster = "+QString::number(d.getId()));
+}
+
 /********************************************************************
  *                             Fillers                              *
  ********************************************************************/
@@ -538,7 +544,7 @@ bool DatabaseManager::flushNoteAssoc (const Note& n) const //Enleve tous les tag
 bool DatabaseManager::fillNote (Article& a)  const
 {
 	QSqlQuery query(*database);
-	int id = a.getId();
+	unsigned int id = a.getId();
 
 	bool result = true;
 	result &= query.exec("SELECT n.title, a.txt FROM Note n, Article a WHERE a.id = n.id and a.id = "+QString::number(id));
@@ -611,5 +617,17 @@ DatabaseManager& DatabaseManager::getInstance(QString filename, QString user, QS
 
 void DatabaseManager::destroy(){
 	if( s_inst != NULL )
+	{
 		delete s_inst;
+		s_inst = NULL;
+	}
+}
+
+DatabaseManager::~DatabaseManager()
+{
+	QString dbname = database->connectionName();
+	database->close();
+	delete database;
+	database = NULL;
+	QSqlDatabase::removeDatabase(dbname);
 }
