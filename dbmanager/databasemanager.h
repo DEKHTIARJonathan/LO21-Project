@@ -123,7 +123,8 @@ public:
 	DatabaseManager(const QString &filename, const QString &user, const QString &pass);	// Interdit l'instanciation directe
 	DatabaseManager(const DatabaseManager& nm);	// Interdit la recopie
 	DatabaseManager& operator=(const DatabaseManager& n);	// Interdit la recopie
-	static DatabaseManager * s_inst;	// Contient le singleton s'il est instancié
+	static DatabaseManager *s_inst;	// Contient le singleton s'il est instancié
+	~DatabaseManager();
 };
 
 #endif // DatabaseManager_H

@@ -10,9 +10,8 @@ using namespace std;
 DatabaseManager::DatabaseManager(const QString &filename, const QString &user, const QString &pass)
 {
 	database = new QSqlDatabase();
-
 	//set database driver to QSQLITE
-	*database = QSqlDatabase::addDatabase("QSQLITE");
+	*database = QSqlDatabase::addDatabase("QSQLITE", filename);
 
 	dbpath = QDir::currentPath() +"/"+ filename + ".lo21";
 
@@ -611,5 +610,17 @@ DatabaseManager& DatabaseManager::getInstance(QString filename, QString user, QS
 
 void DatabaseManager::destroy(){
 	if( s_inst != NULL )
+	{
 		delete s_inst;
+		s_inst = NULL;
+	}
+}
+
+DatabaseManager::~DatabaseManager()
+{
+	QString dbname = database->connectionName();
+	database->close();
+	delete database;
+	database = NULL;
+	QSqlDatabase::removeDatabase(dbname);
 }
