@@ -18,7 +18,8 @@ class NotesManager
 		Note&							getNewNote(const QString &typeNote);
 		Note&							getNote(unsigned int id);
 		void							saveNote(Note& n);
-		void							deleteNote(Note& n);
+		void							putToTrash(Note& n);
+		void							emptyTrash(std::vector< pair <unsigned int, QString > >& trash);
 		void							flush();
 
 		// Singleton
@@ -36,7 +37,7 @@ class NotesManager
 		NotesManager();	// Interdit l'instanciation directe
 		NotesManager(const NotesManager& nm);	// Interdit la recopie
 		NotesManager&				operator=(const NotesManager& n);	// Interdit la recopie
-		static NotesManager * s_inst;	// Contient le singleton s'il est instancié
+		static NotesManager * s_inst;	// Contient le singleton s'il est instancie
 
 };
 

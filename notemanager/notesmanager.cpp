@@ -51,19 +51,28 @@ void NotesManager::saveNote(Note& n){
 	gf.saveNote(n);
 }
 
-void NotesManager::deleteNote(Note& n){
+void NotesManager::putToTrash(Note& n){
 	// Check if Note is loaded
 	QMap<unsigned int, Note*>::iterator it = m_loadedNotes.find(n.getId());
 
 	if( it!=m_loadedNotes.end() )	// Return an exception when Note 'n' wasn't referenced.
 		throw NotesManagerException("Delete Note ("+QString::number(n.getId())+")","Can not delete an unreferenced Note.");
 
-	// Delete Note 'n' from m_loadedNotes.
-	m_loadedNotes.erase(it);
+	// Put Note 'n' in trash from DB.
+	DatabaseManager::getInstance().putToTrash(n.getId());
+}
 
-	// Delete Note 'n' from DB.
-	GeneralNoteFactory& gf = GeneralNoteFactory::getInstance();
-	gf.deleteNote(n);
+void NotesManager::emptyTrash(std::vector< pair <unsigned int, QString > >& trash){
+	for(std::vector< pair <unsigned int, QString > >::iterator it = trash.begin(); it!=trash.end(); it++){
+		// Check if Note is loaded
+		QMap<unsigned int, Note*>::iterator f = m_loadedNotes.find(it->first);
+		GeneralNoteFactory& gf = GeneralNoteFactory::getInstance();
+		if( f!=m_loadedNotes.end() ){
+			gf.deleteNote(*f.value());
+			m_loadedNotes.erase(f);
+		}
+	}
+	DatabaseManager::getInstance().emptyTrash();
 }
 
 void NotesManager::flush(){

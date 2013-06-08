@@ -14,6 +14,7 @@
 #include <view/notesview/generalviewfactory.h>
 #include <view/listnoteviewitem.h>
 #include <view/workspaceform.h>
+#include <view/trashdialog.h>
 #if QT_VERSION >= 0x050000 // Pour la version 5 et + il est nécessaire d'inclure QtWidgets
 	#include <QtWidgets>
 #endif
@@ -35,6 +36,7 @@ class MainWindow : public QMainWindow
 		void				searchNotes();
 		void				exportNote(int i);
 		void				changeWorkspace();
+		void				openTrash();
     
 	public:
 		// Constructor

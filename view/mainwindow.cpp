@@ -147,7 +147,8 @@ void MainWindow::deleteCancelNote(){
 	try{
 
 		if( !m_editMode ){
-			// To Do Delete
+			// Delete Note
+
 		}
 		else{
 			// Reload Original Note content and Setup View Mode
@@ -215,8 +216,7 @@ void MainWindow::changeWorkspace(){
 			GeneralViewFactory::getInstance().flushViews();
 			NotesManager::getInstance().flush();
 			DatabaseManager::destroy();
-			//DatabaseManager::getInstance(w.getPath());
-			DatabaseManager::getInstance("testing");
+			DatabaseManager::getInstance(w.getPath());
 			showEditor(false);
 			clearListView();
 		}
@@ -262,6 +262,26 @@ void MainWindow::searchNotes(){
 		showErrorMessageBox(QString(e.what()));
 	}
 
+}
+
+void MainWindow::openTrash(){
+	try{
+
+		// Show Worspace form
+		TrashDialog w;
+		w.setModal(true);
+		w.exec();
+
+		// If a note was remove from the trash, display it
+		if( w.getSelectedNote() != NULL ){
+			DatabaseManager::getInstance().removeFromTrash(w.getSelectedNote()->getId());
+			displayNote(*w.getSelectedNote());
+		}
+
+	}
+	catch(std::exception& e){
+		showErrorMessageBox(QString(e.what()));
+	}
 }
 
 /********************************************************************
