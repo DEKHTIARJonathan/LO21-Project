@@ -7,15 +7,16 @@ using namespace std;
  *                           Constructers                           *
  ********************************************************************/
 
-DatabaseManager::DatabaseManager(const QString &path, const QString &user, const QString &pass) :database(new QSqlDatabase()), dbpath(path)
+DatabaseManager::DatabaseManager(const QString &path, const QString &user, const QString &pass) : database(new QSqlDatabase()), dbpath(path)
 {
 	//set database driver to QSQLITE avec une connection ayant pour nom "projet.lo21"
 	*database = QSqlDatabase::addDatabase("QSQLITE", "projet.lo21");
 
 	QFile file(dbpath);
+
 	bool dbIsNew = !file.exists();
 
-	//database->setDatabaseName(dbpath);
+	database->setDatabaseName(dbpath);
 
 	//can be removed
 	database->setHostName("localhost");
@@ -24,7 +25,7 @@ DatabaseManager::DatabaseManager(const QString &path, const QString &user, const
 
 	if(!database->open())
 	{
-		throw DBException("INITIALISATION Database", "Can not open database.");
+		throw DBException("INITIALISATION Database", "Can not open database. Path = "+file.fileName());
 	}
 	else
 	{

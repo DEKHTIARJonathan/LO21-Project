@@ -215,8 +215,7 @@ void MainWindow::changeWorkspace(){
 			GeneralViewFactory::getInstance().flushViews();
 			NotesManager::getInstance().flush();
 			DatabaseManager::destroy();
-			//DatabaseManager::getInstance(w.getPath());
-			DatabaseManager::getInstance("testing");
+			DatabaseManager::getInstance(w.getPath());
 			showEditor(false);
 			clearListView();
 		}
