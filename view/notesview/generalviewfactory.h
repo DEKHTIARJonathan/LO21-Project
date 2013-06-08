@@ -21,6 +21,7 @@ class GeneralViewFactory
 		QList<QString>							getAvailableViewFactoryType() const;
 		NoteView&								getView(Note& n);
 		void                                    deleteView( unsigned int id );
+		void									flushViews();
 
 		// Singleton
 		static GeneralViewFactory&				getInstance();

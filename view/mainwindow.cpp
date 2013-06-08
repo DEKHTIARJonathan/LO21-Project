@@ -73,9 +73,16 @@ void MainWindow::setupExportArea(){
  ********************************************************************/
 
 void MainWindow::newNote(){
-	QAction* a = dynamic_cast<QAction*> (QObject::sender());
-	if(a!=NULL)
-		editNewNote(a->text());
+	try{
+
+		QAction* a = dynamic_cast<QAction*> (QObject::sender());
+		if(a!=NULL)
+			editNewNote(a->text());
+
+	}
+	catch(std::exception e){
+		showErrorMessageBox(QString(e.what()));
+	}
 }
 
 void MainWindow::openNote(QListWidgetItem* i){
@@ -172,8 +179,14 @@ void MainWindow::changeWorkspace(){
 	w.setModal(true);
 	w.exec();
 
-	if( !w.isCanceled() && w.getPath()!=db.getpath() ){
-		showInfoMessageBox("Path Changed : "+w.getPath());
+	if( !w.isCanceled() && w.getPath() != db.getpath() ){
+		GeneralViewFactory::getInstance().flushViews();
+		NotesManager::getInstance().flush();
+		DatabaseManager::destroy();
+		//DatabaseManager::getInstance(w.getPath());
+		DatabaseManager::getInstance("testing");
+		showEditor(false);
+		clearListView();
 	}
 }
 
@@ -189,13 +202,11 @@ void MainWindow::searchNotes(){
 	else
 		result = db.getNotes(search);
 
-	// Clear List View
+	// Reference
 	QListWidget& l = *ui->noteList;
-	QListWidgetItem* item = l.takeItem(0);
-	while( item != NULL ){
-		delete item;
-		item = l.takeItem(0);
-	}
+
+	// Clear List View
+	clearListView();
 
 	if(result.empty())
 		// Show No Result Massage
@@ -302,6 +313,15 @@ void MainWindow::loadActualNoteContent(){
 void MainWindow::showEditor(bool b){
 	ui->tabBox->setEnabled(b);
 	ui->editor->setVisible(b);
+}
+
+void MainWindow::clearListView(){
+	QListWidget& l = *ui->noteList;
+	QListWidgetItem* item = l.takeItem(0);
+	while( item != NULL ){
+		delete item;
+		item = l.takeItem(0);
+	}
 }
 
 /********************************************************************

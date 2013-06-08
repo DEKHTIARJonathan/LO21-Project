@@ -19,6 +19,7 @@ class NotesManager
 		Note&							getNote(unsigned int id);
 		void							saveNote(Note& n);
 		void							deleteNote(Note& n);
+		void							flush();
 
 		// Singleton
 		static NotesManager&			getInstance();
@@ -27,9 +28,6 @@ class NotesManager
 	private:
 		// Member
 		QMap<unsigned int,Note*>		m_loadedNotes;
-
-		// Method
-		void							flush();
 
 		// Destructor
 		~NotesManager();

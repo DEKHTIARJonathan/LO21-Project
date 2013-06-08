@@ -16,6 +16,7 @@ class WorkspaceForm : public QDialog
 		void						cancel();
 		void						loadPath(const QString &fileName);
 		void						choosePath();
+		void						createNewWorkSpace();
 		
 	public:
 		// Constructor

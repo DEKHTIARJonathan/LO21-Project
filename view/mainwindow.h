@@ -60,6 +60,7 @@ class MainWindow : public QMainWindow
 		void				showErrorMessageBox(const QString& msg);
 		void				showEditor(bool b);
 		void				loadActualNoteContent();
+		void				clearListView();
 
 		// Setup
 		void				setupMenu();

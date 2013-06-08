@@ -50,13 +50,21 @@ void GeneralViewFactory::deleteView(unsigned int id){
 	QMap<unsigned int, NoteView*>::iterator f = m_views.find(id);
 
 	if( f!=m_views.end() ){ // And delete here if exist
-		NoteView* v = *f;
+		NoteView* v = f.value();
 		m_views.erase(f);
 		delete (v);
 	}
 }
 
+void GeneralViewFactory::flushViews(){
+	for( QMap<unsigned int, NoteView*>::iterator it = m_views.begin(); it!=m_views.end(); it++ ){
+		delete (it.value());
+	}
+	m_views.clear();
+}
+
 void GeneralViewFactory::flush(){
+	flushViews();
 	for(QHash<QString, InterfaceViewFactory*>::iterator it = m_factories.begin(); it!=m_factories.end(); it++)
 		delete *it;
 }
