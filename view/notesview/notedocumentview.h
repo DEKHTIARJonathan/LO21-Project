@@ -17,6 +17,9 @@ class NoteDocumentView : public QWidget
 		void					showNote();
 		void					removeNote();
 
+	public slots:
+		void					setEditMode(bool b);
+
 	public:
 		// Constructor
 		explicit NoteDocumentView(Note& n, QWidget *parent = 0);

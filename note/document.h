@@ -21,8 +21,11 @@ class Document : public Note
 		void							addNote(Note &n);
 		Note&							getNote(unsigned int i) const;
 		void							removeNote(unsigned int id);
-		vector<Note*>::iterator			getIterator();
-		vector<Note*>::const_iterator	getConstIterator() const;
+		void							flushNotes();
+		vector<Note*>::iterator			begin();
+		vector<Note*>::const_iterator	begin() const;
+		vector<Note*>::iterator			end();
+		vector<Note*>::const_iterator	end() const;
 
 	private:
 		// Constructor

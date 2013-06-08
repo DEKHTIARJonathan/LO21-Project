@@ -14,7 +14,6 @@ ImageView::ImageView(Image& a, QWidget *parent) :
 
 	// Setup
 	QObject::connect(ui->searchImage, SIGNAL(clicked()), this, SLOT(chooseImg()));
-	setEditMode(false);
 }
 
 /********************************************************************

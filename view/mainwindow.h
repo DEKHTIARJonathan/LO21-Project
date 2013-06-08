@@ -28,6 +28,7 @@ class MainWindow : public QMainWindow
 	public slots:
 		void				newNote();
 		void				openNote(QListWidgetItem* i);
+		void				openNote(unsigned int id);
 		void				editSaveNote();
 		void				deleteCancelNote();
 		void				searchNotes();

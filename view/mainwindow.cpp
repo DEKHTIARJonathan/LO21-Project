@@ -82,6 +82,10 @@ void MainWindow::openNote(QListWidgetItem* i){
 	}
 }
 
+void MainWindow::openNote(unsigned int id){
+	displayNote(id);
+}
+
 void MainWindow::editSaveNote(){
 	if( !m_editMode ){
 		// Setup Edit Mode
@@ -264,6 +268,7 @@ void MainWindow::displayNote(Note &n){
 void MainWindow::clearActualNoteView(){
 	if( m_actualNote != NULL ){
 		// Hide Actual Note View
+		QObject::disconnect(m_actualNoteView, SIGNAL(showNote(uint)), this, SLOT(openNote(uint)));
 		showEditor(false);
 		ui->speNoteLayout->removeWidget(m_actualNoteView);
 		m_actualNoteView->setParent(NULL);
@@ -277,6 +282,8 @@ void MainWindow::loadActualNoteContent(){
 		// Load Actual Note in View
 		ui->titleEdit->setText(m_actualNote->getTitle());
 		m_actualNoteView->loadNoteContent();
+		m_actualNoteView->setEditMode(false);
+		QObject::connect(m_actualNoteView, SIGNAL(showNote(uint)), this, SLOT(openNote(uint)));
 	}
 }
 

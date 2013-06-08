@@ -7,6 +7,9 @@ class NoteView : public QWidget
 {
 		Q_OBJECT
 
+	signals:
+		void				showNote(unsigned int id);
+
 	public:
 		// Constructor
 		explicit NoteView(QWidget *parent = 0);

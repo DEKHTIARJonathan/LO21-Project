@@ -11,7 +11,6 @@ ArticleView::ArticleView(Article &a, QWidget *parent) :
 	m_art(&a)
 {
 	ui->setupUi(this);
-	setEditMode(false);
 }
 
 /********************************************************************

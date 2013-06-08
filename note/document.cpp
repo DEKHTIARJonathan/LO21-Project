@@ -42,11 +42,23 @@ void Document::removeNote(unsigned int id){
 		}
 }
 
-vector<Note*>::iterator Document::getIterator(){
+void Document::flushNotes(){
+	m_notes.clear();
+}
+
+vector<Note*>::iterator Document::begin(){
 	return m_notes.begin();
 }
 
-vector<Note*>::const_iterator Document::getConstIterator() const{
+vector<Note*>::const_iterator Document::begin() const{
 	return m_notes.begin();
+}
+
+vector<Note*>::iterator Document::end(){
+	return m_notes.end();
+}
+
+vector<Note*>::const_iterator Document::end() const{
+	return m_notes.end();
 }
 

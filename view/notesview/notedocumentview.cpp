@@ -16,14 +16,23 @@ NoteDocumentView::NoteDocumentView(Note &n, QWidget *parent) :
 	QObject::connect(ui->showButton, SIGNAL(clicked()), this, SIGNAL(showNote()));
 	QObject::connect(ui->removeButton, SIGNAL(clicked()), this, SIGNAL(removeNote()));
 
-	ui->titleLabel->setText("[" + n.metaObject()->className() + "] " + n.getTitle());
+	ui->titleLabel->setText(QString() + "[" + n.metaObject()->className() + "] " + n.getTitle());
 }
 
 /********************************************************************
  *                              Getter                              *
  ********************************************************************/
 
-Note&	NoteDocumentView::getNoteRef() const{	return m_noteRef;	}
+Note&	NoteDocumentView::getNoteRef() const{	return *m_noteRef;	}
+
+/********************************************************************
+ *                           Slot Method		                    *
+ ********************************************************************/
+
+void NoteDocumentView::setEditMode(bool b){
+	ui->showButton->setEnabled(!b);
+	ui->removeButton->setEnabled(b);
+}
 
 /********************************************************************
  *                            Destructor                            *

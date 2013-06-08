@@ -13,8 +13,7 @@ AudioView::AudioView(Audio& a, QWidget *parent) :
 	ui->setupUi(this);
 
 	// Setup
-    QObject::connect(ui->searchAudio, SIGNAL(clicked()), this, SLOT(chooseAud()));
-	setEditMode(false);
+	QObject::connect(ui->searchAudio, SIGNAL(clicked()), this, SLOT(chooseAud()));
 }
 
 /********************************************************************
@@ -33,12 +32,12 @@ void AudioView::chooseAud(){
 
 void AudioView::loadNoteContent(){
 	ui->descEdit->setPlainText(m_aud->getDescription());
-    loadAudioPath(m_aud->getPath());
+	loadAudioPath(m_aud->getPath());
 }
 
 void AudioView::setEditMode(bool b){
 	ui->descEdit->setReadOnly(!b);
-    ui->searchAudio->setEnabled(b);
+	ui->searchAudio->setEnabled(b);
 }
 
 void AudioView::saveChanges(){

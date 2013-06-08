@@ -6,15 +6,14 @@
  ********************************************************************/
 
 VideoView::VideoView(Video& a, QWidget *parent) :
-    NoteView(parent),
-    ui(new Ui::VideoView),
-    m_vid(&a)
+	NoteView(parent),
+	ui(new Ui::VideoView),
+	m_vid(&a)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 
-    // Setup
-    QObject::connect(ui->searchVideo, SIGNAL(clicked()), this, SLOT(chooseAud()));
-    setEditMode(false);
+	// Setup
+	QObject::connect(ui->searchVideo, SIGNAL(clicked()), this, SLOT(chooseAud()));
 }
 
 /********************************************************************
@@ -22,9 +21,9 @@ VideoView::VideoView(Video& a, QWidget *parent) :
  ********************************************************************/
 
 void VideoView::chooseAud(){
-    QString fileName = QFileDialog::getOpenFileName(this, "Open Audio", QString(), "Audio File (*.*)");
-    if(!fileName.isEmpty())
-        loadVideoPath(fileName);
+	QString fileName = QFileDialog::getOpenFileName(this, "Open Audio", QString(), "Audio File (*.*)");
+	if(!fileName.isEmpty())
+		loadVideoPath(fileName);
 }
 
 /********************************************************************
@@ -32,22 +31,22 @@ void VideoView::chooseAud(){
  ********************************************************************/
 
 void VideoView::loadNoteContent(){
-    ui->descEdit->setPlainText(m_vid->getDescription());
-    loadVideoPath(m_vid->getPath());
+	ui->descEdit->setPlainText(m_vid->getDescription());
+	loadVideoPath(m_vid->getPath());
 }
 
 void VideoView::setEditMode(bool b){
-    ui->descEdit->setReadOnly(!b);
-    ui->searchVideo->setEnabled(b);
+	ui->descEdit->setReadOnly(!b);
+	ui->searchVideo->setEnabled(b);
 }
 
 void VideoView::saveChanges(){
-    m_vid->setPath(ui->pathEdit->text());
-    m_vid->setDescription(ui->descEdit->toPlainText());
+	m_vid->setPath(ui->pathEdit->text());
+	m_vid->setDescription(ui->descEdit->toPlainText());
 }
 
 void VideoView::loadVideoPath(const QString& path){
-    ui->pathEdit->setText(path);
+	ui->pathEdit->setText(path);
 }
 
 /********************************************************************
@@ -56,6 +55,6 @@ void VideoView::loadVideoPath(const QString& path){
 
 VideoView::~VideoView()
 {
-    delete ui;
+	delete ui;
 }
 
