@@ -48,6 +48,7 @@ void MainWindow::setupSearchArea(){
 	// Connect
 	QObject::connect(ui->searchButton, SIGNAL(clicked()), this, SLOT(searchNotes()));
 	QObject::connect(ui->noteList, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(openNote(QListWidgetItem*)));
+	QObject::connect(ui->trashButton, SIGNAL(clicked()), this, SLOT(openTrash()));
 }
 
 void MainWindow::setupEditorArea(){
@@ -78,6 +79,7 @@ void MainWindow::newNote(){
 		QAction* a = dynamic_cast<QAction*> (QObject::sender());
 		if(a!=NULL)
 			editNewNote(a->text());
+		searchNotes();
 
 	}
 	catch(std::exception& e){
@@ -132,7 +134,7 @@ void MainWindow::editSaveNote(){
 			// And Setup View Mode
 			m_actualNoteView->setEditMode(false);
 			ui->titleEdit->setReadOnly(true);
-			ui->deleteCancelButton->setText("Delete");
+			ui->deleteCancelButton->setText("Put to Trash");
 			ui->editSaveButton->setText("Edit");
 		}
 		m_editMode = !m_editMode;
@@ -148,14 +150,16 @@ void MainWindow::deleteCancelNote(){
 
 		if( !m_editMode ){
 			// Delete Note
-
+			NotesManager::getInstance().putToTrash(*m_actualNote);
+			clearActualNoteView();
+			searchNotes();
 		}
 		else{
 			// Reload Original Note content and Setup View Mode
 			loadActualNoteContent();
 			m_actualNoteView->setEditMode(false);
 			ui->titleEdit->setReadOnly(true);
-			ui->deleteCancelButton->setText("Delete");
+			ui->deleteCancelButton->setText("Put to Trash");
 			ui->editSaveButton->setText("Edit");
 			m_editMode = !m_editMode;
 		}
@@ -276,6 +280,7 @@ void MainWindow::openTrash(){
 		if( w.getSelectedNote() != NULL ){
 			DatabaseManager::getInstance().removeFromTrash(w.getSelectedNote()->getId());
 			displayNote(*w.getSelectedNote());
+			searchNotes();
 		}
 
 	}

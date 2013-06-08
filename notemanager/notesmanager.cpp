@@ -55,8 +55,8 @@ void NotesManager::putToTrash(Note& n){
 	// Check if Note is loaded
 	QMap<unsigned int, Note*>::iterator it = m_loadedNotes.find(n.getId());
 
-	if( it!=m_loadedNotes.end() )	// Return an exception when Note 'n' wasn't referenced.
-		throw NotesManagerException("Delete Note ("+QString::number(n.getId())+")","Can not delete an unreferenced Note.");
+	if( it == m_loadedNotes.end() )	// Return an exception when Note 'n' wasn't referenced.
+		throw NotesManagerException("Put to Trash Note ("+QString::number(n.getId())+")","Can not delete an unreferenced Note.");
 
 	// Put Note 'n' in trash from DB.
 	DatabaseManager::getInstance().putToTrash(n.getId());
