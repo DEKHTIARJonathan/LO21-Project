@@ -80,24 +80,39 @@ void MainWindow::newNote(){
 			editNewNote(a->text());
 
 	}
-	catch(std::exception e){
+	catch(std::exception& e){
 		showErrorMessageBox(QString(e.what()));
 	}
 }
 
 void MainWindow::openNote(QListWidgetItem* i){
-	ListNoteViewItem* item = dynamic_cast<ListNoteViewItem*> (i);
-	if( item!=NULL ){
-		displayNote(item->getId());
+	try{
+
+		ListNoteViewItem* item = dynamic_cast<ListNoteViewItem*> (i);
+		if( item!=NULL ){
+			displayNote(item->getId());
+		}
+
+	}
+	catch(std::exception& e){
+		showErrorMessageBox(QString(e.what()));
 	}
 }
 
 void MainWindow::openNote(unsigned int id){
-	displayNote(id);
+	try{
+
+		displayNote(id);
+
+	}
+	catch(std::exception& e){
+		showErrorMessageBox(QString(e.what()));
+	}
 }
 
 void MainWindow::editSaveNote(){
 	try{
+
 		if( !m_editMode ){
 			// Setup Edit Mode
 			ui->editSaveButton->setText("Save");
@@ -121,101 +136,130 @@ void MainWindow::editSaveNote(){
 			ui->editSaveButton->setText("Edit");
 		}
 		m_editMode = !m_editMode;
+
 	}
-	catch(std::exception e){
+	catch(std::exception& e){
 		showErrorMessageBox(QString(e.what()));
 	}
 }
 
 void MainWindow::deleteCancelNote(){
-	if( !m_editMode ){
-		// To Do Delete
+	try{
+
+		if( !m_editMode ){
+			// To Do Delete
+		}
+		else{
+			// Reload Original Note content and Setup View Mode
+			loadActualNoteContent();
+			m_actualNoteView->setEditMode(false);
+			ui->titleEdit->setReadOnly(true);
+			ui->deleteCancelButton->setText("Delete");
+			ui->editSaveButton->setText("Edit");
+			m_editMode = !m_editMode;
+		}
+
 	}
-	else{
-		// Reload Original Note content and Setup View Mode
-		loadActualNoteContent();
-		m_actualNoteView->setEditMode(false);
-		ui->titleEdit->setReadOnly(true);
-		ui->deleteCancelButton->setText("Delete");
-		ui->editSaveButton->setText("Edit");
-		m_editMode = !m_editMode;
+	catch(std::exception& e){
+		showErrorMessageBox(QString(e.what()));
 	}
 }
 
 void MainWindow::exportNote(int i){
-	if( i!=0 ){
-		if( m_editMode ){
-			ui->tabBox->setCurrentIndex(0);
-			showErrorMessageBox("Impossible to export note, currents modifications need to be saved before.");
-		}
-		else{
-			// Get Export
-			GeneralExportFactory& ef = GeneralExportFactory::getInstance();
+	try{
 
-			switch(i){
-				case 1:
-					ui->htmlArea->setHtml(ef.exportNote("html", *m_actualNote));
-					break;
-				case 2:
-					ui->texArea->setText(ef.exportNote("tex", *m_actualNote));
-					break;
-				case 3:
-					ui->txtArea->setText(ef.exportNote("txt", *m_actualNote));
-					break;
-				default:
-					showErrorMessageBox("This box is not referenced in exportNote function.");
-					break;
+		if( i!=0 ){
+			if( m_editMode ){
+				ui->tabBox->setCurrentIndex(0);
+				showErrorMessageBox("Impossible to export note, currents modifications need to be saved before.");
+			}
+			else{
+				// Get Export
+				GeneralExportFactory& ef = GeneralExportFactory::getInstance();
+
+				switch(i){
+					case 1:
+						ui->htmlArea->setHtml(ef.exportNote("html", *m_actualNote));
+						break;
+					case 2:
+						ui->texArea->setText(ef.exportNote("tex", *m_actualNote));
+						break;
+					case 3:
+						ui->txtArea->setText(ef.exportNote("txt", *m_actualNote));
+						break;
+					default:
+						showErrorMessageBox("This box is not referenced in exportNote function.");
+						break;
+				}
 			}
 		}
+
+	}
+	catch(std::exception& e){
+		showErrorMessageBox(QString(e.what()));
 	}
 }
 
 void MainWindow::changeWorkspace(){
-	// Look for Path
-	DatabaseManager& db = DatabaseManager::getInstance();
+	try{
 
-	// Show Worspace form
-	WorkspaceForm w(db.getpath());
-	w.setModal(true);
-	w.exec();
+		// Look for Path
+		DatabaseManager& db = DatabaseManager::getInstance();
 
-	if( !w.isCanceled() && w.getPath() != db.getpath() ){
-		GeneralViewFactory::getInstance().flushViews();
-		NotesManager::getInstance().flush();
-		DatabaseManager::destroy();
-		//DatabaseManager::getInstance(w.getPath());
-		DatabaseManager::getInstance("testing");
-		showEditor(false);
-		clearListView();
+		// Show Worspace form
+		WorkspaceForm w(db.getpath());
+		w.setModal(true);
+		w.exec();
+
+		if( !w.isCanceled() && w.getPath() != db.getpath() ){
+			GeneralViewFactory::getInstance().flushViews();
+			NotesManager::getInstance().flush();
+			DatabaseManager::destroy();
+			//DatabaseManager::getInstance(w.getPath());
+			DatabaseManager::getInstance("testing");
+			showEditor(false);
+			clearListView();
+		}
+
+	}
+	catch(std::exception& e){
+		showErrorMessageBox(QString(e.what()));
 	}
 }
 
 void MainWindow::searchNotes(){
-	// Get back search line's text
-	QString search = ui->searchLine->text();
+	try{
 
-	// Start search in DataBase
-	DatabaseManager& db = DatabaseManager::getInstance();
-	std::vector< pair <unsigned int, QString > > result;
-	if( search.isEmpty() )
-		result = db.getNotes();
-	else
-		result = db.getNotes(search);
+		// Get back search line's text
+		QString search = ui->searchLine->text();
 
-	// Reference
-	QListWidget& l = *ui->noteList;
+		// Start search in DataBase
+		DatabaseManager& db = DatabaseManager::getInstance();
+		std::vector< pair <unsigned int, QString > > result;
+		if( search.isEmpty() )
+			result = db.getNotes();
+		else
+			result = db.getNotes(search);
 
-	// Clear List View
-	clearListView();
+		// Reference
+		QListWidget& l = *ui->noteList;
 
-	if(result.empty())
-		// Show No Result Massage
-		showInfoMessageBox("No result.");
-	else{
-		// Display results
-		for( std::vector< pair <unsigned int, QString > >::const_iterator it = result.begin(); it!=result.end(); it++ )
-			l.addItem( new ListNoteViewItem(it->first,it->second) );
-		l.sortItems();
+		// Clear List View
+		clearListView();
+
+		if(result.empty())
+			// Show No Result Massage
+			showInfoMessageBox("No result.");
+		else{
+			// Display results
+			for( std::vector< pair <unsigned int, QString > >::const_iterator it = result.begin(); it!=result.end(); it++ )
+				l.addItem( new ListNoteViewItem(it->first,it->second) );
+			l.sortItems();
+		}
+
+	}
+	catch(std::exception& e){
+		showErrorMessageBox(QString(e.what()));
 	}
 
 }
