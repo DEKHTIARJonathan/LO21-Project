@@ -35,13 +35,14 @@ public:
 	bool putToTrash (unsigned int n) const;
 	bool removeFromTrash (unsigned int n) const;
 
+
 	/***************** Retrievers *********************/
 
 	std::vector<QString> getAllTags() const; // Retourne tous les Tags existants
 	std::vector<QString> getTags (const Note& n) const; // Retourne les tags associés à une Note
 	std::vector< pair <unsigned int, QString > > getNotes (const QString &tag) const; // Retourne les Notes associés à un Tag.
 	std::vector< pair <unsigned int, QString > > getNotes () const; // Retourne Toutes les Notes
-
+	std::vector< pair <unsigned int, QString > > getTrash() const;
 	QString getNoteType(const unsigned int id); // Renvoie le type d'une note
 
 	/***************** Deleters ************************/
@@ -104,7 +105,7 @@ public:
 
 	/***************** Inserters **********************/
 
-	unsigned int insertNotePrivate(const QString& type) const;
+	unsigned int insertNoteCommon(const QString& type) const;
 	bool insertMultimedia(const unsigned int id) const;
 	bool insertTag (const QString &t) const;
 
