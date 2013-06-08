@@ -1,5 +1,5 @@
 #include "databasemanager.h"
-
+#include <notemanager/notesmanager.h>
 using namespace std;
 
 
@@ -300,6 +300,11 @@ bool DatabaseManager::updateNote (const Document& d)  const
 
 	result &= query("UPDATE Note SET title = '"+escape(title)+"' WHERE id ='"+ QString::number(id) +"'");
 
+	for (vector<Note* >::const_iterator it = d.begin(); it != d.end(); it++)
+	{
+		addNoteToDoc(id, (Note&) *it);
+	}
+
 	return result;
 }
 
@@ -445,6 +450,29 @@ QString DatabaseManager::getNoteType(const unsigned int id)
 	return request.value(0).toString();
 }
 
+bool DatabaseManager::getNotesInDoc (Document& d) const
+{
+	int idDoc = d.getId();
+
+	QSqlQuery request(*database);
+	vector<QString> result;
+
+	NotesManager& nm = NotesManager::getInstance();
+
+	QString sql = "Select note from AssocDoc where docMaster = "+QString::number(idDoc);
+
+	if(!request.exec(sql))
+		throw DBException(sql, request.lastError().databaseText());
+
+	while (request.next())
+	{
+		cout<<"Note : "+request.value(0).toString().toStdString();
+		d.addNote(nm.getNote(request.value(0).toInt()));
+	}
+
+	return true;
+}
+
 /********************************************************************
  *                   AssocBuilders // AssocRemovers                 *
  ********************************************************************/
@@ -542,6 +570,8 @@ bool DatabaseManager::fillNote (Document& d)  const
 	QString title = query.value(0).toString();
 
 	d.setTitle(title);
+
+	result &= getNotesInDoc(d);
 
 	return result;
 }

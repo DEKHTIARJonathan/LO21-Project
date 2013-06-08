@@ -17,6 +17,7 @@
 #include "constants.h"
 #include <dbmanager/dbexception.h>
 
+
 class DatabaseManager
 {
 public:
@@ -86,13 +87,13 @@ public:
 	QSqlDatabase *database;
 	QString dbpath;
 
-	/***************** DB REQUESTS ********************/
+	/***************** DB Requests ********************/
 	bool initDB();
 	bool query(const QString& query) const; // Execute une query en SQL
 	int getLastID() const; // Retourne le rowid du de la derniere requete d'insertion effectuée.
 	bool tagExist(const QString &t) const;
 
-	/********************* ESCAPER ********************/
+	/********************* Escaper ********************/
 
 	QString escape(QString s) const;
 	QString capitalize(QString str) const;
@@ -108,6 +109,10 @@ public:
 	unsigned int insertNoteCommon(const QString& type) const;
 	bool insertMultimedia(const unsigned int id) const;
 	bool insertTag (const QString &t) const;
+
+	/***************** Retrievers **********************/
+
+	bool getNotesInDoc (Document& d) const;
 
 	/***************** AssocBuilders ******************/
 
