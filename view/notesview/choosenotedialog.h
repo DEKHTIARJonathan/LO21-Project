@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <dbmanager/databasemanager.h>
+#include <notemanager/notesmanager.h>
 #include <view/listnoteviewitem.h>
 
 namespace Ui {
@@ -14,11 +15,11 @@ class ChooseNoteDialog : public QDialog
 		Q_OBJECT
 		
 	public slots:
-		void					setSelectedNote(Note& n);
+		void					setSelectedNote(QListWidgetItem* item);
 
 	public:
 		explicit ChooseNoteDialog(QWidget *parent = 0);
-		Note&					getSelectedNote() const;
+		Note*					getSelectedNote() const;
 		~ChooseNoteDialog();
 		
 	private:

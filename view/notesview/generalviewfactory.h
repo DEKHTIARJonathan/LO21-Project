@@ -10,6 +10,9 @@
 
 #include <view/notesview/articleview.h>
 #include <view/notesview/imageview.h>
+#include <view/notesview/audioview.h>
+#include <view/notesview/videoview.h>
+#include <view/notesview/documentview.h>
 
 class GeneralViewFactory
 {

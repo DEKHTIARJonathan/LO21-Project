@@ -2,6 +2,7 @@
 #define DOCUMENT_H
 
 #include <vector>
+#include <QDebug>
 
 #include <note/note.h>
 #include <note/documentindexoutofarrayexception.h>

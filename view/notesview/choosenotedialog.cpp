@@ -21,16 +21,22 @@ ChooseNoteDialog::ChooseNoteDialog(QWidget *parent) :
 		l.sortItems();
 	}
 
+	QObject::connect(ui->noteList, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(setSelectedNote(QListWidgetItem*)));
+	QObject::connect(ui->cancelButton, SIGNAL(clicked()), this, SLOT(close()));
 
 }
 
-Note& ChooseNoteDialog::getSelectedNote() const{
-	return *m_selectedNote;
+Note* ChooseNoteDialog::getSelectedNote() const{
+	return m_selectedNote;
 }
 
-void ChooseNoteDialog::setSelectedNote(Note& n){
-	m_selectedNote = &n;
+void ChooseNoteDialog::setSelectedNote(QListWidgetItem* item){
+	ListNoteViewItem* i = dynamic_cast<ListNoteViewItem*> ( item );
 
+	if( i!=NULL ){
+		m_selectedNote = &NotesManager::getInstance().getNote(i->getId());
+		this->close();
+	}
 }
 
 ChooseNoteDialog::~ChooseNoteDialog()

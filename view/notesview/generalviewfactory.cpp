@@ -8,6 +8,9 @@ GeneralViewFactory::GeneralViewFactory() : m_factories()
 {
 	m_factories.insert( Article::staticMetaObject.className(), (InterfaceViewFactory*)(new ViewFactory<Article, ArticleView>()) );
 	m_factories.insert( Image::staticMetaObject.className(), (InterfaceViewFactory*)(new ViewFactory<Image, ImageView>()) );
+	m_factories.insert( Audio::staticMetaObject.className(), (InterfaceViewFactory*)(new ViewFactory<Audio, AudioView>()) );
+	m_factories.insert( Video::staticMetaObject.className(), (InterfaceViewFactory*)(new ViewFactory<Video, VideoView>()) );
+	m_factories.insert( Document::staticMetaObject.className(), (InterfaceViewFactory*)(new ViewFactory<Document, DocumentView>()) );
 }
 
 /********************************************************************

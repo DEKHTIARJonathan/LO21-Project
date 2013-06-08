@@ -1,6 +1,8 @@
 #ifndef DOCUMENTVIEW_H
 #define DOCUMENTVIEW_H
 
+#include <QDebug>
+
 #include <view/notesview/noteview.h>
 #include <note/document.h>
 #include <view/notesview/notedocumentview.h>
@@ -39,8 +41,9 @@ class DocumentView : public NoteView
 		Document*			m_doc;
 
 		// Method
-		void				addNoteDocumentView(Note& n);
+		void				addNoteDocumentView(Note& n, bool editMode = false);
 		void				removeNoteDocumentView(NoteDocumentView* v);
+		void				clearViewList();
 };
 
 #endif // DOCUMENTVIEW_H

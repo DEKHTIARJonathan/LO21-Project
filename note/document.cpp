@@ -44,6 +44,7 @@ void Document::removeNote(unsigned int id){
 
 void Document::flushNotes(){
 	m_notes.clear();
+	m_modified = true;
 }
 
 vector<Note*>::iterator Document::begin(){

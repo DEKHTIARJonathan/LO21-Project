@@ -15,6 +15,9 @@ MainWindow::MainWindow(QWidget *parent) :QMainWindow(parent),ui(new Ui::MainWind
 	setupEditorArea();
 	setupExportArea();
 
+	// Display all notes
+	searchNotes();
+
 }
 
 /********************************************************************
@@ -70,13 +73,13 @@ void MainWindow::setupExportArea(){
  ********************************************************************/
 
 void MainWindow::newNote(){
-	QAction* a = static_cast<QAction*> (QObject::sender());
+	QAction* a = dynamic_cast<QAction*> (QObject::sender());
 	if(a!=NULL)
 		editNewNote(a->text());
 }
 
 void MainWindow::openNote(QListWidgetItem* i){
-	ListNoteViewItem* item = static_cast<ListNoteViewItem*> (i);
+	ListNoteViewItem* item = dynamic_cast<ListNoteViewItem*> (i);
 	if( item!=NULL ){
 		displayNote(item->getId());
 	}
@@ -87,25 +90,34 @@ void MainWindow::openNote(unsigned int id){
 }
 
 void MainWindow::editSaveNote(){
-	if( !m_editMode ){
-		// Setup Edit Mode
-		ui->editSaveButton->setText("Save");
-		ui->deleteCancelButton->setText("Cancel");
-		ui->titleEdit->setReadOnly(false);
-		m_actualNoteView->setEditMode(true);
+	try{
+		if( !m_editMode ){
+			// Setup Edit Mode
+			ui->editSaveButton->setText("Save");
+			ui->deleteCancelButton->setText("Cancel");
+			ui->titleEdit->setReadOnly(false);
+			m_actualNoteView->setEditMode(true);
+		}
+		else{
+			// Save Note
+			bool titleChanged = m_actualNote->getTitle() != ui->titleEdit->text();
+			if( titleChanged )
+				m_actualNote->setTitle(ui->titleEdit->text());
+			m_actualNoteView->saveChanges();
+			NotesManager::getInstance().saveNote(*m_actualNote);
+			if( titleChanged )
+				searchNotes();
+			// And Setup View Mode
+			m_actualNoteView->setEditMode(false);
+			ui->titleEdit->setReadOnly(true);
+			ui->deleteCancelButton->setText("Delete");
+			ui->editSaveButton->setText("Edit");
+		}
+		m_editMode = !m_editMode;
 	}
-	else{
-		// Save Note
-		m_actualNote->setTitle(ui->titleEdit->text());
-		m_actualNoteView->saveChanges();
-		NotesManager::getInstance().saveNote(*m_actualNote);
-		// And Setup View Mode
-		m_actualNoteView->setEditMode(false);
-		ui->titleEdit->setReadOnly(true);
-		ui->deleteCancelButton->setText("Delete");
-		ui->editSaveButton->setText("Edit");
+	catch(std::exception e){
+		showErrorMessageBox(QString(e.what()));
 	}
-	m_editMode = !m_editMode;
 }
 
 void MainWindow::deleteCancelNote(){
