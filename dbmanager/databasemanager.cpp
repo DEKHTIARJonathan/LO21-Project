@@ -7,15 +7,13 @@ using namespace std;
  *                           Constructers                           *
  ********************************************************************/
 
-DatabaseManager::DatabaseManager(const QString &filename, const QString &user, const QString &pass)
+DatabaseManager::DatabaseManager(const QString &path, const QString &user, const QString &pass) : database(new QSqlDatabase()), dbpath(path)
 {
-	database = new QSqlDatabase();
-	//set database driver to QSQLITE
-	*database = QSqlDatabase::addDatabase("QSQLITE", filename);
-
-	dbpath = QDir::currentPath() +"/"+ filename + ".lo21";
+	//set database driver to QSQLITE avec une connection ayant pour nom "projet.lo21"
+	*database = QSqlDatabase::addDatabase("QSQLITE", "projet.lo21");
 
 	QFile file(dbpath);
+
 	bool dbIsNew = !file.exists();
 
 	database->setDatabaseName(dbpath);
@@ -27,7 +25,7 @@ DatabaseManager::DatabaseManager(const QString &filename, const QString &user, c
 
 	if(!database->open())
 	{
-		throw DBException("INITIALISATION Database", "Can not open database.");
+		throw DBException("INITIALISATION Database", "Can not open database. Path = "+file.fileName());
 	}
 	else
 	{
@@ -101,8 +99,19 @@ bool DatabaseManager::removeFromTrash (unsigned int n) const
 	return query("UPDATE Note SET trashed = 0 WHERE id = "+ QString::number(n));
 }
 
-
-
+bool DatabaseManager::isTrashEmpty() const
+{
+	QSqlQuery request(*database);
+	if(request.exec("select count(*) from Note where trashed = 1"))
+	{
+		if(request.next())
+			return request.value(0).toBool();
+		else
+			throw DBException("select count(*) from Note where trashed = 1", request.lastError().databaseText());
+	}
+	else
+		throw DBException("select count(*) from Note where trashed = 1", request.lastError().databaseText());
+}
 /********************************************************************
  *                            DB Requests                           *
  ********************************************************************/
@@ -467,7 +476,6 @@ bool DatabaseManager::getNotesInDoc (Document& d) const
 
 	while (request.next())
 	{
-		cout<<"Note : "+request.value(0).toString().toStdString();
 		d.addNote(nm.getNote(request.value(0).toInt()));
 	}
 
@@ -609,13 +617,14 @@ bool DatabaseManager::fillNote (MultiMedia& m)  const
 
 DatabaseManager* DatabaseManager::s_inst = NULL;
 
-DatabaseManager& DatabaseManager::getInstance(QString filename, QString user, QString pass){
+DatabaseManager& DatabaseManager::getInstance(QString path, QString user, QString pass){
 	if( s_inst == NULL )
-		s_inst = new DatabaseManager(filename,user,pass);
+		s_inst = new DatabaseManager(path,user,pass);
 	return (*s_inst);
 }
 
-void DatabaseManager::destroy(){
+void DatabaseManager::destroy()
+{
 	if( s_inst != NULL )
 	{
 		delete s_inst;
@@ -629,5 +638,5 @@ DatabaseManager::~DatabaseManager()
 	database->close();
 	delete database;
 	database = NULL;
-	QSqlDatabase::removeDatabase(dbname);
+	QSqlDatabase::removeDatabase("projet.lo21");
 }

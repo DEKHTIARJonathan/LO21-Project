@@ -30,7 +30,7 @@ public:
 	/***************** DB REQUESTS ********************/
 
 	/***************** TrashManaging ******************/
-
+	bool isTrashEmpty() const;
 	bool emptyTrash() const;
 	bool isTrashed (unsigned int n) const;
 	bool putToTrash (unsigned int n) const;
@@ -74,7 +74,7 @@ public:
 
 	/****************  Singleton ^*********************/
 
-	static DatabaseManager&			getInstance(QString filename = "temp", QString user = "", QString pass = "");
+	static DatabaseManager&			getInstance(QString path = QDir::currentPath() +"/temp.lo21", QString user = "", QString pass = "");
 	static void						destroy();
 
  private:
@@ -120,7 +120,7 @@ public:
 
 	/****************  Singleton ^*********************/
 
-	DatabaseManager(const QString &filename, const QString &user, const QString &pass);	// Interdit l'instanciation directe
+	DatabaseManager(const QString &path, const QString &user, const QString &pass);	// Interdit l'instanciation directe
 	DatabaseManager(const DatabaseManager& nm);	// Interdit la recopie
 	DatabaseManager& operator=(const DatabaseManager& n);	// Interdit la recopie
 	static DatabaseManager *s_inst;	// Contient le singleton s'il est instancié

@@ -1,5 +1,5 @@
 #include "exporttex.h"
-
+#include "export/generalexportfactory.h"
 ExportTex::ExportTex()
 {
 }
@@ -34,8 +34,18 @@ QString	ExportTex::exportNote(const Article& a) const
 
 QString	ExportTex::exportNote(const Document& d) const
 {
-	d.getTitle();
-	return "";
+	GeneralExportFactory &gef = GeneralExportFactory::getInstance();
+
+	QString result = exportNote((Note&)d);
+
+	for (vector<Note* >::const_iterator it = d.begin(); it != d.end(); it++)
+	{
+		result += "\\frame\n"
+				  "{\n"
+				  ""+gef.exportNoteAsPart("tex", **it)+"\n"
+				  "}\n";
+	}
+	return result;
 }
 
 QString	ExportTex::exportNote(const Image& i) const
