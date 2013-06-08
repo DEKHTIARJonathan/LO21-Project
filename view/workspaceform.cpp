@@ -1,6 +1,10 @@
 #include "workspaceform.h"
 #include "ui_workspaceform.h"
 
+/********************************************************************
+ *                            Constructor                           *
+ ********************************************************************/
+
 WorkspaceForm::WorkspaceForm(const QString& file, QWidget *parent) :
 	QDialog(parent),
 	ui(new Ui::WorkspaceForm),
@@ -16,8 +20,16 @@ WorkspaceForm::WorkspaceForm(const QString& file, QWidget *parent) :
 	QObject::connect(ui->cancelButton, SIGNAL(clicked()), this, SLOT(cancel()));
 }
 
+/********************************************************************
+ *                              Getter                              *
+ ********************************************************************/
+
 bool WorkspaceForm::isCanceled()const{	return m_canceled;}
 QString WorkspaceForm::getPath()const{	return m_f;}
+
+/********************************************************************
+ *                           Slot Method		                    *
+ ********************************************************************/
 
 void WorkspaceForm::cancel(){
 	m_canceled = true;
@@ -30,10 +42,14 @@ void WorkspaceForm::loadPath(const QString& fileName){
 }
 
 void WorkspaceForm::choosePath(){
-	QString fileName = QFileDialog::getOpenFileName(this, "Open Image", QString(), "DB File (*.lo21)");
+	QString fileName = QFileDialog::getOpenFileName(this, "Open DB", QString(), "DB File (*.lo21)");
 	if(!fileName.isEmpty())
 		loadPath(fileName);
 }
+
+/********************************************************************
+ *                            Destructor                            *
+ ********************************************************************/
 
 WorkspaceForm::~WorkspaceForm()
 {

@@ -9,6 +9,7 @@
 #include <note/classdef.h>
 
 #include <view/notesview/articleview.h>
+#include <view/notesview/imageview.h>
 
 class GeneralViewFactory
 {

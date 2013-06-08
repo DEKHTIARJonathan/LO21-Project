@@ -1,8 +1,6 @@
 #ifndef ARTICLEVIEW_H
 #define ARTICLEVIEW_H
 
-#include <QWidget>
-
 #include <view/notesview/noteview.h>
 #include <note/article.h>
 

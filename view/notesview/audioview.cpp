@@ -1,19 +1,19 @@
-#include "imageview.h"
-#include "ui_imageview.h"
+#include "audioview.h"
+#include "ui_audioview.h"
 
 /********************************************************************
  *                            Constructor                           *
  ********************************************************************/
 
-ImageView::ImageView(Image& a, QWidget *parent) :
+AudioView::AudioView(Audio& a, QWidget *parent) :
 	NoteView(parent),
-	ui(new Ui::ImageView),
-	m_img(&a)
+	ui(new Ui::AudioView),
+	m_aud(&a)
 {
 	ui->setupUi(this);
 
 	// Setup
-	QObject::connect(ui->searchImage, SIGNAL(clicked()), this, SLOT(chooseImg()));
+    QObject::connect(ui->searchAudio, SIGNAL(clicked()), this, SLOT(chooseAud()));
 	setEditMode(false);
 }
 
@@ -21,42 +21,40 @@ ImageView::ImageView(Image& a, QWidget *parent) :
  *                           Slot Method		                    *
  ********************************************************************/
 
-void ImageView::chooseImg(){
-	QString fileName = QFileDialog::getOpenFileName(this, "Open Image", QString(), "Img File (*.*)");
+void AudioView::chooseAud(){
+	QString fileName = QFileDialog::getOpenFileName(this, "Open Audio", QString(), "Audio File (*.*)");
 	if(!fileName.isEmpty())
-		loadImagePath(fileName);
+		loadAudioPath(fileName);
 }
 
 /********************************************************************
  *                              Method                              *
  ********************************************************************/
 
-void ImageView::loadNoteContent(){
-	ui->descEdit->setPlainText(m_img->getDescription());
-	loadImagePath(m_img->getPath());
+void AudioView::loadNoteContent(){
+	ui->descEdit->setPlainText(m_aud->getDescription());
+    loadAudioPath(m_aud->getPath());
 }
 
-void ImageView::setEditMode(bool b){
+void AudioView::setEditMode(bool b){
 	ui->descEdit->setReadOnly(!b);
-	ui->searchImage->setEnabled(b);
+    ui->searchAudio->setEnabled(b);
 }
 
-void ImageView::saveChanges(){
-	m_img->setPath(ui->pathEdit->text());
-	m_img->setDescription(ui->descEdit->toPlainText());
+void AudioView::saveChanges(){
+	m_aud->setPath(ui->pathEdit->text());
+	m_aud->setDescription(ui->descEdit->toPlainText());
 }
 
-void ImageView::loadImagePath(const QString& path){
+void AudioView::loadAudioPath(const QString& path){
 	ui->pathEdit->setText(path);
-	QPixmap img(path);
-	ui->imageArea->setPixmap(img);
 }
 
 /********************************************************************
  *                            Destructor                            *
  ********************************************************************/
 
-ImageView::~ImageView()
+AudioView::~AudioView()
 {
 	delete ui;
 }

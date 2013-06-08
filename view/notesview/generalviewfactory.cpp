@@ -7,6 +7,7 @@
 GeneralViewFactory::GeneralViewFactory() : m_factories()
 {
 	m_factories.insert( Article::staticMetaObject.className(), (InterfaceViewFactory*)(new ViewFactory<Article, ArticleView>()) );
+	m_factories.insert( Image::staticMetaObject.className(), (InterfaceViewFactory*)(new ViewFactory<Image, ImageView>()) );
 }
 
 /********************************************************************

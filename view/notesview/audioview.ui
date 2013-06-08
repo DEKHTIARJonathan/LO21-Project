@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ImageView</class>
- <widget class="QWidget" name="ImageView">
+ <class>AudioView</class>
+ <widget class="QWidget" name="AudioView">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -15,16 +15,18 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QLabel" name="imageArea">
+    <widget class="QWidget" name="audioArea" native="true">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="text">
-      <string/>
-     </property>
+     <layout class="QVBoxLayout" name="audioLayout">
+      <property name="margin">
+       <number>0</number>
+      </property>
+     </layout>
     </widget>
    </item>
    <item>
@@ -64,7 +66,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QToolButton" name="searchImage">
+      <widget class="QToolButton" name="searchAudio">
        <property name="text">
         <string>...</string>
        </property>

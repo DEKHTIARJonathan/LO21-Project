@@ -31,7 +31,11 @@ SOURCES += \
     controller/controller.cpp \
     view/listnoteviewitem.cpp \
 	view/workspaceform.cpp \
-    view/notesview/imageview.cpp
+    view/notesview/imageview.cpp \
+    view/notesview/audioview.cpp \
+    view/notesview/videoview.cpp \
+    view/notesview/documentview.cpp \
+    view/notesview/notedocumentview.cpp
 
 HEADERS += \
     export/exportstrategy.h \
@@ -74,13 +78,21 @@ HEADERS += \
     controller/controller.h \
     view/listnoteviewitem.h \
     view/workspaceform.h \
-    view/notesview/imageview.h
+    view/notesview/imageview.h \
+    view/notesview/audioview.h \
+    view/notesview/videoview.h \
+    view/notesview/documentview.h \
+    view/notesview/notedocumentview.h
 
 FORMS += \
     view/mainwindow.ui \
 	view/notesview/articleview.ui \
     view/workspaceform.ui \
-    view/notesview/imageview.ui
+    view/notesview/imageview.ui \
+    view/notesview/audioview.ui \
+    view/notesview/videoview.ui \
+    view/notesview/documentview.ui \
+    view/notesview/notedocumentview.ui
 
 QT += widgets \
 	  sql \

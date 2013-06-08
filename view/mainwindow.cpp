@@ -29,12 +29,15 @@ void MainWindow::setupMenu(){
 
 	// New Note Menu
 	QList<QString> l = GeneralViewFactory::getInstance().getAvailableViewFactoryType();
+	QList<QAction *> acts;
 
 	for(QList<QString>::const_iterator it = l.begin(); it!=l.end(); it++){
 		QAction* act = new QAction(*it, this);
-		ui->menuNewNote->addAction(act);
+		acts.append(act);
 		QObject::connect(act, SIGNAL(triggered()), this, SLOT(newNote()));
 	}
+
+	ui->menuNewNote->addActions(acts);
 
 }
 
