@@ -37,16 +37,11 @@ class MainWindow : public QMainWindow
 		void				exportNote(int i);
 		void				changeWorkspace();
 		void				openTrash();
+		void				emptyTrash();
     
 	public:
 		// Constructor
 		explicit MainWindow(QWidget *parent = 0);
-
-		// Method
-		void				editNewNote( const QString& NoteType );
-		void				displayNote( unsigned int id );
-		void				displayNote( Note& n );
-		void				clearActualNoteView();
 
 		// Destructor
 		~MainWindow();
@@ -58,12 +53,19 @@ class MainWindow : public QMainWindow
 		NoteView*			m_actualNoteView;
 		bool				m_editMode;
 
-		// Method
+		// Info Method
 		void				showInfoMessageBox(const QString& msg);
 		void				showErrorMessageBox(const QString& msg);
+
+		// Tool Method
+		void				editNewNote( const QString& NoteType );
+		void				displayNote( unsigned int id );
+		void				displayNote( Note& n );
+		void				clearActualNoteView();
 		void				showEditor(bool b);
 		void				loadActualNoteContent();
 		void				clearListView();
+		void				emptyTrash(const std::vector< pair <unsigned int, QString > >& trash);
 
 		// Setup
 		void				setupMenu();

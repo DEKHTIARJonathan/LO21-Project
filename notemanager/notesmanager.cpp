@@ -62,8 +62,8 @@ void NotesManager::putToTrash(Note& n){
 	DatabaseManager::getInstance().putToTrash(n.getId());
 }
 
-void NotesManager::emptyTrash(std::vector< pair <unsigned int, QString > >& trash){
-	for(std::vector< pair <unsigned int, QString > >::iterator it = trash.begin(); it!=trash.end(); it++){
+void NotesManager::emptyTrash(const std::vector< pair <unsigned int, QString > >& trash){
+	for(std::vector< pair <unsigned int, QString > >::const_iterator it = trash.begin(); it!=trash.end(); it++){
 		// Check if Note is loaded
 		QMap<unsigned int, Note*>::iterator f = m_loadedNotes.find(it->first);
 		GeneralNoteFactory& gf = GeneralNoteFactory::getInstance();
@@ -76,8 +76,9 @@ void NotesManager::emptyTrash(std::vector< pair <unsigned int, QString > >& tras
 }
 
 void NotesManager::flush(){
+	GeneralNoteFactory& gf = GeneralNoteFactory::getInstance();
 	for(QMap<unsigned int, Note*>::iterator it = m_loadedNotes.begin(); it!=m_loadedNotes.end(); it++)
-		delete *it;
+		gf.deleteNote(**it);
 }
 
 /********************************************************************

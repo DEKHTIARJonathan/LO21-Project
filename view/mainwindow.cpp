@@ -276,12 +276,29 @@ void MainWindow::openTrash(){
 		w.setModal(true);
 		w.exec();
 
-		// If a note was remove from the trash, display it
+		// If a note was double-clicked, remove it from the trash and display it
 		if( w.getSelectedNote() != NULL ){
 			DatabaseManager::getInstance().removeFromTrash(w.getSelectedNote()->getId());
 			displayNote(*w.getSelectedNote());
 			searchNotes();
 		}
+
+		// If empty trash order was sent
+		if( w.isEmptyTrashOrder() ){
+			emptyTrash(w.getTrashContent());
+		}
+
+	}
+	catch(std::exception& e){
+		showErrorMessageBox(QString(e.what()));
+	}
+}
+
+void MainWindow::emptyTrash(){
+	try{
+
+		std::vector< pair <unsigned int, QString > > trash = DatabaseManager::getInstance().getTrash();
+		emptyTrash(trash);
 
 	}
 	catch(std::exception& e){
@@ -391,6 +408,17 @@ void MainWindow::clearListView(){
 		delete item;
 		item = l.takeItem(0);
 	}
+}
+
+void MainWindow::emptyTrash(const std::vector< pair <unsigned int, QString > >& trash){
+	// Delete view part of Notes in trash
+	GeneralViewFactory& vf = GeneralViewFactory::getInstance();
+	for(std::vector< pair <unsigned int, QString > >::const_iterator it = trash.begin(); it!=trash.end(); it++){
+		vf.deleteView(it->first);
+	}
+
+	// Empty model part of Notes in trash
+	NotesManager::getInstance().emptyTrash(trash);
 }
 
 /********************************************************************

@@ -19,7 +19,7 @@ class NotesManager
 		Note&							getNote(unsigned int id);
 		void							saveNote(Note& n);
 		void							putToTrash(Note& n);
-		void							emptyTrash(std::vector< pair <unsigned int, QString > >& trash);
+		void							emptyTrash(const std::vector< pair <unsigned int, QString > >& trash);
 		void							flush();
 
 		// Singleton
