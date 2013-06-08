@@ -34,6 +34,7 @@ QString	ExportTex::exportNote(const Article& a) const
 
 QString	ExportTex::exportNote(const Document& d) const
 {
+	d.getTitle();
 	return "";
 }
 
@@ -44,9 +45,9 @@ QString	ExportTex::exportNote(const Image& i) const
 	return exportNote((Note&)i)+"\\section*{Video: }\n"
 			"\\frame\n"
 			"{\n"
-				"\\includegraphics{"+escape(path)+"}";
+				"\\includegraphics{"+escape(path)+"}\n"
 			"}\n"
-			"Description : \n"+escape(desc);
+	"Description : \n"+escape(desc)+"\n";
 }
 
 QString	ExportTex::exportNote(const Video& v) const
@@ -58,7 +59,7 @@ QString	ExportTex::exportNote(const Video& v) const
 			"{\n"
 				"\\movie{"+escape(path)+"}\n"
 			"}\n"
-			"Description : \n"+escape(desc);
+			"Description : \n"+escape(desc)+"\n";
 }
 
 QString	ExportTex::exportNote(const Audio& a) const
@@ -68,21 +69,21 @@ QString	ExportTex::exportNote(const Audio& a) const
 	return exportNote((Note&)a)+"\\section*{Video: }\n"
 			"\\frame\n"
 			"{\n"
-				"\\audio{"+escape(path)+"}\n"
+				"\\audio{"+escape(desc)+"}\n"
 			"}\n"
-			"Description : \n"+escape(path);
+			"Description : \n"+escape(path)+"\n";
 }
 
 QString	ExportTex::escape(QString s) const
 {
 	s.replace("\\", "\\textbackslash");
-	s.replace("&", "\&");
-	s.replace("$", "\$");
-	s.replace("%", "\%");
-	s.replace("#", "\#");
-	s.replace("_", "\_");
-	s.replace("{", "\{");
-	s.replace("}", "\}");
+	s.replace("&", "\\&");
+	s.replace("$", "\\$");
+	s.replace("%", "\\%");
+	s.replace("#", "\\#");
+	s.replace("_", "\\_");
+	s.replace("{", "\\{");
+	s.replace("}", "\\}");
 	s.replace("^", "\\textasciicircum");
 	s.replace("~", "\\textasciitilde");
 	s.replace("<", "\\textless{}");

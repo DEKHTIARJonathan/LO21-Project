@@ -4,11 +4,11 @@
  *                            Constructor                           *
  ********************************************************************/
 
-Note::Note( unsigned int id ) : QObject(), m_id(id), m_title(), m_modified(false)
+Note::Note( unsigned int id ) : QObject(), m_modified(false), m_id(id) , m_title()
 {
 }
 
-Note::Note( unsigned int id, const QString & title ) : QObject(), m_id(id), m_title(title), m_modified(false)
+Note::Note( unsigned int id, const QString & title ) : QObject(), m_modified(false), m_id(id) , m_title(title)
 {
 }
 

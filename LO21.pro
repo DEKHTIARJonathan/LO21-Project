@@ -14,7 +14,7 @@ SOURCES += \
     export/exporttex.cpp \
     export/exporttext.cpp \
     notemanager/notesmanager.cpp \
-	notefactory/notefactorynotfoundexception.cpp \
+    notefactory/notefactorynotfoundexception.cpp \
     notefactory/generalnotefactory.cpp \
     constants.cpp \
     dbmanager/dbexception.cpp \
@@ -22,15 +22,15 @@ SOURCES += \
     export/generalexportfactory.cpp \
     export/exportfactorynotfoundexception.cpp \
     view/mainwindow.cpp \
-	export/exportfileexception.cpp \
+    export/exportfileexception.cpp \
     export/exportstrategy.cpp \
-	view/notesview/articleview.cpp \
+    view/notesview/articleview.cpp \
     view/notesview/noteview.cpp \
     view/notesview/generalviewfactory.cpp \
     view/notesview/viewfactorynotfoundexception.cpp \
     controller/controller.cpp \
     view/listnoteviewitem.cpp \
-	view/workspaceform.cpp \
+    view/workspaceform.cpp \
     view/notesview/imageview.cpp \
     view/notesview/audioview.cpp \
     view/notesview/videoview.cpp \
@@ -56,21 +56,21 @@ HEADERS += \
     export/exporttext.h \
     notemanager/notesmanager.h \
     notefactory/notefactorynotfoundexception.h \
-	notefactory/generalnotefactory.h \
+    notefactory/generalnotefactory.h \
     constants.h \
     notefactory/interfacenotefactory.h \
     notefactory/notefactory.h \
     dbmanager/dbexception.h \
     notemanager/notesmanagerexception.h \
-	interfacestrategyfactory.h \
-	strategyfactory.h \
+    interfacestrategyfactory.h \
+    strategyfactory.h \
     export/interfaceexportfactory.h \
     export/exportfactory.h \
     export/generalexportfactory.h \
     export/exportfactorynotfoundexception.h \
     view/mainwindow.h \
-	export/exportfileexception.h \
-	view/notesview/articleview.h \
+    export/exportfileexception.h \
+    view/notesview/articleview.h \
     view/notesview/noteview.h \
     view/notesview/generalviewfactory.h \
     view/notesview/interfaceviewfactory.h \
@@ -88,7 +88,7 @@ HEADERS += \
 
 FORMS += \
     view/mainwindow.ui \
-	view/notesview/articleview.ui \
+    view/notesview/articleview.ui \
     view/workspaceform.ui \
     view/notesview/imageview.ui \
     view/notesview/audioview.ui \
@@ -98,6 +98,7 @@ FORMS += \
     view/notesview/choosenotedialog.ui
 
 QT += widgets \
-	  sql \
-	  webkit
-
+      sql \
+      webkit\
+      webkitwidgets\
+      network

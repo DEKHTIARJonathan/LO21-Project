@@ -21,12 +21,19 @@ class DatabaseManager
 {
 public:
 
-	/***************** Getters ***********************/
+	/***************** Getters ************************/
 	const QString getpath() const;
 
-	/******************* Setters *********************/
+	/******************* Setters **********************/
 
 	/***************** DB REQUESTS ********************/
+
+	/***************** TrashManaging ******************/
+
+	bool emptyTrash() const;
+	bool isTrashed (unsigned int n) const;
+	bool putToTrash (unsigned int n) const;
+	bool removeFromTrash (unsigned int n) const;
 
 	/***************** Retrievers *********************/
 
@@ -39,10 +46,7 @@ public:
 
 	/***************** Deleters ************************/
 
-	bool deleteNote (const unsigned int id) const; // On supprime une note
-	bool deleteNote () const; // On supprime toutes les notes
 	bool deleteTag (const QString &t) const; // On supprime un Tag
-	bool deleteTag () const; // On supprime tous les Tag
 	bool flushDB () const; // On vide complètement la base de données
 
 	/***************** Inserters **********************/
@@ -91,6 +95,12 @@ public:
 
 	QString escape(QString s) const;
 	QString capitalize(QString str) const;
+
+	/***************** Deleters ***********************/
+
+	bool deleteNote (unsigned int id) const;
+	bool deleteNote () const; // On supprime toutes les notes
+	bool deleteTag () const; // On supprime tous les Tag
 
 	/***************** Inserters **********************/
 

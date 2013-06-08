@@ -39,7 +39,7 @@ class NoteFactory : public InterfaceNoteFactory
 		void deleteNote(Note &n){
 			DatabaseManager& db = DatabaseManager::getInstance();
 
-			db.deleteNote(n.getId());
+			db.putToTrash(n.getId());
 			delete &n;
 		}
 

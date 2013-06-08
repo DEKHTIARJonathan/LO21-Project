@@ -32,13 +32,19 @@ QString	ExportHTML::exportNote(const Article& a) const
 
 QString	ExportHTML::exportNote(const Document& d) const
 {
+	d.getTitle();
 	return "";
 }
 
 QString	ExportHTML::exportNote(const Image& i) const
 {
 	QString description = i.getDescription();
-	QString path = i.getPath();
+
+	QString path =  i.getPath();
+
+	if (!path.startsWith("http"))
+		 path = "file://"+path;
+
 	return exportNote((Note&)i)+"<div><h2>Image :</h2><br><img src='"+escape(path)+"'><br><h3>Description</h3><p>"+escape(description)+"</p></div>";
 }
 

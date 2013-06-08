@@ -68,6 +68,43 @@ const QString DatabaseManager::getpath() const
 }
 
 /********************************************************************
+ *                           TrashManaging                          *
+ ********************************************************************/
+
+bool DatabaseManager::emptyTrash() const
+{
+
+	return query("Delete from Note where trashed=1");
+
+}
+
+bool DatabaseManager::isTrashed (unsigned int n) const
+{
+	QSqlQuery request(*database);
+	if(request.exec("select trashed from Note where id="+QString::number(n)))
+	{
+		if(request.next())
+			return request.value(0).toBool();
+		else
+			throw DBException("select trashed from Note where id="+QString::number(n), "Aucun enregistrement retourné ... Cette note n'existe pas ...");
+	}
+	else
+		throw DBException("select trashed from Note where id="+QString::number(n), request.lastError().databaseText());
+}
+
+bool DatabaseManager::putToTrash (unsigned int n) const
+{
+	return query("UPDATE Note SET trashed = 1 WHERE id = "+ QString::number(n));
+}
+
+bool DatabaseManager::removeFromTrash (unsigned int n) const
+{
+	return query("UPDATE Note SET trashed = 0 WHERE id = "+ QString::number(n));
+}
+
+
+
+/********************************************************************
  *                            DB Requests                           *
  ********************************************************************/
 
@@ -87,7 +124,7 @@ bool DatabaseManager::initDB()
 {
 	QString qry[7];
 
-	qry[0] = "create table Note (id integer , title varchar("+QString::number(constants::SIZE_MAX_TITLE)+"), typeNote varchar("+QString::number(constants::SIZE_MAX_TYPE_NOTE)+"), primary key(id))";
+	qry[0] = "create table Note (id integer , title varchar("+QString::number(constants::SIZE_MAX_TITLE)+"), typeNote varchar("+QString::number(constants::SIZE_MAX_TYPE_NOTE)+"), trashed  BOOL , primary key(id))";
 	qry[1] = "create table Article (id integer, txt text, primary key(id), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE)";
 	qry[2] = "create table Document (id integer, primary key(id), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE)";
 	qry[3] = "create table Multimedia (id integer, description TEXT, path varchar("+QString::number(constants::SIZE_MAX_PATH)+"), primary key(id), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE)";
@@ -144,7 +181,7 @@ bool DatabaseManager::tagExist(const QString &t) const
  *                              Deleters                              *
  ********************************************************************/
 
-bool DatabaseManager::deleteNote (const unsigned int id) const
+bool DatabaseManager::deleteNote (unsigned int id) const
 {
 	return query("Delete from Note where id = "+ QString::number(id));
 }
@@ -195,6 +232,8 @@ unsigned int DatabaseManager::insertNotePrivate(const QString & type) const{
 
 	if (query("INSERT INTO Note (id, title, typeNote) VALUES (NULL, '"+escape(titre)+"','"+escape(type)+"')"))
 		return getLastID();
+	else
+		exit(0);
 }
 
 bool DatabaseManager::insertMultimedia(const unsigned int id) const
