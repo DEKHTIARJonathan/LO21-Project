@@ -1,0 +1,96 @@
+\hypertarget{class_database_manager}{\section{Database\-Manager Class Reference}
+\label{class_database_manager}\index{Database\-Manager@{Database\-Manager}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_database_manager_a02f2ab0a227055c58d5343d7adbc4dcb}{const Q\-String {\bfseries getpath} () const }\label{class_database_manager_a02f2ab0a227055c58d5343d7adbc4dcb}
+
+\item 
+\hypertarget{class_database_manager_a9e67d16734e9125f119d53d2ce9dd11e}{bool {\bfseries is\-Trash\-Empty} () const }\label{class_database_manager_a9e67d16734e9125f119d53d2ce9dd11e}
+
+\item 
+\hypertarget{class_database_manager_abac20f4310496e2dd3b045c6aa788b5a}{bool {\bfseries empty\-Trash} () const }\label{class_database_manager_abac20f4310496e2dd3b045c6aa788b5a}
+
+\item 
+\hypertarget{class_database_manager_a75856a89b4281b6b42a2ef68aaf7db1e}{bool {\bfseries is\-Trashed} (unsigned int n) const }\label{class_database_manager_a75856a89b4281b6b42a2ef68aaf7db1e}
+
+\item 
+\hypertarget{class_database_manager_abaac36bbd798652c7d4a86de36ac29bc}{bool {\bfseries put\-To\-Trash} (unsigned int n) const }\label{class_database_manager_abaac36bbd798652c7d4a86de36ac29bc}
+
+\item 
+\hypertarget{class_database_manager_a92352c753e7909e9672f1b1a562784e6}{bool {\bfseries remove\-From\-Trash} (unsigned int n) const }\label{class_database_manager_a92352c753e7909e9672f1b1a562784e6}
+
+\item 
+\hypertarget{class_database_manager_afe273713f7c5a5a38d3b50aa94365568}{std\-::vector$<$ Q\-String $>$ {\bfseries get\-All\-Tags} () const }\label{class_database_manager_afe273713f7c5a5a38d3b50aa94365568}
+
+\item 
+\hypertarget{class_database_manager_aca5944a7b8f1a9de795f74a57296e4bb}{std\-::vector$<$ Q\-String $>$ {\bfseries get\-Tags} (const \hyperlink{class_note}{Note} \&n) const }\label{class_database_manager_aca5944a7b8f1a9de795f74a57296e4bb}
+
+\item 
+\hypertarget{class_database_manager_a88b8e87fc7edea9188150b03353a2cde}{std\-::vector$<$ pair$<$ unsigned \\*
+int, Q\-String $>$ $>$ {\bfseries get\-Notes} (const Q\-String \&tag) const }\label{class_database_manager_a88b8e87fc7edea9188150b03353a2cde}
+
+\item 
+\hypertarget{class_database_manager_a8681173f2b3bca5c59aedde06aca2a10}{std\-::vector$<$ pair$<$ unsigned \\*
+int, Q\-String $>$ $>$ {\bfseries get\-Notes} () const }\label{class_database_manager_a8681173f2b3bca5c59aedde06aca2a10}
+
+\item 
+\hypertarget{class_database_manager_abc00afdcef3da3591755f84ec2b11da5}{std\-::vector$<$ pair$<$ unsigned \\*
+int, Q\-String $>$ $>$ {\bfseries get\-Trash} () const }\label{class_database_manager_abc00afdcef3da3591755f84ec2b11da5}
+
+\item 
+\hypertarget{class_database_manager_a69b26d837c71bacc9249961e8e6e9f1a}{Q\-String {\bfseries get\-Note\-Type} (const unsigned int id)}\label{class_database_manager_a69b26d837c71bacc9249961e8e6e9f1a}
+
+\item 
+\hypertarget{class_database_manager_a392a827d99ce292d1b29f0907ea2f475}{bool {\bfseries delete\-Tag} (const Q\-String \&t) const }\label{class_database_manager_a392a827d99ce292d1b29f0907ea2f475}
+
+\item 
+\hypertarget{class_database_manager_ab07cbf4b2209dc23d0182ae5e2c29767}{bool {\bfseries flush\-D\-B} () const }\label{class_database_manager_ab07cbf4b2209dc23d0182ae5e2c29767}
+
+\item 
+\hypertarget{class_database_manager_ab4d0e33e24ddba70c03699b88e9fa388}{unsigned int {\bfseries insert\-Note} (const Q\-String \&type\-Note) const }\label{class_database_manager_ab4d0e33e24ddba70c03699b88e9fa388}
+
+\item 
+\hypertarget{class_database_manager_a45e88316fb01d63b2efb2f4fd5ffc9a1}{bool {\bfseries update\-Note} (const \hyperlink{class_article}{Article} \&a) const }\label{class_database_manager_a45e88316fb01d63b2efb2f4fd5ffc9a1}
+
+\item 
+\hypertarget{class_database_manager_ab5496a11eae6a164047964bea0f6eb64}{bool {\bfseries update\-Note} (const \hyperlink{class_document}{Document} \&d) const }\label{class_database_manager_ab5496a11eae6a164047964bea0f6eb64}
+
+\item 
+\hypertarget{class_database_manager_abe7f623b96b8bbd5b72f2c0bdd11d40b}{bool {\bfseries update\-Note} (const \hyperlink{class_multi_media}{Multi\-Media} \&m) const }\label{class_database_manager_abe7f623b96b8bbd5b72f2c0bdd11d40b}
+
+\item 
+\hypertarget{class_database_manager_ade4151d081de414a0c8ed7cd36a5032a}{bool {\bfseries Tag\-Assoc\-Note} (const \hyperlink{class_note}{Note} \&n, const Q\-String \&t) const }\label{class_database_manager_ade4151d081de414a0c8ed7cd36a5032a}
+
+\item 
+\hypertarget{class_database_manager_a31c2247f473293824570876fa7623291}{bool {\bfseries flush\-Doc} (const \hyperlink{class_document}{Document} \&d) const }\label{class_database_manager_a31c2247f473293824570876fa7623291}
+
+\item 
+\hypertarget{class_database_manager_ad0725b642eb37fa4d0ca0b0bed7683e3}{bool {\bfseries flush\-Note\-Assoc} (const \hyperlink{class_note}{Note} \&n) const }\label{class_database_manager_ad0725b642eb37fa4d0ca0b0bed7683e3}
+
+\item 
+\hypertarget{class_database_manager_a1df802cba027faf8c465fe9b79ac8b98}{bool {\bfseries fill\-Note} (\hyperlink{class_article}{Article} \&a) const }\label{class_database_manager_a1df802cba027faf8c465fe9b79ac8b98}
+
+\item 
+\hypertarget{class_database_manager_a8121dee650003b03b9fddab7fe71320f}{bool {\bfseries fill\-Note} (\hyperlink{class_document}{Document} \&d) const }\label{class_database_manager_a8121dee650003b03b9fddab7fe71320f}
+
+\item 
+\hypertarget{class_database_manager_ad9dbf6c671ae44e3dc5c927c94c8f667}{bool {\bfseries fill\-Note} (\hyperlink{class_multi_media}{Multi\-Media} \&m) const }\label{class_database_manager_ad9dbf6c671ae44e3dc5c927c94c8f667}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_database_manager_ad998f5de5416534ee875b10fe1dcac82}{static \hyperlink{class_database_manager}{Database\-Manager} \& {\bfseries get\-Instance} (Q\-String path=Q\-Dir\-::current\-Path()+\char`\"{}/temp.\-lo21\char`\"{}, Q\-String user=\char`\"{}\char`\"{}, Q\-String pass=\char`\"{}\char`\"{})}\label{class_database_manager_ad998f5de5416534ee875b10fe1dcac82}
+
+\item 
+\hypertarget{class_database_manager_af3327202d4a70cd119b300bfc6b759e2}{static void {\bfseries destroy} ()}\label{class_database_manager_af3327202d4a70cd119b300bfc6b759e2}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+dbmanager/databasemanager.\-h\item 
+dbmanager/databasemanager.\-cpp\end{DoxyCompactItemize}
