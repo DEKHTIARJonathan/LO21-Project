@@ -10,6 +10,7 @@
         <file alias="audio">icon/audio.png</file>
         <file alias="new">icon/new.png</file>
         <file alias="open">icon/open.png</file>  
-        <file alias="quit">icon/quit.png</file>   
+        <file alias="quit">icon/quit.png</file> 
+        <file alias="export">icon/export.png</file>  
     </qresource>
 </RCC>

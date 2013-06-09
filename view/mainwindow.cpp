@@ -77,11 +77,11 @@ void MainWindow::setupExportArea(){
 
 void MainWindow::newNote(){
 	try{
+
 		QAction* a = dynamic_cast<QAction*> (QObject::sender());
 		if(a!=NULL)
 			editNewNote(a->text());
-		else
-			searchNotes();
+		searchNotes();
 
 	}
 	catch(std::exception& e){
@@ -256,7 +256,7 @@ void MainWindow::searchNotes(){
 		// Clear List View
 		clearListView();
 
-        if(result.empty()){
+		if(!result.empty()){
 			// Display results
 			for( std::vector< pair <unsigned int, QString > >::const_iterator it = result.begin(); it!=result.end(); it++ )
 				l.addItem( new ListNoteViewItem(it->first,it->second) );
@@ -443,7 +443,6 @@ void MainWindow::setTrashIcon(bool empty)
 	else
 		buttonImage.load(":/icn/full");
 
-	//QPixmap buttonImage(":/icn/empty");
 	QIcon Icon;
 	Icon.addPixmap ( buttonImage, QIcon::Normal, QIcon::Off );
 	ui->trashButton->setIcon(Icon);
@@ -462,6 +461,7 @@ void MainWindow::setAllIcons()
 	QPixmap icnImage(":/icn/image");
 	QPixmap icnVideo(":/icn/video");
 	QPixmap icnAudio(":/icn/audio");
+	QPixmap icnExport(":/icn/export");
 
 	// ****************  New Project Button ***************
 
@@ -489,6 +489,15 @@ void MainWindow::setAllIcons()
 	ui->quit->setIconSize(QSize(25,25));
 	ui->quit->setToolTip("Close the Software");
 	connect(ui->quit, SIGNAL(clicked()), this, SLOT(close()));
+
+	// ****************  Export Button ***************
+
+	ui->export_to_file->setFlat(true); // Pour enlever les bords
+	ui->export_to_file->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
+	ui->export_to_file->setIcon(icnExport);
+	ui->export_to_file->setIconSize(QSize(25,25));
+	ui->export_to_file->setToolTip("Export to File");
+	//connect(ui->export_to_file, SIGNAL(clicked()), this, SLOT(close()));
 
 	// ****************  New Article Button ***************
 
@@ -544,7 +553,6 @@ void MainWindow::setAllIcons()
 	QAction* aud = new QAction("Audio", this);
 	connect(ui->audio, SIGNAL(clicked()), aud, SLOT(trigger()));
 	connect(aud, SIGNAL(triggered()), this, SLOT(newNote()));
-
 
 }
 
