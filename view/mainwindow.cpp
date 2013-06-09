@@ -450,7 +450,7 @@ void MainWindow::setTrashIcon(bool empty)
 	QIcon Icon;
 	Icon.addPixmap ( buttonImage, QIcon::Normal, QIcon::Off );
 	ui->trashButton->setIcon(Icon);
-	ui->trashButton->setIconSize(QSize(64,64));
+	ui->trashButton->setIconSize(QSize(128,128));
 }
 
 
