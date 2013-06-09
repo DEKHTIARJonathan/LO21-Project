@@ -105,7 +105,7 @@ bool DatabaseManager::isTrashEmpty() const
 	if(request.exec("select count(*) from Note where trashed = 1"))
 	{
 		if(request.next())
-			return request.value(0).toBool();
+			return request.value(0).toInt() == 0;
 		else
 			throw DBException("select count(*) from Note where trashed = 1", request.lastError().databaseText());
 	}

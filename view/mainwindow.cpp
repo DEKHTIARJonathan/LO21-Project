@@ -18,6 +18,9 @@ MainWindow::MainWindow(QWidget *parent) :QMainWindow(parent),ui(new Ui::MainWind
 	// Display all notes
 	searchNotes();
 
+	// Display Trash
+	setTrashIcon(DatabaseManager::getInstance().isTrashEmpty());
+
 }
 
 /********************************************************************
@@ -471,114 +474,114 @@ void MainWindow::setTrashIcon(bool empty)
 
 void MainWindow::setAllIcons()
 {
-	QPixmap icnNew(":/icn/new");
-	QPixmap icnOpen(":/icn/open");
-	QPixmap icnQuit(":/icn/quit");
-	QPixmap icnArticle(":/icn/article");
-	QPixmap icnDocument(":/icn/document");
-	QPixmap icnImage(":/icn/image");
-	QPixmap icnVideo(":/icn/video");
-	QPixmap icnAudio(":/icn/audio");
-	QPixmap icnExport(":/icn/export");
-	QPixmap icnTrash(":/icn/empty");
+//	QPixmap icnNew(":/icn/new");
+//	QPixmap icnOpen(":/icn/open");
+//	QPixmap icnQuit(":/icn/quit");
+//	QPixmap icnArticle(":/icn/article");
+//	QPixmap icnDocument(":/icn/document");
+//	QPixmap icnImage(":/icn/image");
+//	QPixmap icnVideo(":/icn/video");
+//	QPixmap icnAudio(":/icn/audio");
+//	QPixmap icnExport(":/icn/export");
+//	QPixmap icnTrash(":/icn/empty");
 
-	// **************** Trash Icon ************************
-	ui->trashButton->setFlat(true); // Pour enlever les bords
-	ui->trashButton->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
-	ui->trashButton->setIcon(icnTrash);
-	ui->trashButton->setIconSize(QSize(128,128));
-	ui->trashButton->setToolTip("Open the Trash");
+//	// **************** Trash Icon ************************
+//	ui->trashButton->setFlat(true); // Pour enlever les bords
+//	ui->trashButton->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
+//	ui->trashButton->setIcon(icnTrash);
+//	ui->trashButton->setIconSize(QSize(128,128));
+//	ui->trashButton->setToolTip("Open the Trash");
 
-	// ****************  New Project Button ***************
+//	// ****************  New Project Button ***************
 
-	ui->new_project->setFlat(true); // Pour enlever les bords
-	ui->new_project->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
-	ui->new_project->setIcon(icnNew);
-	ui->new_project->setIconSize(QSize(25,25));
-	ui->new_project->setToolTip("New Project");
-	//connect(ui->new_project, SIGNAL(clicked()),...);
+//	ui->new_project->setFlat(true); // Pour enlever les bords
+//	ui->new_project->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
+//	ui->new_project->setIcon(icnNew);
+//	ui->new_project->setIconSize(QSize(25,25));
+//	ui->new_project->setToolTip("New Project");
+//	//connect(ui->new_project, SIGNAL(clicked()),...);
 
-	// ****************  Open Project Button ***************
+//	// ****************  Open Project Button ***************
 
-	ui->open_project->setFlat(true); // Pour enlever les bords
-	ui->open_project->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
-	ui->open_project->setIcon(icnOpen);
-	ui->open_project->setIconSize(QSize(25,25));
-	ui->open_project->setToolTip("Open Project");
-	connect(ui->open_project, SIGNAL(clicked()), this, SLOT(changeWorkspace()));
+//	ui->open_project->setFlat(true); // Pour enlever les bords
+//	ui->open_project->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
+//	ui->open_project->setIcon(icnOpen);
+//	ui->open_project->setIconSize(QSize(25,25));
+//	ui->open_project->setToolTip("Open Project");
+//	connect(ui->open_project, SIGNAL(clicked()), this, SLOT(changeWorkspace()));
 
-	// ****************  Quit Button ***************
+//	// ****************  Quit Button ***************
 
-	ui->quit->setFlat(true); // Pour enlever les bords
-	ui->quit->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
-	ui->quit->setIcon(icnQuit);
-	ui->quit->setIconSize(QSize(25,25));
-	ui->quit->setToolTip("Close the Software");
-	connect(ui->quit, SIGNAL(clicked()), this, SLOT(close()));
+//	ui->quit->setFlat(true); // Pour enlever les bords
+//	ui->quit->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
+//	ui->quit->setIcon(icnQuit);
+//	ui->quit->setIconSize(QSize(25,25));
+//	ui->quit->setToolTip("Close the Software");
+//	connect(ui->quit, SIGNAL(clicked()), this, SLOT(close()));
 
-	// ****************  Export Button ***************
+//	// ****************  Export Button ***************
 
-	ui->export_to_file->setFlat(true); // Pour enlever les bords
-	ui->export_to_file->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
-	ui->export_to_file->setIcon(icnExport);
-	ui->export_to_file->setIconSize(QSize(25,25));
-	ui->export_to_file->setToolTip("Export to File");
-	//connect(ui->export_to_file, SIGNAL(clicked()), this, SLOT(close()));
+//	ui->export_to_file->setFlat(true); // Pour enlever les bords
+//	ui->export_to_file->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
+//	ui->export_to_file->setIcon(icnExport);
+//	ui->export_to_file->setIconSize(QSize(25,25));
+//	ui->export_to_file->setToolTip("Export to File");
+//	//connect(ui->export_to_file, SIGNAL(clicked()), this, SLOT(close()));
 
-	// ****************  New Article Button ***************
+//	// ****************  New Article Button ***************
 
-	ui->article->setFlat(true); // Pour enlever les bords
-	ui->article->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
-	ui->article->setIcon(icnArticle);
-	ui->article->setIconSize(QSize(25,25));
-	ui->article->setToolTip("Create a new Article");
-	QAction* art = new QAction("Article", this);
-	connect(ui->article, SIGNAL(clicked()), art, SLOT(trigger()));
-	connect(art, SIGNAL(triggered()), this, SLOT(newNote()));
+//	ui->article->setFlat(true); // Pour enlever les bords
+//	ui->article->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
+//	ui->article->setIcon(icnArticle);
+//	ui->article->setIconSize(QSize(25,25));
+//	ui->article->setToolTip("Create a new Article");
+//	QAction* art = new QAction("Article", this);
+//	connect(ui->article, SIGNAL(clicked()), art, SLOT(trigger()));
+//	connect(art, SIGNAL(triggered()), this, SLOT(newNote()));
 
-	// ****************  New Document Button ***************
+//	// ****************  New Document Button ***************
 
-	ui->document->setFlat(true); // Pour enlever les bords
-	ui->document->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
-	ui->document->setIcon(icnDocument);
-	ui->document->setIconSize(QSize(25,25));
-	ui->document->setToolTip("Create a new Document");
-	QAction* doc = new QAction("Document", this);
-	connect(ui->document, SIGNAL(clicked()), doc, SLOT(trigger()));
-	connect(doc, SIGNAL(triggered()), this, SLOT(newNote()));
+//	ui->document->setFlat(true); // Pour enlever les bords
+//	ui->document->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
+//	ui->document->setIcon(icnDocument);
+//	ui->document->setIconSize(QSize(25,25));
+//	ui->document->setToolTip("Create a new Document");
+//	QAction* doc = new QAction("Document", this);
+//	connect(ui->document, SIGNAL(clicked()), doc, SLOT(trigger()));
+//	connect(doc, SIGNAL(triggered()), this, SLOT(newNote()));
 
-	// ****************  New Image Button ***************
+//	// ****************  New Image Button ***************
 
-	ui->image->setFlat(true); // Pour enlever les bords
-	ui->image->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
-	ui->image->setIcon(icnImage);
-	ui->image->setIconSize(QSize(25,25));
-	ui->image->setToolTip("Create a new Image");
-	QAction* img = new QAction("Image", this);
-	connect(ui->image, SIGNAL(clicked()), img, SLOT(trigger()));
-	connect(img, SIGNAL(triggered()), this, SLOT(newNote()));
+//	ui->image->setFlat(true); // Pour enlever les bords
+//	ui->image->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
+//	ui->image->setIcon(icnImage);
+//	ui->image->setIconSize(QSize(25,25));
+//	ui->image->setToolTip("Create a new Image");
+//	QAction* img = new QAction("Image", this);
+//	connect(ui->image, SIGNAL(clicked()), img, SLOT(trigger()));
+//	connect(img, SIGNAL(triggered()), this, SLOT(newNote()));
 
-	// ****************  New Video Button ***************
+//	// ****************  New Video Button ***************
 
-	ui->video->setFlat(true); // Pour enlever les bords
-	ui->video->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
-	ui->video->setIcon(icnVideo);
-	ui->video->setIconSize(QSize(25,25));
-	ui->video->setToolTip("Create a new Video");
-	QAction* vid = new QAction("Video", this);
-	connect(ui->video, SIGNAL(clicked()), vid, SLOT(trigger()));
-	connect(vid, SIGNAL(triggered()), this, SLOT(newNote()));
+//	ui->video->setFlat(true); // Pour enlever les bords
+//	ui->video->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
+//	ui->video->setIcon(icnVideo);
+//	ui->video->setIconSize(QSize(25,25));
+//	ui->video->setToolTip("Create a new Video");
+//	QAction* vid = new QAction("Video", this);
+//	connect(ui->video, SIGNAL(clicked()), vid, SLOT(trigger()));
+//	connect(vid, SIGNAL(triggered()), this, SLOT(newNote()));
 
-	// ****************  New Audio Button ***************
+//	// ****************  New Audio Button ***************
 
-	ui->audio->setFlat(true); // Pour enlever les bords
-	ui->audio->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
-	ui->audio->setIcon(icnAudio);
-	ui->audio->setIconSize(QSize(25,25));
-	ui->audio->setToolTip("Create a new Audio");
-	QAction* aud = new QAction("Audio", this);
-	connect(ui->audio, SIGNAL(clicked()), aud, SLOT(trigger()));
-	connect(aud, SIGNAL(triggered()), this, SLOT(newNote()));
+//	ui->audio->setFlat(true); // Pour enlever les bords
+//	ui->audio->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
+//	ui->audio->setIcon(icnAudio);
+//	ui->audio->setIconSize(QSize(25,25));
+//	ui->audio->setToolTip("Create a new Audio");
+//	QAction* aud = new QAction("Audio", this);
+//	connect(ui->audio, SIGNAL(clicked()), aud, SLOT(trigger()));
+//	connect(aud, SIGNAL(triggered()), this, SLOT(newNote()));
 
 }
 
