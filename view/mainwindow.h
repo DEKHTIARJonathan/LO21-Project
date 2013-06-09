@@ -73,8 +73,9 @@ class MainWindow : public QMainWindow
 		void				setupEditorArea();
 		void				setupExportArea();
 
-		// Icon
+		// Icons
 		void				setTrashIcon(bool empty = true);
+		void				setAllIcons();
 };
 
 #endif // MAINWINDOW_H
