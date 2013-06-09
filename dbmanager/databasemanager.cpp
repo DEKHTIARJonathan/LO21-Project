@@ -130,19 +130,18 @@ bool DatabaseManager::query(const QString &query) const
 
 bool DatabaseManager::initDB()
 {
-	QString qry[7];
+	QString qry[6];
 
 	qry[0] = "create table Note (id integer , title varchar("+QString::number(constants::SIZE_MAX_TITLE)+"), typeNote varchar("+QString::number(constants::SIZE_MAX_TYPE_NOTE)+"), trashed  BOOL DEFAULT '0' NOT NULL, primary key(id))";
 	qry[1] = "create table Article (id integer, txt text, primary key(id), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE)";
 	qry[2] = "create table Document (id integer, primary key(id), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE)";
 	qry[3] = "create table Multimedia (id integer, description TEXT, path varchar("+QString::number(constants::SIZE_MAX_PATH)+"), primary key(id), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE)";
 	qry[4] = "create table AssocDoc (docMaster integer, note integer, primary key(docMaster, note), FOREIGN KEY(docMaster) REFERENCES Document(id) ON DELETE CASCADE, FOREIGN KEY(note) REFERENCES Note(id) ON DELETE CASCADE)";
-	qry[5] = "create table Tag (name varchar("+QString::number(constants::SIZE_MAX_TAG)+"), primary key(name))";
-	qry[6] = "create table AssocTag (id integer, name varchar("+QString::number(constants::SIZE_MAX_TAG)+"), primary key(id, name), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE, FOREIGN KEY(name) REFERENCES Tag(name) ON DELETE CASCADE)";
+	qry[5] = "create table AssocTag (id integer, name varchar("+QString::number(constants::SIZE_MAX_TAG)+"), primary key(id, name), FOREIGN KEY(id) REFERENCES Note(id) ON DELETE CASCADE)";
 
 	bool b = true;
 
-	for (int i = 0; i<7; ++i)
+	for (int i = 0; i<6; ++i)
 	{
 		if (!query(qry[i]))
 			b &= false;
@@ -174,7 +173,7 @@ unsigned int DatabaseManager::getLastID() const
 bool DatabaseManager::tagExist(const QString &t) const
 {
 	QSqlQuery query(*database);
-	QString sql = "SELECT * from Tag where name ='"+escape(capitalize(t))+"'";
+	QString sql = "SELECT id from AssocTag where name ='"+escape(capitalize(t))+"'";
 
 	if(!query.exec(sql))
 		throw DBException(sql, query.lastError().databaseText());
@@ -201,12 +200,12 @@ bool DatabaseManager::deleteNote () const
 
 bool DatabaseManager::deleteTag (const QString &t) const
 {
-	return query("Delete from Tag where name ='"+escape(capitalize(t))+"'");
+	return query("Delete from AssocTag where name ='"+escape(capitalize(t))+"'");
 }
 
 bool DatabaseManager::deleteTag () const
 {
-	return query("Delete from Tag where 1=1");
+	return query("Delete from AssocTag where 1=1");
 }
 
 bool DatabaseManager::flushDB () const
@@ -389,7 +388,7 @@ QStringList DatabaseManager::getAllTags() const
 	QSqlQuery request(*database);
 	QStringList result;
 
-	QString sql = "Select * from Tag";
+	QString sql = "Select DISTINCT name from AssocTag";
 
 	if(!request.exec(sql))
 		throw DBException(sql, request.lastError().databaseText());
@@ -429,7 +428,7 @@ std::vector< pair <unsigned int, QString > > DatabaseManager::getNotes(const QSt
 
 	QSqlQuery request(*database);
 
-	QString sql = "Select a.id , title from AssocTag a, Note n where a.name = '"+escape(capitalize(tag))+"' and a.id = n.id and n.trashed = 0";
+	QString sql = "Select n.id , n.title from AssocTag a, Note n where a.name = '"+escape(capitalize(tag))+"' and a.id = n.id and n.trashed = 0";
 
 	if(!request.exec(sql))
 		throw DBException(sql, request.lastError().databaseText());
@@ -486,10 +485,9 @@ bool DatabaseManager::getNotesInDoc (Document& d) const
  *                   AssocBuilders // AssocRemovers                 *
  ********************************************************************/
 
-bool DatabaseManager::tagAssocNote (const Note& n, const QStringList& l) const // Associe une liste de tag et une note, si les tags n'existent pas ilq sont créés
+bool DatabaseManager::tagAssocNote (const Note& n, const QStringList& l) const // Associe une liste de tag et une note, si les tags n'existent pas ils sont créés
 {
 	bool result = true;
-
 	for( QStringList::ConstIterator it =  l.begin(); it!=l.end(); it++ )
 		result &= tagAssocNote(n, *it);
 
@@ -516,12 +514,7 @@ bool DatabaseManager::addTagAssoc (const Note& n,const QString &t) const // Asso
 bool DatabaseManager::removeTagAssoc (const Note& n, const QString &t) const // Désassociation d'un tag et d'un note
 {
 	int id = n.getId();
-	bool result = query("DELETE FROM AssocTag WHERE id = "+QString::number(id)+" and name = '"+escape(capitalize(t))+"'");
-
-	if (getNotes(t).empty())
-		result &= deleteTag(t);
-
-	return result;
+	return query("DELETE FROM AssocTag WHERE id = "+QString::number(id)+" and name = '"+escape(capitalize(t))+"'");
 }
 
 bool DatabaseManager::addNoteToDoc (const Document &d, const Note &n) const // Ajoute une Note dans un document
