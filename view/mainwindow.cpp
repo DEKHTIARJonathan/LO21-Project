@@ -256,10 +256,7 @@ void MainWindow::searchNotes(){
 		// Clear List View
 		clearListView();
 
-		if(result.empty())
-			// Show No Result Massage
-			showInfoMessageBox("No result.");
-		else{
+        if(result.empty()){
 			// Display results
 			for( std::vector< pair <unsigned int, QString > >::const_iterator it = result.begin(); it!=result.end(); it++ )
 				l.addItem( new ListNoteViewItem(it->first,it->second) );
