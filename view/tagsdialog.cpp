@@ -17,7 +17,7 @@ TagsDialog::TagsDialog(Note& n, QWidget *parent) :
 	DatabaseManager& db = DatabaseManager::getInstance();
 	QStringList tags = db.getAllTags();
 	QStringList selectedTags = db.getTags(m_note);
-	m_tagsList = &tags;
+	m_tagsList = tags;
 
 	// Setup
 	QListWidget& l = *ui->tagsList;
@@ -31,6 +31,8 @@ TagsDialog::TagsDialog(Note& n, QWidget *parent) :
 			tagItem->setFlags(tagItem->flags() | Qt::ItemIsUserCheckable);
 			if( selectedTags.contains(*it, Qt::CaseInsensitive) )
 				tagItem->setCheckState(Qt::Checked);
+			else
+				tagItem->setCheckState(Qt::Unchecked);
 
 			// Insert Tag Item
 			l.addItem(tagItem);
@@ -65,26 +67,30 @@ void TagsDialog::addTag(){
 	QString tag;
 	bool ok;
 	int begin = 0;
+
 	QListWidget& l = *ui->tagsList;
 
-	QRegExp rx("^[a-z]{3,}$");
+	QRegExp rx("^[A-Z][a-z]{2,}$");
 	QRegExpValidator val;
 	val.setRegExp(rx);
 
 	// Ask for new valide tag
 	do{
-		tag = QInputDialog::getText(this, "Create new Tag", "Tag (only use a-z characters) : ", QLineEdit::Normal, "", &ok);
+		tag = QInputDialog::getText(this, "Create new Tag", "Tag (only use a-z characters) : ", QLineEdit::Normal, "", &ok).toLower();
+		tag[0] = tag[0].toUpper();
+	}while( ok &&  (val.validate(tag,begin) != QRegExpValidator::Acceptable || m_tagsList.contains(tag) ) );
 
-	}while( ok &&  (val.validate(tag,begin) != QRegExpValidator::Acceptable || m_tagsList->contains(tag) )  );
+	if(ok){
 
-	// Create tag item
-	QListWidgetItem* tagItem = new QListWidgetItem(tag, &l);
-	tagItem->setFlags(tagItem->flags() | Qt::ItemIsUserCheckable);
-	tagItem->setCheckState(Qt::Checked);
+		// Create tag item
+		QListWidgetItem* tagItem = new QListWidgetItem(tag, &l);
+		tagItem->setFlags(tagItem->flags() | Qt::ItemIsUserCheckable);
+		tagItem->setCheckState(Qt::Checked);
 
-	// Add Tag to tag list
-	(*m_tagsList) << tag;
+		// Add Tag to tag list
+		m_tagsList << tag;
 
+	}
 }
 
 void TagsDialog::ok(){

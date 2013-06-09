@@ -31,7 +31,11 @@ class MainWindow : public QMainWindow
 
 	public slots:
 		// Note Management
-		void				newNote();
+		void				newArticle();
+		void				newDocument();
+		void				newImage();
+		void				newAudio();
+		void				newVideo();
 		void				openNote(QListWidgetItem* i);
 		void				openNote(unsigned int id);
 		void				editSaveNote();
@@ -66,6 +70,7 @@ class MainWindow : public QMainWindow
 		void				showErrorMessageBox(const QString& msg);
 
 		// Tool Method
+		void				newNote(const QString &type);
 		void				editNewNote( const QString& NoteType );
 		void				displayNote( unsigned int id );
 		void				displayNote( Note& n );

@@ -34,7 +34,7 @@ class TagsDialog : public QDialog
 		Ui::TagsDialog*								ui;
 		Note&										m_note;
 		bool										m_isCancelled;
-		QStringList*								m_tagsList;
+		QStringList									m_tagsList;
 		QStringList									m_selectedTags;
 };
 

@@ -34,16 +34,11 @@ void MainWindow::setupMenu(){
 	QObject::connect(ui->actionQuit, SIGNAL(triggered()), this, SLOT(close()));
 
 	// New Note Menu
-	QList<QString> l = GeneralViewFactory::getInstance().getAvailableViewFactoryType();
-	QList<QAction *> acts;
-
-	for(QList<QString>::const_iterator it = l.begin(); it!=l.end(); it++){
-		QAction* act = new QAction(*it, this);
-		acts.append(act);
-		QObject::connect(act, SIGNAL(triggered()), this, SLOT(newNote()));
-	}
-
-	ui->menuNewNote->addActions(acts);
+	QObject::connect(ui->actionNew_Article, SIGNAL(triggered()), this, SLOT(newArticle()));
+	QObject::connect(ui->actionNew_Document, SIGNAL(triggered()), this, SLOT(newDocument()));
+	QObject::connect(ui->actionNew_Image, SIGNAL(triggered()), this, SLOT(newImage()));
+	QObject::connect(ui->actionNew_Audio, SIGNAL(triggered()), this, SLOT(newAudio()));
+	QObject::connect(ui->actionNew_Video, SIGNAL(triggered()), this, SLOT(newVideo()));
 
 }
 
@@ -79,19 +74,11 @@ void MainWindow::setupExportArea(){
  *                           Slot Method		                    *
  ********************************************************************/
 
-void MainWindow::newNote(){
-	try{
-
-		QAction* a = dynamic_cast<QAction*> (QObject::sender());
-		if(a!=NULL)
-			editNewNote(a->text());
-		searchNotes();
-
-	}
-	catch(std::exception& e){
-		showErrorMessageBox(QString(e.what()));
-	}
-}
+void MainWindow::newArticle()	{ newNote(Article::staticMetaObject.className());	}
+void MainWindow::newDocument()	{ newNote(Document::staticMetaObject.className());	}
+void MainWindow::newImage()		{ newNote(Image::staticMetaObject.className());	}
+void MainWindow::newAudio()		{ newNote(Audio::staticMetaObject.className());	}
+void MainWindow::newVideo()		{ newNote(Video::staticMetaObject.className());	}
 
 void MainWindow::openNote(QListWidgetItem* i){
 	try{
@@ -354,6 +341,18 @@ void MainWindow::showErrorMessageBox(const QString& msg){
 /********************************************************************
  *                           Tool Method		                    *
  ********************************************************************/
+
+void MainWindow::newNote(const QString& type){
+	try{
+
+		editNewNote(type);
+		searchNotes();
+
+	}
+	catch(std::exception& e){
+		showErrorMessageBox(QString(e.what()));
+	}
+}
 
 void MainWindow::editNewNote( const QString& typeNote ){
 	if( m_editMode )
