@@ -451,8 +451,6 @@ void MainWindow::setTrashIcon(bool empty)
 
 void MainWindow::setAllIcons()
 {
-	setTrashIcon();
-
 	QPixmap icnNew(":/icn/new");
 	QPixmap icnOpen(":/icn/open");
 	QPixmap icnQuit(":/icn/quit");
@@ -462,6 +460,14 @@ void MainWindow::setAllIcons()
 	QPixmap icnVideo(":/icn/video");
 	QPixmap icnAudio(":/icn/audio");
 	QPixmap icnExport(":/icn/export");
+	QPixmap icnTrash(":/icn/empty");
+
+	// **************** Trash Icon ************************
+	ui->trashButton->setFlat(true); // Pour enlever les bords
+	ui->trashButton->setFocusPolicy(Qt::NoFocus); // Pour éviter d'avoir l'indication de focus sur l'image (pointillés)
+	ui->trashButton->setIcon(icnTrash);
+	ui->trashButton->setIconSize(QSize(128,128));
+	ui->trashButton->setToolTip("Open the Trash");
 
 	// ****************  New Project Button ***************
 
