@@ -1,8 +1,5 @@
-<?xml version='1.0'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author/>
- <comment/>
- <exportmacro/>
  <class>VideoView</class>
  <widget class="QWidget" name="VideoView">
   <property name="geometry">
@@ -17,21 +14,6 @@
    <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <widget class="QWidget" name="audioArea" native="true">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <layout class="QVBoxLayout" name="audioLayout">
-      <property name="margin">
-       <number>0</number>
-      </property>
-     </layout>
-    </widget>
-   </item>
    <item>
     <widget class="QLabel" name="label_2">
      <property name="font">
@@ -79,6 +61,6 @@
    </item>
   </layout>
  </widget>
- <pixmapfunction/>
+ <resources/>
  <connections/>
 </ui>
