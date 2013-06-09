@@ -50,7 +50,7 @@ void MainWindow::setupSearchArea(){
 	QObject::connect(ui->noteList, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(openNote(QListWidgetItem*)));
 	QObject::connect(ui->trashButton, SIGNAL(clicked()), this, SLOT(openTrash()));
 
-	setTrashIcon();
+    setTrashIcon();
 }
 
 void MainWindow::setupEditorArea(){
@@ -155,6 +155,9 @@ void MainWindow::deleteCancelNote(){
 			NotesManager::getInstance().putToTrash(*m_actualNote);
 			clearActualNoteView();
 			searchNotes();
+
+            // Update Trash Icon
+            setTrashIcon(false);
 		}
 		else{
 			// Reload Original Note content and Setup View Mode
@@ -283,6 +286,10 @@ void MainWindow::openTrash(){
 			DatabaseManager::getInstance().removeFromTrash(w.getSelectedNote()->getId());
 			displayNote(*w.getSelectedNote());
 			searchNotes();
+
+            // Update Trash Icon
+            if(w.isEmpty())
+                setTrashIcon();
 		}
 
 		// If empty trash order was sent
@@ -421,10 +428,13 @@ void MainWindow::emptyTrash(const std::vector< pair <unsigned int, QString > >& 
 
 	// Empty model part of Notes in trash
 	NotesManager::getInstance().emptyTrash(trash);
+
+    // Update Trash Icon
+    setTrashIcon();
 }
 
 /********************************************************************
- *                           Trash Icon                           *
+ *                           Trash Icon                             *
  ********************************************************************/
 
 void MainWindow::setTrashIcon(bool empty)
