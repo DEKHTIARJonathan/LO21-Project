@@ -184,7 +184,6 @@ void MainWindow::tagNote(){
 		td.exec();
 
 		if( !td.isCancelled() ){
-			qDebug() << "Saving";
 			DatabaseManager& db = DatabaseManager::getInstance();
 			db.flushNoteAssoc(*m_actualNote);
 			db.tagAssocNote(*m_actualNote, td.getSelectedTags());
