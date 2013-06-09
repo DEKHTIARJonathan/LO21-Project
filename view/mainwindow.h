@@ -15,6 +15,8 @@
 #include <view/listnoteviewitem.h>
 #include <view/workspaceform.h>
 #include <view/trashdialog.h>
+#include <view/tagsdialog.h>
+
 #if QT_VERSION >= 0x050000 // Pour la version 5 et + il est nécessaire d'inclure QtWidgets
 	#include <QtWidgets>
 #endif
@@ -28,14 +30,20 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 	public slots:
+		// Note Management
 		void				newNote();
 		void				openNote(QListWidgetItem* i);
 		void				openNote(unsigned int id);
 		void				editSaveNote();
 		void				deleteCancelNote();
-		void				searchNotes();
+		void				tagNote();
+		// Export Management
 		void				exportNote(int i);
+		// Search Management
+		void				searchNotes();
+		// Workspace Management
 		void				changeWorkspace();
+		// Trash Management
 		void				openTrash();
 		void				emptyTrash();
     

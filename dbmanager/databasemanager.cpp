@@ -384,10 +384,10 @@ std::vector< pair <unsigned int, QString > > DatabaseManager::getTrash() const
 
 }
 
-std::vector<QString> DatabaseManager::getAllTags() const
+QStringList DatabaseManager::getAllTags() const
 {
 	QSqlQuery request(*database);
-	vector<QString> result;
+	QStringList result;
 
 	QString sql = "Select * from Tag";
 
@@ -396,16 +396,16 @@ std::vector<QString> DatabaseManager::getAllTags() const
 
 	while (request.next())
 	{
-		result.push_back(request.value(0).toString());
+		result << request.value(0).toString();
 	}
 
 	return result;
 }
 
-std::vector<QString> DatabaseManager::getTags(const Note &n) const
+QStringList DatabaseManager::getTags(const Note &n) const
 {
 	QSqlQuery request(*database);
-	vector<QString> result;
+	QStringList result;
 
 	int id = n.getId();
 
@@ -416,7 +416,7 @@ std::vector<QString> DatabaseManager::getTags(const Note &n) const
 
 	while (request.next())
 	{
-		result.push_back(request.value(0).toString());
+		result << request.value(0).toString();
 	}
 
 	return result;
@@ -486,7 +486,17 @@ bool DatabaseManager::getNotesInDoc (Document& d) const
  *                   AssocBuilders // AssocRemovers                 *
  ********************************************************************/
 
-bool DatabaseManager::TagAssocNote (const Note& n, const QString& t) const // Associe un tag et une note, si le tag n'existe pas il est créé
+bool DatabaseManager::tagAssocNote (const Note& n, const QStringList& l) const // Associe une liste de tag et une note, si les tags n'existent pas ilq sont créés
+{
+	bool result = true;
+
+	for( QStringList::ConstIterator it =  l.begin(); it!=l.end(); it++ )
+		result &= tagAssocNote(n, *it);
+
+	return result;
+}
+
+bool DatabaseManager::tagAssocNote (const Note& n, const QString& t) const // Associe un tag et une note, si le tag n'existe pas il est créé
 {
 	bool result = true;
 
@@ -506,7 +516,7 @@ bool DatabaseManager::addTagAssoc (const Note& n,const QString &t) const // Asso
 bool DatabaseManager::removeTagAssoc (const Note& n, const QString &t) const // Désassociation d'un tag et d'un note
 {
 	int id = n.getId();
-	bool result = query("REMOVE FROM AssocTag WHERE id = "+QString::number(id)+" and name = '"+escape(capitalize(t))+"'");
+	bool result = query("DELETE FROM AssocTag WHERE id = "+QString::number(id)+" and name = '"+escape(capitalize(t))+"'");
 
 	if (getNotes(t).empty())
 		result &= deleteTag(t);
@@ -529,7 +539,7 @@ bool DatabaseManager::removeNotefromDoc (const Document &d, const Note &n) const
 	int idDoc = d.getId();
 	int idNote = n.getId();
 	if (idDoc != idNote)
-		return query("REMOVE FROM AssocDoc WHERE docMaster = "+QString::number(idDoc)+" and note = "+QString::number(idNote));
+		return query("DELETE FROM AssocDoc WHERE docMaster = "+QString::number(idDoc)+" and note = "+QString::number(idNote));
 	else
 		throw DBException("Try to remove the document from itself", "DocumentID = "+QString::number(idDoc));
 }
@@ -537,12 +547,12 @@ bool DatabaseManager::removeNotefromDoc (const Document &d, const Note &n) const
 bool DatabaseManager::flushNoteAssoc (const Note& n) const //Enleve tous les tags d'une note
 {
 	int id = n.getId();
-	return query("REMOVE FROM AssocTag WHERE id = "+QString::number(id));
+	return query("DELETE FROM AssocTag WHERE id = "+QString::number(id));
 }
 
 bool DatabaseManager::flushDoc (const Document& d) const
 {
-	query("Delete From AssocDoc where docMaster = "+QString::number(d.getId()));
+	return query("Delete From AssocDoc where docMaster = "+QString::number(d.getId()));
 }
 
 /********************************************************************

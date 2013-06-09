@@ -59,6 +59,7 @@ void MainWindow::setupEditorArea(){
 	showEditor(false);
 
 	// Connects
+	QObject::connect(ui->tagButton, SIGNAL(clicked()), this, SLOT(tagNote()));
 	QObject::connect(ui->editSaveButton, SIGNAL(clicked()), this, SLOT(editSaveNote()));
 	QObject::connect(ui->deleteCancelButton, SIGNAL(clicked()), this, SLOT(deleteCancelNote()));
 
@@ -167,6 +168,26 @@ void MainWindow::deleteCancelNote(){
 			ui->deleteCancelButton->setText("Put to Trash");
 			ui->editSaveButton->setText("Edit");
 			m_editMode = !m_editMode;
+		}
+
+	}
+	catch(std::exception& e){
+		showErrorMessageBox(QString(e.what()));
+	}
+}
+
+void MainWindow::tagNote(){
+	try{
+
+		TagsDialog td(*m_actualNote);
+		td.setModal(true);
+		td.exec();
+
+		if( !td.isCancelled() ){
+			qDebug() << "Saving";
+			DatabaseManager& db = DatabaseManager::getInstance();
+			db.flushNoteAssoc(*m_actualNote);
+			db.tagAssocNote(*m_actualNote, td.getSelectedTags());
 		}
 
 	}

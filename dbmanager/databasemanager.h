@@ -38,8 +38,8 @@ public:
 
 	/***************** Retrievers *********************/
 
-	std::vector<QString> getAllTags() const; // Retourne tous les Tags existants
-	std::vector<QString> getTags (const Note& n) const; // Retourne les tags associés à une Note
+	QStringList getAllTags() const; // Retourne tous les Tags existants
+	QStringList getTags (const Note& n) const; // Retourne les tags associés à une Note
 	std::vector< pair <unsigned int, QString > > getNotes (const QString &tag) const; // Retourne les Notes associés à un Tag.
 	std::vector< pair <unsigned int, QString > > getNotes () const; // Retourne Toutes les Notes
 	std::vector< pair <unsigned int, QString > > getTrash() const;
@@ -62,7 +62,8 @@ public:
 
 	/********** AssocBuilders // AssocRemovers **********/
 
-	bool TagAssocNote (const Note& n, const QString& t) const;
+	bool tagAssocNote (const Note& n, const QStringList& l) const;
+	bool tagAssocNote (const Note& n, const QString& t) const;
 	bool flushDoc (const Document& d) const;
 	bool flushNoteAssoc (const Note& n) const;
 
@@ -72,7 +73,7 @@ public:
 	bool fillNote (Document& d)  const;
 	bool fillNote (MultiMedia& m)  const;
 
-	/****************  Singleton ^*********************/
+	/****************  Singleton *********************/
 
 	static DatabaseManager&			getInstance(QString path = QDir::currentPath() +"/temp.lo21", QString user = "", QString pass = "");
 	static void						destroy();

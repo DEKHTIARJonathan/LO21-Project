@@ -37,7 +37,8 @@ SOURCES += \
     view/notesview/documentview.cpp \
     view/notesview/notedocumentview.cpp \
     view/notesview/choosenotedialog.cpp \
-    view/trashdialog.cpp
+    view/trashdialog.cpp \
+    view/tagsdialog.cpp
 
 HEADERS += \
     export/exportstrategy.h \
@@ -86,7 +87,8 @@ HEADERS += \
     view/notesview/documentview.h \
     view/notesview/notedocumentview.h \
     view/notesview/choosenotedialog.h \
-    view/trashdialog.h
+    view/trashdialog.h \
+    view/tagsdialog.h
 
 FORMS += \
     view/mainwindow.ui \
@@ -98,7 +100,8 @@ FORMS += \
     view/notesview/documentview.ui \
     view/notesview/notedocumentview.ui \
     view/notesview/choosenotedialog.ui \
-    view/trashdialog.ui
+    view/trashdialog.ui \
+    view/tagsdialog.ui
 
 QT += widgets \
       sql \
