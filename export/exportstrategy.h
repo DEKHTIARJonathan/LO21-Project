@@ -21,7 +21,7 @@ class ExportStrategy
 		virtual QString			exportNote(const Image& i) const = 0 ;
 		virtual QString			exportNote(const Audio& a) const = 0 ;
 		virtual QString			exportNote(const Video& v) const = 0 ;
-		static  bool			exportFile(const QString &s, const QString &filename, const QString & strategy, const QDir exportPath = QDir::current());
+		static  bool			exportFile(const QString &s, const QString &filename);
 		virtual QString			escape(QString s) const = 0;
 
 };

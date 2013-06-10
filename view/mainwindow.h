@@ -8,6 +8,7 @@
 #include <QFileDialog>
 #include <QListWidgetItem>
 #include <QMessageBox>
+#include <QWebFrame>
 #include <constants.h>
 #include <notemanager/notesmanager.h>
 #include <export/generalexportfactory.h>
@@ -42,10 +43,15 @@ class MainWindow : public QMainWindow
 		void				deleteCancelNote();
 		void				tagNote();
 		// Export Management
+		void				exportNoteAsHtml();
+		void				exportNoteAsTeX();
+		void				exportNoteAsTxt();
 		void				exportNote(int i);
+		void				exportNoteAsFile();
 		// Search Management
 		void				searchNotes();
 		// Workspace Management
+		void				createWorkspace();
 		void				changeWorkspace();
 		// Trash Management
 		void				openTrash();

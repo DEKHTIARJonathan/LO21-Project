@@ -30,15 +30,26 @@ MainWindow::MainWindow(QWidget *parent) :QMainWindow(parent),ui(new Ui::MainWind
 void MainWindow::setupMenu(){
 
 	// File Menu
+		// New Note Menu
+		QObject::connect(ui->actionNew_Article, SIGNAL(triggered()), this, SLOT(newArticle()));
+		QObject::connect(ui->actionNew_Document, SIGNAL(triggered()), this, SLOT(newDocument()));
+		QObject::connect(ui->actionNew_Image, SIGNAL(triggered()), this, SLOT(newImage()));
+		QObject::connect(ui->actionNew_Audio, SIGNAL(triggered()), this, SLOT(newAudio()));
+		QObject::connect(ui->actionNew_Video, SIGNAL(triggered()), this, SLOT(newVideo()));
+
+	QObject::connect(ui->actionOpenTrash, SIGNAL(triggered()), this, SLOT(openTrash()));
+	QObject::connect(ui->actionCreate_WorkSpace, SIGNAL(triggered()), this, SLOT(createWorkspace()));
 	QObject::connect(ui->actionChange_WorkSpace, SIGNAL(triggered()), this, SLOT(changeWorkspace()));
+	QObject::connect(ui->actionExport_As_File, SIGNAL(triggered()), this, SLOT(exportNoteAsFile()));
 	QObject::connect(ui->actionQuit, SIGNAL(triggered()), this, SLOT(close()));
 
-	// New Note Menu
-	QObject::connect(ui->actionNew_Article, SIGNAL(triggered()), this, SLOT(newArticle()));
-	QObject::connect(ui->actionNew_Document, SIGNAL(triggered()), this, SLOT(newDocument()));
-	QObject::connect(ui->actionNew_Image, SIGNAL(triggered()), this, SLOT(newImage()));
-	QObject::connect(ui->actionNew_Audio, SIGNAL(triggered()), this, SLOT(newAudio()));
-	QObject::connect(ui->actionNew_Video, SIGNAL(triggered()), this, SLOT(newVideo()));
+	// EditMenu
+	QObject::connect(ui->actionTags, SIGNAL(triggered()), this, SLOT(tagNote()));
+	QObject::connect(ui->actionEdit, SIGNAL(triggered()), this, SLOT(editSaveNote()));
+	QObject::connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(deleteCancelNote()));
+	QObject::connect(ui->actionHtml, SIGNAL(triggered()), this, SLOT(exportNoteAsHtml()));
+	QObject::connect(ui->actionTeX, SIGNAL(triggered()), this, SLOT(exportNoteAsTeX()));
+	QObject::connect(ui->actionTxt, SIGNAL(triggered()), this, SLOT(exportNoteAsTxt()));
 
 }
 
@@ -76,9 +87,9 @@ void MainWindow::setupExportArea(){
 
 void MainWindow::newArticle()	{ newNote(Article::staticMetaObject.className());	}
 void MainWindow::newDocument()	{ newNote(Document::staticMetaObject.className());	}
-void MainWindow::newImage()		{ newNote(Image::staticMetaObject.className());	}
-void MainWindow::newAudio()		{ newNote(Audio::staticMetaObject.className());	}
-void MainWindow::newVideo()		{ newNote(Video::staticMetaObject.className());	}
+void MainWindow::newImage()		{ newNote(Image::staticMetaObject.className());     }
+void MainWindow::newAudio()		{ newNote(Audio::staticMetaObject.className());     }
+void MainWindow::newVideo()		{ newNote(Video::staticMetaObject.className());     }
 
 void MainWindow::openNote(QListWidgetItem* i){
 	try{
@@ -108,29 +119,31 @@ void MainWindow::openNote(unsigned int id){
 void MainWindow::editSaveNote(){
 	try{
 
-		if( !m_editMode ){
-			// Setup Edit Mode
-			ui->editSaveButton->setText("Save");
-			ui->deleteCancelButton->setText("Cancel");
-			ui->titleEdit->setReadOnly(false);
-			m_actualNoteView->setEditMode(true);
+		if(m_actualNote!=NULL){
+			if( !m_editMode ){
+				// Setup Edit Mode
+				ui->editSaveButton->setText("Save");
+				ui->deleteCancelButton->setText("Cancel");
+				ui->titleEdit->setReadOnly(false);
+				m_actualNoteView->setEditMode(true);
+			}
+			else{
+				// Save Note
+				bool titleChanged = m_actualNote->getTitle() != ui->titleEdit->text();
+				if( titleChanged )
+					m_actualNote->setTitle(ui->titleEdit->text());
+				m_actualNoteView->saveChanges();
+				NotesManager::getInstance().saveNote(*m_actualNote);
+				if( titleChanged )
+					searchNotes();
+				// And Setup View Mode
+				m_actualNoteView->setEditMode(false);
+				ui->titleEdit->setReadOnly(true);
+				ui->deleteCancelButton->setText("Put to Trash");
+				ui->editSaveButton->setText("Edit");
+			}
+			m_editMode = !m_editMode;
 		}
-		else{
-			// Save Note
-			bool titleChanged = m_actualNote->getTitle() != ui->titleEdit->text();
-			if( titleChanged )
-				m_actualNote->setTitle(ui->titleEdit->text());
-			m_actualNoteView->saveChanges();
-			NotesManager::getInstance().saveNote(*m_actualNote);
-			if( titleChanged )
-				searchNotes();
-			// And Setup View Mode
-			m_actualNoteView->setEditMode(false);
-			ui->titleEdit->setReadOnly(true);
-			ui->deleteCancelButton->setText("Put to Trash");
-			ui->editSaveButton->setText("Edit");
-		}
-		m_editMode = !m_editMode;
 
 	}
 	catch(std::exception& e){
@@ -141,23 +154,25 @@ void MainWindow::editSaveNote(){
 void MainWindow::deleteCancelNote(){
 	try{
 
-		if( !m_editMode ){
-			// Delete Note
-			NotesManager::getInstance().putToTrash(*m_actualNote);
-			clearActualNoteView();
-			searchNotes();
+		if(m_actualNote!=NULL){
+			if( !m_editMode ){
+				// Delete Note
+				NotesManager::getInstance().putToTrash(*m_actualNote);
+				clearActualNoteView();
+				searchNotes();
 
-            // Update Trash Icon
-            setTrashIcon(false);
-		}
-		else{
-			// Reload Original Note content and Setup View Mode
-			loadActualNoteContent();
-			m_actualNoteView->setEditMode(false);
-			ui->titleEdit->setReadOnly(true);
-			ui->deleteCancelButton->setText("Put to Trash");
-			ui->editSaveButton->setText("Edit");
-			m_editMode = !m_editMode;
+				// Update Trash Icon
+				setTrashIcon(false);
+			}
+			else{
+				// Reload Original Note content and Setup View Mode
+				loadActualNoteContent();
+				m_actualNoteView->setEditMode(false);
+				ui->titleEdit->setReadOnly(true);
+				ui->deleteCancelButton->setText("Put to Trash");
+				ui->editSaveButton->setText("Edit");
+				m_editMode = !m_editMode;
+			}
 		}
 
 	}
@@ -169,20 +184,37 @@ void MainWindow::deleteCancelNote(){
 void MainWindow::tagNote(){
 	try{
 
-		TagsDialog td(*m_actualNote);
-		td.setModal(true);
-		td.exec();
+		if(m_actualNote!=NULL){
+			TagsDialog td(*m_actualNote);
+			td.setModal(true);
+			td.exec();
 
-		if( !td.isCancelled() ){
-			DatabaseManager& db = DatabaseManager::getInstance();
-			db.flushNoteAssoc(*m_actualNote);
-			db.tagAssocNote(*m_actualNote, td.getSelectedTags());
+			if( !td.isCancelled() ){
+				DatabaseManager& db = DatabaseManager::getInstance();
+				db.flushNoteAssoc(*m_actualNote);
+				db.tagAssocNote(*m_actualNote, td.getSelectedTags());
+			}
 		}
 
 	}
 	catch(std::exception& e){
 		showErrorMessageBox(QString(e.what()));
 	}
+}
+
+void MainWindow::exportNoteAsHtml(){
+	if( !m_editMode && m_actualNote!=NULL )
+		ui->tabBox->setCurrentIndex(1);
+}
+
+void MainWindow::exportNoteAsTeX(){
+	if( !m_editMode && m_actualNote!=NULL )
+		ui->tabBox->setCurrentIndex(2);
+}
+
+void MainWindow::exportNoteAsTxt(){
+	if( !m_editMode && m_actualNote!=NULL )
+		ui->tabBox->setCurrentIndex(3);
 }
 
 void MainWindow::exportNote(int i){
@@ -220,24 +252,86 @@ void MainWindow::exportNote(int i){
 	}
 }
 
-void MainWindow::changeWorkspace(){
+void MainWindow::exportNoteAsFile(){
 	try{
 
-		// Look for Path
+		int i = ui->tabBox->currentIndex();
+
+		if( i!=0 ){
+			if( m_editMode ){
+				ui->tabBox->setCurrentIndex(0);
+				showErrorMessageBox("Impossible to export note, currents modifications need to be saved before.");
+			}
+			else{
+				// Get Export
+				QString fileName;
+
+				switch(i){
+					case 1:
+						fileName = QFileDialog::getSaveFileName(this, "Export Html File", QString(), "DB File (*.html)");
+						if(!fileName.isEmpty())
+							ExportStrategy::exportFile(ui->htmlArea->page()->mainFrame()->toHtml(), fileName);
+						break;
+					case 2:
+						fileName = QFileDialog::getSaveFileName(this, "Export TeX File", QString(), "DB File (*.tex)");
+						if(!fileName.isEmpty())
+							ExportStrategy::exportFile(ui->texArea->toPlainText(), fileName);
+						break;
+					case 3:
+						fileName = QFileDialog::getSaveFileName(this, "Export Txt File", QString(), "DB File (*.txt)");
+						if(!fileName.isEmpty())
+							ExportStrategy::exportFile(ui->txtArea->toPlainText(), fileName);
+						break;
+					default:
+						showErrorMessageBox("This box is not referenced in exportNote function.");
+						break;
+				}
+			}
+		}
+
+	}
+	catch(std::exception& e){
+		showErrorMessageBox(QString(e.what()));
+	}
+}
+
+void MainWindow::createWorkspace(){
+	try{
+
+		// Look new Path
 		DatabaseManager& db = DatabaseManager::getInstance();
+		QString fileName = QFileDialog::getSaveFileName(this, "Create DB", QString(), "DB File (*.lo21)");
 
-		// Show Worspace form
-		WorkspaceForm w(db.getpath());
-		w.setModal(true);
-		w.exec();
-
-		if( !w.isCanceled() && w.getPath() != db.getpath() ){
+		if( !fileName.isEmpty() && fileName != db.getpath() ){
 			GeneralViewFactory::getInstance().flushViews();
 			NotesManager::getInstance().flush();
 			DatabaseManager::destroy();
-			DatabaseManager::getInstance(w.getPath());
+			DatabaseManager::getInstance(fileName);
 			showEditor(false);
 			clearListView();
+		}
+
+	}
+	catch(std::exception& e){
+		showErrorMessageBox(QString(e.what()));
+	}
+}
+
+void MainWindow::changeWorkspace(){
+	try{
+
+		// Look new Path
+		DatabaseManager& db = DatabaseManager::getInstance();
+		QString fileName = QFileDialog::getOpenFileName(this, "Open DB", db.getpath(), "DB File (*.lo21)");
+
+		if( !fileName.isEmpty() && fileName != db.getpath() ){
+			GeneralViewFactory::getInstance().flushViews();
+			NotesManager::getInstance().flush();
+			DatabaseManager::destroy();
+			DatabaseManager::getInstance(fileName);
+			showEditor(false);
+			clearListView();
+			searchNotes();
 		}
 
 	}

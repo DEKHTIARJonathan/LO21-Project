@@ -28,7 +28,6 @@ SOURCES += \
     view/notesview/noteview.cpp \
     view/notesview/generalviewfactory.cpp \
     view/notesview/viewfactorynotfoundexception.cpp \
-    controller/controller.cpp \
     view/listnoteviewitem.cpp \
     view/workspaceform.cpp \
     view/notesview/imageview.cpp \
@@ -64,8 +63,6 @@ HEADERS += \
     notefactory/notefactory.h \
     dbmanager/dbexception.h \
     notemanager/notesmanagerexception.h \
-    interfacestrategyfactory.h \
-    strategyfactory.h \
     export/interfaceexportfactory.h \
     export/exportfactory.h \
     export/generalexportfactory.h \

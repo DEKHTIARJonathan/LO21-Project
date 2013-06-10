@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>TerminaNotes</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../ressources/iconlib.qrc">
+    <normaloff>:/icn/article</normaloff>:/icn/article</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -127,7 +131,7 @@
              <x>0</x>
              <y>0</y>
              <width>544</width>
-             <height>356</height>
+             <height>354</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="speNoteLayout">
@@ -354,7 +358,7 @@
             <x>0</x>
             <y>0</y>
             <width>198</width>
-            <height>324</height>
+            <height>322</height>
            </rect>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout">
@@ -501,7 +505,7 @@
      <addaction name="actionNew_Video"/>
     </widget>
     <addaction name="menuNewNote"/>
-    <addaction name="actionGo_to_Trash"/>
+    <addaction name="actionOpenTrash"/>
     <addaction name="separator"/>
     <addaction name="actionCreate_WorkSpace"/>
     <addaction name="actionChange_WorkSpace"/>
@@ -561,7 +565,7 @@
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>true</bool>
+    <bool>false</bool>
    </attribute>
    <addaction name="actionCreate_WorkSpace"/>
    <addaction name="actionChange_WorkSpace"/>
@@ -612,23 +616,26 @@
     <string>New WorkSpace</string>
    </property>
   </action>
-  <action name="actionGo_to_Trash">
+  <action name="actionOpenTrash">
    <property name="icon">
     <iconset resource="../ressources/iconlib.qrc">
      <normaloff>:/icn/full</normaloff>:/icn/full</iconset>
    </property>
    <property name="text">
-    <string>Go to Trash</string>
+    <string>Open Trash</string>
+   </property>
+   <property name="toolTip">
+    <string>Open Trash</string>
    </property>
   </action>
   <action name="actionEdit">
    <property name="text">
-    <string>Edit</string>
+    <string>Edit/Save</string>
    </property>
   </action>
   <action name="actionDelete">
    <property name="text">
-    <string>Put to Trash</string>
+    <string>Put to Trash/Cancel</string>
    </property>
   </action>
   <action name="actionTags">
