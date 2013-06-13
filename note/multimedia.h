@@ -4,6 +4,14 @@
 #include <QString>
 #include <note/note.h>
 
+//! Article
+/*!
+  Cette classe implémente simplement la classe abstraite Note.
+  Elle n'a pas vocation à être utilisé directement, mais réimplémenté par des types multimédias plus spécifique comme Image, Audio ou Video.
+
+  \version	1.0
+  \author	Florian Baune
+*/
 class MultiMedia : public Note
 {
 		Q_OBJECT

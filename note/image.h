@@ -3,6 +3,14 @@
 
 #include <note/multimedia.h>
 
+//! Image
+/*!
+  Cette classe implémente simplement la classe Multimedia.
+  Elle permet le stockage des imformations nécessaire à une Image.
+
+  \version	1.0
+  \author	Florian Baune
+*/
 class Image : public MultiMedia
 {
 		Q_OBJECT

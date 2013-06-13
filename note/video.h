@@ -3,6 +3,14 @@
 
 #include <note/multimedia.h>
 
+//! Vidéo
+/*!
+  Cette classe implémente simplement la classe Multimedia.
+  Elle permet le stockage des imformations nécessaire à une Vidéo.
+
+  \version	1.0
+  \author	Florian Baune
+*/
 class Video : public MultiMedia
 {
 		Q_OBJECT

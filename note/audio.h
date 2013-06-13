@@ -3,6 +3,14 @@
 
 #include <note/multimedia.h>
 
+//! Audio
+/*!
+  Cette classe implémente simplement la classe Multimedia.
+  Elle permet le stockage des imformations nécessaire à un Audio.
+
+  \version	1.0
+  \author	Florian Baune
+*/
 class Audio : public MultiMedia
 {
 		Q_OBJECT

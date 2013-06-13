@@ -5,6 +5,14 @@
 
 #include <note/note.h>
 
+//! Article
+/*!
+  Cette classe implémente simplement la classe abstraite Note.
+  Elle permet le stockage des imformations nécessaire à un Article.
+
+  \version	1.0
+  \author	Florian Baune
+*/
 class Article : public Note
 {
 		Q_OBJECT

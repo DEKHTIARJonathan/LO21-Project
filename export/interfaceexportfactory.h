@@ -18,6 +18,7 @@ class InterfaceExportFactory
 		/*!
 		  \param	es		La stratégie d'export
 		  \param	n		La note à exporter
+		  \return	La QString résultat de l'export
 
 		  \version	1.0
 		  \author	Florian Baune
