@@ -1,0 +1,15 @@
+<map id="projet/notefactory/notefactory.h" name="projet/notefactory/notefactory.h">
+<area shape="rect" id="node2" href="$db/dca/interfacenotefactory_8h.html" title="notefactory/interfacenotefactory.h" alt="" coords="1188,96,1407,123"/>
+<area shape="rect" id="node6" href="$dd/d3a/databasemanager_8h.html" title="Interface entre le logiciel et la base de données. Elle est la seule à réaliser des accès à la BDD..." alt="" coords="690,96,902,123"/>
+<area shape="rect" id="node3" href="$d8/da6/note_8h.html" title="note/note.h" alt="" coords="1226,395,1315,421"/>
+<area shape="rect" id="node18" href="$d1/da6/classdef_8h.html" title="note/classdef.h" alt="" coords="1190,171,1302,197"/>
+<area shape="rect" id="node29" href="$d2/d6f/constants_8h.html" title="constants.h" alt="" coords="1326,171,1416,197"/>
+<area shape="rect" id="node30" href="$da/de0/dbexception_8h.html" title="dbmanager/dbexception.h" alt="" coords="322,320,498,347"/>
+<area shape="rect" id="node19" href="$db/d82/article_8h.html" title="note/article.h" alt="" coords="1223,320,1322,347"/>
+<area shape="rect" id="node20" href="$db/df5/document_8h.html" title="note/document.h" alt="" coords="770,245,891,272"/>
+<area shape="rect" id="node22" href="$d8/dec/documentindexoutofarrayexception_8h.html" title="note/documentindexoutofarrayexception.h" alt="" coords="605,320,875,347"/>
+<area shape="rect" id="node25" href="$da/d5f/multimedia_8h.html" title="note/multimedia.h" alt="" coords="1072,320,1198,347"/>
+<area shape="rect" id="node26" href="$d5/db2/image_8h.html" title="note/image.h" alt="" coords="1086,245,1184,272"/>
+<area shape="rect" id="node27" href="$da/d09/audio_8h.html" title="note/audio.h" alt="" coords="1208,245,1304,272"/>
+<area shape="rect" id="node28" href="$dd/d78/video_8h.html" title="note/video.h" alt="" coords="916,245,1010,272"/>
+</map>

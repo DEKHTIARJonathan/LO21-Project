@@ -1,6 +1,14 @@
 #ifndef DatabaseManager_H
 #define DatabaseManager_H
 
+/**
+ * \file databasemanager.h
+ * \brief Interface entre le logiciel et la base de données. Elle est la seule à réaliser des accès à la BDD
+ * \author Dekhtiar Jonathan & Florian Baune
+ * \version 1
+ */
+
+
 #include <QWidget>
 #include <QSqlDatabase>
 #include <QSqlTableModel>
@@ -74,7 +82,15 @@ public:
 	bool fillNote (MultiMedia& m)  const;
 
 	/****************  Singleton *********************/
-
+	/*!
+		 *  \brief Méthode static renvoyant une référence sur le singleton DatabaseManager
+		 *
+		 *  Constructeur de la classe DatabaseManager
+		 *
+		 *	\param path : chemin du fichier de la base SQLite
+		 *  \param user : utilisateur de la base de données
+		 *  \param pass : mot de passe de la base de données
+		 */
 	static DatabaseManager&			getInstance(QString path = QDir::currentPath() +"/temp.lo21", QString user = "", QString pass = "");
 	static void						destroy();
 
@@ -120,10 +136,33 @@ public:
 	bool removeNotefromDoc (const Document& d, const Note& n) const;
 
 	/****************  Singleton ^*********************/
-
+	/*!
+		 *  \brief Constructeur
+		 *
+		 *  Constructeur de la classe DatabaseManager
+		 *
+		 *  \param path : chemin du fichier de la base SQLite
+		 *  \param user : utilisateur de la base de données
+		 *  \param pass : mot de passe de la base de données
+		 */
 	DatabaseManager(const QString &path, const QString &user, const QString &pass);	// Interdit l'instanciation directe
+
+	/*!
+		 *  \brief Constructeur de recopie
+		 *
+		 *  La recopie est interdite
+
+		 */
 	DatabaseManager(const DatabaseManager& nm);	// Interdit la recopie
+
+	/*!
+		 *  \brief Opérateur =
+		 *
+		 *  La recopie est interdite
+		 */
 	DatabaseManager& operator=(const DatabaseManager& n);	// Interdit la recopie
+
+
 	static DatabaseManager *s_inst;	// Contient le singleton s'il est instancié
 	~DatabaseManager();
 };

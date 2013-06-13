@@ -1,0 +1,34 @@
+<map id="projet/view/mainwindow.h" name="projet/view/mainwindow.h">
+<area shape="rect" id="node10" href="$d2/d6f/constants_8h.html" title="constants.h" alt="" coords="1160,453,1251,480"/>
+<area shape="rect" id="node11" href="$de/d36/notesmanager_8h.html" title="notemanager/notesmanager.h" alt="" coords="1475,155,1675,181"/>
+<area shape="rect" id="node29" href="$de/de0/generalexportfactory_8h.html" title="export/generalexportfactory.h" alt="" coords="839,155,1035,181"/>
+<area shape="rect" id="node37" href="$d2/daf/generalviewfactory_8h.html" title="view/notesview/generalviewfactory.h" alt="" coords="2303,379,2540,405"/>
+<area shape="rect" id="node45" href="$d8/d82/listnoteviewitem_8h.html" title="view/listnoteviewitem.h" alt="" coords="1800,155,1957,181"/>
+<area shape="rect" id="node46" href="$d6/d02/workspaceform_8h.html" title="view/workspaceform.h" alt="" coords="2135,80,2288,107"/>
+<area shape="rect" id="node48" href="$d8/dbd/trashdialog_8h.html" title="view/trashdialog.h" alt="" coords="1719,80,1848,107"/>
+<area shape="rect" id="node49" href="$d7/d5c/tagsdialog_8h.html" title="view/tagsdialog.h" alt="" coords="1933,80,2056,107"/>
+<area shape="rect" id="node14" href="$d8/da6/note_8h.html" title="note/note.h" alt="" coords="1233,603,1321,629"/>
+<area shape="rect" id="node16" href="$de/dd1/generalnotefactory_8h.html" title="notefactory/generalnotefactory.h" alt="" coords="1352,229,1565,256"/>
+<area shape="rect" id="node28" href="$d3/da2/notesmanagerexception_8h.html" title="notemanager/notesmanagerexception.h" alt="" coords="899,603,1156,629"/>
+<area shape="rect" id="node18" href="$db/dca/interfacenotefactory_8h.html" title="notefactory/interfacenotefactory.h" alt="" coords="1446,379,1665,405"/>
+<area shape="rect" id="node19" href="$d5/d17/notefactory_8h.html" title="notefactory/notefactory.h" alt="" coords="1497,304,1665,331"/>
+<area shape="rect" id="node27" href="$d3/d8e/notefactorynotfoundexception_8h.html" title="notefactory/notefactorynotfoundexception.h" alt="" coords="93,603,371,629"/>
+<area shape="rect" id="node20" href="$dd/d3a/databasemanager_8h.html" title="Interface entre le logiciel et la base de données. Elle est la seule à réaliser des accès à la BDD..." alt="" coords="1742,379,1953,405"/>
+<area shape="rect" id="node22" href="$d1/da6/classdef_8h.html" title="note/classdef.h" alt="" coords="1537,453,1649,480"/>
+<area shape="rect" id="node23" href="$db/d82/article_8h.html" title="note/article.h" alt="" coords="1745,528,1844,555"/>
+<area shape="rect" id="node24" href="$db/df5/document_8h.html" title="note/document.h" alt="" coords="1515,528,1636,555"/>
+<area shape="rect" id="node25" href="$d8/dec/documentindexoutofarrayexception_8h.html" title="note/documentindexoutofarrayexception.h" alt="" coords="1346,603,1616,629"/>
+<area shape="rect" id="node31" href="$da/da7/interfaceexportfactory_8h.html" title="export/interfaceexportfactory.h" alt="" coords="811,304,1013,331"/>
+<area shape="rect" id="node35" href="$df/d40/exportfactory_8h.html" title="export/exportfactory.h" alt="" coords="862,229,1012,256"/>
+<area shape="rect" id="node36" href="$de/da7/exportfactorynotfoundexception_8h.html" title="export/exportfactorynotfoundexception.h" alt="" coords="395,603,655,629"/>
+<area shape="rect" id="node33" href="$d4/d83/exportstrategynotfoundexception_8h.html" title="export/exportstrategynotfoundexception.h" alt="" coords="563,528,831,555"/>
+<area shape="rect" id="node32" href="$d2/df9/exportstrategy_8h.html" title="export/exportstrategy.h" alt="" coords="1161,379,1319,405"/>
+<area shape="rect" id="node34" href="$d5/d79/exportfileexception_8h.html" title="exportfileexception.h" alt="" coords="731,603,875,629"/>
+<area shape="rect" id="node38" href="$d0/daa/viewfactory_8h.html" title="view/notesview/viewfactory.h" alt="" coords="2663,453,2856,480"/>
+<area shape="rect" id="node39" href="$d2/dba/viewfactorynotfoundexception_8h.html" title="view/notesview/viewfactorynotfoundexception.h" alt="" coords="1641,603,1943,629"/>
+<area shape="rect" id="node40" href="$d5/d41/articleview_8h.html" title="view/notesview/articleview.h" alt="" coords="2189,453,2379,480"/>
+<area shape="rect" id="node41" href="$df/dd7/imageview_8h.html" title="view/notesview/imageview.h" alt="" coords="2881,453,3071,480"/>
+<area shape="rect" id="node42" href="$de/df6/audioview_8h.html" title="view/notesview/audioview.h" alt="" coords="3095,453,3280,480"/>
+<area shape="rect" id="node43" href="$d6/d01/videoview_8h.html" title="view/notesview/videoview.h" alt="" coords="2454,453,2639,480"/>
+<area shape="rect" id="node44" href="$d3/d59/documentview_8h.html" title="view/notesview/documentview.h" alt="" coords="1953,453,2164,480"/>
+</map>

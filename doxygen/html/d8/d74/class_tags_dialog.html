@@ -1,0 +1,531 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>Gestionnaire de Notes - Projet LO21 - P13: Référence de la classe TagsDialog</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Gestionnaire de Notes - Projet LO21 - P13
+   &#160;<span id="projectnumber">V1.0</span>
+   </div>
+   <div id="projectbrief">Project by Dekhtiar Jonathan &amp; Florian Baune</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.4 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="../../namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="../../classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="../../inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="../../functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d8/d74/class_tags_dialog.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Connecteurs publics</a> &#124;
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
+<a href="../../d5/d9e/class_tags_dialog-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe TagsDialog</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../">tagsdialog.h</a>&gt;</code></p>
+<div class="dynheader">
+Graphe d'héritage de TagsDialog:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d07/class_tags_dialog__inherit__graph.png" border="0" usemap="#_tags_dialog_inherit__map" alt="Inheritance graph"/></div>
+<map name="_tags_dialog_inherit__map" id="_tags_dialog_inherit__map">
+</map>
+</div>
+<div class="dynheader">
+Graphe de collaboration de TagsDialog:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d42/class_tags_dialog__coll__graph.png" border="0" usemap="#_tags_dialog_coll__map" alt="Collaboration graph"/></div>
+<map name="_tags_dialog_coll__map" id="_tags_dialog_coll__map">
+<area shape="rect" id="node3" href="../../de/d15/class_note.html" title="{Note\n|# m_modified\l&#45; m_id\l&#45; m_title\l|+ Note()\l+ Note()\l+ getId()\l+ getTitle()\l+ isModified()\l+ setTitle()\l+ operator==()\l+ confirmSaving()\l+ ~Note()\l&#45; Note()\l&#45; operator=()\l}" alt="" coords="99,133,225,387"/></map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Connecteurs publics</h2></td></tr>
+<tr class="memitem:a8254c580bb70359ab845faa198f7c11a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d74/class_tags_dialog.html#a8254c580bb70359ab845faa198f7c11a">addTag</a> ()</td></tr>
+<tr class="separator:a8254c580bb70359ab845faa198f7c11a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a721aa420a0862a0280207530c70f41a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d74/class_tags_dialog.html#a721aa420a0862a0280207530c70f41a1">ok</a> ()</td></tr>
+<tr class="separator:a721aa420a0862a0280207530c70f41a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a9d90d29fbdf9f602e17fe50f25e77d96"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d74/class_tags_dialog.html#a9d90d29fbdf9f602e17fe50f25e77d96">TagsDialog</a> (<a class="el" href="../../de/d15/class_note.html">Note</a> &amp;n, QWidget *parent=0)</td></tr>
+<tr class="separator:a9d90d29fbdf9f602e17fe50f25e77d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a724682fbc5443ad991df726af06c84bc"><td class="memItemLeft" align="right" valign="top">const QStringList &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d74/class_tags_dialog.html#a724682fbc5443ad991df726af06c84bc">getSelectedTags</a> () const </td></tr>
+<tr class="separator:a724682fbc5443ad991df726af06c84bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60d2d9c0d97152f46a33179b94242368"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d74/class_tags_dialog.html#a60d2d9c0d97152f46a33179b94242368">isCancelled</a> () const </td></tr>
+<tr class="separator:a60d2d9c0d97152f46a33179b94242368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56209d8d793f0bbf9490337f37f51e86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d74/class_tags_dialog.html#a56209d8d793f0bbf9490337f37f51e86">~TagsDialog</a> ()</td></tr>
+<tr class="separator:a56209d8d793f0bbf9490337f37f51e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:a49291f5b00ccd636ab0388d0614a674a"><td class="memItemLeft" align="right" valign="top">Ui::TagsDialog *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d74/class_tags_dialog.html#a49291f5b00ccd636ab0388d0614a674a">ui</a></td></tr>
+<tr class="separator:a49291f5b00ccd636ab0388d0614a674a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aecbde88c86078ae6f63b3d6db0a830"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d15/class_note.html">Note</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d74/class_tags_dialog.html#a8aecbde88c86078ae6f63b3d6db0a830">m_note</a></td></tr>
+<tr class="separator:a8aecbde88c86078ae6f63b3d6db0a830"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7327b658a1ce71f231397337a380b8bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d74/class_tags_dialog.html#a7327b658a1ce71f231397337a380b8bf">m_isCancelled</a></td></tr>
+<tr class="separator:a7327b658a1ce71f231397337a380b8bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78c66aab2c6fff3d49fe3e53db935265"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d74/class_tags_dialog.html#a78c66aab2c6fff3d49fe3e53db935265">m_tagsList</a></td></tr>
+<tr class="separator:a78c66aab2c6fff3d49fe3e53db935265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4f967c297265e975296c69eb8b89ecd"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d74/class_tags_dialog.html#aa4f967c297265e975296c69eb8b89ecd">m_selectedTags</a></td></tr>
+<tr class="separator:aa4f967c297265e975296c69eb8b89ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock">
+<p>Définition à la ligne <a class="el" href="../../#L13">13</a> du fichier <a class="el" href="../../">tagsdialog.h</a>.</p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a9d90d29fbdf9f602e17fe50f25e77d96"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TagsDialog::TagsDialog </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d15/class_note.html">Note</a> &amp;&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L8">8</a> du fichier <a class="el" href="../../">tagsdialog.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                                               :</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    QDialog(parent),</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="../../d8/d74/class_tags_dialog.html#a49291f5b00ccd636ab0388d0614a674a">ui</a>(<span class="keyword">new</span> Ui::TagsDialog),</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="../../d8/d74/class_tags_dialog.html#a8aecbde88c86078ae6f63b3d6db0a830">m_note</a>(n),</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="../../d8/d74/class_tags_dialog.html#a7327b658a1ce71f231397337a380b8bf">m_isCancelled</a>(<span class="keyword">true</span>)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="../../d8/d74/class_tags_dialog.html#a49291f5b00ccd636ab0388d0614a674a">ui</a>-&gt;setupUi(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">// Start search in DataBase</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../d5/dd7/class_database_manager.html">DatabaseManager</a>&amp; db = <a class="code" href="../../d5/dd7/class_database_manager.html#ad998f5de5416534ee875b10fe1dcac82" title="Méthode static renvoyant une référence sur le singleton DatabaseManager. ">DatabaseManager::getInstance</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    QStringList tags = db.<a class="code" href="../../d5/dd7/class_database_manager.html#ae2741f227538d263894c7c5133865fb6">getAllTags</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    QStringList selectedTags = db.<a class="code" href="../../d5/dd7/class_database_manager.html#ac576c7a9f1800614aeb73d9db1300e03">getTags</a>(<a class="code" href="../../d8/d74/class_tags_dialog.html#a8aecbde88c86078ae6f63b3d6db0a830">m_note</a>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="../../d8/d74/class_tags_dialog.html#a78c66aab2c6fff3d49fe3e53db935265">m_tagsList</a> = tags;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// Setup</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    QListWidget&amp; l = *<a class="code" href="../../d8/d74/class_tags_dialog.html#a49291f5b00ccd636ab0388d0614a674a">ui</a>-&gt;tagsList;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    l.setSelectionMode(QAbstractItemView::NoSelection);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span>(!tags.isEmpty()){</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment">// Display All Tags</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">for</span>( QStringList::ConstIterator it = tags.begin(); it!=tags.end(); it++ ){</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="comment">// Create tag item</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            QListWidgetItem* tagItem = <span class="keyword">new</span> QListWidgetItem(*it, &amp;l);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            tagItem-&gt;setFlags(tagItem-&gt;flags() | Qt::ItemIsUserCheckable);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">if</span>( selectedTags.contains(*it, Qt::CaseInsensitive) )</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                tagItem-&gt;setCheckState(Qt::Checked);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                tagItem-&gt;setCheckState(Qt::Unchecked);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="comment">// Insert Tag Item</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            l.addItem(tagItem);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        l.sortItems();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    QObject::connect(<a class="code" href="../../d8/d74/class_tags_dialog.html#a49291f5b00ccd636ab0388d0614a674a">ui</a>-&gt;addButton, SIGNAL(clicked()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d8/d74/class_tags_dialog.html#a8254c580bb70359ab845faa198f7c11a">addTag</a>()));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    QObject::connect(<a class="code" href="../../d8/d74/class_tags_dialog.html#a49291f5b00ccd636ab0388d0614a674a">ui</a>-&gt;okButton, SIGNAL(clicked()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d8/d74/class_tags_dialog.html#a721aa420a0862a0280207530c70f41a1">ok</a>()));</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    QObject::connect(<a class="code" href="../../d8/d74/class_tags_dialog.html#a49291f5b00ccd636ab0388d0614a674a">ui</a>-&gt;cancelButton, SIGNAL(clicked()), <span class="keyword">this</span>, SLOT(close()));</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a56209d8d793f0bbf9490337f37f51e86"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TagsDialog::~TagsDialog </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L110">110</a> du fichier <a class="el" href="../../">tagsdialog.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// Clear List View</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    QListWidget&amp; l = *<a class="code" href="../../d8/d74/class_tags_dialog.html#a49291f5b00ccd636ab0388d0614a674a">ui</a>-&gt;tagsList;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    QListWidgetItem* item = l.takeItem(0);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">while</span>( item != NULL ){</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keyword">delete</span> item;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        item = l.takeItem(0);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">delete</span> <a class="code" href="../../d8/d74/class_tags_dialog.html#a49291f5b00ccd636ab0388d0614a674a">ui</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a8254c580bb70359ab845faa198f7c11a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TagsDialog::addTag </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L65">65</a> du fichier <a class="el" href="../../">tagsdialog.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                       {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    QString tag;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d8/d74/class_tags_dialog.html#a721aa420a0862a0280207530c70f41a1">ok</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">int</span> begin = 0;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    QListWidget&amp; l = *<a class="code" href="../../d8/d74/class_tags_dialog.html#a49291f5b00ccd636ab0388d0614a674a">ui</a>-&gt;tagsList;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    QRegExp rx(<span class="stringliteral">&quot;^[A-Z][a-z]{2,}$&quot;</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    QRegExpValidator val;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    val.setRegExp(rx);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Ask for new valide tag</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">do</span>{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        tag = QInputDialog::getText(<span class="keyword">this</span>, <span class="stringliteral">&quot;Create new Tag&quot;</span>, <span class="stringliteral">&quot;Tag (only use a-z characters) : &quot;</span>, QLineEdit::Normal, <span class="stringliteral">&quot;&quot;</span>, &amp;ok).toLower();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        tag[0] = tag[0].toUpper();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }<span class="keywordflow">while</span>( ok &amp;&amp;  (val.validate(tag,begin) != QRegExpValidator::Acceptable || <a class="code" href="../../d8/d74/class_tags_dialog.html#a78c66aab2c6fff3d49fe3e53db935265">m_tagsList</a>.contains(tag) ) );</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span>(ok){</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="comment">// Create tag item</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        QListWidgetItem* tagItem = <span class="keyword">new</span> QListWidgetItem(tag, &amp;l);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        tagItem-&gt;setFlags(tagItem-&gt;flags() | Qt::ItemIsUserCheckable);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        tagItem-&gt;setCheckState(Qt::Checked);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// Add Tag to tag list</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="../../d8/d74/class_tags_dialog.html#a78c66aab2c6fff3d49fe3e53db935265">m_tagsList</a> &lt;&lt; tag;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a724682fbc5443ad991df726af06c84bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QStringList &amp; TagsDialog::getSelectedTags </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L53">53</a> du fichier <a class="el" href="../../">tagsdialog.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                     {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d8/d74/class_tags_dialog.html#aa4f967c297265e975296c69eb8b89ecd">m_selectedTags</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a60d2d9c0d97152f46a33179b94242368"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TagsDialog::isCancelled </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L57">57</a> du fichier <a class="el" href="../../">tagsdialog.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                  {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d8/d74/class_tags_dialog.html#a7327b658a1ce71f231397337a380b8bf">m_isCancelled</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a721aa420a0862a0280207530c70f41a1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TagsDialog::ok </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L96">96</a> du fichier <a class="el" href="../../">tagsdialog.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                   {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// Set Selected Tags List</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    QListWidget&amp; l = *<a class="code" href="../../d8/d74/class_tags_dialog.html#a49291f5b00ccd636ab0388d0614a674a">ui</a>-&gt;tagsList;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;l.count(); i++)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span>( l.item(i)-&gt;checkState() == Qt::Checked )</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <a class="code" href="../../d8/d74/class_tags_dialog.html#aa4f967c297265e975296c69eb8b89ecd">m_selectedTags</a> &lt;&lt; l.item(i)-&gt;text();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="../../d8/d74/class_tags_dialog.html#a7327b658a1ce71f231397337a380b8bf">m_isCancelled</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    close();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="a7327b658a1ce71f231397337a380b8bf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TagsDialog::m_isCancelled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L36">36</a> du fichier <a class="el" href="../../">tagsdialog.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8aecbde88c86078ae6f63b3d6db0a830"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d15/class_note.html">Note</a>&amp; TagsDialog::m_note</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L35">35</a> du fichier <a class="el" href="../../">tagsdialog.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa4f967c297265e975296c69eb8b89ecd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList TagsDialog::m_selectedTags</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L38">38</a> du fichier <a class="el" href="../../">tagsdialog.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a78c66aab2c6fff3d49fe3e53db935265"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList TagsDialog::m_tagsList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L37">37</a> du fichier <a class="el" href="../../">tagsdialog.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a49291f5b00ccd636ab0388d0614a674a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ui::TagsDialog* TagsDialog::ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L34">34</a> du fichier <a class="el" href="../../">tagsdialog.h</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>projet/view/<a class="el" href="../../">tagsdialog.h</a></li>
+<li>projet/view/<a class="el" href="../../">tagsdialog.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d8/d74/class_tags_dialog.html">TagsDialog</a></li>
+    <li class="footer">Généré le Jeudi Juin 13 2013 08:16:45 pour Gestionnaire de Notes - Projet LO21 - P13 par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['savechanges',['saveChanges',['../d4/de2/class_article_view.html#a8ae8b1921976abd932ec357d5f6753b6',1,'ArticleView::saveChanges()'],['../d5/daf/class_audio_view.html#a928f01e885d73f0709d44977b22019f4',1,'AudioView::saveChanges()'],['../d3/d2f/class_document_view.html#a8b3274bcbd61dd967c6fa16fdb2eca62',1,'DocumentView::saveChanges()'],['../df/de8/class_image_view.html#aa0b728d807cf22a28c4a35b564891662',1,'ImageView::saveChanges()'],['../dc/d35/class_note_view.html#a9d8ed98c0a31cb306032718f396c4181',1,'NoteView::saveChanges()'],['../db/dee/class_video_view.html#ae8a23beff53708f18c442332d37c663e',1,'VideoView::saveChanges()']]],
+  ['savenote',['saveNote',['../d8/d71/class_general_note_factory.html#ad2a92f1cd911c41b0b28b1492e3809f3',1,'GeneralNoteFactory::saveNote()'],['../d6/dab/class_interface_note_factory.html#a5eaa49c05be1a48e71de83b71b89eac8',1,'InterfaceNoteFactory::saveNote()'],['../da/de5/class_note_factory.html#a27dbfdd2a6f27cb45eb912ce6acc83c8',1,'NoteFactory::saveNote()'],['../de/d23/class_notes_manager.html#a73b0f85ed9efe1a4e674066b25d8eca0',1,'NotesManager::saveNote()']]],
+  ['searchnotes',['searchNotes',['../d9/dc6/class_main_window.html#abd2b126f767bb4dad9746ae3918f8b57',1,'MainWindow']]],
+  ['setdescription',['setDescription',['../dd/d83/class_multi_media.html#afd1a092327d8edd48519221a22ab49a8',1,'MultiMedia']]],
+  ['seteditmode',['setEditMode',['../d4/de2/class_article_view.html#abe514d7f17135b42e3734cc5d4bc888f',1,'ArticleView::setEditMode()'],['../d5/daf/class_audio_view.html#ac36e1a8eb840e177a57b847cb013d6b4',1,'AudioView::setEditMode()'],['../d3/d2f/class_document_view.html#a734853f477ab8e76d4a9605f68a5fee4',1,'DocumentView::setEditMode()'],['../df/de8/class_image_view.html#ade1413eedb974b12aa70047d82a6e7ec',1,'ImageView::setEditMode()'],['../df/d3a/class_note_document_view.html#a637a7ff39418eac09b46a127899c2c22',1,'NoteDocumentView::setEditMode()'],['../dc/d35/class_note_view.html#a4e1be01f1924c848fbc94e3f57c1c5d6',1,'NoteView::setEditMode()'],['../db/dee/class_video_view.html#a30cf8c284a2aece5065a0868edcd8d6d',1,'VideoView::setEditMode()']]],
+  ['setpath',['setPath',['../dd/d83/class_multi_media.html#aeb2157270c517fb82ccbe418e0587f25',1,'MultiMedia']]],
+  ['setselectednote',['setSelectedNote',['../dd/d89/class_choose_note_dialog.html#a7526969b1a596f7d679cc8f8c400b92f',1,'ChooseNoteDialog::setSelectedNote()'],['../d2/dfe/class_trash_dialog.html#ad9db9a737a4d7c9e6d4ff94c647e89f9',1,'TrashDialog::setSelectedNote()']]],
+  ['settext',['setText',['../d9/de8/class_article.html#a860d31b831c031144cece4d334233246',1,'Article']]],
+  ['settitle',['setTitle',['../de/d15/class_note.html#a65150ecf35f28f67a601f687ea3971c8',1,'Note']]],
+  ['settrashicon',['setTrashIcon',['../d9/dc6/class_main_window.html#ae8665ebfd195c76284d0d2f56c611b89',1,'MainWindow']]],
+  ['setupeditorarea',['setupEditorArea',['../d9/dc6/class_main_window.html#a6de4a3accfed43ce9ab5f07d04352107',1,'MainWindow']]],
+  ['setupexportarea',['setupExportArea',['../d9/dc6/class_main_window.html#a29a64282a85dae9be4dbb09051d33800',1,'MainWindow']]],
+  ['setupmenu',['setupMenu',['../d9/dc6/class_main_window.html#a7e08df6635b97269d345b607cb0b7215',1,'MainWindow']]],
+  ['setupsearcharea',['setupSearchArea',['../d9/dc6/class_main_window.html#a23065b69dd75b36653e3057277ed5ad2',1,'MainWindow']]],
+  ['showeditor',['showEditor',['../d9/dc6/class_main_window.html#ab55683ef062bc9fa2de88760d3b15a6a',1,'MainWindow']]],
+  ['showerrormessagebox',['showErrorMessageBox',['../d9/dc6/class_main_window.html#af600f20b01c4cc7efff1fee2522ac419',1,'MainWindow']]],
+  ['showinfomessagebox',['showInfoMessageBox',['../d9/dc6/class_main_window.html#a978f744a098c63a1dbf53f58eb7ff761',1,'MainWindow']]],
+  ['shownote',['showNote',['../df/d3a/class_note_document_view.html#aebe3c11e6e84959c0230a46742ed24cc',1,'NoteDocumentView::showNote()'],['../dc/d35/class_note_view.html#aba31d7f99bc2c276cc331f1998548730',1,'NoteView::showNote()']]],
+  ['shownoteorder',['showNoteOrder',['../d3/d2f/class_document_view.html#a4b5566516da6ce783288b11a327c21f4',1,'DocumentView']]]
+];
