@@ -1,0 +1,16 @@
+<map id="projet/notemanager/notesmanager.h" name="projet/notemanager/notesmanager.h">
+<area shape="rect" id="node2" href="$d2/dd9/controller_8h.html" title="projet/controller/controller.h" alt="" coords="5,104,189,131"/>
+<area shape="rect" id="node3" href="$d8/d20/databasemanager_8cpp.html" title="projet/dbmanager/databasemanager.cpp" alt="" coords="214,104,476,131"/>
+<area shape="rect" id="node4" href="$de/d34/notesmanager_8cpp.html" title="projet/notemanager\l/notesmanager.cpp" alt="" coords="501,97,637,138"/>
+<area shape="rect" id="node5" href="$d9/d53/mainwindow_8h.html" title="projet/view/mainwindow.h" alt="" coords="783,376,956,403"/>
+<area shape="rect" id="node8" href="$d3/d36/choosenotedialog_8h.html" title="projet/view/notesview\l/choosenotedialog.h" alt="" coords="911,97,1060,138"/>
+<area shape="rect" id="node14" href="$d8/dbd/trashdialog_8h.html" title="projet/view/trashdialog.h" alt="" coords="663,104,828,131"/>
+<area shape="rect" id="node6" href="$df/d0a/main_8cpp.html" title="projet/main.cpp" alt="" coords="726,459,839,485"/>
+<area shape="rect" id="node7" href="$d8/dd9/mainwindow_8cpp.html" title="projet/view/mainwindow.cpp" alt="" coords="863,459,1051,485"/>
+<area shape="rect" id="node9" href="$dc/d7b/choosenotedialog_8cpp.html" title="projet/view/notesview\l/choosenotedialog.cpp" alt="" coords="907,187,1063,229"/>
+<area shape="rect" id="node10" href="$d3/d59/documentview_8h.html" title="projet/view/notesview\l/documentview.h" alt="" coords="1088,187,1237,229"/>
+<area shape="rect" id="node11" href="$d8/d15/documentview_8cpp.html" title="projet/view/notesview\l/documentview.cpp" alt="" coords="915,278,1064,319"/>
+<area shape="rect" id="node12" href="$d2/daf/generalviewfactory_8h.html" title="projet/view/notesview\l/generalviewfactory.h" alt="" coords="1088,278,1237,319"/>
+<area shape="rect" id="node13" href="$d9/d83/generalviewfactory_8cpp.html" title="projet/view/notesview\l/generalviewfactory.cpp" alt="" coords="1081,369,1244,410"/>
+<area shape="rect" id="node15" href="$dd/dd6/trashdialog_8cpp.html" title="projet/view/trashdialog.cpp" alt="" coords="651,195,831,221"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="ArticleView" name="ArticleView">
+<area shape="rect" id="node2" href="$dc/d35/class_note_view.html" title="{NoteView\n||+ NoteView()\l+ loadNoteContent()\l+ setEditMode()\l+ saveChanges()\l+ ~NoteView()\l}" alt="" coords="5,437,147,573"/>
+<area shape="rect" id="node4" href="$d9/de8/class_article.html" title="{Article\n|&#45; m_text\l|+ Article()\l+ getText()\l+ setText()\l&#45; Article()\l&#45; operator=()\l}" alt="" coords="172,437,268,573"/>
+<area shape="rect" id="node5" href="$de/d15/class_note.html" title="{Note\n|# m_modified\l&#45; m_id\l&#45; m_title\l|+ Note()\l+ Note()\l+ getId()\l+ getTitle()\l+ isModified()\l+ setTitle()\l+ operator==()\l+ confirmSaving()\l+ ~Note()\l&#45; Note()\l&#45; operator=()\l}" alt="" coords="157,133,283,387"/>
+</map>

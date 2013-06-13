@@ -12,5 +12,6 @@
         <file alias="open">icon/open.png</file>  
         <file alias="quit">icon/quit.png</file> 
         <file alias="export">icon/export.png</file>  
+        <file alias="copy">icon/copy.png</file> 
     </qresource>
 </RCC>

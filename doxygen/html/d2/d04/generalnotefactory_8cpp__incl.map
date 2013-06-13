@@ -1,0 +1,18 @@
+<map id="projet/notefactory/generalnotefactory.cpp" name="projet/notefactory/generalnotefactory.cpp">
+<area shape="rect" id="node2" href="$de/dd1/generalnotefactory_8h.html" title="generalnotefactory.h" alt="" coords="678,96,822,123"/>
+<area shape="rect" id="node4" href="$db/dca/interfacenotefactory_8h.html" title="notefactory/interfacenotefactory.h" alt="" coords="520,245,739,272"/>
+<area shape="rect" id="node8" href="$d5/d17/notefactory_8h.html" title="notefactory/notefactory.h" alt="" coords="726,171,895,197"/>
+<area shape="rect" id="node34" href="$d3/d8e/notefactorynotfoundexception_8h.html" title="notefactory/notefactorynotfoundexception.h" alt="" coords="1936,469,2214,496"/>
+<area shape="rect" id="node5" href="$d8/da6/note_8h.html" title="note/note.h" alt="" coords="1288,544,1376,571"/>
+<area shape="rect" id="node9" href="$dd/d3a/databasemanager_8h.html" title="Interface entre le logiciel et la base de données. Elle est la seule à réaliser des accès à la BDD..." alt="" coords="764,245,975,272"/>
+<area shape="rect" id="node21" href="$d1/da6/classdef_8h.html" title="note/classdef.h" alt="" coords="1384,320,1496,347"/>
+<area shape="rect" id="node32" href="$d2/d6f/constants_8h.html" title="constants.h" alt="" coords="1087,320,1178,347"/>
+<area shape="rect" id="node33" href="$da/de0/dbexception_8h.html" title="dbmanager/dbexception.h" alt="" coords="2238,469,2414,496"/>
+<area shape="rect" id="node22" href="$db/d82/article_8h.html" title="note/article.h" alt="" coords="1367,469,1466,496"/>
+<area shape="rect" id="node23" href="$db/df5/document_8h.html" title="note/document.h" alt="" coords="1196,395,1316,421"/>
+<area shape="rect" id="node25" href="$d8/dec/documentindexoutofarrayexception_8h.html" title="note/documentindexoutofarrayexception.h" alt="" coords="1641,469,1911,496"/>
+<area shape="rect" id="node28" href="$da/d5f/multimedia_8h.html" title="note/multimedia.h" alt="" coords="1490,469,1616,496"/>
+<area shape="rect" id="node29" href="$d5/db2/image_8h.html" title="note/image.h" alt="" coords="1563,395,1662,421"/>
+<area shape="rect" id="node30" href="$da/d09/audio_8h.html" title="note/audio.h" alt="" coords="1686,395,1782,421"/>
+<area shape="rect" id="node31" href="$dd/d78/video_8h.html" title="note/video.h" alt="" coords="1393,395,1487,421"/>
+</map>

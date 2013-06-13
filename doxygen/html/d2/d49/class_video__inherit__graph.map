@@ -1,0 +1,4 @@
+<map id="Video" name="Video">
+<area shape="rect" id="node2" href="$dd/d83/class_multi_media.html" title="{MultiMedia\n|&#45; m_description\l&#45; m_path\l|+ MultiMedia()\l+ getDescription()\l+ getPath()\l+ setDescription()\l+ setPath()\l&#45; MultiMedia()\l&#45; operator=()\l}" alt="" coords="5,433,133,613"/>
+<area shape="rect" id="node3" href="$de/d15/class_note.html" title="{Note\n|# m_modified\l&#45; m_id\l&#45; m_title\l|+ Note()\l+ Note()\l+ getId()\l+ getTitle()\l+ isModified()\l+ setTitle()\l+ operator==()\l+ confirmSaving()\l+ ~Note()\l&#45; Note()\l&#45; operator=()\l}" alt="" coords="6,131,132,384"/>
+</map>

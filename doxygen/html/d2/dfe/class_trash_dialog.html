@@ -1,0 +1,534 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>Gestionnaire de Notes - Projet LO21 - P13: Référence de la classe TrashDialog</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Gestionnaire de Notes - Projet LO21 - P13
+   &#160;<span id="projectnumber">V1.0</span>
+   </div>
+   <div id="projectbrief">Project by Dekhtiar Jonathan &amp; Florian Baune</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.4 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="../../namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="../../classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="../../inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="../../functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d2/dfe/class_trash_dialog.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Connecteurs publics</a> &#124;
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
+<a href="../../dd/d4f/class_trash_dialog-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe TrashDialog</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../">trashdialog.h</a>&gt;</code></p>
+<div class="dynheader">
+Graphe d'héritage de TrashDialog:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d32/class_trash_dialog__inherit__graph.png" border="0" usemap="#_trash_dialog_inherit__map" alt="Inheritance graph"/></div>
+<map name="_trash_dialog_inherit__map" id="_trash_dialog_inherit__map">
+</map>
+</div>
+<div class="dynheader">
+Graphe de collaboration de TrashDialog:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d55/class_trash_dialog__coll__graph.png" border="0" usemap="#_trash_dialog_coll__map" alt="Collaboration graph"/></div>
+<map name="_trash_dialog_coll__map" id="_trash_dialog_coll__map">
+<area shape="rect" id="node3" href="../../de/d15/class_note.html" title="{Note\n|# m_modified\l&#45; m_id\l&#45; m_title\l|+ Note()\l+ Note()\l+ getId()\l+ getTitle()\l+ isModified()\l+ setTitle()\l+ operator==()\l+ confirmSaving()\l+ ~Note()\l&#45; Note()\l&#45; operator=()\l}" alt="" coords="102,133,228,387"/></map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Connecteurs publics</h2></td></tr>
+<tr class="memitem:ad9db9a737a4d7c9e6d4ff94c647e89f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfe/class_trash_dialog.html#ad9db9a737a4d7c9e6d4ff94c647e89f9">setSelectedNote</a> (QListWidgetItem *item)</td></tr>
+<tr class="separator:ad9db9a737a4d7c9e6d4ff94c647e89f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ea2c3cdbcc6e93875dc86f4b5e086c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfe/class_trash_dialog.html#a4ea2c3cdbcc6e93875dc86f4b5e086c2">emptyTrash</a> ()</td></tr>
+<tr class="separator:a4ea2c3cdbcc6e93875dc86f4b5e086c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a3f9d43b2f58bd6575c10c0763bacb77b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfe/class_trash_dialog.html#a3f9d43b2f58bd6575c10c0763bacb77b">TrashDialog</a> (QWidget *parent=0)</td></tr>
+<tr class="separator:a3f9d43b2f58bd6575c10c0763bacb77b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54e7a98ccd45f3795960209fb1aec065"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d15/class_note.html">Note</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfe/class_trash_dialog.html#a54e7a98ccd45f3795960209fb1aec065">getSelectedNote</a> () const </td></tr>
+<tr class="separator:a54e7a98ccd45f3795960209fb1aec065"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ea97aa3d9d31c22a2f75edc952f2b09"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfe/class_trash_dialog.html#a1ea97aa3d9d31c22a2f75edc952f2b09">isEmpty</a> () const </td></tr>
+<tr class="separator:a1ea97aa3d9d31c22a2f75edc952f2b09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92d7823d8ced3f238dfff19a373ef91a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfe/class_trash_dialog.html#a92d7823d8ced3f238dfff19a373ef91a">isEmptyTrashOrder</a> () const </td></tr>
+<tr class="separator:a92d7823d8ced3f238dfff19a373ef91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5e11ed90f3a588d1cc054c1e096ae4b"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; pair<br class="typebreak"/>
+&lt; unsigned int, QString &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfe/class_trash_dialog.html#ac5e11ed90f3a588d1cc054c1e096ae4b">getTrashContent</a> () const </td></tr>
+<tr class="separator:ac5e11ed90f3a588d1cc054c1e096ae4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b5000c9bd33b204635cb7e1f830f7f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfe/class_trash_dialog.html#a0b5000c9bd33b204635cb7e1f830f7f0">~TrashDialog</a> ()</td></tr>
+<tr class="separator:a0b5000c9bd33b204635cb7e1f830f7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:a906bf72b1b950e5952b842b91478cbc2"><td class="memItemLeft" align="right" valign="top">Ui::TrashDialog *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfe/class_trash_dialog.html#a906bf72b1b950e5952b842b91478cbc2">ui</a></td></tr>
+<tr class="separator:a906bf72b1b950e5952b842b91478cbc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d077423c6de480f46cb4a580580e97b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d15/class_note.html">Note</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfe/class_trash_dialog.html#a3d077423c6de480f46cb4a580580e97b">m_selectedNote</a></td></tr>
+<tr class="separator:a3d077423c6de480f46cb4a580580e97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48ef46d167b0cfd70afed386e95378c3"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfe/class_trash_dialog.html#a48ef46d167b0cfd70afed386e95378c3">m_count</a></td></tr>
+<tr class="separator:a48ef46d167b0cfd70afed386e95378c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5e82c28400ed6f1b10fd796638880ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfe/class_trash_dialog.html#af5e82c28400ed6f1b10fd796638880ce">m_emptyTrashOrder</a></td></tr>
+<tr class="separator:af5e82c28400ed6f1b10fd796638880ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28946f52a113e77055467708946ecaec"><td class="memItemLeft" align="right" valign="top">std::vector&lt; pair&lt; unsigned <br class="typebreak"/>
+int, QString &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfe/class_trash_dialog.html#a28946f52a113e77055467708946ecaec">m_trash</a></td></tr>
+<tr class="separator:a28946f52a113e77055467708946ecaec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock">
+<p>Définition à la ligne <a class="el" href="../../#L13">13</a> du fichier <a class="el" href="../../">trashdialog.h</a>.</p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a3f9d43b2f58bd6575c10c0763bacb77b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TrashDialog::TrashDialog </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L8">8</a> du fichier <a class="el" href="../../">trashdialog.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                                        :</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    QDialog(parent),</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="../../d2/dfe/class_trash_dialog.html#a906bf72b1b950e5952b842b91478cbc2">ui</a>(<span class="keyword">new</span> Ui::TrashDialog),</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="../../d2/dfe/class_trash_dialog.html#a3d077423c6de480f46cb4a580580e97b">m_selectedNote</a>(NULL),</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="../../d2/dfe/class_trash_dialog.html#af5e82c28400ed6f1b10fd796638880ce">m_emptyTrashOrder</a>(<span class="keyword">false</span>)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="../../d2/dfe/class_trash_dialog.html#a906bf72b1b950e5952b842b91478cbc2">ui</a>-&gt;setupUi(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">// Start search in DataBase</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../d5/dd7/class_database_manager.html">DatabaseManager</a>&amp; db = <a class="code" href="../../d5/dd7/class_database_manager.html#ad998f5de5416534ee875b10fe1dcac82" title="Méthode static renvoyant une référence sur le singleton DatabaseManager. ">DatabaseManager::getInstance</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::vector&lt; pair &lt;unsigned int, QString &gt; &gt; result = db.<a class="code" href="../../d5/dd7/class_database_manager.html#abc00afdcef3da3591755f84ec2b11da5">getTrash</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// Count</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="../../d2/dfe/class_trash_dialog.html#a28946f52a113e77055467708946ecaec">m_trash</a> = result;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../d2/dfe/class_trash_dialog.html#a48ef46d167b0cfd70afed386e95378c3">m_count</a> = result.size();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// Ref</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    QListWidget&amp; l = *<a class="code" href="../../d2/dfe/class_trash_dialog.html#a906bf72b1b950e5952b842b91478cbc2">ui</a>-&gt;noteList;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span>(!result.empty()){</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">// Display results</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">for</span>( std::vector&lt; pair &lt;unsigned int, QString &gt; &gt;::const_iterator it = result.begin(); it!=result.end(); it++ )</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            l.addItem( <span class="keyword">new</span> <a class="code" href="../../dd/d68/class_list_note_view_item.html">ListNoteViewItem</a>(it-&gt;first,it-&gt;second) );</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        l.sortItems();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    QObject::connect(<a class="code" href="../../d2/dfe/class_trash_dialog.html#a906bf72b1b950e5952b842b91478cbc2">ui</a>-&gt;noteList, SIGNAL(itemDoubleClicked(QListWidgetItem*)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d2/dfe/class_trash_dialog.html#ad9db9a737a4d7c9e6d4ff94c647e89f9">setSelectedNote</a>(QListWidgetItem*)));</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    QObject::connect(<a class="code" href="../../d2/dfe/class_trash_dialog.html#a906bf72b1b950e5952b842b91478cbc2">ui</a>-&gt;emptyTrashButton, SIGNAL(clicked()), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d2/dfe/class_trash_dialog.html#a4ea2c3cdbcc6e93875dc86f4b5e086c2">emptyTrash</a>()));</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    QObject::connect(<a class="code" href="../../d2/dfe/class_trash_dialog.html#a906bf72b1b950e5952b842b91478cbc2">ui</a>-&gt;cancelButton, SIGNAL(clicked()), <span class="keyword">this</span>, SLOT(close()));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a0b5000c9bd33b204635cb7e1f830f7f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TrashDialog::~TrashDialog </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L84">84</a> du fichier <a class="el" href="../../">trashdialog.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// Clear List View</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    QListWidget&amp; l = *<a class="code" href="../../d2/dfe/class_trash_dialog.html#a906bf72b1b950e5952b842b91478cbc2">ui</a>-&gt;noteList;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    QListWidgetItem* item = l.takeItem(0);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">while</span>( item != NULL ){</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">delete</span> item;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        item = l.takeItem(0);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">delete</span> <a class="code" href="../../d2/dfe/class_trash_dialog.html#a906bf72b1b950e5952b842b91478cbc2">ui</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a4ea2c3cdbcc6e93875dc86f4b5e086c2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TrashDialog::emptyTrash </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L74">74</a> du fichier <a class="el" href="../../">trashdialog.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                            {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="../../d2/dfe/class_trash_dialog.html#af5e82c28400ed6f1b10fd796638880ce">m_emptyTrashOrder</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="../../d2/dfe/class_trash_dialog.html#a48ef46d167b0cfd70afed386e95378c3">m_count</a> = 0;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    close();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a54e7a98ccd45f3795960209fb1aec065"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d15/class_note.html">Note</a> * TrashDialog::getSelectedNote </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L44">44</a> du fichier <a class="el" href="../../">trashdialog.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                        {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d2/dfe/class_trash_dialog.html#a3d077423c6de480f46cb4a580580e97b">m_selectedNote</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ac5e11ed90f3a588d1cc054c1e096ae4b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; pair&lt; unsigned int, QString &gt; &gt; &amp; TrashDialog::getTrashContent </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L56">56</a> du fichier <a class="el" href="../../">trashdialog.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                                                                    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d2/dfe/class_trash_dialog.html#a28946f52a113e77055467708946ecaec">m_trash</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a1ea97aa3d9d31c22a2f75edc952f2b09"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TrashDialog::isEmpty </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L48">48</a> du fichier <a class="el" href="../../">trashdialog.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                               {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d2/dfe/class_trash_dialog.html#a48ef46d167b0cfd70afed386e95378c3">m_count</a> == 0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a92d7823d8ced3f238dfff19a373ef91a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TrashDialog::isEmptyTrashOrder </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L52">52</a> du fichier <a class="el" href="../../">trashdialog.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                         {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d2/dfe/class_trash_dialog.html#af5e82c28400ed6f1b10fd796638880ce">m_emptyTrashOrder</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad9db9a737a4d7c9e6d4ff94c647e89f9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TrashDialog::setSelectedNote </td>
+          <td>(</td>
+          <td class="paramtype">QListWidgetItem *&#160;</td>
+          <td class="paramname"><em>item</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L64">64</a> du fichier <a class="el" href="../../">trashdialog.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                      {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="../../dd/d68/class_list_note_view_item.html">ListNoteViewItem</a>* i = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="../../dd/d68/class_list_note_view_item.html">ListNoteViewItem</a>*<span class="keyword">&gt;</span> ( item );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span>( i!=NULL ){</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="../../d2/dfe/class_trash_dialog.html#a3d077423c6de480f46cb4a580580e97b">m_selectedNote</a> = &amp;<a class="code" href="../../de/d23/class_notes_manager.html#a7311347da4088a6622955e46d53e7599">NotesManager::getInstance</a>().<a class="code" href="../../de/d23/class_notes_manager.html#a559c0b690aa23fb568b4a8e53a6f51cc">getNote</a>(i-&gt;<a class="code" href="../../dd/d68/class_list_note_view_item.html#a8835ae8de761810ea4ae8617fc6a73c4">getId</a>());</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="../../d2/dfe/class_trash_dialog.html#a48ef46d167b0cfd70afed386e95378c3">m_count</a>--;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        this-&gt;close();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="a48ef46d167b0cfd70afed386e95378c3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int TrashDialog::m_count</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L38">38</a> du fichier <a class="el" href="../../">trashdialog.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af5e82c28400ed6f1b10fd796638880ce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TrashDialog::m_emptyTrashOrder</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L39">39</a> du fichier <a class="el" href="../../">trashdialog.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3d077423c6de480f46cb4a580580e97b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d15/class_note.html">Note</a>* TrashDialog::m_selectedNote</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L37">37</a> du fichier <a class="el" href="../../">trashdialog.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a28946f52a113e77055467708946ecaec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; pair &lt;unsigned int, QString &gt; &gt; TrashDialog::m_trash</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L40">40</a> du fichier <a class="el" href="../../">trashdialog.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a906bf72b1b950e5952b842b91478cbc2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ui::TrashDialog* TrashDialog::ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L36">36</a> du fichier <a class="el" href="../../">trashdialog.h</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>projet/view/<a class="el" href="../../">trashdialog.h</a></li>
+<li>projet/view/<a class="el" href="../../">trashdialog.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d2/dfe/class_trash_dialog.html">TrashDialog</a></li>
+    <li class="footer">Généré le Jeudi Juin 13 2013 08:16:45 pour Gestionnaire de Notes - Projet LO21 - P13 par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
+  </ul>
+</div>
+</body>
+</html>

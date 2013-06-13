@@ -1,0 +1,6 @@
+<map id="MultiMedia" name="MultiMedia">
+<area shape="rect" id="node4" href="$d2/d4a/class_audio.html" title="{Audio\n||+ Audio()\l&#45; Audio()\l&#45; operator=()\l}" alt="" coords="5,661,101,768"/>
+<area shape="rect" id="node5" href="$de/d73/class_image.html" title="{Image\n||+ Image()\l&#45; Image()\l&#45; operator=()\l}" alt="" coords="125,661,221,768"/>
+<area shape="rect" id="node6" href="$d2/d47/class_video.html" title="{Video\n||+ Video()\l&#45; Video()\l&#45; operator=()\l}" alt="" coords="245,661,341,768"/>
+<area shape="rect" id="node2" href="$de/d15/class_note.html" title="{Note\n|# m_modified\l&#45; m_id\l&#45; m_title\l|+ Note()\l+ Note()\l+ getId()\l+ getTitle()\l+ isModified()\l+ setTitle()\l+ operator==()\l+ confirmSaving()\l+ ~Note()\l&#45; Note()\l&#45; operator=()\l}" alt="" coords="110,131,236,384"/>
+</map>

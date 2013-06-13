@@ -1,0 +1,8 @@
+<map id="Note" name="Note">
+<area shape="rect" id="node3" href="$d9/de8/class_article.html" title="{Article\n|&#45; m_text\l|+ Article()\l+ getText()\l+ setText()\l&#45; Article()\l&#45; operator=()\l}" alt="" coords="5,484,101,620"/>
+<area shape="rect" id="node4" href="$db/d97/class_document.html" title="{Document\n|&#45; m_notes\l|+ Document()\l+ containNote()\l+ addNote()\l+ getNote()\l+ removeNote()\l+ flushNotes()\l+ begin()\l+ begin()\l+ end()\l+ end()\l&#45; Document()\l&#45; operator=()\l}" alt="" coords="125,433,240,671"/>
+<area shape="rect" id="node5" href="$dd/d83/class_multi_media.html" title="{MultiMedia\n|&#45; m_description\l&#45; m_path\l|+ MultiMedia()\l+ getDescription()\l+ getPath()\l+ setDescription()\l+ setPath()\l&#45; MultiMedia()\l&#45; operator=()\l}" alt="" coords="264,462,392,642"/>
+<area shape="rect" id="node6" href="$d2/d4a/class_audio.html" title="{Audio\n||+ Audio()\l&#45; Audio()\l&#45; operator=()\l}" alt="" coords="160,720,256,827"/>
+<area shape="rect" id="node7" href="$de/d73/class_image.html" title="{Image\n||+ Image()\l&#45; Image()\l&#45; operator=()\l}" alt="" coords="280,720,376,827"/>
+<area shape="rect" id="node8" href="$d2/d47/class_video.html" title="{Video\n||+ Video()\l&#45; Video()\l&#45; operator=()\l}" alt="" coords="400,720,496,827"/>
+</map>
