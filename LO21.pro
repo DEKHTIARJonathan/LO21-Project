@@ -75,7 +75,6 @@ HEADERS += \
     view/notesview/interfaceviewfactory.h \
     view/notesview/viewfactory.h \
     view/notesview/viewfactorynotfoundexception.h \
-    controller/controller.h \
     view/listnoteviewitem.h \
     view/workspaceform.h \
     view/notesview/imageview.h \
