@@ -130,8 +130,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>544</width>
-             <height>354</height>
+             <width>548</width>
+             <height>357</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="speNoteLayout">
@@ -357,8 +357,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>198</width>
-            <height>322</height>
+            <width>194</width>
+            <height>323</height>
            </rect>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout">
@@ -576,6 +576,8 @@
    <addaction name="actionNew_Audio"/>
    <addaction name="actionNew_Video"/>
    <addaction name="separator"/>
+   <addaction name="actionCopy_Binaries"/>
+   <addaction name="separator"/>
    <addaction name="actionExport_As_File"/>
    <addaction name="separator"/>
    <addaction name="actionQuit"/>
@@ -710,6 +712,15 @@
    </property>
    <property name="text">
     <string>New Video</string>
+   </property>
+  </action>
+  <action name="actionCopy_Binaries">
+   <property name="icon">
+    <iconset resource="../ressources/iconlib.qrc">
+     <normaloff>:/icn/copy</normaloff>:/icn/copy</iconset>
+   </property>
+   <property name="text">
+    <string>Copy Binaries Content</string>
    </property>
   </action>
  </widget>

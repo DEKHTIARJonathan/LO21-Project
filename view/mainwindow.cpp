@@ -47,6 +47,7 @@ void MainWindow::setupMenu(){
 	QObject::connect(ui->actionTags, SIGNAL(triggered()), this, SLOT(tagNote()));
 	QObject::connect(ui->actionEdit, SIGNAL(triggered()), this, SLOT(editSaveNote()));
 	QObject::connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(deleteCancelNote()));
+	QObject::connect(ui->actionCopy_Binaries, SIGNAL(triggered()), this, SLOT(copyBinaries()));
 	QObject::connect(ui->actionHtml, SIGNAL(triggered()), this, SLOT(exportNoteAsHtml()));
 	QObject::connect(ui->actionTeX, SIGNAL(triggered()), this, SLOT(exportNoteAsTeX()));
 	QObject::connect(ui->actionTxt, SIGNAL(triggered()), this, SLOT(exportNoteAsTxt()));
@@ -409,6 +410,26 @@ void MainWindow::emptyTrash(){
 
 		std::vector< pair <unsigned int, QString > > trash = DatabaseManager::getInstance().getTrash();
 		emptyTrash(trash);
+
+	}
+	catch(std::exception& e){
+		showErrorMessageBox(QString(e.what()));
+	}
+}
+
+void MainWindow::copyBinaries(){
+	try{
+
+		if(m_actualNote!=NULL && !m_editMode){
+			MultiMedia* m = dynamic_cast<MultiMedia*> ( m_actualNote );
+			if( m==NULL )
+				showInfoMessageBox("Actual note didn't content any binary linked files.");
+			else{
+				m->binaryToWorkspace();
+				displayNote(*m);
+				showInfoMessageBox("Binary Content had been saved in local folder.");
+			}
+		}
 
 	}
 	catch(std::exception& e){

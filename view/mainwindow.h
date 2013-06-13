@@ -11,6 +11,7 @@
 #include <QWebFrame>
 #include <constants.h>
 #include <notemanager/notesmanager.h>
+#include <note/multimedia.h>
 #include <export/generalexportfactory.h>
 #include <view/notesview/generalviewfactory.h>
 #include <view/listnoteviewitem.h>
@@ -42,6 +43,7 @@ class MainWindow : public QMainWindow
 		void				editSaveNote();
 		void				deleteCancelNote();
 		void				tagNote();
+		void				copyBinaries();
 		// Export Management
 		void				exportNoteAsHtml();
 		void				exportNoteAsTeX();
