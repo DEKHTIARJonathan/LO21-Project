@@ -94,7 +94,6 @@ class MainWindow : public QMainWindow
 
 		// Icons
 		void				setTrashIcon(bool empty = true);
-		void				setAllIcons();
 };
 
 #endif // MAINWINDOW_H
