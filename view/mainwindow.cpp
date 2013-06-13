@@ -303,12 +303,13 @@ void MainWindow::createWorkspace(){
 		QString fileName = QFileDialog::getSaveFileName(this, "Create DB", QString(), "DB File (*.lo21)");
 
 		if( !fileName.isEmpty() && fileName != db.getpath() ){
+			clearActualNoteView();
 			GeneralViewFactory::getInstance().flushViews();
 			NotesManager::getInstance().flush();
 			DatabaseManager::destroy();
 			DatabaseManager::getInstance(fileName);
-			showEditor(false);
 			clearListView();
+			setTrashIcon(true);
 		}
 
 	}
@@ -325,13 +326,14 @@ void MainWindow::changeWorkspace(){
 		QString fileName = QFileDialog::getOpenFileName(this, "Open DB", db.getpath(), "DB File (*.lo21)");
 
 		if( !fileName.isEmpty() && fileName != db.getpath() ){
+			clearActualNoteView();
 			GeneralViewFactory::getInstance().flushViews();
 			NotesManager::getInstance().flush();
 			DatabaseManager::destroy();
-			DatabaseManager::getInstance(fileName);
-			showEditor(false);
+			DatabaseManager& newDb = DatabaseManager::getInstance(fileName);
 			clearListView();
 			searchNotes();
+			setTrashIcon(newDb.isTrashEmpty());
 		}
 
 	}
@@ -465,6 +467,7 @@ void MainWindow::displayNote( unsigned int id ){
 	if( m_editMode )
 		showErrorMessageBox("Impossible to open Note, currents modifications need to be saved before.");
 	else{
+
 		// Load Note
 		NotesManager& nm = NotesManager::getInstance();
 		Note& n = nm.getNote(id);

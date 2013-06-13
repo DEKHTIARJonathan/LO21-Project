@@ -30,8 +30,9 @@ Note& NotesManager::getNote(unsigned int id){
 	// Check if Note corresponding to 'id' is already loaded
 	QMap<unsigned int, Note*>::const_iterator it = m_loadedNotes.find(id);
 
-	if( it!=m_loadedNotes.end() )
+	if( it!=m_loadedNotes.end() ){
 		return **it;
+	}
 	else{
 		// Load Note corresponding to 'id'
 		GeneralNoteFactory& gf = GeneralNoteFactory::getInstance();
@@ -79,6 +80,7 @@ void NotesManager::flush(){
 	GeneralNoteFactory& gf = GeneralNoteFactory::getInstance();
 	for(QMap<unsigned int, Note*>::iterator it = m_loadedNotes.begin(); it!=m_loadedNotes.end(); it++)
 		gf.deleteNote(**it);
+	m_loadedNotes.clear();
 }
 
 /********************************************************************

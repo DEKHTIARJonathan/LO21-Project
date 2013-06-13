@@ -31,12 +31,14 @@ InterfaceViewFactory& GeneralViewFactory::getFactories(const QString & typeName)
 }
 
 NoteView& GeneralViewFactory::getView(Note& n){
+
 	// Look for already created view
 	QMap<unsigned int, NoteView*>::iterator f = m_views.find(n.getId());
 
 	// And load it if exist
-	if( f!=m_views.end() )
+	if( f!=m_views.end() ){
 		return **f;
+	}
 
 	// Get back the corresponging ViewFactory and load it.
 	InterfaceViewFactory& vf = getFactories(n.metaObject()->className());
