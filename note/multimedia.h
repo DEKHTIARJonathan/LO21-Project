@@ -19,6 +19,7 @@ class MultiMedia : public Note
 		// Setter
 		void			setDescription( const QString & description);
 		void			setPath( const QString & path);
+		void			binaryToWorkspace();
 
 	private:
 		// Constructor
