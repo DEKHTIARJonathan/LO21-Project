@@ -1,5 +1,0 @@
-<map id="DocumentView" name="DocumentView">
-<area shape="rect" id="node2" href="$dc/d35/class_note_view.html" title="{NoteView\n||+ NoteView()\l+ loadNoteContent()\l+ setEditMode()\l+ saveChanges()\l+ ~NoteView()\l}" alt="" coords="5,489,147,625"/>
-<area shape="rect" id="node4" href="$db/d97/class_document.html" title="{Document\n|&#45; m_notes\l|+ Document()\l+ containNote()\l+ addNote()\l+ getNote()\l+ removeNote()\l+ flushNotes()\l+ begin()\l+ begin()\l+ end()\l+ end()\l&#45; Document()\l&#45; operator=()\l}" alt="" coords="172,438,287,677"/>
-<area shape="rect" id="node5" href="$de/d15/class_note.html" title="{Note\n|# m_modified\l&#45; m_id\l&#45; m_title\l|+ Note()\l+ Note()\l+ getId()\l+ getTitle()\l+ isModified()\l+ setTitle()\l+ operator==()\l+ confirmSaving()\l+ ~Note()\l&#45; Note()\l&#45; operator=()\l}" alt="" coords="166,133,292,387"/>
-</map>
