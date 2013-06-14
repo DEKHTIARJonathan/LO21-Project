@@ -2,6 +2,7 @@
 #define MULTIMEDIA_H
 
 #include <QString>
+#include <QFileInfo>
 #include <note/note.h>
 
 //! Article
