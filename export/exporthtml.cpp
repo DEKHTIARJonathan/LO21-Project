@@ -90,6 +90,7 @@ QString	ExportHTML::exportNote(const Audio& a) const
 QString	ExportHTML::escape(QString s) const
 {
 	s.replace("\\", "\\\\");
+	s.replace("\n","<br>");
 	return s;
 }
 
