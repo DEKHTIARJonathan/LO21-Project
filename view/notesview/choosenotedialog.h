@@ -10,11 +10,24 @@ namespace Ui {
 	class ChooseNoteDialog;
 }
 
+//! Affiche une fenêtre permettant de choisir une nouvelle note à ajouter à un document
+/*!
+
+  \version	1.0
+  \author	Florian Baune
+*/
 class ChooseNoteDialog : public QDialog
 {
 		Q_OBJECT
 		
 	public slots:
+		//! Ce slot permet d'enregistrer la note qu'a séléctionné l'utilisateur.
+		/*!
+		  Ce slot sera directement connecté au signal itemDoubleClicked(QListWidgetItem*)
+
+		  \version	1.0
+		  \author	Florian Baune
+		*/
 		void							setSelectedNote(QListWidgetItem* item);
 
 	public:

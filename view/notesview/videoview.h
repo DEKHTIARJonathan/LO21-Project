@@ -10,6 +10,15 @@ namespace Ui {
 	class VideoView;
 }
 
+//! L'implémentation de la vue pour un Video.
+/*!
+  Cette classe implémente les fonctionnalités de l'interface NoteView pour une note de type Video.
+
+  \sa		NoteView
+
+  \version	1.0
+  \author	Florian Baune
+*/
 class VideoView : public NoteView
 {
         Q_OBJECT

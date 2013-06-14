@@ -10,6 +10,15 @@ namespace Ui {
 	class AudioView;
 }
 
+//! L'implémentation de la vue pour un Audio.
+/*!
+  Cette classe implémente les fonctionnalités de l'interface NoteView pour une note de type Audio.
+
+  \sa		NoteView
+
+  \version	1.0
+  \author	Florian Baune
+*/
 class AudioView : public NoteView
 {
 		Q_OBJECT

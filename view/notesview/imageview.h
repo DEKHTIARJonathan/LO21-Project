@@ -10,6 +10,15 @@ namespace Ui {
 	class ImageView;
 }
 
+//! L'implémentation de la vue pour une Image.
+/*!
+  Cette classe implémente les fonctionnalités de l'interface NoteView pour une note de type Image.
+
+  \sa		NoteView
+
+  \version	1.0
+  \author	Florian Baune
+*/
 class ImageView : public NoteView
 {
 		Q_OBJECT

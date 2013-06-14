@@ -4,7 +4,7 @@
 #include <note/note.h>
 #include <export/exportstrategy.h>
 
-//! L'interface qui sera réimplémenté par la classe template Exportfactory.
+//! L'interface qui sera réimplémenté par la classe template ExportFactory.
 /*!
   Cette interface fournit la méthode nécessaire à l'utilisation d'une Export Strategy.
 

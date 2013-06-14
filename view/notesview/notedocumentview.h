@@ -9,6 +9,13 @@ namespace Ui {
 	class NoteDocumentView;
 }
 
+//! Cette petite interface permet de gérer les notes à l'intérieur de la vue d'un Document
+/*!
+  Cette interface permet gérer l'affichage de la note contenue dans le Document ainsi que ça suppression du Document.
+
+  \version	1.0
+  \author	Florian Baune
+*/
 class NoteDocumentView : public QWidget
 {
 		Q_OBJECT

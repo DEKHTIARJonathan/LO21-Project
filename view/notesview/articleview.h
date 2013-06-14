@@ -8,6 +8,15 @@ namespace Ui {
 	class ArticleView;
 }
 
+//! L'implémentation de la vue pour un Article.
+/*!
+  Cette classe implémente les fonctionnalités de l'interface NoteView pour une note de type Article.
+
+  \sa		NoteView
+
+  \version	1.0
+  \author	Florian Baune
+*/
 class ArticleView : public NoteView
 {
 		Q_OBJECT

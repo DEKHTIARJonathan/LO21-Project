@@ -22,7 +22,7 @@ class GeneralExportFactory
 {
 	public:
 		// Method
-		//! Fonction permettant de retourner l'ensemble des nom des stratégies d'export contenuent dans GeneralExportFactory
+		//! Fonction permettant de retourner l'ensemble des noms des stratégies d'export contenuent dans GeneralExportFactory
 		/*!
 		  \return	La liste de QString des noms des stratégies d'export
 

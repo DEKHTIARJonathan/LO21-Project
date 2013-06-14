@@ -29,7 +29,6 @@ SOURCES += \
     view/notesview/generalviewfactory.cpp \
     view/notesview/viewfactorynotfoundexception.cpp \
     view/listnoteviewitem.cpp \
-    view/workspaceform.cpp \
     view/notesview/imageview.cpp \
     view/notesview/audioview.cpp \
     view/notesview/videoview.cpp \
@@ -76,7 +75,6 @@ HEADERS += \
     view/notesview/viewfactory.h \
     view/notesview/viewfactorynotfoundexception.h \
     view/listnoteviewitem.h \
-    view/workspaceform.h \
     view/notesview/imageview.h \
     view/notesview/audioview.h \
     view/notesview/videoview.h \
