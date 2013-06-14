@@ -52,7 +52,7 @@ QString	ExportTex::exportNote(const Image& i) const
 {
 	QString desc = i.getDescription();
 	QString path = i.getPath();
-	return exportNote((Note&)i)+"\\section*{Video: }\n"
+	return exportNote((Note&)i)+"\\section*{Image: }\n"
 			"\\frame\n"
 			"{\n"
 				"\\includegraphics{"+escape(path)+"}\n"
@@ -76,7 +76,7 @@ QString	ExportTex::exportNote(const Audio& a) const
 {
 	QString desc = a.getDescription();
 	QString path = a.getPath();
-	return exportNote((Note&)a)+"\\section*{Video: }\n"
+	return exportNote((Note&)a)+"\\section*{Audio: }\n"
 			"\\frame\n"
 			"{\n"
 				"\\audio{"+escape(desc)+"}\n"

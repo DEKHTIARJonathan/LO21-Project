@@ -1,6 +1,0 @@
-<map id="VideoView" name="VideoView">
-<area shape="rect" id="node2" href="$dc/d35/class_note_view.html" title="{NoteView\n||+ NoteView()\l+ loadNoteContent()\l+ setEditMode()\l+ saveChanges()\l+ ~NoteView()\l}" alt="" coords="5,669,147,805"/>
-<area shape="rect" id="node4" href="$d2/d47/class_video.html" title="{Video\n||+ Video()\l&#45; Video()\l&#45; operator=()\l}" alt="" coords="172,684,268,791"/>
-<area shape="rect" id="node5" href="$dd/d83/class_multi_media.html" title="{MultiMedia\n|&#45; m_description\l&#45; m_path\l|+ MultiMedia()\l+ getDescription()\l+ getPath()\l+ setDescription()\l+ setPath()\l&#45; MultiMedia()\l&#45; operator=()\l}" alt="" coords="156,438,284,618"/>
-<area shape="rect" id="node6" href="$de/d15/class_note.html" title="{Note\n|# m_modified\l&#45; m_id\l&#45; m_title\l|+ Note()\l+ Note()\l+ getId()\l+ getTitle()\l+ isModified()\l+ setTitle()\l+ operator==()\l+ confirmSaving()\l+ ~Note()\l&#45; Note()\l&#45; operator=()\l}" alt="" coords="157,133,283,387"/>
-</map>

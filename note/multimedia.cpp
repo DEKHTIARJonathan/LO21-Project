@@ -34,9 +34,17 @@ void	MultiMedia::setPath( const QString & path){					m_path			= path;
 void	MultiMedia::binaryToWorkspace()
 {
 
-	QDir saveDir(QDir::currentPath()+"/binary");
+	DatabaseManager& db = DatabaseManager::getInstance();
 
-	saveDir.mkpath(QDir::currentPath()+"/binary");
+	QFile dbFile(db.getpath());
+
+	QFileInfo info(dbFile);
+
+	QDir saveDir = info.absoluteDir();
+
+	saveDir.setPath(saveDir.path()+"/binary");
+
+	saveDir.mkpath(saveDir.path());
 
 	if(!saveDir.exists())
 		cout<<"Erreur à la création du dossier"<<endl;
@@ -57,7 +65,7 @@ void	MultiMedia::binaryToWorkspace()
 	else
 	{
 		m_path = target.fileName();
-		DatabaseManager& db = DatabaseManager::getInstance();
+
 		db.updateNote(*this);
 	}
 
