@@ -18,7 +18,7 @@ using namespace std;
   Elle évitera aussi qu'une même note ne soit charger deux fois depuis le support de sauvegarde.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class NotesManager
 {
@@ -33,7 +33,7 @@ class NotesManager
 		  \return	La liste de QString des noms des stratégies d'export
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		Note&							getNewNote(const QString &typeNote);
 
@@ -47,7 +47,7 @@ class NotesManager
 		  \return	La Note que l'on vient de charger
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		Note&							getNote(unsigned int id);
 
@@ -59,7 +59,7 @@ class NotesManager
 		  \param	La note que l'on souhaite sauvegarder sur le support de sauvegarde.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void							saveNote(Note& n);
 
@@ -71,7 +71,7 @@ class NotesManager
 		  \param	La note que l'on souhaite mettre à la corbeille.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void							putToTrash(Note& n);
 
@@ -83,7 +83,7 @@ class NotesManager
 		  \param	La liste des Ids des notes contenues dans la corbeille.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void							emptyTrash(const std::vector< pair <unsigned int, QString > >& trash);
 
@@ -95,7 +95,7 @@ class NotesManager
 		  \param	La note que l'on souhaite désinstancier.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void							flush();
 
@@ -105,7 +105,7 @@ class NotesManager
 		  \return	L'instance de la NotesManager
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		static NotesManager&			getInstance();
 
@@ -114,7 +114,7 @@ class NotesManager
 		  \return	L'instance de la NotesManager
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		static void						destroy();
 

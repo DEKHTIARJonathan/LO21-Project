@@ -8,7 +8,7 @@
   Cette interface fournit les méthodes nécessaire à l'utilisation d'une Vue dans la fenêtre principale.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class NoteView : public QWidget
 {
@@ -23,7 +23,7 @@ class NoteView : public QWidget
 		  \param	id		L'id de la note que l'on souhaite se voir afficher
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				showNote(unsigned int id);
 
@@ -38,7 +38,7 @@ class NoteView : public QWidget
 		  \return	La référence sur la vue nouvellement créée
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		virtual void		loadNoteContent() = 0;
 
@@ -47,7 +47,7 @@ class NoteView : public QWidget
 		  \param	b		Booléen qui vaut vraie si on veut éditer et faux dans le cas contraire.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		virtual void		setEditMode(bool b) = 0;
 
@@ -55,7 +55,7 @@ class NoteView : public QWidget
 		/*!
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		virtual void		saveChanges() = 0;
 

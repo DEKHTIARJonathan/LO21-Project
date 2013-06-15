@@ -1,0 +1,9 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node2" href="$df/d3a/class_note_document_view.html" title="Cette petite interface permet de gérer les notes à l&#39;intérieur de la vue d&#39;un Document. " alt="" coords="129,56,269,83"/>
+<area shape="rect" id="node3" href="$dc/d35/class_note_view.html" title="L&#39;interface de vue de note. " alt="" coords="159,107,238,133"/>
+<area shape="rect" id="node4" href="$d4/de2/class_article_view.html" title="L&#39;implémentation de la vue pour un Article. " alt="" coords="329,5,417,32"/>
+<area shape="rect" id="node5" href="$d5/daf/class_audio_view.html" title="L&#39;implémentation de la vue pour un Audio. " alt="" coords="331,56,416,83"/>
+<area shape="rect" id="node6" href="$d3/d2f/class_document_view.html" title="L&#39;implémentation de la vue pour un Document. " alt="" coords="317,107,429,133"/>
+<area shape="rect" id="node7" href="$df/de8/class_image_view.html" title="L&#39;implémentation de la vue pour une Image. " alt="" coords="329,157,417,184"/>
+<area shape="rect" id="node8" href="$db/dee/class_video_view.html" title="L&#39;implémentation de la vue pour un Video. " alt="" coords="331,208,416,235"/>
+</map>

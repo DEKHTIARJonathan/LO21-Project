@@ -19,7 +19,7 @@
   Cette classe implémentant le design pattern Singleton contient l'ensembles des factory de vue.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class GeneralViewFactory
 {
@@ -30,7 +30,7 @@ class GeneralViewFactory
 		  \return	La liste de QString des noms des types de note
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		QList<QString>							getAvailableViewFactoryType() const;
 
@@ -42,7 +42,7 @@ class GeneralViewFactory
 		  \return	La référence sur la vue de \a n
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		NoteView&								getView(Note& n);
 
@@ -51,7 +51,7 @@ class GeneralViewFactory
 		  \param	id				L'id de la note
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void                                    deleteView( unsigned int id );
 
@@ -59,7 +59,7 @@ class GeneralViewFactory
 		/*!
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void									flushViews();
 
@@ -69,14 +69,14 @@ class GeneralViewFactory
 		  \return	L'instance de la GeneralViewFactory
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		static GeneralViewFactory&				getInstance();
 
 		//! Fonction détruisant l'instance du Singleton GeneralViewFactory
 		/*!
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		static void								destroy();
 

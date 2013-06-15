@@ -1,0 +1,35 @@
+<map id="projet/note/classdef.h" name="projet/note/classdef.h">
+<area shape="rect" id="node2" href="$dd/d3a/databasemanager_8h.html" title="Interface entre le logiciel et la base de données. Elle est la seule à réaliser des accès à la BDD..." alt="" coords="405,80,653,107"/>
+<area shape="rect" id="node23" href="$d2/df9/exportstrategy_8h.html" title="projet/export/exportstrategy.h" alt="" coords="1269,80,1464,107"/>
+<area shape="rect" id="node34" href="$de/de0/generalexportfactory_8h.html" title="projet/export/generalexportfactory.h" alt="" coords="1387,344,1619,371"/>
+<area shape="rect" id="node4" href="$df/d0a/main_8cpp.html" title="projet/main.cpp" alt="" coords="562,789,675,816"/>
+<area shape="rect" id="node17" href="$d2/daf/generalviewfactory_8h.html" title="projet/view/notesview\l/generalviewfactory.h" alt="" coords="148,609,297,650"/>
+<area shape="rect" id="node3" href="$d8/d20/databasemanager_8cpp.html" title="projet/dbmanager/databasemanager.cpp" alt="" coords="318,435,580,461"/>
+<area shape="rect" id="node5" href="$df/dce/multimedia_8cpp.html" title="projet/note/multimedia.cpp" alt="" coords="440,163,619,189"/>
+<area shape="rect" id="node6" href="$d5/d17/notefactory_8h.html" title="projet/notefactory\l/notefactory.h" alt="" coords="643,155,768,197"/>
+<area shape="rect" id="node13" href="$d3/d36/choosenotedialog_8h.html" title="projet/view/notesview\l/choosenotedialog.h" alt="" coords="144,427,293,469"/>
+<area shape="rect" id="node21" href="$d7/d5c/tagsdialog_8h.html" title="projet/view/tagsdialog.h" alt="" coords="866,163,1027,189"/>
+<area shape="rect" id="node19" href="$d8/dbd/trashdialog_8h.html" title="projet/view/trashdialog.h" alt="" coords="869,435,1035,461"/>
+<area shape="rect" id="node7" href="$de/dd1/generalnotefactory_8h.html" title="projet/notefactory\l/generalnotefactory.h" alt="" coords="617,246,764,287"/>
+<area shape="rect" id="node8" href="$d9/d6a/generalnotefactory_8cpp.html" title="projet/notefactory\l/generalnotefactory.cpp" alt="" coords="762,337,923,378"/>
+<area shape="rect" id="node9" href="$de/d36/notesmanager_8h.html" title="projet/notemanager\l/notesmanager.h" alt="" coords="601,337,737,378"/>
+<area shape="rect" id="node10" href="$de/d34/notesmanager_8cpp.html" title="projet/notemanager\l/notesmanager.cpp" alt="" coords="707,427,844,469"/>
+<area shape="rect" id="node11" href="$d9/d53/mainwindow_8h.html" title="projet/view/mainwindow.h" alt="" coords="785,707,959,733"/>
+<area shape="rect" id="node12" href="$d8/dd9/mainwindow_8cpp.html" title="projet/view/mainwindow.cpp" alt="" coords="778,789,965,816"/>
+<area shape="rect" id="node14" href="$dc/d7b/choosenotedialog_8cpp.html" title="projet/view/notesview\l/choosenotedialog.cpp" alt="" coords="343,518,499,559"/>
+<area shape="rect" id="node15" href="$d3/d59/documentview_8h.html" title="projet/view/notesview\l/documentview.h" alt="" coords="169,518,319,559"/>
+<area shape="rect" id="node16" href="$d8/d15/documentview_8cpp.html" title="projet/view/notesview\l/documentview.cpp" alt="" coords="321,609,471,650"/>
+<area shape="rect" id="node18" href="$d9/d83/generalviewfactory_8cpp.html" title="projet/view/notesview\l/generalviewfactory.cpp" alt="" coords="141,699,304,741"/>
+<area shape="rect" id="node20" href="$dd/dd6/trashdialog_8cpp.html" title="projet/view/trashdialog.cpp" alt="" coords="734,525,913,552"/>
+<area shape="rect" id="node22" href="$d6/dd9/tagsdialog_8cpp.html" title="projet/view/tagsdialog.cpp" alt="" coords="859,253,1035,280"/>
+<area shape="rect" id="node24" href="$d6/d47/exporthtml_8h.html" title="projet/export/exporthtml.h" alt="" coords="1659,344,1832,371"/>
+<area shape="rect" id="node27" href="$d4/dc4/exportstrategy_8cpp.html" title="projet/export/exportstrategy.cpp" alt="" coords="1262,163,1471,189"/>
+<area shape="rect" id="node28" href="$d9/d00/exporttex_8h.html" title="projet/export/exporttex.h" alt="" coords="1856,344,2021,371"/>
+<area shape="rect" id="node30" href="$d2/def/exporttext_8h.html" title="projet/export/exporttext.h" alt="" coords="1167,344,1336,371"/>
+<area shape="rect" id="node32" href="$da/da7/interfaceexportfactory_8h.html" title="projet/export/interfaceexportfactory.h" alt="" coords="1495,163,1733,189"/>
+<area shape="rect" id="node25" href="$df/d36/exporthtml_8cpp.html" title="projet/export/exporthtml.cpp" alt="" coords="1419,435,1605,461"/>
+<area shape="rect" id="node26" href="$d4/d56/generalexportfactory_8cpp.html" title="projet/export/generalexportfactory.cpp" alt="" coords="1630,435,1876,461"/>
+<area shape="rect" id="node29" href="$dc/d28/exporttex_8cpp.html" title="projet/export/exporttex.cpp" alt="" coords="1901,435,2080,461"/>
+<area shape="rect" id="node31" href="$db/db4/exporttext_8cpp.html" title="projet/export/exporttext.cpp" alt="" coords="1160,435,1344,461"/>
+<area shape="rect" id="node33" href="$df/d40/exportfactory_8h.html" title="projet/export/exportfactory.h" alt="" coords="1533,253,1720,280"/>
+</map>

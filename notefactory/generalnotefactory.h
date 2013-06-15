@@ -15,7 +15,7 @@ using namespace std;
   Elle permettra notamment, la création d'une nouvelle note d'un certain type, le chargement/sauvegarde d'une note et la destruction d'une note.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class GeneralNoteFactory
 {
@@ -28,7 +28,7 @@ class GeneralNoteFactory
 		  \return	La liste de QString des noms des stratégies d'export
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		InterfaceNoteFactory&					getFactories(const QString& typeNote) const;
 
@@ -41,7 +41,7 @@ class GeneralNoteFactory
 		  \return	La Note que l'on vient de charger
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		Note&									loadNote(unsigned int id) const;
 
@@ -53,7 +53,7 @@ class GeneralNoteFactory
 		  \param	La note que l'on souhaite sauvegarder sur le support de sauvegarde.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void									saveNote(Note& n) const;
 
@@ -65,7 +65,7 @@ class GeneralNoteFactory
 		  \param	La note que l'on souhaite détruire sur le support de sauvegarde.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void									deleteNote(Note& n) const;
 
@@ -75,7 +75,7 @@ class GeneralNoteFactory
 		  \return	L'instance de la GeneralNoteFactory
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		static GeneralNoteFactory&				getInstance();
 
@@ -84,7 +84,7 @@ class GeneralNoteFactory
 		  \return	L'instance de la GeneralNoteFactory
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		static void								destroy();
 

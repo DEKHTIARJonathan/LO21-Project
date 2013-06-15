@@ -14,7 +14,7 @@ namespace Ui {
 /*!
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class ChooseNoteDialog : public QDialog
 {
@@ -26,7 +26,7 @@ class ChooseNoteDialog : public QDialog
 		  Ce slot sera directement connecté au signal itemDoubleClicked(QListWidgetItem*)
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void							setSelectedNote(QListWidgetItem* item);
 

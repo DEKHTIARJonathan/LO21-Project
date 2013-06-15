@@ -9,7 +9,7 @@
   Cette classe factory template implémente la gestion d'une note du type passé en argument template.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 template<class NoteType>
 class NoteFactory : public InterfaceNoteFactory
@@ -24,7 +24,7 @@ class NoteFactory : public InterfaceNoteFactory
 		  \return	La Note que l'on vient de créer
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		Note& buildNewNote(){
 			DatabaseManager& db = DatabaseManager::getInstance();
@@ -46,7 +46,7 @@ class NoteFactory : public InterfaceNoteFactory
 		  \return	La Note que l'on vient de charger
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		Note& loadNote(unsigned int id){
 			DatabaseManager& db = DatabaseManager::getInstance();
@@ -65,7 +65,7 @@ class NoteFactory : public InterfaceNoteFactory
 		  \param	La note que l'on souhaite sauvegarder sur le support de sauvegarde.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void saveNote(Note &n){
 			DatabaseManager& db = DatabaseManager::getInstance();
@@ -84,7 +84,7 @@ class NoteFactory : public InterfaceNoteFactory
 		  \param	La note que l'on souhaite désinstancier.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void deleteNote(Note &n){
 			delete &n;

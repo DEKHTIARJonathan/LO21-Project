@@ -1,0 +1,555 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>Gestionnaire de Notes - Projet LO21 - P13: Référence de la classe ExportHTML</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Gestionnaire de Notes - Projet LO21 - P13
+   &#160;<span id="projectnumber">V1.0</span>
+   </div>
+   <div id="projectbrief">Project by Dekhtiar Jonathan &amp; Florian Baune</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.4 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="../../namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="../../classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="../../inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="../../functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d0/df8/class_export_h_t_m_l.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-methods">Fonctions membres privées</a> &#124;
+<a href="../../db/d8e/class_export_h_t_m_l-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe ExportHTML</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../">exporthtml.h</a>&gt;</code></p>
+<div class="dynheader">
+Graphe d'héritage de ExportHTML:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d69/class_export_h_t_m_l__inherit__graph.png" border="0" usemap="#_export_h_t_m_l_inherit__map" alt="Inheritance graph"/></div>
+<map name="_export_h_t_m_l_inherit__map" id="_export_h_t_m_l_inherit__map">
+<area shape="rect" id="node2" href="../../d2/dd9/class_export_strategy.html" title="{ExportStrategy\n||+ header()\l+ footer()\l+ exportNote()\l+ exportNote()\l+ exportNote()\l+ exportNote()\l+ exportNote()\l+ escape()\l+ exportFile()\l&#45; exportNote()\l}" alt="" coords="9,6,119,215"/></map>
+</div>
+<div class="dynheader">
+Graphe de collaboration de ExportHTML:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/da1/class_export_h_t_m_l__coll__graph.png" border="0" usemap="#_export_h_t_m_l_coll__map" alt="Collaboration graph"/></div>
+<map name="_export_h_t_m_l_coll__map" id="_export_h_t_m_l_coll__map">
+<area shape="rect" id="node2" href="../../d2/dd9/class_export_strategy.html" title="{ExportStrategy\n||+ header()\l+ footer()\l+ exportNote()\l+ exportNote()\l+ exportNote()\l+ exportNote()\l+ exportNote()\l+ escape()\l+ exportFile()\l&#45; exportNote()\l}" alt="" coords="9,6,119,215"/></map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a0743bec717bb042a87ee3c7141c4e267"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/df8/class_export_h_t_m_l.html#a0743bec717bb042a87ee3c7141c4e267">ExportHTML</a> ()</td></tr>
+<tr class="separator:a0743bec717bb042a87ee3c7141c4e267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af378e8ae98f67529f39f46cca79a5fef"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/df8/class_export_h_t_m_l.html#af378e8ae98f67529f39f46cca79a5fef">header</a> () const </td></tr>
+<tr class="memdesc:af378e8ae98f67529f39f46cca79a5fef"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie une QString contenant le header d'un fichier html  <a href="#af378e8ae98f67529f39f46cca79a5fef">Plus de détails...</a><br/></td></tr>
+<tr class="separator:af378e8ae98f67529f39f46cca79a5fef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d43c1eb88206e4619f6a1ebda4898cb"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/df8/class_export_h_t_m_l.html#a0d43c1eb88206e4619f6a1ebda4898cb">footer</a> () const </td></tr>
+<tr class="memdesc:a0d43c1eb88206e4619f6a1ebda4898cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie une QString contenant le footer d'un fichier html  <a href="#a0d43c1eb88206e4619f6a1ebda4898cb">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a0d43c1eb88206e4619f6a1ebda4898cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b04a2b0efc3b0a5a3e8030382c14f53"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/df8/class_export_h_t_m_l.html#a1b04a2b0efc3b0a5a3e8030382c14f53">exportNote</a> (const <a class="el" href="../../d9/de8/class_article.html">Article</a> &amp;a) const </td></tr>
+<tr class="memdesc:a1b04a2b0efc3b0a5a3e8030382c14f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie une QString contenant le corps d'un article html  <a href="#a1b04a2b0efc3b0a5a3e8030382c14f53">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a1b04a2b0efc3b0a5a3e8030382c14f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2a5cf56206fece15be32609b4908a20"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/df8/class_export_h_t_m_l.html#aa2a5cf56206fece15be32609b4908a20">exportNote</a> (const <a class="el" href="../../db/d97/class_document.html">Document</a> &amp;d) const </td></tr>
+<tr class="memdesc:aa2a5cf56206fece15be32609b4908a20"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie une QString contenant le corps d'un document html  <a href="#aa2a5cf56206fece15be32609b4908a20">Plus de détails...</a><br/></td></tr>
+<tr class="separator:aa2a5cf56206fece15be32609b4908a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21fa1e9ed061d68f6879023ff370582b"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/df8/class_export_h_t_m_l.html#a21fa1e9ed061d68f6879023ff370582b">exportNote</a> (const <a class="el" href="../../de/d73/class_image.html">Image</a> &amp;i) const </td></tr>
+<tr class="memdesc:a21fa1e9ed061d68f6879023ff370582b"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie une QString contenant le corps d'une image html  <a href="#a21fa1e9ed061d68f6879023ff370582b">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a21fa1e9ed061d68f6879023ff370582b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a578b2ca8a2829840eae42978c4691823"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/df8/class_export_h_t_m_l.html#a578b2ca8a2829840eae42978c4691823">exportNote</a> (const <a class="el" href="../../d2/d47/class_video.html">Video</a> &amp;v) const </td></tr>
+<tr class="memdesc:a578b2ca8a2829840eae42978c4691823"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie une QString contenant le corps d'une video html  <a href="#a578b2ca8a2829840eae42978c4691823">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a578b2ca8a2829840eae42978c4691823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a389010ab7204abeb24cf407dd732abb4"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/df8/class_export_h_t_m_l.html#a389010ab7204abeb24cf407dd732abb4">exportNote</a> (const <a class="el" href="../../d2/d4a/class_audio.html">Audio</a> &amp;a) const </td></tr>
+<tr class="memdesc:a389010ab7204abeb24cf407dd732abb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie une QString contenant le corps d'un video html  <a href="#a389010ab7204abeb24cf407dd732abb4">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a389010ab7204abeb24cf407dd732abb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdd5b7e17ff352788346e64f2c717adc"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/df8/class_export_h_t_m_l.html#afdd5b7e17ff352788346e64f2c717adc">escape</a> (QString s) const </td></tr>
+<tr class="memdesc:afdd5b7e17ff352788346e64f2c717adc"><td class="mdescLeft">&#160;</td><td class="mdescRight">escape les caractères en relatif aux normes du HTML  <a href="#afdd5b7e17ff352788346e64f2c717adc">Plus de détails...</a><br/></td></tr>
+<tr class="separator:afdd5b7e17ff352788346e64f2c717adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Fonctions membres privées</h2></td></tr>
+<tr class="memitem:ad0f6f266f32dd6d3d17832933b7a697e"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/df8/class_export_h_t_m_l.html#ad0f6f266f32dd6d3d17832933b7a697e">exportNote</a> (const <a class="el" href="../../de/d15/class_note.html">Note</a> &amp;n) const </td></tr>
+<tr class="memdesc:ad0f6f266f32dd6d3d17832933b7a697e"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie une QString contenant le corpscommun d'une note en HTML  <a href="#ad0f6f266f32dd6d3d17832933b7a697e">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ad0f6f266f32dd6d3d17832933b7a697e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_static_methods_class_export_strategy"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_export_strategy')"><img src="../../closed.png" alt="-"/>&#160;Fonctions membres publiques statiques inherited from <a class="el" href="../../d2/dd9/class_export_strategy.html">ExportStrategy</a></td></tr>
+<tr class="memitem:af7fa2a6a760d0437cfe6b0f921551d4a inherit pub_static_methods_class_export_strategy"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd9/class_export_strategy.html#af7fa2a6a760d0437cfe6b0f921551d4a">exportFile</a> (const QString &amp;s, const QString &amp;filename)</td></tr>
+<tr class="separator:af7fa2a6a760d0437cfe6b0f921551d4a inherit pub_static_methods_class_export_strategy"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock">
+<p>Définition à la ligne <a class="el" href="../../#L8">8</a> du fichier <a class="el" href="../../">exporthtml.h</a>.</p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a0743bec717bb042a87ee3c7141c4e267"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ExportHTML::ExportHTML </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L4">4</a> du fichier <a class="el" href="../../">exporthtml.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                       : <a class="code" href="../../d2/dd9/class_export_strategy.html">ExportStrategy</a>()</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="afdd5b7e17ff352788346e64f2c717adc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ExportHTML::escape </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>s</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>escape les caractères en relatif aux normes du HTML </p>
+
+<p>Implémente <a class="el" href="../../d2/dd9/class_export_strategy.html#ae15590aa4e2026ef61d81a016c2ecdb5">ExportStrategy</a>.</p>
+
+<p>Définition à la ligne <a class="el" href="../../#L90">90</a> du fichier <a class="el" href="../../">exporthtml.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    s.replace(<span class="stringliteral">&quot;\\&quot;</span>, <span class="stringliteral">&quot;\\\\&quot;</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    s.replace(<span class="stringliteral">&quot;\n&quot;</span>,<span class="stringliteral">&quot;&lt;br&gt;&quot;</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> s;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a1b04a2b0efc3b0a5a3e8030382c14f53"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ExportHTML::exportNote </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/de8/class_article.html">Article</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>renvoie une QString contenant le corps d'un article html </p>
+
+<p>Implémente <a class="el" href="../../d2/dd9/class_export_strategy.html#a5432dfb620310bc8cdb6373e8905601e">ExportStrategy</a>.</p>
+
+<p>Définition à la ligne <a class="el" href="../../#L28">28</a> du fichier <a class="el" href="../../">exporthtml.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    QString text = a.<a class="code" href="../../d9/de8/class_article.html#a2f7505b72f339bcbc2fa7c387ab681f4">getText</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d0/df8/class_export_h_t_m_l.html#a1b04a2b0efc3b0a5a3e8030382c14f53" title="renvoie une QString contenant le corps d&#39;un article html ">exportNote</a>((<a class="code" href="../../de/d15/class_note.html" title="Classe abstraite représentant une note générique avec un id et un titre. ">Note</a>&amp;)a)+<span class="stringliteral">&quot;&lt;div&gt;&lt;h2&gt;Texte :&lt;/h2&gt;&lt;br&gt;&lt;p&gt;&quot;</span>+<a class="code" href="../../d0/df8/class_export_h_t_m_l.html#afdd5b7e17ff352788346e64f2c717adc" title="escape les caractères en relatif aux normes du HTML ">escape</a>(text)+<span class="stringliteral">&quot;&lt;/p&gt;&lt;/div&gt;&quot;</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa2a5cf56206fece15be32609b4908a20"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ExportHTML::exportNote </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../db/d97/class_document.html">Document</a> &amp;&#160;</td>
+          <td class="paramname"><em>d</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>renvoie une QString contenant le corps d'un document html </p>
+
+<p>Implémente <a class="el" href="../../d2/dd9/class_export_strategy.html#a76d3850840f2cfaab4ce31960539a086">ExportStrategy</a>.</p>
+
+<p>Définition à la ligne <a class="el" href="../../#L34">34</a> du fichier <a class="el" href="../../">exporthtml.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="../../d1/d0b/class_general_export_factory.html" title="Gère l&#39;ensemble des fonctionnalités d&#39;export. ">GeneralExportFactory</a> &amp;gef = <a class="code" href="../../d1/d0b/class_general_export_factory.html#aaeddf4a7a56e9a95aa8c8b15cb2f35d1" title="Fonction retournant l&#39;instance du Singleton GeneralExportFactory. ">GeneralExportFactory::getInstance</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    QString result = <a class="code" href="../../d0/df8/class_export_h_t_m_l.html#a1b04a2b0efc3b0a5a3e8030382c14f53" title="renvoie une QString contenant le corps d&#39;un article html ">exportNote</a>((<a class="code" href="../../de/d15/class_note.html" title="Classe abstraite représentant une note générique avec un id et un titre. ">Note</a>&amp;)d);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">for</span> (vector&lt;Note* &gt;::const_iterator it = d.<a class="code" href="../../db/d97/class_document.html#a69562d2facffa04076d05406ef9ee49c" title="Itérateur en tête positionné de liste. ">begin</a>(); it != d.<a class="code" href="../../db/d97/class_document.html#a4c599a3eecfc866a3209ed865c6cd6ce" title="Itérateur représentant la fin de liste. ">end</a>(); it++)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        result += <span class="stringliteral">&quot;&lt;hr&gt;&lt;div style=&#39;margin-left:100px;&#39;&gt;&quot;</span>+gef.<a class="code" href="../../d1/d0b/class_general_export_factory.html#a523b972e3c61e6273749dc0b37589800" title="Fonction faisant un export partiel du contenu d&#39;une note. ">exportNoteAsPart</a>(<span class="stringliteral">&quot;html&quot;</span>, **it)+<span class="stringliteral">&quot;&lt;/div&gt;&quot;</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a21fa1e9ed061d68f6879023ff370582b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ExportHTML::exportNote </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/d73/class_image.html">Image</a> &amp;&#160;</td>
+          <td class="paramname"><em>i</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>renvoie une QString contenant le corps d'une image html </p>
+
+<p>Implémente <a class="el" href="../../d2/dd9/class_export_strategy.html#abbdc2355c37e746486afc5b5f1cc775a">ExportStrategy</a>.</p>
+
+<p>Définition à la ligne <a class="el" href="../../#L47">47</a> du fichier <a class="el" href="../../">exporthtml.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    QString description = i.<a class="code" href="../../dd/d83/class_multi_media.html#a8237eaf42a335948cdfb98b5e23bf63e">getDescription</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    QString path =  i.<a class="code" href="../../dd/d83/class_multi_media.html#add546580c0338b0601d0aa3ebe92e294">getPath</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (!path.startsWith(<span class="stringliteral">&quot;http&quot;</span>))</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;         path = <span class="stringliteral">&quot;file://&quot;</span>+path;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d0/df8/class_export_h_t_m_l.html#a1b04a2b0efc3b0a5a3e8030382c14f53" title="renvoie une QString contenant le corps d&#39;un article html ">exportNote</a>((<a class="code" href="../../de/d15/class_note.html" title="Classe abstraite représentant une note générique avec un id et un titre. ">Note</a>&amp;)i)+<span class="stringliteral">&quot;&lt;div&gt;&lt;h2&gt;Image :&lt;/h2&gt;&lt;br&gt;&lt;img src=&#39;&quot;</span>+<a class="code" href="../../d0/df8/class_export_h_t_m_l.html#afdd5b7e17ff352788346e64f2c717adc" title="escape les caractères en relatif aux normes du HTML ">escape</a>(path)+<span class="stringliteral">&quot;&#39;&gt;&lt;br&gt;&lt;h3&gt;Description&lt;/h3&gt;&lt;p&gt;&quot;</span>+<a class="code" href="../../d0/df8/class_export_h_t_m_l.html#afdd5b7e17ff352788346e64f2c717adc" title="escape les caractères en relatif aux normes du HTML ">escape</a>(description)+<span class="stringliteral">&quot;&lt;/p&gt;&lt;/div&gt;&quot;</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a578b2ca8a2829840eae42978c4691823"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ExportHTML::exportNote </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d2/d47/class_video.html">Video</a> &amp;&#160;</td>
+          <td class="paramname"><em>v</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>renvoie une QString contenant le corps d'une video html </p>
+
+<p>Implémente <a class="el" href="../../d2/dd9/class_export_strategy.html#ab10a5c0dc2d001c4a3e7bbf051233581">ExportStrategy</a>.</p>
+
+<p>Définition à la ligne <a class="el" href="../../#L59">59</a> du fichier <a class="el" href="../../">exporthtml.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    QString description = v.<a class="code" href="../../dd/d83/class_multi_media.html#a8237eaf42a335948cdfb98b5e23bf63e">getDescription</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    QString path =  v.<a class="code" href="../../dd/d83/class_multi_media.html#add546580c0338b0601d0aa3ebe92e294">getPath</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span> (!path.startsWith(<span class="stringliteral">&quot;http&quot;</span>))</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;         path = <span class="stringliteral">&quot;file://&quot;</span>+path;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d0/df8/class_export_h_t_m_l.html#a1b04a2b0efc3b0a5a3e8030382c14f53" title="renvoie une QString contenant le corps d&#39;un article html ">exportNote</a>((<a class="code" href="../../de/d15/class_note.html" title="Classe abstraite représentant une note générique avec un id et un titre. ">Note</a>&amp;)v)+<span class="stringliteral">&quot;&lt;div&gt;&lt;h2&gt;Video :&lt;/h2&gt;&lt;br&gt;&quot;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="stringliteral">&quot;&lt;video id=\&quot;sampleMovie\&quot; width=\&quot;640\&quot; height=\&quot;360\&quot; preload controls&gt;&lt;source src=\&quot;&quot;</span>+<a class="code" href="../../d0/df8/class_export_h_t_m_l.html#afdd5b7e17ff352788346e64f2c717adc" title="escape les caractères en relatif aux normes du HTML ">escape</a>(path)+<span class="stringliteral">&quot;\&quot;/&gt;&lt;/video&gt;&quot;</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="stringliteral">&quot;&lt;br&gt;&lt;h3&gt;Description&lt;/h3&gt;&lt;p&gt;En cas de problème à la lecture . Le navigateur ne doit pas être compatible avec le lecteur&lt;/p&gt;&quot;</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="stringliteral">&quot;&lt;p&gt;&quot;</span>+<a class="code" href="../../d0/df8/class_export_h_t_m_l.html#afdd5b7e17ff352788346e64f2c717adc" title="escape les caractères en relatif aux normes du HTML ">escape</a>(description)+<span class="stringliteral">&quot;&lt;/p&gt;&lt;/div&gt;&quot;</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a389010ab7204abeb24cf407dd732abb4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ExportHTML::exportNote </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d2/d4a/class_audio.html">Audio</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>renvoie une QString contenant le corps d'un video html </p>
+
+<p>Implémente <a class="el" href="../../d2/dd9/class_export_strategy.html#abe7d60aa53d3ca1d23409220d3f5202a">ExportStrategy</a>.</p>
+
+<p>Définition à la ligne <a class="el" href="../../#L75">75</a> du fichier <a class="el" href="../../">exporthtml.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    QString description = a.<a class="code" href="../../dd/d83/class_multi_media.html#a8237eaf42a335948cdfb98b5e23bf63e">getDescription</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    QString path =  a.<a class="code" href="../../dd/d83/class_multi_media.html#add546580c0338b0601d0aa3ebe92e294">getPath</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (!path.startsWith(<span class="stringliteral">&quot;http&quot;</span>))</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;         path = <span class="stringliteral">&quot;file://&quot;</span>+path;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d0/df8/class_export_h_t_m_l.html#a1b04a2b0efc3b0a5a3e8030382c14f53" title="renvoie une QString contenant le corps d&#39;un article html ">exportNote</a>((<a class="code" href="../../de/d15/class_note.html" title="Classe abstraite représentant une note générique avec un id et un titre. ">Note</a>&amp;)a)+<span class="stringliteral">&quot;&lt;div&gt;&lt;h2&gt;Audio :&lt;/h2&gt;&lt;br&gt;&quot;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="stringliteral">&quot;&lt;audio preload=\&quot;auto\&quot; autobuffer controls id=\&quot;audio\&quot;&gt;&lt;source src=\&quot;&quot;</span>+<a class="code" href="../../d0/df8/class_export_h_t_m_l.html#afdd5b7e17ff352788346e64f2c717adc" title="escape les caractères en relatif aux normes du HTML ">escape</a>(path)+<span class="stringliteral">&quot;\&quot; type=\&quot;audio/mpeg\&quot;&gt;&lt;/audio&gt;&quot;</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="stringliteral">&quot;&lt;br&gt;&lt;h3&gt;Description&lt;/h3&gt;&lt;p&gt;En cas de problème à la lecture . Le navigateur ne doit pas être compatible avec le lecteur&lt;/p&gt;&quot;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="stringliteral">&quot;&lt;p&gt;&quot;</span>+<a class="code" href="../../d0/df8/class_export_h_t_m_l.html#afdd5b7e17ff352788346e64f2c717adc" title="escape les caractères en relatif aux normes du HTML ">escape</a>(description)+<span class="stringliteral">&quot;&lt;/p&gt;&lt;/div&gt;&quot;</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad0f6f266f32dd6d3d17832933b7a697e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ExportHTML::exportNote </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/d15/class_note.html">Note</a> &amp;&#160;</td>
+          <td class="paramname"><em>n</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>renvoie une QString contenant le corpscommun d'une note en HTML </p>
+
+<p>Implémente <a class="el" href="../../d2/dd9/class_export_strategy.html#afdf3bb9e2f9f0449ccb45f4d7ffe8de9">ExportStrategy</a>.</p>
+
+<p>Définition à la ligne <a class="el" href="../../#L22">22</a> du fichier <a class="el" href="../../">exporthtml.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    QString titre = n.<a class="code" href="../../de/d15/class_note.html#ac5891af072f8e8d990909a65c0702244">getTitle</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&lt;div&gt;&lt;h1&gt;&quot;</span>+<a class="code" href="../../d0/df8/class_export_h_t_m_l.html#afdd5b7e17ff352788346e64f2c717adc" title="escape les caractères en relatif aux normes du HTML ">escape</a>(titre)+<span class="stringliteral">&quot;&lt;/h1&gt;&lt;/div&gt;&quot;</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a0d43c1eb88206e4619f6a1ebda4898cb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ExportHTML::footer </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>renvoie une QString contenant le footer d'un fichier html </p>
+
+<p>Implémente <a class="el" href="../../d2/dd9/class_export_strategy.html#aa7640ca5f382c7264697e594cd1288ff">ExportStrategy</a>.</p>
+
+<p>Définition à la ligne <a class="el" href="../../#L16">16</a> du fichier <a class="el" href="../../">exporthtml.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&lt;/body&gt;&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="stringliteral">&quot;&lt;/html&gt;&quot;</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af378e8ae98f67529f39f46cca79a5fef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ExportHTML::header </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>renvoie une QString contenant le header d'un fichier html </p>
+
+<p>Implémente <a class="el" href="../../d2/dd9/class_export_strategy.html#a8f24eb340762e0c1b1faaefb32087468">ExportStrategy</a>.</p>
+
+<p>Définition à la ligne <a class="el" href="../../#L7">7</a> du fichier <a class="el" href="../../">exporthtml.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&lt;html&gt;&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;           <span class="stringliteral">&quot;&lt;head&gt;&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <span class="stringliteral">&quot;&lt;meta http-equiv=\&quot;content-type\&quot; content=\&quot;text/html; charset=utf-8\&quot;&gt;&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <span class="stringliteral">&quot;&lt;/head&gt;&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="stringliteral">&quot;&lt;body&gt;&quot;</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>projet/export/<a class="el" href="../../">exporthtml.h</a></li>
+<li>projet/export/<a class="el" href="../../">exporthtml.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d0/df8/class_export_h_t_m_l.html">ExportHTML</a></li>
+    <li class="footer">Généré le Samedi Juin 15 2013 16:08:24 pour Gestionnaire de Notes - Projet LO21 - P13 par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
+  </ul>
+</div>
+</body>
+</html>

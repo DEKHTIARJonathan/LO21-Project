@@ -1,0 +1,4 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node1" href="$d6/dab/class_interface_note_factory.html" title="L&#39;interface qui sera réimplémenté par la classe template NoteFactory. " alt="" coords="5,5,152,32"/>
+<area shape="rect" id="node2" href="$da/de5/class_note_factory.html" title="Classe template implémentant l&#39;interface InterfaceNoteFactory. " alt="" coords="200,5,376,32"/>
+</map>

@@ -16,7 +16,7 @@
   à une note selon le type réel de cette note.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class GeneralExportFactory
 {
@@ -27,7 +27,7 @@ class GeneralExportFactory
 		  \return	La liste de QString des noms des stratégies d'export
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		QList<QString>							getAvailableExportType() const;
 
@@ -38,7 +38,7 @@ class GeneralExportFactory
 		  \return	La QString résultat de l'export
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		QString									exportNote(const QString& strategyName, const Note& n) const;
 
@@ -49,7 +49,7 @@ class GeneralExportFactory
 		  \return	La QString résultat de l'export
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		QString									exportNote(ExportStrategy& es, const Note& n) const;
 
@@ -60,7 +60,7 @@ class GeneralExportFactory
 		  \return	La QString résultat de l'export
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		QString									exportNoteAsPart(const QString& strategyName, const Note& n) const;
 
@@ -71,7 +71,7 @@ class GeneralExportFactory
 		  \return	La QString résultat de l'export
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		QString									exportNoteAsPart(ExportStrategy& es, const Note& n) const;
 
@@ -81,14 +81,14 @@ class GeneralExportFactory
 		  \return	L'instance de la GeneralExportFactory
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		static GeneralExportFactory&			getInstance();
 
 		//! Fonction détruisant l'instance du Singleton GeneralExportFactory
 		/*!
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		static void								destroy();
 

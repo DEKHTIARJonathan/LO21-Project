@@ -9,7 +9,7 @@
   Cette interface fournit la méthode nécessaire à l'utilisation d'une Export Strategy.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class InterfaceExportFactory
 {
@@ -21,7 +21,7 @@ class InterfaceExportFactory
 		  \return	La QString résultat de l'export
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		virtual QString exportAsPart(ExportStrategy& es, const Note& n) = 0;
 };

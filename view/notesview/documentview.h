@@ -19,7 +19,7 @@ class DocumentView;
   \sa		NoteView
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class DocumentView : public NoteView
 {
@@ -33,7 +33,7 @@ class DocumentView : public NoteView
 		/*!
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				addNote();
 
@@ -47,7 +47,7 @@ class DocumentView : public NoteView
 		  \sa NoteDocumentView
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				showNoteOrder();
 
@@ -55,7 +55,7 @@ class DocumentView : public NoteView
 		/*!
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				removeNoteOrder();
 

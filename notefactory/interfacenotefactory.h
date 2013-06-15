@@ -8,7 +8,7 @@
   Cette interface fournit les méthodes nécessaires à la création, la sauvegarde, le chargement et la destruction d'une note.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class InterfaceNoteFactory
 {
@@ -19,7 +19,7 @@ class InterfaceNoteFactory
 		  \return	La Note que l'on vient de créer
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		virtual Note&		buildNewNote() = 0;
 
@@ -29,7 +29,7 @@ class InterfaceNoteFactory
 		  \return	La Note que l'on vient de charger
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		virtual Note&		loadNote(unsigned int id) = 0;
 
@@ -38,7 +38,7 @@ class InterfaceNoteFactory
 		  \param	La note que l'on souhaite sauvegarder sur le support de sauvegarde.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		virtual void		saveNote(Note& n) = 0;
 
@@ -47,7 +47,7 @@ class InterfaceNoteFactory
 		  \param	La note que l'on souhaite désinstencier.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		virtual void		deleteNote(Note& n) = 0;
 

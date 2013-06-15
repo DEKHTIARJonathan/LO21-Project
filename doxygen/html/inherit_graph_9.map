@@ -1,0 +1,4 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node1" href="$d9/d81/class_interface_view_factory.html" title="L&#39;interface qui sera réimplémenté par la classe template ViewFactory. " alt="" coords="5,12,152,39"/>
+<area shape="rect" id="node2" href="$d9/d79/class_view_factory.html" title="Classe template implémentant l&#39;interface InterfaceViewFactory. " alt="" coords="200,5,368,46"/>
+</map>

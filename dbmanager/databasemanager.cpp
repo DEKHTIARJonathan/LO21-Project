@@ -1,4 +1,4 @@
-#include "databasemanager.h"
+#include "dbmanager/databasemanager.h"
 #include <notemanager/notesmanager.h>
 using namespace std;
 
@@ -274,11 +274,6 @@ unsigned int DatabaseManager::insertNote(const QString& typeNote) const
 	}
 }
 
-bool DatabaseManager::insertTag (const QString &t) const
-{
-	return query("INSERT INTO Tag (name) VALUES ('"+escape(capitalize(t))+"')");
-}
-
 
 /********************************************************************
  *                             Updaters                             *
@@ -496,13 +491,7 @@ bool DatabaseManager::tagAssocNote (const Note& n, const QStringList& l) const /
 
 bool DatabaseManager::tagAssocNote (const Note& n, const QString& t) const // Associe un tag et une note, si le tag n'existe pas il est créé
 {
-	bool result = true;
-
-	if (!tagExist(t))
-		result &= insertTag(t);
-
-	return result && addTagAssoc(n,t);
-
+	return addTagAssoc(n,t);
 }
 
 bool DatabaseManager::addTagAssoc (const Note& n,const QString &t) const // Association d'un tag et d'une note

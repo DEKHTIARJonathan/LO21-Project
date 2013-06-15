@@ -9,7 +9,7 @@
   Cette classe factory template implémente l'export d'une note du type passé en argument template.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 template <class NoteType>
 class ExportFactory : InterfaceExportFactory
@@ -25,7 +25,7 @@ class ExportFactory : InterfaceExportFactory
 		  \return	La QString résultat de l'export
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		QString exportAsPart(ExportStrategy &es, const Note &n){
 			const NoteType& casted_n = dynamic_cast<const NoteType&> (n);

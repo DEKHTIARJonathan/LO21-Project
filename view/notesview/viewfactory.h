@@ -8,7 +8,7 @@
   Cette classe factory template implémente la fabrication d'une vue du type passé en argument template, pour une note du type passé en argument template.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 template<class NoteType, class ViewType>
 class ViewFactory : public InterfaceViewFactory
@@ -23,7 +23,7 @@ class ViewFactory : public InterfaceViewFactory
 		  \return	La référence sur la vue nouvellement créée
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		NoteView& buildNoteView(Note& n){
 			NoteType& casted_n = dynamic_cast<NoteType&> (n);

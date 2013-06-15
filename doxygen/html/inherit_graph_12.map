@@ -1,0 +1,9 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node2" href="$de/d15/class_note.html" title="Classe abstraite représentant une note générique avec un id et un titre. " alt="" coords="125,56,176,83"/>
+<area shape="rect" id="node3" href="$d9/de8/class_article.html" title="Article. " alt="" coords="239,5,297,32"/>
+<area shape="rect" id="node4" href="$db/d97/class_document.html" title="Document. " alt="" coords="227,56,309,83"/>
+<area shape="rect" id="node5" href="$dd/d83/class_multi_media.html" title="Article. " alt="" coords="225,107,311,133"/>
+<area shape="rect" id="node6" href="$d2/d4a/class_audio.html" title="Audio. " alt="" coords="361,56,417,83"/>
+<area shape="rect" id="node7" href="$de/d73/class_image.html" title="Image. " alt="" coords="360,107,419,133"/>
+<area shape="rect" id="node8" href="$d2/d47/class_video.html" title="Vidéo. " alt="" coords="361,157,417,184"/>
+</map>

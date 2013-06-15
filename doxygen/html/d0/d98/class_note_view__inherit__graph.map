@@ -1,0 +1,7 @@
+<map id="NoteView" name="NoteView">
+<area shape="rect" id="node3" href="$d4/de2/class_article_view.html" title="L&#39;implémentation de la vue pour un Article. " alt="" coords="5,359,147,510"/>
+<area shape="rect" id="node4" href="$d5/daf/class_audio_view.html" title="L&#39;implémentation de la vue pour un Audio. " alt="" coords="171,345,313,525"/>
+<area shape="rect" id="node5" href="$d3/d2f/class_document_view.html" title="L&#39;implémentation de la vue pour un Document. " alt="" coords="338,315,539,554"/>
+<area shape="rect" id="node6" href="$df/de8/class_image_view.html" title="L&#39;implémentation de la vue pour une Image. " alt="" coords="563,345,705,525"/>
+<area shape="rect" id="node7" href="$db/dee/class_video_view.html" title="L&#39;implémentation de la vue pour un Video. " alt="" coords="730,345,872,525"/>
+</map>

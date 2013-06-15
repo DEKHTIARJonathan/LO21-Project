@@ -11,7 +11,7 @@
   Elle permet le stockage des imformations nécessaire à un Article.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class Article : public Note
 {

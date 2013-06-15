@@ -1,0 +1,739 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>Gestionnaire de Notes - Projet LO21 - P13: Référence de la classe GeneralExportFactory</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Gestionnaire de Notes - Projet LO21 - P13
+   &#160;<span id="projectnumber">V1.0</span>
+   </div>
+   <div id="projectbrief">Project by Dekhtiar Jonathan &amp; Florian Baune</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.4 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="../../namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="../../classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="../../inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="../../functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d1/d0b/class_general_export_factory.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pub-static-methods">Fonctions membres publiques statiques</a> &#124;
+<a href="#pri-methods">Fonctions membres privées</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
+<a href="#pri-static-attribs">Attributs privés statiques</a> &#124;
+<a href="../../dd/dc0/class_general_export_factory-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe GeneralExportFactory</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Gère l'ensemble des fonctionnalités d'export.  
+ <a href="../../d1/d0b/class_general_export_factory.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../">generalexportfactory.h</a>&gt;</code></p>
+<div class="dynheader">
+Graphe de collaboration de GeneralExportFactory:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d58/class_general_export_factory__coll__graph.png" border="0" usemap="#_general_export_factory_coll__map" alt="Collaboration graph"/></div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:aa3ded2962777498a79d7aa17ec0197f7"><td class="memItemLeft" align="right" valign="top">QList&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0b/class_general_export_factory.html#aa3ded2962777498a79d7aa17ec0197f7">getAvailableExportType</a> () const </td></tr>
+<tr class="memdesc:aa3ded2962777498a79d7aa17ec0197f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de retourner l'ensemble des noms des stratégies d'export contenuent dans <a class="el" href="../../d1/d0b/class_general_export_factory.html" title="Gère l&#39;ensemble des fonctionnalités d&#39;export. ">GeneralExportFactory</a>.  <a href="#aa3ded2962777498a79d7aa17ec0197f7">Plus de détails...</a><br/></td></tr>
+<tr class="separator:aa3ded2962777498a79d7aa17ec0197f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85663004a445fbb50acc69bdd0883215"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0b/class_general_export_factory.html#a85663004a445fbb50acc69bdd0883215">exportNote</a> (const QString &amp;strategyName, const <a class="el" href="../../de/d15/class_note.html">Note</a> &amp;n) const </td></tr>
+<tr class="memdesc:a85663004a445fbb50acc69bdd0883215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction faisant un export complet (avec Header et Footer) d'une note.  <a href="#a85663004a445fbb50acc69bdd0883215">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a85663004a445fbb50acc69bdd0883215"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac85e886b00f965b4339d56384c16cf08"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0b/class_general_export_factory.html#ac85e886b00f965b4339d56384c16cf08">exportNote</a> (<a class="el" href="../../d2/dd9/class_export_strategy.html">ExportStrategy</a> &amp;es, const <a class="el" href="../../de/d15/class_note.html">Note</a> &amp;n) const </td></tr>
+<tr class="memdesc:ac85e886b00f965b4339d56384c16cf08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction faisant un export complet (avec Header et Footer) d'une note.  <a href="#ac85e886b00f965b4339d56384c16cf08">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ac85e886b00f965b4339d56384c16cf08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a523b972e3c61e6273749dc0b37589800"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0b/class_general_export_factory.html#a523b972e3c61e6273749dc0b37589800">exportNoteAsPart</a> (const QString &amp;strategyName, const <a class="el" href="../../de/d15/class_note.html">Note</a> &amp;n) const </td></tr>
+<tr class="memdesc:a523b972e3c61e6273749dc0b37589800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction faisant un export partiel du contenu d'une note.  <a href="#a523b972e3c61e6273749dc0b37589800">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a523b972e3c61e6273749dc0b37589800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08d8aefa406b56477232d7ded158135b"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0b/class_general_export_factory.html#a08d8aefa406b56477232d7ded158135b">exportNoteAsPart</a> (<a class="el" href="../../d2/dd9/class_export_strategy.html">ExportStrategy</a> &amp;es, const <a class="el" href="../../de/d15/class_note.html">Note</a> &amp;n) const </td></tr>
+<tr class="memdesc:a08d8aefa406b56477232d7ded158135b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction faisant un export partiel du contenu d'une note.  <a href="#a08d8aefa406b56477232d7ded158135b">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a08d8aefa406b56477232d7ded158135b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Fonctions membres publiques statiques</h2></td></tr>
+<tr class="memitem:aaeddf4a7a56e9a95aa8c8b15cb2f35d1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d0b/class_general_export_factory.html">GeneralExportFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0b/class_general_export_factory.html#aaeddf4a7a56e9a95aa8c8b15cb2f35d1">getInstance</a> ()</td></tr>
+<tr class="memdesc:aaeddf4a7a56e9a95aa8c8b15cb2f35d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction retournant l'instance du Singleton <a class="el" href="../../d1/d0b/class_general_export_factory.html" title="Gère l&#39;ensemble des fonctionnalités d&#39;export. ">GeneralExportFactory</a>.  <a href="#aaeddf4a7a56e9a95aa8c8b15cb2f35d1">Plus de détails...</a><br/></td></tr>
+<tr class="separator:aaeddf4a7a56e9a95aa8c8b15cb2f35d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9bdc900afd922cc7e1df866ecfd2c21"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0b/class_general_export_factory.html#ac9bdc900afd922cc7e1df866ecfd2c21">destroy</a> ()</td></tr>
+<tr class="memdesc:ac9bdc900afd922cc7e1df866ecfd2c21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction détruisant l'instance du Singleton <a class="el" href="../../d1/d0b/class_general_export_factory.html" title="Gère l&#39;ensemble des fonctionnalités d&#39;export. ">GeneralExportFactory</a>.  <a href="#ac9bdc900afd922cc7e1df866ecfd2c21">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ac9bdc900afd922cc7e1df866ecfd2c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Fonctions membres privées</h2></td></tr>
+<tr class="memitem:a54aa64d406b4132e9c6dd86a6d6fc700"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da7/class_interface_export_factory.html">InterfaceExportFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0b/class_general_export_factory.html#a54aa64d406b4132e9c6dd86a6d6fc700">getFactory</a> (const QString &amp;typeNote) const </td></tr>
+<tr class="separator:a54aa64d406b4132e9c6dd86a6d6fc700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe671bccceb715baf2381f5caaa0a9e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/dd9/class_export_strategy.html">ExportStrategy</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0b/class_general_export_factory.html#abe671bccceb715baf2381f5caaa0a9e6">getStrategy</a> (const QString &amp;strategyName) const </td></tr>
+<tr class="separator:abe671bccceb715baf2381f5caaa0a9e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31cb2399e15806ee4438e5c9ecbe897d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0b/class_general_export_factory.html#a31cb2399e15806ee4438e5c9ecbe897d">~GeneralExportFactory</a> ()</td></tr>
+<tr class="separator:a31cb2399e15806ee4438e5c9ecbe897d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f2db9028b43faff482c068023924fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0b/class_general_export_factory.html#a19f2db9028b43faff482c068023924fd">GeneralExportFactory</a> ()</td></tr>
+<tr class="separator:a19f2db9028b43faff482c068023924fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46bde15c74efc42b690ad15f45584faf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0b/class_general_export_factory.html#a46bde15c74efc42b690ad15f45584faf">GeneralExportFactory</a> (const <a class="el" href="../../d1/d0b/class_general_export_factory.html">GeneralExportFactory</a> &amp;nm)</td></tr>
+<tr class="separator:a46bde15c74efc42b690ad15f45584faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afca6b2f263d9d707a285ea9366cd416c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d0b/class_general_export_factory.html">GeneralExportFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0b/class_general_export_factory.html#afca6b2f263d9d707a285ea9366cd416c">operator=</a> (const <a class="el" href="../../d1/d0b/class_general_export_factory.html">GeneralExportFactory</a> &amp;n)</td></tr>
+<tr class="separator:afca6b2f263d9d707a285ea9366cd416c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:adc5da474a2c57ccd397ec4c8bbb88df8"><td class="memItemLeft" align="right" valign="top">QHash&lt; QString, <br class="typebreak"/>
+<a class="el" href="../../d4/da7/class_interface_export_factory.html">InterfaceExportFactory</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0b/class_general_export_factory.html#adc5da474a2c57ccd397ec4c8bbb88df8">m_factories</a></td></tr>
+<tr class="separator:adc5da474a2c57ccd397ec4c8bbb88df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1005d1fd3a7b4d3bc5194956d92a275"><td class="memItemLeft" align="right" valign="top">QHash&lt; QString, <a class="el" href="../../d2/dd9/class_export_strategy.html">ExportStrategy</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0b/class_general_export_factory.html#ad1005d1fd3a7b4d3bc5194956d92a275">m_strategies</a></td></tr>
+<tr class="separator:ad1005d1fd3a7b4d3bc5194956d92a275"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Attributs privés statiques</h2></td></tr>
+<tr class="memitem:a2c9059161fe53e2378e7e5299170b3e4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d0b/class_general_export_factory.html">GeneralExportFactory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d0b/class_general_export_factory.html#a2c9059161fe53e2378e7e5299170b3e4">s_inst</a> = NULL</td></tr>
+<tr class="separator:a2c9059161fe53e2378e7e5299170b3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Gère l'ensemble des fonctionnalités d'export. </p>
+<p>Cette classe implémentant le design pattern Singleton contient l'ensembles des stratégies d'exports. Elle contient aussi l'ensemble des factory d'export qui permettent d'appliquer la stratégie d'export à une note selon le type réel de cette note.</p>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Florian Baune &amp; Jonathan Dekhtiar </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../#L21">21</a> du fichier <a class="el" href="../../">generalexportfactory.h</a>.</p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a31cb2399e15806ee4438e5c9ecbe897d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeneralExportFactory::~GeneralExportFactory </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L82">82</a> du fichier <a class="el" href="../../">generalexportfactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                           {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span>(QHash&lt;QString, InterfaceExportFactory*&gt;::iterator it = <a class="code" href="../../d1/d0b/class_general_export_factory.html#adc5da474a2c57ccd397ec4c8bbb88df8">m_factories</a>.begin(); it!=<a class="code" href="../../d1/d0b/class_general_export_factory.html#adc5da474a2c57ccd397ec4c8bbb88df8">m_factories</a>.end(); it++)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keyword">delete</span> *it;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a19f2db9028b43faff482c068023924fd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeneralExportFactory::GeneralExportFactory </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L11">11</a> du fichier <a class="el" href="../../">generalexportfactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                           : <a class="code" href="../../d1/d0b/class_general_export_factory.html#adc5da474a2c57ccd397ec4c8bbb88df8">m_factories</a>(), <a class="code" href="../../d1/d0b/class_general_export_factory.html#ad1005d1fd3a7b4d3bc5194956d92a275">m_strategies</a>()</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">// Strategies</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="../../d1/d0b/class_general_export_factory.html#ad1005d1fd3a7b4d3bc5194956d92a275">m_strategies</a>.insert(    <span class="stringliteral">&quot;html&quot;</span>,                                 (<a class="code" href="../../d2/dd9/class_export_strategy.html">ExportStrategy</a>*)(<span class="keyword">new</span> <a class="code" href="../../d0/df8/class_export_h_t_m_l.html">ExportHTML</a>()) );</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../d1/d0b/class_general_export_factory.html#ad1005d1fd3a7b4d3bc5194956d92a275">m_strategies</a>.insert(    <span class="stringliteral">&quot;tex&quot;</span>,                                  (<a class="code" href="../../d2/dd9/class_export_strategy.html">ExportStrategy</a>*)(<span class="keyword">new</span> <a class="code" href="../../d3/d10/class_export_tex.html">ExportTex</a>())  );</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="../../d1/d0b/class_general_export_factory.html#ad1005d1fd3a7b4d3bc5194956d92a275">m_strategies</a>.insert(    <span class="stringliteral">&quot;txt&quot;</span>,                                  (<a class="code" href="../../d2/dd9/class_export_strategy.html">ExportStrategy</a>*)(<span class="keyword">new</span> <a class="code" href="../../d3/d4b/class_export_text.html">ExportText</a>()) );</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">// Factories</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="../../d1/d0b/class_general_export_factory.html#adc5da474a2c57ccd397ec4c8bbb88df8">m_factories</a>.insert(     Article::staticMetaObject.className(),  (<a class="code" href="../../d4/da7/class_interface_export_factory.html" title="L&#39;interface qui sera réimplémenté par la classe template ExportFactory. ">InterfaceExportFactory</a>*)(<span class="keyword">new</span> <a class="code" href="../../d3/dce/class_export_factory.html" title="Classe template implémentant l&#39;interface InterfaceExportFactory. ">ExportFactory&lt;Article&gt;</a>())     );</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="../../d1/d0b/class_general_export_factory.html#adc5da474a2c57ccd397ec4c8bbb88df8">m_factories</a>.insert(     Document::staticMetaObject.className(), (<a class="code" href="../../d4/da7/class_interface_export_factory.html" title="L&#39;interface qui sera réimplémenté par la classe template ExportFactory. ">InterfaceExportFactory</a>*)(<span class="keyword">new</span> <a class="code" href="../../d3/dce/class_export_factory.html" title="Classe template implémentant l&#39;interface InterfaceExportFactory. ">ExportFactory&lt;Document&gt;</a>())    );</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="../../d1/d0b/class_general_export_factory.html#adc5da474a2c57ccd397ec4c8bbb88df8">m_factories</a>.insert(     Image::staticMetaObject.className(),    (<a class="code" href="../../d4/da7/class_interface_export_factory.html" title="L&#39;interface qui sera réimplémenté par la classe template ExportFactory. ">InterfaceExportFactory</a>*)(<span class="keyword">new</span> <a class="code" href="../../d3/dce/class_export_factory.html" title="Classe template implémentant l&#39;interface InterfaceExportFactory. ">ExportFactory&lt;Image&gt;</a>())       );</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../d1/d0b/class_general_export_factory.html#adc5da474a2c57ccd397ec4c8bbb88df8">m_factories</a>.insert(     Audio::staticMetaObject.className(),    (<a class="code" href="../../d4/da7/class_interface_export_factory.html" title="L&#39;interface qui sera réimplémenté par la classe template ExportFactory. ">InterfaceExportFactory</a>*)(<span class="keyword">new</span> <a class="code" href="../../d3/dce/class_export_factory.html" title="Classe template implémentant l&#39;interface InterfaceExportFactory. ">ExportFactory&lt;Audio&gt;</a>())       );</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="../../d1/d0b/class_general_export_factory.html#adc5da474a2c57ccd397ec4c8bbb88df8">m_factories</a>.insert(     Video::staticMetaObject.className(),    (<a class="code" href="../../d4/da7/class_interface_export_factory.html" title="L&#39;interface qui sera réimplémenté par la classe template ExportFactory. ">InterfaceExportFactory</a>*)(<span class="keyword">new</span> <a class="code" href="../../d3/dce/class_export_factory.html" title="Classe template implémentant l&#39;interface InterfaceExportFactory. ">ExportFactory&lt;Video&gt;</a>())       );</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a46bde15c74efc42b690ad15f45584faf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeneralExportFactory::GeneralExportFactory </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/d0b/class_general_export_factory.html">GeneralExportFactory</a> &amp;&#160;</td>
+          <td class="paramname"><em>nm</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="ac9bdc900afd922cc7e1df866ecfd2c21"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeneralExportFactory::destroy </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction détruisant l'instance du Singleton <a class="el" href="../../d1/d0b/class_general_export_factory.html" title="Gère l&#39;ensemble des fonctionnalités d&#39;export. ">GeneralExportFactory</a>. </p>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Florian Baune &amp; Jonathan Dekhtiar </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../#L99">99</a> du fichier <a class="el" href="../../">generalexportfactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                  {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="../../d1/d0b/class_general_export_factory.html#a2c9059161fe53e2378e7e5299170b3e4">s_inst</a> != NULL ){</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../d1/d0b/class_general_export_factory.html#a2c9059161fe53e2378e7e5299170b3e4">s_inst</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="../../d1/d0b/class_general_export_factory.html#a2c9059161fe53e2378e7e5299170b3e4">s_inst</a> = NULL;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a85663004a445fbb50acc69bdd0883215"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString GeneralExportFactory::exportNote </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>strategyName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../de/d15/class_note.html">Note</a> &amp;&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction faisant un export complet (avec Header et Footer) d'une note. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strategyName</td><td>Le nom de la stratégie d'export </td></tr>
+    <tr><td class="paramname">n</td><td>La note à exporter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La QString résultat de l'export</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Florian Baune &amp; Jonathan Dekhtiar </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../#L52">52</a> du fichier <a class="el" href="../../">generalexportfactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                                                                        {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Get back the corresponging ExportStrategy and export the Note.</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="../../d2/dd9/class_export_strategy.html">ExportStrategy</a>&amp; es = <a class="code" href="../../d1/d0b/class_general_export_factory.html#abe671bccceb715baf2381f5caaa0a9e6">getStrategy</a>(strategyName);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span>  <a class="code" href="../../d1/d0b/class_general_export_factory.html#a85663004a445fbb50acc69bdd0883215" title="Fonction faisant un export complet (avec Header et Footer) d&#39;une note. ">exportNote</a>(es,n);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ac85e886b00f965b4339d56384c16cf08"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString GeneralExportFactory::exportNote </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/dd9/class_export_strategy.html">ExportStrategy</a> &amp;&#160;</td>
+          <td class="paramname"><em>es</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../de/d15/class_note.html">Note</a> &amp;&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction faisant un export complet (avec Header et Footer) d'une note. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">es</td><td>La stratégie d'export </td></tr>
+    <tr><td class="paramname">n</td><td>La note à exporter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La QString résultat de l'export</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Florian Baune &amp; Jonathan Dekhtiar </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../#L58">58</a> du fichier <a class="el" href="../../">generalexportfactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                                               {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// Get back the corresponging ExportFactory and export the Note.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="../../d4/da7/class_interface_export_factory.html" title="L&#39;interface qui sera réimplémenté par la classe template ExportFactory. ">InterfaceExportFactory</a>&amp; ef = <a class="code" href="../../d1/d0b/class_general_export_factory.html#a54aa64d406b4132e9c6dd86a6d6fc700">getFactory</a>(n.metaObject()-&gt;className());</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span>  es.<a class="code" href="../../d2/dd9/class_export_strategy.html#a8f24eb340762e0c1b1faaefb32087468">header</a>() %</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            ef.<a class="code" href="../../d4/da7/class_interface_export_factory.html#a1d06f4f9a15c154bbe306bafb2c5029b" title="Fonction virtuelle pure qui applique la stratégie d&#39;export à une note donnée. ">exportAsPart</a>(es, n) %</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            es.<a class="code" href="../../d2/dd9/class_export_strategy.html#aa7640ca5f382c7264697e594cd1288ff">footer</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a523b972e3c61e6273749dc0b37589800"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString GeneralExportFactory::exportNoteAsPart </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>strategyName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../de/d15/class_note.html">Note</a> &amp;&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction faisant un export partiel du contenu d'une note. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strategyName</td><td>Le nom de la stratégie d'export </td></tr>
+    <tr><td class="paramname">n</td><td>La note à exporter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La QString résultat de l'export</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Florian Baune &amp; Jonathan Dekhtiar </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../#L66">66</a> du fichier <a class="el" href="../../">generalexportfactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                                                                              {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// Get back the corresponging ExportStrategy and export the Note.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="../../d2/dd9/class_export_strategy.html">ExportStrategy</a>&amp; es = <a class="code" href="../../d1/d0b/class_general_export_factory.html#abe671bccceb715baf2381f5caaa0a9e6">getStrategy</a>(strategyName);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span>  <a class="code" href="../../d1/d0b/class_general_export_factory.html#a523b972e3c61e6273749dc0b37589800" title="Fonction faisant un export partiel du contenu d&#39;une note. ">exportNoteAsPart</a>(es,n);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a08d8aefa406b56477232d7ded158135b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString GeneralExportFactory::exportNoteAsPart </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/dd9/class_export_strategy.html">ExportStrategy</a> &amp;&#160;</td>
+          <td class="paramname"><em>es</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../de/d15/class_note.html">Note</a> &amp;&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction faisant un export partiel du contenu d'une note. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">es</td><td>La stratégie d'export </td></tr>
+    <tr><td class="paramname">n</td><td>La note à exporter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La QString résultat de l'export</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Florian Baune &amp; Jonathan Dekhtiar </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../#L72">72</a> du fichier <a class="el" href="../../">generalexportfactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                                                                     {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// Get back the corresponging ExportFactory and export the Note.</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="../../d4/da7/class_interface_export_factory.html" title="L&#39;interface qui sera réimplémenté par la classe template ExportFactory. ">InterfaceExportFactory</a>&amp; ef = <a class="code" href="../../d1/d0b/class_general_export_factory.html#a54aa64d406b4132e9c6dd86a6d6fc700">getFactory</a>(n.metaObject()-&gt;className());</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> ef.<a class="code" href="../../d4/da7/class_interface_export_factory.html#a1d06f4f9a15c154bbe306bafb2c5029b" title="Fonction virtuelle pure qui applique la stratégie d&#39;export à une note donnée. ">exportAsPart</a>(es, n);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa3ded2962777498a79d7aa17ec0197f7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; QString &gt; GeneralExportFactory::getAvailableExportType </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de retourner l'ensemble des noms des stratégies d'export contenuent dans <a class="el" href="../../d1/d0b/class_general_export_factory.html" title="Gère l&#39;ensemble des fonctionnalités d&#39;export. ">GeneralExportFactory</a>. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>La liste de QString des noms des stratégies d'export</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Florian Baune &amp; Jonathan Dekhtiar </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../#L30">30</a> du fichier <a class="el" href="../../">generalexportfactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                                                 {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d1/d0b/class_general_export_factory.html#ad1005d1fd3a7b4d3bc5194956d92a275">m_strategies</a>.keys();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a54aa64d406b4132e9c6dd86a6d6fc700"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da7/class_interface_export_factory.html">InterfaceExportFactory</a> &amp; GeneralExportFactory::getFactory </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>typeNote</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L34">34</a> du fichier <a class="el" href="../../">generalexportfactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                                                                      {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    QHash&lt;QString, InterfaceExportFactory*&gt;::const_iterator it = <a class="code" href="../../d1/d0b/class_general_export_factory.html#adc5da474a2c57ccd397ec4c8bbb88df8">m_factories</a>.find(typeName);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span>( it==<a class="code" href="../../d1/d0b/class_general_export_factory.html#adc5da474a2c57ccd397ec4c8bbb88df8">m_factories</a>.end() )</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../df/d59/class_export_factory_not_found_exception.html">ExportFactoryNotFoundException</a>(typeName);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> **it;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aaeddf4a7a56e9a95aa8c8b15cb2f35d1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d0b/class_general_export_factory.html">GeneralExportFactory</a> &amp; GeneralExportFactory::getInstance </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction retournant l'instance du Singleton <a class="el" href="../../d1/d0b/class_general_export_factory.html" title="Gère l&#39;ensemble des fonctionnalités d&#39;export. ">GeneralExportFactory</a>. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>L'instance de la <a class="el" href="../../d1/d0b/class_general_export_factory.html" title="Gère l&#39;ensemble des fonctionnalités d&#39;export. ">GeneralExportFactory</a></dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Florian Baune &amp; Jonathan Dekhtiar </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../#L93">93</a> du fichier <a class="el" href="../../">generalexportfactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                                       {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="../../d1/d0b/class_general_export_factory.html#a2c9059161fe53e2378e7e5299170b3e4">s_inst</a> == NULL )</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="../../d1/d0b/class_general_export_factory.html#a2c9059161fe53e2378e7e5299170b3e4">s_inst</a> = <span class="keyword">new</span> <a class="code" href="../../d1/d0b/class_general_export_factory.html#a19f2db9028b43faff482c068023924fd">GeneralExportFactory</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">return</span> (*<a class="code" href="../../d1/d0b/class_general_export_factory.html#a2c9059161fe53e2378e7e5299170b3e4">s_inst</a>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="abe671bccceb715baf2381f5caaa0a9e6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/dd9/class_export_strategy.html">ExportStrategy</a> &amp; GeneralExportFactory::getStrategy </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>strategyName</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L43">43</a> du fichier <a class="el" href="../../">generalexportfactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                                                                   {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    QHash&lt;QString, ExportStrategy*&gt;::const_iterator it = <a class="code" href="../../d1/d0b/class_general_export_factory.html#ad1005d1fd3a7b4d3bc5194956d92a275">m_strategies</a>.find(strategyName);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span>( it==<a class="code" href="../../d1/d0b/class_general_export_factory.html#ad1005d1fd3a7b4d3bc5194956d92a275">m_strategies</a>.end() )</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d5/da1/class_export_strategy_not_found_exception.html">ExportStrategyNotFoundException</a>(strategyName);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> **it;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="afca6b2f263d9d707a285ea9366cd416c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d0b/class_general_export_factory.html">GeneralExportFactory</a>&amp; GeneralExportFactory::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/d0b/class_general_export_factory.html">GeneralExportFactory</a> &amp;&#160;</td>
+          <td class="paramname"><em>n</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="adc5da474a2c57ccd397ec4c8bbb88df8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHash&lt;QString, <a class="el" href="../../d4/da7/class_interface_export_factory.html">InterfaceExportFactory</a>*&gt; GeneralExportFactory::m_factories</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L97">97</a> du fichier <a class="el" href="../../">generalexportfactory.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad1005d1fd3a7b4d3bc5194956d92a275"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHash&lt;QString, <a class="el" href="../../d2/dd9/class_export_strategy.html">ExportStrategy</a>*&gt; GeneralExportFactory::m_strategies</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L98">98</a> du fichier <a class="el" href="../../">generalexportfactory.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2c9059161fe53e2378e7e5299170b3e4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d0b/class_general_export_factory.html">GeneralExportFactory</a> * GeneralExportFactory::s_inst = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L111">111</a> du fichier <a class="el" href="../../">generalexportfactory.h</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>projet/export/<a class="el" href="../../">generalexportfactory.h</a></li>
+<li>projet/export/<a class="el" href="../../">generalexportfactory.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d1/d0b/class_general_export_factory.html">GeneralExportFactory</a></li>
+    <li class="footer">Généré le Samedi Juin 15 2013 16:08:24 pour Gestionnaire de Notes - Projet LO21 - P13 par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
+  </ul>
+</div>
+</body>
+</html>

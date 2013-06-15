@@ -14,7 +14,7 @@ namespace Ui {
   Cette interface permet gérer l'affichage de la note contenue dans le Document ainsi que ça suppression du Document.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class NoteDocumentView : public QWidget
 {

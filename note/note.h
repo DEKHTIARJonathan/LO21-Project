@@ -11,7 +11,7 @@
   dans la fabrication/gestion des instances, dans les stratégies d'exports et dans la fabrication/gestion des vues.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class Note : public QObject
 {
@@ -24,7 +24,7 @@ class Note : public QObject
 		  \param	id		L'id de la note.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		Note( unsigned int id );
 
@@ -34,7 +34,7 @@ class Note : public QObject
 		  \param	name	Le titre de la note.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		Note( unsigned int id, const QString & name );
 
@@ -45,7 +45,7 @@ class Note : public QObject
 		//! Getter permettant de savoir si la note a été modifié depuis ça dernière sauvegarde sur le support de sauvegarde.
 		/*!
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		bool				isModified() const;
 
@@ -59,7 +59,7 @@ class Note : public QObject
 		//! Cette fonction reset le booléen de modification de la note. Ainsi, cette note sera considérée comme à jours par rapport au support de sauvegarde.
 		/*!
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				confirmSaving();
 

@@ -1,0 +1,5 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node2" href="$dd/d89/class_choose_note_dialog.html" title="Affiche une fenêtre permettant de choisir une nouvelle note à ajouter à un document. " alt="" coords="125,5,259,32"/>
+<area shape="rect" id="node3" href="$d8/d74/class_tags_dialog.html" title="Cette vue gère l&#39;affichage, l&#39;ajout ainsi que la séléction et désélection de tags pour une note donné..." alt="" coords="147,56,237,83"/>
+<area shape="rect" id="node4" href="$d2/dfe/class_trash_dialog.html" title="Cette vue gère l&#39;affichage, la restauration et la suppression des notes contenues dans la corbeille..." alt="" coords="145,107,239,133"/>
+</map>

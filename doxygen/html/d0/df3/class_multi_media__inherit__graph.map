@@ -1,0 +1,6 @@
+<map id="MultiMedia" name="MultiMedia">
+<area shape="rect" id="node4" href="$d2/d4a/class_audio.html" title="Audio. " alt="" coords="5,675,101,781"/>
+<area shape="rect" id="node5" href="$de/d73/class_image.html" title="Image. " alt="" coords="125,675,221,781"/>
+<area shape="rect" id="node6" href="$d2/d47/class_video.html" title="Vidéo. " alt="" coords="245,675,341,781"/>
+<area shape="rect" id="node2" href="$de/d15/class_note.html" title="Classe abstraite représentant une note générique avec un id et un titre. " alt="" coords="110,131,236,384"/>
+</map>

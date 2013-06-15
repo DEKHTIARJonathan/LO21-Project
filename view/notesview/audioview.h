@@ -17,7 +17,7 @@ namespace Ui {
   \sa		NoteView
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class AudioView : public NoteView
 {

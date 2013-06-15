@@ -10,7 +10,7 @@
   Cette interface fournit la méthode nécessaire à l'utilisation d'une View Strategy.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class InterfaceViewFactory
 {
@@ -21,7 +21,7 @@ class InterfaceViewFactory
 		  \return	La référence sur la vue nouvellement créée
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		virtual NoteView&	buildNoteView(Note& n) = 0;
 };

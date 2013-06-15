@@ -13,7 +13,7 @@
   il n'y a plus qu'à récupérer l'id contenue dans cette objet et accéder à la note complète via le NotesManager.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class ListNoteViewItem : public QListWidgetItem
 {

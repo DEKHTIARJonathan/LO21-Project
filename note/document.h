@@ -15,7 +15,7 @@ using namespace std;
   Elle permet le stockage et la gestion d'un ensemble d'autres notes.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class Document : public Note
 {
@@ -32,7 +32,7 @@ class Document : public Note
 		  \return	La réponse à la question, la note avec l'id \a id est-elle dans ce document ?
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		bool							containNote( unsigned int id ) const;
 
@@ -41,7 +41,7 @@ class Document : public Note
 		  \param	n		La note que l'on souhaite ajouter.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void							addNote(Note &n);
 
@@ -53,7 +53,7 @@ class Document : public Note
 		  \return	La Iième note.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		Note&							getNote(unsigned int i) const;
 
@@ -62,14 +62,14 @@ class Document : public Note
 		  \param	id		L'id de la note.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void							removeNote(unsigned int id);
 
 		//! Retire toutes les notes contenues dans ce document.
 		/*!
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void							flushNotes();
 
@@ -78,7 +78,7 @@ class Document : public Note
 		  \return	L'itérateur positionné en tête de liste permettant de parcourir séquentiellement ce document.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		vector<Note*>::iterator			begin();
 
@@ -87,7 +87,7 @@ class Document : public Note
 		  \return	L'itérateur Constant positionné en tête de liste permettant de parcourir séquentiellement ce document.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		vector<Note*>::const_iterator	begin() const;
 
@@ -95,7 +95,7 @@ class Document : public Note
 		/*!
 		  \return	L'itérateur représentant la fin de liste.
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		vector<Note*>::iterator			end();
 
@@ -104,7 +104,7 @@ class Document : public Note
 		  \return	L'itérateur Constant représentant la fin de liste.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		vector<Note*>::const_iterator	end() const;
 

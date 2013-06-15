@@ -1,0 +1,16 @@
+<map id="projet/view/tagsdialog.cpp" name="projet/view/tagsdialog.cpp">
+<area shape="rect" id="node2" href="$d7/d5c/tagsdialog_8h.html" title="tagsdialog.h" alt="" coords="879,80,972,107"/>
+<area shape="rect" id="node5" href="$dd/d3a/databasemanager_8h.html" title="Interface entre le logiciel et la base de données. Elle est la seule à réaliser des accès à la BDD..." alt="" coords="910,155,1121,181"/>
+<area shape="rect" id="node34" href="$d8/d82/listnoteviewitem_8h.html" title="view/listnoteviewitem.h" alt="" coords="1417,155,1575,181"/>
+<area shape="rect" id="node18" href="$d1/da6/classdef_8h.html" title="note/classdef.h" alt="" coords="652,229,764,256"/>
+<area shape="rect" id="node32" href="$d2/d6f/constants_8h.html" title="constants.h" alt="" coords="1592,229,1683,256"/>
+<area shape="rect" id="node33" href="$da/de0/dbexception_8h.html" title="dbmanager/dbexception.h" alt="" coords="1033,379,1209,405"/>
+<area shape="rect" id="node19" href="$d8/da6/note_8h.html" title="note/note.h" alt="" coords="389,453,477,480"/>
+<area shape="rect" id="node21" href="$db/d82/article_8h.html" title="note/article.h" alt="" coords="316,379,415,405"/>
+<area shape="rect" id="node22" href="$db/df5/document_8h.html" title="note/document.h" alt="" coords="831,304,952,331"/>
+<area shape="rect" id="node24" href="$d8/dec/documentindexoutofarrayexception_8h.html" title="note/documentindexoutofarrayexception.h" alt="" coords="642,379,912,405"/>
+<area shape="rect" id="node27" href="$da/d5f/multimedia_8h.html" title="note/multimedia.h" alt="" coords="439,379,565,405"/>
+<area shape="rect" id="node29" href="$d5/db2/image_8h.html" title="note/image.h" alt="" coords="417,304,516,331"/>
+<area shape="rect" id="node30" href="$da/d09/audio_8h.html" title="note/audio.h" alt="" coords="540,304,636,331"/>
+<area shape="rect" id="node31" href="$dd/d78/video_8h.html" title="note/video.h" alt="" coords="661,304,755,331"/>
+</map>

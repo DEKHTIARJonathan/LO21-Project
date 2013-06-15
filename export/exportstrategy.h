@@ -15,7 +15,7 @@ class ExportStrategy
 		// Virtual Method
         virtual QString			header() const = 0 ;
         virtual QString			footer() const = 0 ;
-		virtual QString			exportNote(const Note& n) const = 0 ;
+
 		virtual QString			exportNote(const Article& a) const = 0 ;
 		virtual QString			exportNote(const Document& d) const = 0 ;
 		virtual QString			exportNote(const Image& i) const = 0 ;
@@ -23,6 +23,9 @@ class ExportStrategy
 		virtual QString			exportNote(const Video& v) const = 0 ;
 		static  bool			exportFile(const QString &s, const QString &filename);
 		virtual QString			escape(QString s) const = 0;
+
+private:
+		virtual QString			exportNote(const Note& n) const = 0;
 
 };
 

@@ -1,0 +1,22 @@
+<map id="projet/dbmanager/databasemanager.h" name="projet/dbmanager/databasemanager.h">
+<area shape="rect" id="node2" href="$d8/d20/databasemanager_8cpp.html" title="projet/dbmanager/databasemanager.cpp" alt="" coords="486,360,748,387"/>
+<area shape="rect" id="node3" href="$df/d0a/main_8cpp.html" title="projet/main.cpp" alt="" coords="5,715,117,741"/>
+<area shape="rect" id="node4" href="$df/dce/multimedia_8cpp.html" title="projet/note/multimedia.cpp" alt="" coords="160,88,339,115"/>
+<area shape="rect" id="node5" href="$d5/d17/notefactory_8h.html" title="projet/notefactory\l/notefactory.h" alt="" coords="363,81,488,122"/>
+<area shape="rect" id="node12" href="$d3/d36/choosenotedialog_8h.html" title="projet/view/notesview\l/choosenotedialog.h" alt="" coords="99,353,248,394"/>
+<area shape="rect" id="node20" href="$d7/d5c/tagsdialog_8h.html" title="projet/view/tagsdialog.h" alt="" coords="895,88,1056,115"/>
+<area shape="rect" id="node18" href="$d8/dbd/trashdialog_8h.html" title="projet/view/trashdialog.h" alt="" coords="773,360,939,387"/>
+<area shape="rect" id="node6" href="$de/dd1/generalnotefactory_8h.html" title="projet/notefactory\l/generalnotefactory.h" alt="" coords="276,171,423,213"/>
+<area shape="rect" id="node7" href="$d9/d6a/generalnotefactory_8cpp.html" title="projet/notefactory\l/generalnotefactory.cpp" alt="" coords="194,262,355,303"/>
+<area shape="rect" id="node8" href="$de/d36/notesmanager_8h.html" title="projet/notemanager\l/notesmanager.h" alt="" coords="379,262,516,303"/>
+<area shape="rect" id="node9" href="$de/d34/notesmanager_8cpp.html" title="projet/notemanager\l/notesmanager.cpp" alt="" coords="273,353,409,394"/>
+<area shape="rect" id="node10" href="$d9/d53/mainwindow_8h.html" title="projet/view/mainwindow.h" alt="" coords="380,632,553,659"/>
+<area shape="rect" id="node11" href="$d8/dd9/mainwindow_8cpp.html" title="projet/view/mainwindow.cpp" alt="" coords="373,715,560,741"/>
+<area shape="rect" id="node13" href="$dc/d7b/choosenotedialog_8cpp.html" title="projet/view/notesview\l/choosenotedialog.cpp" alt="" coords="273,443,428,485"/>
+<area shape="rect" id="node14" href="$d3/d59/documentview_8h.html" title="projet/view/notesview\l/documentview.h" alt="" coords="99,443,248,485"/>
+<area shape="rect" id="node15" href="$d8/d15/documentview_8cpp.html" title="projet/view/notesview\l/documentview.cpp" alt="" coords="276,534,425,575"/>
+<area shape="rect" id="node16" href="$d2/daf/generalviewfactory_8h.html" title="projet/view/notesview\l/generalviewfactory.h" alt="" coords="103,534,252,575"/>
+<area shape="rect" id="node17" href="$d9/d83/generalviewfactory_8cpp.html" title="projet/view/notesview\l/generalviewfactory.cpp" alt="" coords="99,625,261,666"/>
+<area shape="rect" id="node19" href="$dd/dd6/trashdialog_8cpp.html" title="projet/view/trashdialog.cpp" alt="" coords="758,451,937,477"/>
+<area shape="rect" id="node21" href="$d6/dd9/tagsdialog_8cpp.html" title="projet/view/tagsdialog.cpp" alt="" coords="1013,179,1189,205"/>
+</map>

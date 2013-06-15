@@ -1,0 +1,577 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>Gestionnaire de Notes - Projet LO21 - P13: Référence de la classe GeneralNoteFactory</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Gestionnaire de Notes - Projet LO21 - P13
+   &#160;<span id="projectnumber">V1.0</span>
+   </div>
+   <div id="projectbrief">Project by Dekhtiar Jonathan &amp; Florian Baune</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.4 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="../../namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="../../classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="../../inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="../../functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d8/d71/class_general_note_factory.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pub-static-methods">Fonctions membres publiques statiques</a> &#124;
+<a href="#pri-methods">Fonctions membres privées</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
+<a href="#pri-static-attribs">Attributs privés statiques</a> &#124;
+<a href="../../d6/d1f/class_general_note_factory-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe GeneralNoteFactory</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Gère l'ensemble des fonctionnalités nécessaire à la gestion des données des notes.  
+ <a href="../../d8/d71/class_general_note_factory.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../">generalnotefactory.h</a>&gt;</code></p>
+<div class="dynheader">
+Graphe de collaboration de GeneralNoteFactory:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/d71/class_general_note_factory__coll__graph.png" border="0" usemap="#_general_note_factory_coll__map" alt="Collaboration graph"/></div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:ada4ba22c50e4649d07e0a964adca5a1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/dab/class_interface_note_factory.html">InterfaceNoteFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d71/class_general_note_factory.html#ada4ba22c50e4649d07e0a964adca5a1e">getFactories</a> (const QString &amp;typeNote) const </td></tr>
+<tr class="memdesc:ada4ba22c50e4649d07e0a964adca5a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de retourner une factory pour un certain type de note.  <a href="#ada4ba22c50e4649d07e0a964adca5a1e">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ada4ba22c50e4649d07e0a964adca5a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bb4d4081ef947b988a68b750629ee25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d15/class_note.html">Note</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d71/class_general_note_factory.html#a3bb4d4081ef947b988a68b750629ee25">loadNote</a> (unsigned int id) const </td></tr>
+<tr class="memdesc:a3bb4d4081ef947b988a68b750629ee25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui gère le chargement d'une note à partir de son id.  <a href="#a3bb4d4081ef947b988a68b750629ee25">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a3bb4d4081ef947b988a68b750629ee25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2a92f1cd911c41b0b28b1492e3809f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d71/class_general_note_factory.html#ad2a92f1cd911c41b0b28b1492e3809f3">saveNote</a> (<a class="el" href="../../de/d15/class_note.html">Note</a> &amp;n) const </td></tr>
+<tr class="memdesc:ad2a92f1cd911c41b0b28b1492e3809f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui gère la sauvegarde d'une note.  <a href="#ad2a92f1cd911c41b0b28b1492e3809f3">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ad2a92f1cd911c41b0b28b1492e3809f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd401ea8b9f71a43715e62cc36370988"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d71/class_general_note_factory.html#abd401ea8b9f71a43715e62cc36370988">deleteNote</a> (<a class="el" href="../../de/d15/class_note.html">Note</a> &amp;n) const </td></tr>
+<tr class="memdesc:abd401ea8b9f71a43715e62cc36370988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui gère la destruction et la désinstentiation d'une note aussi bien dans la mémoire courante que dans le support de de sauvegarde.  <a href="#abd401ea8b9f71a43715e62cc36370988">Plus de détails...</a><br/></td></tr>
+<tr class="separator:abd401ea8b9f71a43715e62cc36370988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Fonctions membres publiques statiques</h2></td></tr>
+<tr class="memitem:a5d283017f6438ad97947fd3b15b491e3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d8/d71/class_general_note_factory.html">GeneralNoteFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d71/class_general_note_factory.html#a5d283017f6438ad97947fd3b15b491e3">getInstance</a> ()</td></tr>
+<tr class="memdesc:a5d283017f6438ad97947fd3b15b491e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction retournant l'instance du Singleton <a class="el" href="../../d8/d71/class_general_note_factory.html" title="Gère l&#39;ensemble des fonctionnalités nécessaire à la gestion des données des notes. ">GeneralNoteFactory</a>.  <a href="#a5d283017f6438ad97947fd3b15b491e3">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a5d283017f6438ad97947fd3b15b491e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad995b7cef6e27548c3a127d38a3d71d9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d71/class_general_note_factory.html#ad995b7cef6e27548c3a127d38a3d71d9">destroy</a> ()</td></tr>
+<tr class="memdesc:ad995b7cef6e27548c3a127d38a3d71d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction retournant l'instance du Singleton <a class="el" href="../../d8/d71/class_general_note_factory.html" title="Gère l&#39;ensemble des fonctionnalités nécessaire à la gestion des données des notes. ">GeneralNoteFactory</a>.  <a href="#ad995b7cef6e27548c3a127d38a3d71d9">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ad995b7cef6e27548c3a127d38a3d71d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Fonctions membres privées</h2></td></tr>
+<tr class="memitem:a6b0045dd065f6c19797476a6af48a66d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d71/class_general_note_factory.html#a6b0045dd065f6c19797476a6af48a66d">~GeneralNoteFactory</a> ()</td></tr>
+<tr class="separator:a6b0045dd065f6c19797476a6af48a66d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14c4df21a77fcb2cb12a447dfdee872a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d71/class_general_note_factory.html#a14c4df21a77fcb2cb12a447dfdee872a">GeneralNoteFactory</a> ()</td></tr>
+<tr class="separator:a14c4df21a77fcb2cb12a447dfdee872a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa558b1a86367e4214a79c424839c7eb3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d71/class_general_note_factory.html#aa558b1a86367e4214a79c424839c7eb3">GeneralNoteFactory</a> (const <a class="el" href="../../d8/d71/class_general_note_factory.html">GeneralNoteFactory</a> &amp;nm)</td></tr>
+<tr class="separator:aa558b1a86367e4214a79c424839c7eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55215c5e02ad3b36b2f93145ab716fa3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d71/class_general_note_factory.html">GeneralNoteFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d71/class_general_note_factory.html#a55215c5e02ad3b36b2f93145ab716fa3">operator=</a> (const <a class="el" href="../../d8/d71/class_general_note_factory.html">GeneralNoteFactory</a> &amp;n)</td></tr>
+<tr class="separator:a55215c5e02ad3b36b2f93145ab716fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:a4554a1c97cf04cffba8a8afdad4b49f6"><td class="memItemLeft" align="right" valign="top">QHash&lt; QString, <br class="typebreak"/>
+<a class="el" href="../../d6/dab/class_interface_note_factory.html">InterfaceNoteFactory</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d71/class_general_note_factory.html#a4554a1c97cf04cffba8a8afdad4b49f6">m_factories</a></td></tr>
+<tr class="separator:a4554a1c97cf04cffba8a8afdad4b49f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Attributs privés statiques</h2></td></tr>
+<tr class="memitem:a62a14ca5bf6923968a1508d5840992de"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d8/d71/class_general_note_factory.html">GeneralNoteFactory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d71/class_general_note_factory.html#a62a14ca5bf6923968a1508d5840992de">s_inst</a> = NULL</td></tr>
+<tr class="separator:a62a14ca5bf6923968a1508d5840992de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Gère l'ensemble des fonctionnalités nécessaire à la gestion des données des notes. </p>
+<p>Cette classe implémentant le design pattern Singleton contient l'ensembles des factory permettant de gérer les différents types de note. Elle permettra notamment, la création d'une nouvelle note d'un certain type, le chargement/sauvegarde d'une note et la destruction d'une note.</p>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Florian Baune &amp; Jonathan Dekhtiar </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../#L20">20</a> du fichier <a class="el" href="../../">generalnotefactory.h</a>.</p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a6b0045dd065f6c19797476a6af48a66d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeneralNoteFactory::~GeneralNoteFactory </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L59">59</a> du fichier <a class="el" href="../../">generalnotefactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                       {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">for</span>(QHash&lt;QString, InterfaceNoteFactory*&gt;::iterator it = <a class="code" href="../../d8/d71/class_general_note_factory.html#a4554a1c97cf04cffba8a8afdad4b49f6">m_factories</a>.begin(); it!=<a class="code" href="../../d8/d71/class_general_note_factory.html#a4554a1c97cf04cffba8a8afdad4b49f6">m_factories</a>.end(); it++)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">delete</span> *it;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a14c4df21a77fcb2cb12a447dfdee872a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeneralNoteFactory::GeneralNoteFactory </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L7">7</a> du fichier <a class="el" href="../../">generalnotefactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                       : <a class="code" href="../../d8/d71/class_general_note_factory.html#a4554a1c97cf04cffba8a8afdad4b49f6">m_factories</a>()</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="../../d8/d71/class_general_note_factory.html#a4554a1c97cf04cffba8a8afdad4b49f6">m_factories</a>.insert( Article::staticMetaObject.className(), (<a class="code" href="../../d6/dab/class_interface_note_factory.html" title="L&#39;interface qui sera réimplémenté par la classe template NoteFactory. ">InterfaceNoteFactory</a>*)(<span class="keyword">new</span> <a class="code" href="../../da/de5/class_note_factory.html" title="Classe template implémentant l&#39;interface InterfaceNoteFactory. ">NoteFactory&lt;Article&gt;</a>()) );</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="../../d8/d71/class_general_note_factory.html#a4554a1c97cf04cffba8a8afdad4b49f6">m_factories</a>.insert( Document::staticMetaObject.className(), (<a class="code" href="../../d6/dab/class_interface_note_factory.html" title="L&#39;interface qui sera réimplémenté par la classe template NoteFactory. ">InterfaceNoteFactory</a>*)(<span class="keyword">new</span> <a class="code" href="../../da/de5/class_note_factory.html" title="Classe template implémentant l&#39;interface InterfaceNoteFactory. ">NoteFactory&lt;Document&gt;</a>()) );</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="../../d8/d71/class_general_note_factory.html#a4554a1c97cf04cffba8a8afdad4b49f6">m_factories</a>.insert( Image::staticMetaObject.className(), (<a class="code" href="../../d6/dab/class_interface_note_factory.html" title="L&#39;interface qui sera réimplémenté par la classe template NoteFactory. ">InterfaceNoteFactory</a>*)(<span class="keyword">new</span> <a class="code" href="../../da/de5/class_note_factory.html" title="Classe template implémentant l&#39;interface InterfaceNoteFactory. ">NoteFactory&lt;Image&gt;</a>()) );</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="../../d8/d71/class_general_note_factory.html#a4554a1c97cf04cffba8a8afdad4b49f6">m_factories</a>.insert( Audio::staticMetaObject.className(), (<a class="code" href="../../d6/dab/class_interface_note_factory.html" title="L&#39;interface qui sera réimplémenté par la classe template NoteFactory. ">InterfaceNoteFactory</a>*)(<span class="keyword">new</span> <a class="code" href="../../da/de5/class_note_factory.html" title="Classe template implémentant l&#39;interface InterfaceNoteFactory. ">NoteFactory&lt;Audio&gt;</a>()) );</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="../../d8/d71/class_general_note_factory.html#a4554a1c97cf04cffba8a8afdad4b49f6">m_factories</a>.insert( Video::staticMetaObject.className(), (<a class="code" href="../../d6/dab/class_interface_note_factory.html" title="L&#39;interface qui sera réimplémenté par la classe template NoteFactory. ">InterfaceNoteFactory</a>*)(<span class="keyword">new</span> <a class="code" href="../../da/de5/class_note_factory.html" title="Classe template implémentant l&#39;interface InterfaceNoteFactory. ">NoteFactory&lt;Video&gt;</a>()) );</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa558b1a86367e4214a79c424839c7eb3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeneralNoteFactory::GeneralNoteFactory </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/d71/class_general_note_factory.html">GeneralNoteFactory</a> &amp;&#160;</td>
+          <td class="paramname"><em>nm</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="abd401ea8b9f71a43715e62cc36370988"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeneralNoteFactory::deleteNote </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d15/class_note.html">Note</a> &amp;&#160;</td>
+          <td class="paramname"><em>n</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui gère la destruction et la désinstentiation d'une note aussi bien dans la mémoire courante que dans le support de de sauvegarde. </p>
+<p>Cette dernière utilise une NoteFectory qui utilise le singleton <a class="el" href="../../d5/dd7/class_database_manager.html">DatabaseManager</a>, ainsi elle est susceptible de retourner toutes les exceptions possibles inhérentes à l'utilisation des fonctionnalités de ce dernier.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">La</td><td>note que l'on souhaite détruire sur le support de sauvegarde.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Florian Baune &amp; Jonathan Dekhtiar </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../#L47">47</a> du fichier <a class="el" href="../../">generalnotefactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                                {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// Get back the corresponging NoteFactory of Note &#39;n&#39;.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="../../d6/dab/class_interface_note_factory.html" title="L&#39;interface qui sera réimplémenté par la classe template NoteFactory. ">InterfaceNoteFactory</a>&amp; nf = <a class="code" href="../../d8/d71/class_general_note_factory.html#ada4ba22c50e4649d07e0a964adca5a1e" title="Fonction permettant de retourner une factory pour un certain type de note. ">getFactories</a>(n.metaObject()-&gt;className());</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Delete Note &#39;n&#39;.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    nf.<a class="code" href="../../d6/dab/class_interface_note_factory.html#a31218ce86e383c0aad3601e318a29a69" title="Fonction virtuelle pure qui gère la désinstentiation d&#39;une note. ">deleteNote</a>(n);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad995b7cef6e27548c3a127d38a3d71d9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeneralNoteFactory::destroy </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction retournant l'instance du Singleton <a class="el" href="../../d8/d71/class_general_note_factory.html" title="Gère l&#39;ensemble des fonctionnalités nécessaire à la gestion des données des notes. ">GeneralNoteFactory</a>. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>L'instance de la <a class="el" href="../../d8/d71/class_general_note_factory.html" title="Gère l&#39;ensemble des fonctionnalités nécessaire à la gestion des données des notes. ">GeneralNoteFactory</a></dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Florian Baune &amp; Jonathan Dekhtiar </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../#L76">76</a> du fichier <a class="el" href="../../">generalnotefactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="../../d8/d71/class_general_note_factory.html#a62a14ca5bf6923968a1508d5840992de">s_inst</a> != NULL ){</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../d8/d71/class_general_note_factory.html#a62a14ca5bf6923968a1508d5840992de">s_inst</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="../../d8/d71/class_general_note_factory.html#a62a14ca5bf6923968a1508d5840992de">s_inst</a> = NULL;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ada4ba22c50e4649d07e0a964adca5a1e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/dab/class_interface_note_factory.html">InterfaceNoteFactory</a> &amp; GeneralNoteFactory::getFactories </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>typeNote</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de retourner une factory pour un certain type de note. </p>
+<p>Si le nom du type de note ne possède pas de factory, cette fonction retourne une <a class="el" href="../../dc/d70/class_note_factory_not_found_exception.html">NoteFactoryNotFoundException</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">typeNote</td><td>Le nom type de note dont on souhaite obtenir la factory. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La liste de QString des noms des stratégies d'export</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Florian Baune &amp; Jonathan Dekhtiar </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../#L20">20</a> du fichier <a class="el" href="../../">generalnotefactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                                                                    {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    QHash&lt;QString, InterfaceNoteFactory*&gt;::const_iterator it = <a class="code" href="../../d8/d71/class_general_note_factory.html#a4554a1c97cf04cffba8a8afdad4b49f6">m_factories</a>.find(typeName);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">if</span>( it==<a class="code" href="../../d8/d71/class_general_note_factory.html#a4554a1c97cf04cffba8a8afdad4b49f6">m_factories</a>.end() )</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../dc/d70/class_note_factory_not_found_exception.html">NoteFactoryNotFoundException</a>(typeName.toStdString());</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> **it;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a5d283017f6438ad97947fd3b15b491e3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d71/class_general_note_factory.html">GeneralNoteFactory</a> &amp; GeneralNoteFactory::getInstance </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction retournant l'instance du Singleton <a class="el" href="../../d8/d71/class_general_note_factory.html" title="Gère l&#39;ensemble des fonctionnalités nécessaire à la gestion des données des notes. ">GeneralNoteFactory</a>. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>L'instance de la <a class="el" href="../../d8/d71/class_general_note_factory.html" title="Gère l&#39;ensemble des fonctionnalités nécessaire à la gestion des données des notes. ">GeneralNoteFactory</a></dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Florian Baune &amp; Jonathan Dekhtiar </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../#L70">70</a> du fichier <a class="el" href="../../">generalnotefactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                                   {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="../../d8/d71/class_general_note_factory.html#a62a14ca5bf6923968a1508d5840992de">s_inst</a> == NULL )</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="../../d8/d71/class_general_note_factory.html#a62a14ca5bf6923968a1508d5840992de">s_inst</a> = <span class="keyword">new</span> <a class="code" href="../../d8/d71/class_general_note_factory.html#a14c4df21a77fcb2cb12a447dfdee872a">GeneralNoteFactory</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> (*<a class="code" href="../../d8/d71/class_general_note_factory.html#a62a14ca5bf6923968a1508d5840992de">s_inst</a>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a3bb4d4081ef947b988a68b750629ee25"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d15/class_note.html">Note</a> &amp; GeneralNoteFactory::loadNote </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>id</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui gère le chargement d'une note à partir de son id. </p>
+<p>Cette dernière utilise une <a class="el" href="../../da/de5/class_note_factory.html" title="Classe template implémentant l&#39;interface InterfaceNoteFactory. ">NoteFactory</a> qui utilise le singleton <a class="el" href="../../d5/dd7/class_database_manager.html">DatabaseManager</a>, ainsi elle est susceptible de retourner toutes les exceptions possibles inhérentes à l'utilisation des fonctionnalités de ce dernier.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">L'id</td><td>de la note que l'on souhaite charger. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La <a class="el" href="../../de/d15/class_note.html" title="Classe abstraite représentant une note générique avec un id et un titre. ">Note</a> que l'on vient de charger</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Florian Baune &amp; Jonathan Dekhtiar </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../#L29">29</a> du fichier <a class="el" href="../../">generalnotefactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                                       {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// Look for TypeNote of Note corresponding to &#39;id&#39;.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="../../d5/dd7/class_database_manager.html">DatabaseManager</a>&amp; db = <a class="code" href="../../d5/dd7/class_database_manager.html#ad998f5de5416534ee875b10fe1dcac82" title="Méthode static renvoyant une référence sur le singleton DatabaseManager. ">DatabaseManager::getInstance</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    QString typeNote = db.<a class="code" href="../../d5/dd7/class_database_manager.html#a69b26d837c71bacc9249961e8e6e9f1a" title="renvoie une QString contenant le type de la note dont l&#39;id est passé en argument ">getNoteType</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// Get back the corresponging NoteFactory and load the Note.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="../../d6/dab/class_interface_note_factory.html" title="L&#39;interface qui sera réimplémenté par la classe template NoteFactory. ">InterfaceNoteFactory</a>&amp; nf = <a class="code" href="../../d8/d71/class_general_note_factory.html#ada4ba22c50e4649d07e0a964adca5a1e" title="Fonction permettant de retourner une factory pour un certain type de note. ">getFactories</a>(typeNote);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> nf.<a class="code" href="../../d6/dab/class_interface_note_factory.html#a39d4278feb13f8ea452b9eef0bb302a5" title="Fonction virtuelle pure qui gère le chargement d&#39;une note à partir de son id. ">loadNote</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a55215c5e02ad3b36b2f93145ab716fa3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d71/class_general_note_factory.html">GeneralNoteFactory</a>&amp; GeneralNoteFactory::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/d71/class_general_note_factory.html">GeneralNoteFactory</a> &amp;&#160;</td>
+          <td class="paramname"><em>n</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad2a92f1cd911c41b0b28b1492e3809f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeneralNoteFactory::saveNote </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d15/class_note.html">Note</a> &amp;&#160;</td>
+          <td class="paramname"><em>n</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui gère la sauvegarde d'une note. </p>
+<p>Cette dernière utilise une NoteFectory qui utilise le singleton <a class="el" href="../../d5/dd7/class_database_manager.html">DatabaseManager</a>, ainsi elle est susceptible de retourner toutes les exceptions possibles inhérentes à l'utilisation des fonctionnalités de ce dernier.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">La</td><td>note que l'on souhaite sauvegarder sur le support de sauvegarde.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>Florian Baune &amp; Jonathan Dekhtiar </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../#L39">39</a> du fichier <a class="el" href="../../">generalnotefactory.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                              {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// Get back the corresponging NoteFactory of Note &#39;n&#39;.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="../../d6/dab/class_interface_note_factory.html" title="L&#39;interface qui sera réimplémenté par la classe template NoteFactory. ">InterfaceNoteFactory</a>&amp; nf = <a class="code" href="../../d8/d71/class_general_note_factory.html#ada4ba22c50e4649d07e0a964adca5a1e" title="Fonction permettant de retourner une factory pour un certain type de note. ">getFactories</a>(n.metaObject()-&gt;className());</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Save Note &#39;n&#39;.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    nf.<a class="code" href="../../d6/dab/class_interface_note_factory.html#a5eaa49c05be1a48e71de83b71b89eac8" title="Fonction virtuelle pure qui gère la sauvegarde d&#39;une note. ">saveNote</a>(n);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="a4554a1c97cf04cffba8a8afdad4b49f6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHash&lt;QString, <a class="el" href="../../d6/dab/class_interface_note_factory.html">InterfaceNoteFactory</a>*&gt; GeneralNoteFactory::m_factories</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L93">93</a> du fichier <a class="el" href="../../">generalnotefactory.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a62a14ca5bf6923968a1508d5840992de"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d71/class_general_note_factory.html">GeneralNoteFactory</a> * GeneralNoteFactory::s_inst = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../#L102">102</a> du fichier <a class="el" href="../../">generalnotefactory.h</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>projet/notefactory/<a class="el" href="../../">generalnotefactory.h</a></li>
+<li>projet/notefactory/<a class="el" href="../../">generalnotefactory.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d8/d71/class_general_note_factory.html">GeneralNoteFactory</a></li>
+    <li class="footer">Généré le Samedi Juin 15 2013 16:08:24 pour Gestionnaire de Notes - Projet LO21 - P13 par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -45,7 +45,7 @@ class MainWindow;
   Les tags, étant très indépendant des notes grâce à notre architecture, peuvent être modifié à dans le mode lecture comme dans le mode édition.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class MainWindow : public QMainWindow
 {
@@ -60,7 +60,7 @@ class MainWindow : public QMainWindow
 		  effectuer cette action. Après ce message d'erreur, le déroulement du programme continu sans encombre.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				newArticle();
 
@@ -71,7 +71,7 @@ class MainWindow : public QMainWindow
 		  effectuer cette action. Après ce message d'erreur, le déroulement du programme continu sans encombre.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				newDocument();
 
@@ -82,7 +82,7 @@ class MainWindow : public QMainWindow
 		  effectuer cette action. Après ce message d'erreur, le déroulement du programme continu sans encombre.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				newImage();
 
@@ -93,7 +93,7 @@ class MainWindow : public QMainWindow
 		  effectuer cette action. Après ce message d'erreur, le déroulement du programme continu sans encombre.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				newAudio();
 
@@ -104,7 +104,7 @@ class MainWindow : public QMainWindow
 		  effectuer cette action. Après ce message d'erreur, le déroulement du programme continu sans encombre.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				newVideo();
 
@@ -115,7 +115,7 @@ class MainWindow : public QMainWindow
 		  réel \sa ListNoteViewItem, si cela n'est pas le cas, cette fonction n'aura aucun effet.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				openNote(QListWidgetItem* i);
 
@@ -125,7 +125,7 @@ class MainWindow : public QMainWindow
 			continuer l'exécution du programme.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				openNote(unsigned int id);
 
@@ -135,7 +135,7 @@ class MainWindow : public QMainWindow
 		  sur la note courrante est effectuée.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				editSaveNote();
 
@@ -145,7 +145,7 @@ class MainWindow : public QMainWindow
 		  toute les modifications apporter sur la note depuis la dernière sauvegarde.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				deleteCancelNote();
 
@@ -154,7 +154,7 @@ class MainWindow : public QMainWindow
 		  Cette fonctionnalité ne fait rien si aucune note n'est actuellement ouverte.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				tagNote();
 
@@ -163,7 +163,7 @@ class MainWindow : public QMainWindow
 		  Cette fonctionnalité ne fait rien en mode édition ou si aucune note n'est actuellement ouverte.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				copyBinaries();
 		// Export Management
@@ -174,7 +174,7 @@ class MainWindow : public QMainWindow
 		  Et affiche un petit message d'erreur pendant le mode d'édition, empéchant l'export.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				exportNoteAsHtml();
 
@@ -185,7 +185,7 @@ class MainWindow : public QMainWindow
 		  Et affiche un petit message d'erreur pendant le mode d'édition, empéchant l'export.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				exportNoteAsTeX();
 
@@ -196,7 +196,7 @@ class MainWindow : public QMainWindow
 		  Et affiche un petit message d'erreur pendant le mode d'édition, empéchant l'export.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				exportNoteAsTxt();
 
@@ -205,7 +205,7 @@ class MainWindow : public QMainWindow
 		  Cette fonctionnalité ne fait rien si aucune note n'est actuellement ouverte.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				exportNote(int i);
 
@@ -216,7 +216,7 @@ class MainWindow : public QMainWindow
 		  Si aucunne box d'export n'est actuellement afficher, alors cette fonction ne fait rien.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				exportNoteAsFile();
 		// Search Management
@@ -226,7 +226,7 @@ class MainWindow : public QMainWindow
 		  l'ensemble des notes contenues dans la base et qui ne sont pas dans la corbeille.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				searchNotes();
 		// Workspace Management
@@ -236,7 +236,7 @@ class MainWindow : public QMainWindow
 		  Et affiche un petit message d'erreur pendant le mode d'édition, empéchant l'export.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				createWorkspace();
 
@@ -246,7 +246,7 @@ class MainWindow : public QMainWindow
 		  Et affiche un petit message d'erreur pendant le mode d'édition, empéchant l'export.
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				changeWorkspace();
 		// Trash Management
@@ -254,7 +254,7 @@ class MainWindow : public QMainWindow
 		/*!
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				openTrash();
 
@@ -262,7 +262,7 @@ class MainWindow : public QMainWindow
 		/*!
 
 		  \version	1.0
-		  \author	Florian Baune
+		  \author	Florian Baune & Jonathan Dekhtiar
 		*/
 		void				emptyTrash();
     

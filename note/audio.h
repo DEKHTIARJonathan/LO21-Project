@@ -9,7 +9,7 @@
   Elle permet le stockage des imformations nécessaire à un Audio.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class Audio : public MultiMedia
 {

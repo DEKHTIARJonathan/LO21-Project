@@ -11,7 +11,7 @@
   Elle n'a pas vocation à être utilisé directement, mais réimplémenté par des types multimédias plus spécifique comme Image, Audio ou Video.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class MultiMedia : public Note
 {

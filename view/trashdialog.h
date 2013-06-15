@@ -25,7 +25,7 @@ class TrashDialog;
 		le empty trash, la valeur du pointeur de cette note sera NULL.
 
   \version	1.0
-  \author	Florian Baune
+  \author	Florian Baune & Jonathan Dekhtiar
 */
 class TrashDialog : public QDialog
 {
