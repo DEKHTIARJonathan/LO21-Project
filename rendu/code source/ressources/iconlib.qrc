@@ -1,0 +1,17 @@
+<!DOCTYPE RCC>
+<RCC>
+    <qresource prefix="/icn">
+        <file alias="empty">icon/trash_empty.png</file>
+        <file alias="full">icon/trash_full.png</file>
+        <file alias="article">icon/article.png</file>
+        <file alias="document">icon/document.png</file>
+        <file alias="image">icon/image.png</file>
+        <file alias="video">icon/video.png</file>
+        <file alias="audio">icon/audio.png</file>
+        <file alias="new">icon/new.png</file>
+        <file alias="open">icon/open.png</file>  
+        <file alias="quit">icon/quit.png</file> 
+        <file alias="export">icon/export.png</file>  
+        <file alias="copy">icon/copy.png</file> 
+    </qresource>
+</RCC>
