@@ -79,9 +79,9 @@ QString	ExportTex::exportNote(const Audio& a) const
 	return exportNote((Note&)a)+"\\section*{Audio: }\n"
 			"\\frame\n"
 			"{\n"
-				"\\audio{"+escape(desc)+"}\n"
+				"\\audio{"+escape(path)+"}\n"
 			"}\n"
-			"Description : \n"+escape(path)+"\n";
+			"Description : \n"+escape(desc)+"\n";
 }
 
 QString	ExportTex::escape(QString s) const
